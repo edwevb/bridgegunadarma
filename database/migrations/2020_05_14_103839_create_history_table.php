@@ -19,8 +19,8 @@ class CreateHistoryTable extends Migration
             $table->date('hist_date');
             $table->text('hist_loc');
             $table->text('hist_keterangan')->nullable($value=true);
-            $table->string('atlet_1',64)->nullable($value=true);
-            $table->string('atlet_2',64)->nullable($value=true);
+            $table->text('hist_dist')->nullable($value=true);
+            
             $table->timestamps();
         });
     }

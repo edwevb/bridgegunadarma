@@ -15,9 +15,10 @@ class CreateMasterpointTable extends Migration
     {
         Schema::create('tb_masterpoint', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->double('discpiline',2,2);
-            $table->double('bidding',2,2);
-            $table->double('play',2,2);
+            $table->integer('atlet_id');
+            $table->double('discipline');
+            $table->double('bidding');
+            $table->double('play');
             $table->timestamps();
         });
     }

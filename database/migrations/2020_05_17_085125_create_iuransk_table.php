@@ -16,8 +16,8 @@ class CreateIuranskTable extends Migration
         Schema::create('tb_iuran_sk', function (Blueprint $table)
         {
             $table->bigIncrements('id');
-            $table->date('sk_date');
-            $table->double('sk_bayar');
+            $table->date('sk_tahun');
+            $table->string('pta_ata',3);
             $table->timestamps();
         });
     }
