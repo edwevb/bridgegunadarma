@@ -96,6 +96,6 @@ route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 });
 
 //Login
-Auth::routes(['register' => false]);
+Auth::routes();
 
 
