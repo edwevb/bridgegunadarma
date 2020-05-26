@@ -1,0 +1,33 @@
+@extends('layout.detail')
+@section('title', 'Atlet Bridge Gunadarma')
+@section('content')
+	<article id="atlet" class="px-3 content-mobile"> {{-- atlet article --}}
+		<div class="col-md p-1 mt-1 text-center bg-gradient-light rounded">
+			<div class="p-5">
+				<div class="text-dark text-shadow mx-auto my-4">
+    			<h1 class="font-weight-bold">List Atlet Bridge Gunadarma</h1>
+    		</div>
+	      <div class="row justify-content-center row-cols-1 row-cols-md-3" >
+					@foreach ($data_atlet as $atlet)
+					<div class="px-1 mb-5">
+					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
+					  	<div class="col-md p-2">
+					  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$atlet->atlet_name!!}">
+					  	</div>
+					    <div class="card-body">
+					      <h5 class="card-title text-shadow text-white">{{$atlet->atlet_name}}</h5>
+					      <hr id="atletHr">
+					      <div class="text-white lead font-italic mb-3">
+					      	<h6>{{$atlet->alamat}}</h6>
+					      </div>
+					       <a href="{{ url('/detailAtlet/'.$atlet->id) }}" target="_blank" class="btn btn-success p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					    </div>
+					  </div> {{-- end card --}}
+					</div>
+					@endforeach
+				</div> {{-- end atlet row --}}
+				<a href="{{ url('/') }}" class="btn btn-dark rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
+	    </div>
+		</div>
+  </article>{{-- end atlet --}}
+@endsection

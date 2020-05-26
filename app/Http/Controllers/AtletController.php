@@ -1,0 +1,239 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use App\Atlet;
+use PDF;
+class AtletController extends Controller
+{
+    public function index()
+    {
+        // $atlet = DB::table('tb_atlet')->get();
+        if (!$data_atlet = Atlet::orderBy('atlet_name','ASC')->get())
+        {
+            return abort(500);
+        }
+        return view('admin.atlet.atlet', ['data_atlet'=>$data_atlet]);
+    }
+
+    public function create()
+    {
+        //Cara 1
+        // $atlet             = new Atlet;
+        // $atlet->nik        = $request->nik;
+        // $atlet->atlet_name = $request->atlet_name;
+        // $atlet->save();
+
+        //Cara 2
+        /*Atlet::create([
+            'nik'        => $request->nik,
+            'atlet_name' => $request->atlet_name,
+        ]);*/
+    }
+
+    public function store(Request $request)
+    {   
+         $request->validate([
+            'nik'        => 'required|numeric|digits_between:1,17',
+            'atlet_name' => 'required|alpha_spaces|max:64',
+            'tgl_lahir'  => 'required|date',
+            'gender'     => 'required|alpha|max:6',
+            'telp'       => 'required|numeric|digits_between:1,14',
+            'email'      => 'required|email|max:64',
+            'alamat'     => 'nullable|string|max:256',
+            'fakultas'   => 'required|alpha_spaces|max:64',
+            'jurusan'    => 'required|alpha_spaces|max:64',
+            'angkatan'   => 'nullable|numeric|digits:4',
+            'fb'         => 'nullable|string|max:128',
+            'twt'        => 'nullable|string|max:128',
+            'ig'         => 'nullable|string|max:128',
+            'img_atlet'  => 'nullable|image|max:2048'
+        ],
+        [
+            'telp.required' => 'tidak boleh kosong'
+        ]);
+        //Cara 3
+        if ($atlet = Atlet::create($request->all()))
+        {
+            if($request->file('img_atlet') == "")
+            {
+                $atlet->img_atlet = 'default.png';
+            }
+            else{
+                $file             = $request->file('img_atlet');
+                $fileName         = $atlet->nik.'.jpg'/*.getClientOriginalExtension()*/;
+                $file->move("assets/img/img_atlet", $fileName);
+                $atlet->img_atlet = $fileName;
+            }
+            $atlet->save();
+            return redirect('/atlet')->with('AlertSuccess','Data Atlet berhasil ditambahkan!');
+        }
+        return abort(500); 
+    }
+
+    public function show(Atlet $atlet)
+    {
+        $data_prestasi = \App\Prestasi::all();
+        $data_history = \App\History::all();
+        $data_mpoint = \App\Masterpoint::all();
+        return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint'));
+    }
+
+    public function edit(Atlet $atlet)
+    {
+        return view('admin.atlet.EditAtlet',compact('atlet'));
+    }
+
+    public function update(Request $request, Atlet $atlet)
+    {
+        $request->validate([
+            'nik'        => 'required|numeric|digits_between:1,17',
+            'atlet_name' => 'required|alpha_spaces|max:64',
+            'tgl_lahir'  => 'required|date',
+            'gender'     => 'required|alpha|max:6',
+            'telp'       => 'required|numeric|digits_between:1,14',
+            'email'      => 'required|email|max:64',
+            'alamat'     => 'nullable|string|max:256',
+            'fakultas'   => 'required|alpha_spaces|max:64',
+            'jurusan'    => 'required|alpha_spaces|max:64',
+            'angkatan'   => 'nullable|numeric|digits:4',
+            'fb'         => 'nullable|string|max:128',
+            'twt'        => 'nullable|string|max:128',
+            'ig'         => 'nullable|string|max:128',
+            'img_atlet'  => 'nullable|image|max:2048'
+        ]);
+
+        /*Atlet::where('id', $atlet->id)
+                ->update([
+                    'nik'        => $request->nik,
+                    'atlet_name' => $request->atlet_name,
+                ]);*/
+
+        /*if($request->hasFile('img_atlet'))
+        {
+            $request->file('img_atlet')->move('assets/img/', $request->file('img_atlet')->getClientOriginalName());
+
+            $atlet->img_atlet = $request->file('img_atlet')->getClientOriginalName();
+            $atlet->save();
+        }else
+        {
+            $atlet->img_atlet = $atlet->img_atlet;
+        }*/
+        
+        //return $atlet;
+            $atlet->update($request->all());
+
+            if($request->file('img_atlet') == "")
+            {
+                $atlet->img_atlet = $atlet->img_atlet;
+            }
+
+            if($request->hasFile('img_atlet'))
+            {
+                $atletImage = public_path("assets/img/img_atlet/".$atlet->img_atlet);
+                if (File::exists($atletImage))
+                {
+                    // unlink or remove previous image from folder
+                    File::delete($atletImage);
+                }
+                $file       = $request->file('img_atlet');
+                $fileName   = $atlet->nik.'.jpg'/*.getClientOriginalExtension()*/;
+                $file->move("assets/img/img_atlet", $fileName);
+                $atlet->img_atlet = $fileName;
+                $atlet->save();
+            }
+            return redirect('/atlet')->with('AlertSuccess','Data '.$atlet->atlet_name.' berhasil diperbaharui!');
+    }
+
+    public function destroy(Atlet $atlet)
+    {
+        if (Atlet::destroy($atlet->id))
+        {
+            $imageFile = public_path("assets/img/img_atlet/{$atlet->img_atlet}");
+            if (File::exists($imageFile))
+            {
+                unlink($imageFile);
+            }
+            $atlet->masterpoint()->delete($atlet->masterpoint);
+            $atlet->prestasi()->detach($atlet->prestasi, $atlet->history, $atlet->iuranSk);
+            return redirect('/atlet')->with('AlertSuccess','Data Atlet berhasil dihapus!');
+        }
+        return abort(500);
+    }
+
+    public function addPrestasi(Request $request, Atlet $atlet)
+    {
+        if ($atlet->prestasi()->where('prestasi_id',$request->prestasi)->exists())
+        {
+            return redirect()->back()->with('ErrorInputPre',
+                '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    Data Prestasi sudah ada!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>');
+        }
+        $atlet->prestasi()->attach($request->prestasi);
+        return redirect()->back()->with('AlertSuccessPre',
+            '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                Data Prestasi '.$atlet->atlet_name.' berhasil ditambahkan!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>');
+    }
+
+    public function removePrestasi(Atlet $atlet, $prestasi)
+    {
+        $atlet->prestasi()->detach($prestasi);
+        return redirect()->back()->with('AlertSuccessPre','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            Data Prestasi '.$atlet->atlet_name.' berhasil dihapus!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    }
+
+    public function addHistory(Request $request, Atlet $atlet)
+    {
+        if ($atlet->history()->where('history_id',$request->history)->exists())
+        {
+            return redirect()->back()->with('ErrorInputHist',
+                '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    Data Pelatihan sudah ada!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>');
+        }
+        $atlet->history()->attach($request->history);
+        return redirect()->back()->with('AlertSuccessHist',
+            '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                Data Pelatihan '.$atlet->atlet_name.' berhasil ditambahkan!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>');
+    }
+
+    public function removeHistory(Atlet $atlet, $history)
+    {
+        $atlet->history()->detach($history);
+        return redirect()->back()->with('AlertSuccessHist','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            Data Pelatihan '.$atlet->atlet_name.' berhasil dihapus!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    }
+
+    public function exportPdf()
+    {
+        $atlet = Atlet::orderBy('atlet_name','ASC')->get();
+        $atletPdf = PDF::loadview('admin.atlet.PdfAtlet',['atlet' => $atlet]);
+        return $atletPdf->download('AtletBridgeGunadarma.pdf');
+    }
+}

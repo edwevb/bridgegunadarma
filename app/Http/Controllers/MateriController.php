@@ -1,0 +1,132 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Materi;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
+
+class MateriController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $data_materi = Materi::orderBy('mat_date','ASC')->get();
+        return view('admin.materi.materi',['data_materi'=>$data_materi]);
+    }
+
+    public function create()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'mat_title' => 'required|string|max:128',
+            'mat_date'  => 'required|date',
+            'file_mat'  => 'nullable|file|max:10024'
+        ]);
+        if ($materi = Materi::create($request->all()))
+        {
+            if($request->file('file_mat') == "")
+            {
+                $materi->file_mat = '';
+            }
+            else
+            {
+                $file             = $request->file('file_mat');
+                $file_extension   = $file->getClientOriginalExtension();
+                $fileName         = $request->mat_title.'.'.$file_extension;
+                $file->move("assets/file/file_mat", $fileName);
+                $materi->file_mat = $fileName;
+            }
+        $materi->save();
+        return redirect('/materi')->with('AlertSuccess','Data Materi berhasil ditambahkan!');
+        }
+        return abort(404); 
+    }
+
+    public function show(Materi $materi)
+    {
+        return view('admin.materi.DetailMateri',compact('materi'));
+    }
+
+    public function edit(Materi $materi)
+    {
+        return view('admin.materi.EditMateri',compact('materi'));
+    }
+
+    public function update(Request $request, Materi $materi)
+    {
+         $request->validate([
+            'mat_title' => 'required|string|max:128',
+            'mat_date'  => 'required|date',
+            'file_mat'  => 'nullable|file|max:10024'
+        ]);
+
+        if($materi->update($request->all()))
+        {
+            if($request->file('file_mat') == "")
+            {
+                $materi->file_mat = $materi->file_mat;
+            }
+            else
+            {
+                $file             = $request->file('file_mat');
+                $file_extension   = $file->getClientOriginalExtension();
+                $fileName         = $request->mat_title.'.'.$file_extension;
+                $file->move("assets/file/file_mat", $fileName);
+                $materi->file_mat = $fileName;
+                $materi->save();
+
+                if($request->hasFile('file_mat'))
+                {
+                    // get previous image from folder
+                    $matFile = public_path("assets/file/file_mat/{$materi->file_mat}"); 
+                    if ($request->exists($matFile))
+                    {
+                        // unlink or remove previous image from folder
+                        unlink($matFile);
+                    }
+                }
+            }
+            return redirect('/materi')->with('AlertSuccess','Data '.$materi->mat_title.' diperbaharui!');
+        }
+        return abort(403,'Oops failed, coba edit lagi.');
+    }
+
+    public function destroy(Materi $materi)
+    {
+        if (Materi::destroy($materi->id))
+        {
+            $matFile = public_path("assets/file/file_mat/{$materi->file_mat}");
+            if (File::exists($matFile))
+            {
+                unlink($matFile);
+            }
+            return redirect('/materi')->with('AlertSuccess','Data Materi berhasil dihapus!');
+        }
+        return abort(500); 
+    }
+
+    public function download(Materi $materi)
+    {
+        if($materi->file_mat != NULL)
+        {
+            $filepath = public_path("assets/file/file_mat/{$materi->file_mat}");
+            if(file_exists($filepath))
+            {
+                return response()->download($filepath);
+                // return response()->file($filepath);
+            }
+            return redirect()->back()->with('AlertDanger','Terjadi kesalahan! File tidak tersedia. Silahkan download kembali lain waktu.');
+        }
+        return redirect()->back()->with('AlertWarning','File belum tersedia. Silahkan download kembali lain waktu.');
+    }
+
+}

@@ -1,0 +1,173 @@
+@extends('layout.admin_cms')
+@section('title', 'User Management')
+@section('section')
+	<div class="row no-gutters">
+		<div class="col-md-2"></div>
+		{{-- start content --}}
+		<div class="col-lg d-flex">
+			<div class="container">
+				<div class="card-borderless">
+          <div class="card-header">
+            <h1 class="text-center font-weight-bold text-info">User Management</h1>
+          </div>
+          <div class="card-body">
+            @if ($errors->any())
+              <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                {{-- <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul> --}}
+                <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-user" data-toggle="modal" data-target="#modal-tambah-user">Click disini</a> untuk melihat error.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            @endif
+            @if (session('AlertSuccess'))
+              <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                <strong>{{ session('AlertSuccess') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            @endif
+            <div class="mb-2">
+              <a id="btn-wh" class="btn bg-gradient-info" data-toggle="modal" data-target="#modal-tambah-user"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+            </div>
+            <div class="table-responsive-xl mt-4">
+              <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-dark">
+                  <tr>
+                    <th width="10">No</th>
+                    <th scope="col">Atlet</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Date Created</th>
+                    <th class="text-center" width="50" scope="col">Edit</th>
+                    <th class="text-center" width="50" scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($data_user as $user)
+                  <tr>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->username}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->role()}}</td>
+                    <td>
+                      <?php $created = strtotime($user->created_at) ?>
+                      {{date('l, d-m-Y', $created)}}
+                    </td>
+                    <td class="text-center">
+                    	<a class="btn-table  btn btn-transparent" href="{{ url('/user/'.$user->id.'/edit') }}"><i class="fa fa-edit"></i></a>
+                    </td>
+                    <td class="text-center">
+                      <form action="{{ url('/user/'.$user->id) }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button class="btn-table btn btn-transparent" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i></button>
+                      </form>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>{{-- end table --}}
+          </div>
+        </div>{{-- end card --}}
+			</div> {{-- end container --}}
+		</div> {{-- end content --}}
+	</div>
+
+	 {{-- Modal tambah user --}}
+  <div class="modal fade" id="modal-tambah-user" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Form user</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{{ url('/user') }}">
+            @csrf
+						<input type="hidden" name="remember_token" value="{{csrf_token()}}">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="name">Atlet</label>
+              	<input type="text" name="name" id="name" class="form-style  @error('name') is-invalid @enderror" value="{{old('name')}}">
+                @error('name')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="role_id">Role | Level</label>
+                 <select class="form-style-static" name="role_id" id="role_id">
+                  <option value="1" {{(old('role_id') == '1') ? 'selected' : ''}}>Admin</option>
+                  <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>
+                </select>
+                @error('role_id')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-style  @error('username') is-invalid @enderror" value="{{old('username')}}">
+                @error('username')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{old('email')}}">
+                @error('email')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror">
+                @error('password')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group col-md-6">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" class="form-style  @error('confirm_password') is-invalid @enderror">
+                @error('confirm_password')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                @enderror
+              </div>
+            </div>
+            <div class="ml-5 pb-5">
+              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Insert</button>
+              <button type="reset" class="btn-form btn btn-danger">Reset</button>
+              <button type="button" class="btn-form btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>{{-- end modal tambah user --}}
+@endsection
