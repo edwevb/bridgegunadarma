@@ -7,8 +7,8 @@ class PagesController extends Controller
 {
     public function home()
     {
-		$data_atlet     = \App\Atlet::orderBy('atlet_name','Asc')
-                            ->where('home', 1)
+        $data_atlet     = \App\Atlet::orderBy('atlet_name','Asc')
+                            ->take(3)
                             ->get();
 
 		$data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
