@@ -36,7 +36,7 @@ class UserManagementController extends Controller
 
     public function edit(User $user)
     {
-    	return view('admin.auth.editUser',compact('user'));
+    	return view('admin.auth.EditUser',compact('user'));
     }
 
     public function update(Request $request, User $user)
