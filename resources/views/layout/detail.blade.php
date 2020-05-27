@@ -54,6 +54,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link-style js-scroll-trigger" href="{{ url('/') }}">Home</a>
+          </li>
           <li class="nav-item" id="login-btn">
             @if(auth()->user())
              <li class="nav-item dropdown">
