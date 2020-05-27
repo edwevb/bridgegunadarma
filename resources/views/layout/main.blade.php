@@ -34,6 +34,10 @@
         background-attachment: fixed;
       }
     }
+    
+    footer{
+      margin-top: 30px;
+    }
   </style>
 </head>
 
@@ -93,7 +97,7 @@
   @yield('section')
 
   {{-- footer --}}
-  <footer class="mb-2">
+  <footer>
     <div id="footer" class="footer mt-5 bg-white shadow-lg col-md-4 rounded-pill mx-auto"> 
       <div class="col text-center">
         <p class="font-weight-bold py-2">2020 All Rights Reserve by Edward Evbert</p>

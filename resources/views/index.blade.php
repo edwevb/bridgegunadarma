@@ -4,7 +4,7 @@
 	 <div class="content-mobile">
 	 	<div class="no-gutters">
 	 		<div class="col-lg d-flex">
-	 			<section class="" id="home"> {{-- main --}}
+	 			<section id="home"> {{-- main --}}
 			 		{{-- start Jumbotron --}}
 					<div class="jumbotron bg-gradient-light">
 						<header class="content-wrapper mb-5">
