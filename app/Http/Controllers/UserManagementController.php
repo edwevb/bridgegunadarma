@@ -17,7 +17,6 @@ class UserManagementController extends Controller
     {
         $request->validate([
             'name'             => 'required|alpha_spaces|max:64',
-            'username'         => 'required|unique:users|min:6',
             'email'            => 'required|unique:users|email',
             'password'         => 'required|min:6',
             'confirm_password' => 'required|min:6|same:password'
@@ -25,7 +24,6 @@ class UserManagementController extends Controller
 
         $user = new User;
         $user->name           = $request->name;
-        $user->username       = $request->username;
         $user->role_id        = $request->role_id;
         $user->email          = $request->email;
         $user->password       = bcrypt($request->password);
