@@ -13,7 +13,7 @@
 	          </div>
 	           @if ($errors->any())
 	              <div class="alert alert-danger alert-dismissible fade show text-center m-4" role="alert">
-	                <p>&nbsp;<span class="font-weight-bold text-danger">Gagal memperbaharui User {{$user->atlet->atlet_name}}!</span> Cek kembali inputan anda.</p>
+	                <p>&nbsp;<span class="font-weight-bold text-danger">Gagal memperbaharui User {{$user->name}}!</span> Cek kembali inputan anda.</p>
 	                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	                <span aria-hidden="true">&times;</span>
 	                </button>
