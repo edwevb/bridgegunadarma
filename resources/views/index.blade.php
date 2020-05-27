@@ -68,11 +68,11 @@
 													      </div>
 													    </div>
 													  </div> {{-- end card --}}
-													   <a href="{{ url('/detailAtlet/'.$atlet->id) }}" target="_blank" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+													   <a href="{{ url('/detailAtlet/'.$atlet->id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 													</div>
 													@endforeach
 												</div> {{-- end atlet row --}}
-												<a href="{{ url('/moreAtlet') }}" target="_blank" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-users"></i></span></a>
+												<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-users"></i></span></a>
 				              </div>
 				            </div> {{-- end collapse --}}
 		            	</div>
@@ -104,11 +104,11 @@
 														      </p>
 														    </div>
 														  </div> {{-- end card --}}
-														  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" target="_blank" class="btn-detail btn btn-info rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+														  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn btn-info rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 														</div>
 														@endforeach
 													</div> {{-- end prestasi row --}}
-													<a href="{{ url('/morePrestasi') }}" target="_blank" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-medal"></i></span></a>
+													<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-medal"></i></span></a>
 						          	</div>
 				              </div>
 				            </div> {{-- end collapse --}}
@@ -141,11 +141,11 @@
 														      </p>
 														    </div>
 														  </div> {{-- end card --}}
-														  <a href="{{ url('/detailEvent/'.$event->id) }}" target="_blank" class="btn-detail btn btn-warning rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+														  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn btn-warning rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 														</div>
 														@endforeach
 													</div> {{-- end event row --}}
-													<a href="{{ url('/moreEvent') }}" target="_blank" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="far fa-clipboard"></i></span></a>
+													<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="far fa-clipboard"></i></span></a>
 						          	</div>
 				              </div>
 				            </div> {{-- end collapse --}}

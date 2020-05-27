@@ -20,7 +20,7 @@
 					      <div class="text-white lead font-italic mb-3">
 					      	<h6>{{$atlet->alamat}}</h6>
 					      </div>
-					       <a href="{{ url('/detailAtlet/'.$atlet->id) }}" target="_blank" class="btn btn-success p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailAtlet/'.$atlet->id) }}" class="btn btn-success p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>
