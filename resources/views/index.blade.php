@@ -161,45 +161,47 @@
 		<section id="about">
 			<div class="no-gutters">
 	 			<div class="col-lg">
-				 	<div class="jumbotron bridge-bg">
-				 		<div class="bg-light rounded col-md-5 mx-auto shadow">
-				 			<div class="container">
-		 						<div class="my-3">
-									<div class="col-md mx-auto rounded-circle p-4 about-border">
-										<h1 class="display-4 text-shadow text-center text-dark font-weight-bold">About</h1>
+				 	<div class="">
+				 		<div class="bridge-bg p-4">
+					 		<div class="bg-light rounded col-md-5 mx-auto shadow">
+					 			<div class="container">
+			 						<div class="my-3">
+										<div class="col-md mx-auto rounded-circle p-4 about-border">
+											<h1 class="display-4 text-shadow text-center text-dark font-weight-bold">About</h1>
+										</div>
 									</div>
+					 				<div class="col-md mx-auto text-center py-4">
+							  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+								  </div>
 								</div>
-				 				<div class="col-md mx-auto text-center py-4">
-						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
-							  </div>
 							</div>
+						  <article id="contact" class="mt-5">	
+				 				<div class="row justify-content-center px-2">
+				 					<div class="col-md-5 mt-2 bg-primary rounded">
+				 						<div class="card-borderless text-white bg-transparent">
+										  <div class="card-body">
+										  	<h1 class="text-shadow font-weight-bold">Contact</h1>
+										  		<hr id="bridgeHr">
+										  	<h2 class="card-title ml-2"><i class="fas fa-mobile-alt"></i></h2>
+										    <p class="card-text ml-2">xxxx-xxxx-xxxx</p>
+										    	<hr id="bridgeHr">
+										    <h2 class="card-title ml-2"><i class="fab fa-instagram"></i></h2>
+										    <p class="card-text ml-2"><a class="text-white" href="https://www.instagram.com/bridgegunadarmajkt" target="_blank">@bridgegunadarmajkt</a></p>
+										    	<hr id="bridgeHr">
+										  	<h2 class="card-title ml-2"><i class="far fa-paper-plane"></i></h2>
+										    <p class="card-text ml-2"><a class="text-white" href="mailto:someone@example.com" target="_blank">bridgegunadarma@gmail.com</a></p>
+										  </div>
+										</div> {{-- end card --}}
+				 					</div> {{-- end card row --}}
+				 					<div class="col-md-5 rounded bg-light mt-2 p-3">
+				 						<h2 class="card-title"><i class="fas fa-map-marked-alt"></i></h2>
+								    <p class="card-text">Universitas Gunadarma, Kampus C Salemba, Jakarta Pusat.
+								    <br>(belakang deretan Gereja St. Carolus)</p>
+				 							<iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8404.702815305292!2d106.85095023492941!3d-6.198698104947517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4680ba8956b%3A0x6ce461d1f179ab40!2sJl.%20Murtado%203%20No.33%2C%20RT.11%2FRW.5%2C%20Paseban%2C%20Kec.%20Senen%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010440!5e0!3m2!1sen!2sid!4v1589984686992!5m2!1sen!2sid" width="auto" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				 					</div> {{-- end maps --}}
+				 				</div> {{-- end row --}}		  
+						  </article>
 						</div>
-					  <article id="contact" class="mt-5">	
-			 				<div class="row justify-content-center px-2">
-			 					<div class="col-md-5 mt-2 bg-primary rounded">
-			 						<div class="card-borderless text-white bg-transparent">
-									  <div class="card-body">
-									  	<h1 class="text-shadow font-weight-bold">Contact</h1>
-									  		<hr id="bridgeHr">
-									  	<h2 class="card-title ml-2"><i class="fas fa-mobile-alt"></i></h2>
-									    <p class="card-text ml-2">xxxx-xxxx-xxxx</p>
-									    	<hr id="bridgeHr">
-									    <h2 class="card-title ml-2"><i class="fab fa-instagram"></i></h2>
-									    <p class="card-text ml-2"><a class="text-white" href="https://www.instagram.com/bridgegunadarmajkt" target="_blank">@bridgegunadarmajkt</a></p>
-									    	<hr id="bridgeHr">
-									  	<h2 class="card-title ml-2"><i class="far fa-paper-plane"></i></h2>
-									    <p class="card-text ml-2"><a class="text-white" href="mailto:someone@example.com" target="_blank">bridgegunadarma@gmail.com</a></p>
-									  </div>
-									</div> {{-- end card --}}
-			 					</div> {{-- end card row --}}
-			 					<div class="col-md-5 rounded bg-light mt-2 p-3">
-			 						<h2 class="card-title"><i class="fas fa-map-marked-alt"></i></h2>
-							    <p class="card-text">Universitas Gunadarma, Kampus C Salemba, Jakarta Pusat.
-							    <br>(belakang deretan Gereja St. Carolus)</p>
-			 							<iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8404.702815305292!2d106.85095023492941!3d-6.198698104947517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4680ba8956b%3A0x6ce461d1f179ab40!2sJl.%20Murtado%203%20No.33%2C%20RT.11%2FRW.5%2C%20Paseban%2C%20Kec.%20Senen%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010440!5e0!3m2!1sen!2sid!4v1589984686992!5m2!1sen!2sid" width="auto" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-			 					</div> {{-- end maps --}}
-			 				</div> {{-- end row --}}		  
-					  </article>
 					</div> {{-- end jumbotron --}}
 				</div>
 			</div>
