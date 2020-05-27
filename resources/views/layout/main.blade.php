@@ -36,6 +36,7 @@
     }
     
     footer{
+      opacity: 1;
       margin-top: 30px;
     }
   </style>
@@ -98,7 +99,7 @@
 
   {{-- footer --}}
   <footer>
-    <div id="footer" class="footer mt-5 bg-white shadow-lg col-md-4 rounded-pill mx-auto"> 
+    <div class="footer mt-5 bg-white shadow-lg col-md-4 rounded-pill mx-auto"> 
       <div class="col text-center">
         <p class="font-weight-bold py-2">2020 All Rights Reserve by Edward Evbert</p>
       </div>
