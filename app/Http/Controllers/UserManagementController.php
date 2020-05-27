@@ -42,7 +42,6 @@ class UserManagementController extends Controller
     public function update(Request $request, User $user)
     {
     	$request->validate([
-			'username'         => 'required|min:6',
 			'email'            => 'required|email',
 			'password'         => 'required|min:6',
 			'confirm_password' => 'required|min:6|same:password'
@@ -51,7 +50,6 @@ class UserManagementController extends Controller
 		User::where('id', $user->id)
             ->update([
 				'name'           => $request->name,
-				'username'       => $request->username,
 				'role_id'        => $request->role_id,
 				'email'          => $request->email,
 				'password'       => bcrypt($request->password),
