@@ -32,24 +32,15 @@
 		            		{{-- User Interface --}}
 		                <input type="text" class="form-control text-muted" value="{{$user->name}}" disabled>
 		              </div>
-		              <div class="form-group col-md-6">
+		            </div>
+		            <div class="row">
+		            	<div class="form-group col-md-6">
 		                <label for="role_id">Role | Level</label>
 		                 <select class="form-style-static" name="role_id" id="role_id">
 		                  <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>
 		                  <option value="1" {{(old('role_id') == '1') ? 'selected' : ''}}>Admin</option>
 		                </select>
 		                @error('role_id')
-		                  <div class="invalid-feedback">
-		                    {{$message}}
-		                  </div>
-		                @enderror
-		              </div>
-		            </div>
-		            <div class="row">
-		              <div class="form-group col-md-6">
-		                <label for="username">Username</label>
-		                <input type="text" name="username" id="username" class="form-style  @error('username') is-invalid @enderror" value="{{$user->username}}">
-		                @error('username')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
 		                  </div>

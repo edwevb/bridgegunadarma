@@ -1,9 +1,9 @@
 @extends('layout.detail')
 @section('title', 'Atlet Bridge Gunadarma')
 @section('content')
-	<article id="atlet" class="px-3 content-mobile"> {{-- atlet article --}}
-		<div class="col-md p-1 mt-1 text-center bg-gradient-light rounded">
-			<div class="p-5">
+	<article id="atlet" class="content-mobile"> {{-- atlet article --}}
+		<div class="col-md mt-1 text-center bg-gradient-light rounded">
+			<div class="p-2">
 				<div class="text-dark text-shadow mx-auto my-4">
     			<h1 class="font-weight-bold">List Atlet Bridge Gunadarma</h1>
     		</div>

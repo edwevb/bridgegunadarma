@@ -42,7 +42,6 @@
                   <tr>
                     <th width="10">No</th>
                     <th scope="col">Atlet</th>
-                    <th scope="col">Username</th>
                     <th scope="col">Email</th>
                     <th scope="col">Level</th>
                     <th scope="col">Date Created</th>
@@ -55,7 +54,6 @@
                   <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->username}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role()}}</td>
                     <td>
@@ -107,6 +105,8 @@
                   </div>
                 @enderror
               </div>
+            </div>
+            <div class="row">
               <div class="form-group col-md-6">
                 <label for="role_id">Role | Level</label>
                  <select class="form-style-static" name="role_id" id="role_id">
@@ -114,17 +114,6 @@
                   <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>
                 </select>
                 @error('role_id')
-                  <div class="invalid-feedback">
-                    {{$message}}
-                  </div>
-                @enderror
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-style  @error('username') is-invalid @enderror" value="{{old('username')}}">
-                @error('username')
                   <div class="invalid-feedback">
                     {{$message}}
                   </div>

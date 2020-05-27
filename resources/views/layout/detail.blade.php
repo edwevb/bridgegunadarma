@@ -57,7 +57,7 @@
           <li class="nav-item" id="login-btn">
             @if(auth()->user())
              <li class="nav-item dropdown">
-                <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->username}}</a>
+                <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->email}}</a>
                 <div class="dropdown-menu collapse" id="account">
                   <a class="dropdown-item" href="{{ url('/dashboard') }}"><i class="fas fa-laptop"></i> Dashboard</a>
                   <a class="dropdown-item" href="#"><i class="fas fa-pen-alt"></i> Change Password</a>

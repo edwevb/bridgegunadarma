@@ -24,6 +24,7 @@
   {{--  Page styles --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
  {{--  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.bridge.css') }}"> --}}
 
   <style type="text/css">
@@ -49,7 +50,7 @@
             <a class="nav-link-style js-scroll-trigger " href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->username}}</a>
+            <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->email}}</a>
             <div class="dropdown-menu collapse" id="account">
               <a class="dropdown-item" href="{{ url('/dashboard') }}"><i class="fas fa-laptop"></i> Dashboard</a>
               <a class="dropdown-item" href="{{ url('/passwordForm/'.auth()->user()->id) }}"><i class="fas fa-pen-alt"></i> Change Password</a>
@@ -181,6 +182,8 @@
   <script src="{{ asset('assets/js/bridge/bridge.js') }}"></script>
 
   {{-- Page plugins --}}
+    <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
   
   {{-- Page custom scripts --}}
