@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+use Auth;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
@@ -35,7 +36,6 @@ class DashboardController extends Controller
                     'ann_date'  => now(),
                     'ann_isi'   => $request->ann_isi
                     ]);
-
         return redirect('/dashboard')->with('AlertSuccess','Announcement berhasil diperbaharui!');
     }
 
@@ -58,6 +58,7 @@ class DashboardController extends Controller
             ->update([
                 'password' => bcrypt($request->password)
             ]);
-        return redirect('/dashboard')->with('AlertSuccess','Password berhasil diperbaharui!');
+        Auth::logout();
+        return redirect('/login')->with('AlertSuccess','Password berhasil diperbaharui! Silahkan Login kembali');
     }
 }
