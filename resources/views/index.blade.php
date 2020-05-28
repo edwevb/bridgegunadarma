@@ -9,7 +9,7 @@
 					<div class="jumbotron bg-gradient-light">
 						<header class="content-wrapper mb-5">
 							<div class="row">{{-- row welcome --}}
-								<div class="col-xl-6 mb-5">
+								<div class="col-lg-6 mb-5">
 								  <h1 class="display-4 text-gradient-danger font-weight-bold">Hello, Bridge Lovers!</h1>
 								  <p class="lead">Welcome to Bridge Gunadarma's website</p>
 								  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
