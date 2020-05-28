@@ -62,7 +62,7 @@
               <div class="form-group row">
                 <div class="col-md-12">
                   <label for="hist_keterangan">Deskripsi*</label>
-                  <textarea type="text" name="hist_keterangan" id="hist_keterangan" class="form-style" placeholder="Write here.. or Upload File below">{!!$history->hist_keterangan!!}</textarea>
+                  <textarea type="text" name="hist_keterangan" id="hist_keterangan" class="form-style" placeholder="Write here..">{!!$history->hist_keterangan!!}</textarea>
                 </div>
               </div>
               <div class="form-group">

@@ -51,7 +51,7 @@
               <div class="form-group row">
                 <div class="col-md-12">
                   <label for="pre_isi">Prestasi yang didapatkan</label>
-                  <textarea type="text" name="pre_isi" id="pre_isi" class="form-style" placeholder="Deskripsi Prestasi">{!!$prestasi->pre_isi!!}</textarea>
+                  <textarea type="text" name="pre_isi" id="pre_isi" class="form-style" placeholder="Write here..">{!!$prestasi->pre_isi!!}</textarea>
                 </div>
               </div>
               <div class="form-group border-left-info rounded p-2">

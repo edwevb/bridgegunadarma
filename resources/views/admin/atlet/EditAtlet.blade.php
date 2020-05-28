@@ -146,7 +146,7 @@
                 <div class="form-group">
                   <div class="col-md-12">
                     <label for="brg_taught">Deskripsi*</label>
-                    <textarea type="text" name="brg_taught" id="brg_taught" class="form-style">{!!$atlet->brg_taught!!}</textarea>
+                    <textarea type="text" name="brg_taught" id="brg_taught" class="form-style" placeholder="What have you learned from bridge?">{!!$atlet->brg_taught!!}</textarea>
                   </div>
                 </div>
                 <div class="form-group border-left-info rounded p-2">

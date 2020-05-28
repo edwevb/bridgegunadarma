@@ -119,7 +119,7 @@
             <div class="form-group row">
               <div class="col-md-12">
                 <label>Prestasi yang didapatkan</label>
-                <textarea name="pre_isi" id="pre_isi" class="form-style" placeholder="Deskripsi Prestasi">{{old('pre_isi')}}</textarea>
+                <textarea name="pre_isi" id="pre_isi" class="form-style" placeholder="Write here..">{{old('pre_isi')}}</textarea>
                 @error('pre_isi')
                   <div class="invalid-feedback">
                     {{$message}}
