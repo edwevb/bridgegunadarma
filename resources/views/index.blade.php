@@ -2,7 +2,7 @@
  @section('title', 'Home')
  @section('section')
 	 <div class="content-mobile">
-	 	<div class="no-gutters">
+	 	<div class="">
 	 		<div class="col-lg d-flex">
 	 			<section id="home"> {{-- main --}}
 			 		{{-- start Jumbotron --}}
@@ -159,7 +159,7 @@
 	 	</div> {{-- end row --}}
 	 	
 		<section id="about">
-			<div class="no-gutters">
+			<div class="">
 	 			<div class="col-lg">
 				 	<div class="">
 				 		<div class="bridge-bg p-4">

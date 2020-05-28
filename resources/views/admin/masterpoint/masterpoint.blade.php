@@ -80,6 +80,10 @@
                 </tbody>
               </table>
             </div>{{-- end table --}}
+            <div class="mt-4">
+              <p>Value Masterpoint berdasarkan penilian Coach.</p>
+              <span class="font-weight-bold lead">W.D. Karamoy</span>
+            </div>
           </div>
         </div> {{-- end card --}}
 			</div> {{-- end container --}}

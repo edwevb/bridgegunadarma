@@ -51,19 +51,13 @@
                   </div>
                   <div class="my-4 text-center">
 	                	<h5 class="font-italic lead border-right-dark border-left-info p-2 shadow-sm rounded">List Participation</h5>
-	                	@if(session('ErrorInput'))
-			                {!! session('ErrorInput') !!}
-			              @endif
-			              @if(session('AlertSuccess'))
-			                {!!session('AlertSuccess') !!}
-			              @endif
 									</div>
 		              <table class="table table-borderless ml-2">
 		              	<tbody>
 		                  @foreach ($history->atlet as $atlet)
 		                  <tr>
 		                    <th width="10" scope="row"><i class="fa fa-caret-right"></th>
-		                    <td>{{$atlet->atlet_name}}</td>
+		                    <td><a href="{{ url('/detailAtlet/'.$atlet->id) }}">{{$atlet->atlet_name}}</a></td>
 		                  </tr>
 		                  @endforeach
 		                </tbody>
