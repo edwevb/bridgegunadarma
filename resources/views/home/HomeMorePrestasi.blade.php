@@ -5,6 +5,7 @@
 		<div class="p-5 bg-gradient-light text-center rounded content-mobile">
 			<div class="text-shadow text-dark mx-auto my-4">
     		<h1 class="font-weight-bold">List Prestasi Bridge Gunadarma</h1>
+    		<hr class="bg-gradient-info" width="400" style="border-width: 3px;">
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_prestasi as $prestasi)

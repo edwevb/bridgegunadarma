@@ -54,25 +54,25 @@
 	            			<div class="collapse hide bg-transparent" id="atlet-collapse">
 	            				<div class="p-3">
 				                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
-													@foreach ($data_atlet as $atlet)
+													@foreach ($data_mpoint as $mp)
 													<div class="px-1 mb-5">
 													  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
 													  	<div class="col-md p-2">
-													  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$atlet->atlet_name!!}">
+													  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$mp->atlet->atlet_name!!}">
 													  	</div>
 													    <div class="card-body text-center">
-													      <h5 class="card-title text-shadow text-white">{{$atlet->atlet_name}}</h5>
+													      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
 													      <hr id="atletHr">
 													      <div class="text-white lead font-italic">
-													      	<h6>{{$atlet->alamat}}</h6>
+													      	<h6>{{$mp->atlet->alamat}}</h6>
 													      </div>
 													    </div>
 													  </div> {{-- end card --}}
-													   <a href="{{ url('/detailAtlet/'.$atlet->id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+													   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 													</div>
 													@endforeach
 												</div> {{-- end atlet row --}}
-												<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-users"></i></span></a>
+												<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
 				              </div>
 				            </div> {{-- end collapse --}}
 		            	</div>
@@ -108,7 +108,7 @@
 														</div>
 														@endforeach
 													</div> {{-- end prestasi row --}}
-													<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="fas fa-medal"></i></span></a>
+													<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
 						          	</div>
 				              </div>
 				            </div> {{-- end collapse --}}
@@ -121,7 +121,7 @@
 						  <div class="card-borderless">
 	            	<div class="rounded">
 	            		<div class="col-md p-1 text-center">
-	          				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+	          				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
 	            			<div class="collapse hide bg-transparent" id="event-collapse">
 	            				<div class="p-4">
 					            	<div class="card-borderless">
@@ -145,7 +145,7 @@
 														</div>
 														@endforeach
 													</div> {{-- end event row --}}
-													<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">MORE <i class="far fa-clipboard"></i></span></a>
+													<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 						          	</div>
 				              </div>
 				            </div> {{-- end collapse --}}
@@ -187,7 +187,7 @@
 										    <p class="card-text ml-2"><a class="text-white" href="https://www.instagram.com/bridgegunadarmajkt" target="_blank">@bridgegunadarmajkt</a></p>
 										    	<hr id="bridgeHr">
 										  	<h2 class="card-title ml-2"><i class="far fa-paper-plane"></i></h2>
-										    <p class="card-text ml-2"><a class="text-white" href="mailto:someone@example.com" target="_blank">bridgegunadarma@gmail.com</a></p>
+										    <p class="card-text ml-2"><a class="text-white" href="mailto:bridgegundarma@gmail.com" target="_blank">bridgegunadarma@gmail.com</a></p>
 										  </div>
 										</div> {{-- end card --}}
 				 					</div> {{-- end card row --}}

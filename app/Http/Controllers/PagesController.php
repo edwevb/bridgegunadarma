@@ -1,15 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function home()
     {
-        $data_atlet     = \App\Atlet::orderBy('atlet_name','Asc')
-                            ->take(3)
-                            ->get();
+        $data_mpoint  = \App\Masterpoint::all();
+        $data_mpoint->map(function($avg)
+                        {
+                            $avg->AvarageMasterpoint = $avg->AvarageMasterpoint();
+                            return $avg;
+                        });
+        $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint')->take(6);
 
 		$data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
                             ->take(3)
@@ -21,7 +24,7 @@ class PagesController extends Controller
 
     	return view('index',
                 [
-                    'data_atlet'    => $data_atlet,
+                    'data_mpoint'    => $data_mpoint,
                     'data_prestasi' => $data_prestasi,
                     'data_event'    => $data_event
 		    	]);

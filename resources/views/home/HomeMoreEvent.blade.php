@@ -1,10 +1,11 @@
 @extends('layout.detail')
-@section('title', 'List Event / Tournament')
+@section('title', 'List Tournament / Event')
 @section('content')
 	<article id="event"> {{-- event article --}}
 		<div class="p-5 bg-gradient-light text-center rounded content-mobile">
 			<div class="text-shadow text-dark mx-auto my-4">
-    		<h1 class="font-weight-bold">List Event</h1>
+    		<h1 class="font-weight-bold">List Tournament / Event</h1>
+    		<hr class="bg-gradient-warning" width="400" style="border-width: 3px;">
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_event as $event)

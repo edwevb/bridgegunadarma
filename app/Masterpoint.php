@@ -18,4 +18,10 @@ class Masterpoint extends Model
 	{
 			return $this->belongsTo('App\Atlet');
 	}
+
+	public function AvarageMasterpoint()
+  {
+      $avg = ($this->discipline + $this->bidding + $this->play)/3;
+      return $avg;
+  }
 }

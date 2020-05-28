@@ -83,7 +83,7 @@
 	          </div> {{-- end row --}}
 	        </section>
 	        <div class="text-center mt-5">
-	        	<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill px-5 shadow"><span class="lead font-weight-bold">MORE ATLET <i class="far fa-clipboard"></i></span></a>
+	        	<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill px-5 shadow"><span class="lead font-weight-bold">MORE ATLET <i class="fas fa-users"></i></span></a>
 	        </div>
 	      </div> {{-- end container --}}
 	    </div> {{-- end content --}}

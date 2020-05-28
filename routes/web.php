@@ -13,17 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-/*route::get('Atlet', 'AtletController@index');
-route::get('Atlet/{atlet}', 'AtletController@show');
-route::post('Atlet', 'AtletController@store');
-route::delete('Atlet/{atlet}', 'AtletController@destroy');
-route::get('Atlet/{atlet}/edit', 'AtletController@edit');
-route::patch('Atlet/{atlet}', 'AtletController@update');*/
-
 //Route home
 route::get('/', 'PagesController@home')->name('home');
 route::get('/moreAtlet', 'PagesController@moreAtlet')->name('moreAtlet');

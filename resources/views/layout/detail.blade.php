@@ -57,22 +57,31 @@
           <li class="nav-item">
             <a class="nav-link-style js-scroll-trigger" href="{{ url('/') }}">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link-style js-scroll-trigger" href="{{ url('/moreAtlet') }}">Atlet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-style js-scroll-trigger" href="{{ url('/morePrestasi') }}">Prestasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-style js-scroll-trigger" href="{{ url('/moreEvent') }}">Event</a>
+          </li>
           <li class="nav-item" id="login-btn">
-            @if(auth()->user())
-             <li class="nav-item dropdown">
-                <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->email}}</a>
-                <div class="dropdown-menu collapse" id="account">
-                  <a class="dropdown-item" href="{{ url('/dashboard') }}"><i class="fas fa-laptop"></i> Dashboard</a>
-                  <a class="dropdown-item" href="{{ url('/passwordForm/'.auth()->user()->id) }}"><i class="fas fa-pen-alt"></i> Change Password</a>
-                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                    </form>
-                </div>
-              </li>
-            @else
-              <a class="nav-link-style js-scroll-trigger" href="{{ route('login') }}"><i class="far fa-user-circle"></i> Login</a>
-            @endif
+          @if(auth()->user())
+            <li class="nav-item dropdown">
+              <a class="nav-link-style dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-target="#account"><i class="far fa-user-circle"></i> {{auth()->user()->email}}</a>
+              <div class="dropdown-menu collapse" id="account">
+                <a class="dropdown-item" href="{{ url('/dashboard') }}"><i class="fas fa-laptop"></i> Dashboard</a>
+                <a class="dropdown-item" href="{{ url('/passwordForm/'.auth()->user()->id) }}"><i class="fas fa-pen-alt"></i> Change Password</a>
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                  </form>
+              </div>
+            </li>
+          @else
+            <a class="nav-link-style js-scroll-trigger" href="{{ route('login') }}"><i class="far fa-user-circle"></i> Login</a>
+          @endif
           </li>
         </ul>
       </div>

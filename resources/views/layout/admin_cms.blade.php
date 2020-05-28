@@ -80,44 +80,54 @@
           <a class="font-weight-bold text-white btn btn-dark btn-lg btn-block" href="javascript:;" data-toggle="collapse" data-target="#dashboard"><i class="fa fa-list"></i> Menu</a>
           <div id="dashboard" class="collapse show">
             <li class="list-group">
-              <a class="btn btn-dark btn-block text-left" href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
+              <a class="btn btn-block text-left {{
+                Request::url() ===  url('/materi') || 
+                Request::url() ===  url('/history') ||
+                Request::url() ===  url('/atlet') || 
+                Request::url() ===  url('/prestasi') || 
+                Request::url() ===  url('/event')
+                ? 'btn-secondary' : 'btn-dark'}}" 
+                href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="data" class="collapse list-group">
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/materi') }}"><i class="fas fa-book"></i> Materi</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/history') }}"><i class="fas fa-history"></i> Pelatihan</a>
+                  <a class="btn text-left ml-2  {{Request::url() ===  url('/history')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/history') }}"><i class="fas fa-history"></i> Pelatihan</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/atlet') }}"><i class="fas fa-users"></i> Atlet</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/atlet')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/atlet') }}"><i class="fas fa-users"></i> Atlet</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/prestasi') }}"><i class="fas fa-trophy"></i> Prestasi</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/prestasi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/prestasi') }}"><i class="fas fa-trophy"></i> Prestasi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/event') }}"><i class="far fa-newspaper"></i> Event</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/event')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/event') }}"><i class="far fa-newspaper"></i> Event</a>
                 </li>
               </ul>
             </li>
           </div>
           <li id="dashboard" class="list-group collapse show">
-            <a class="btn btn-dark btn-block text-left" href="{{ url('/masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
+            <a class="btn btn-block text-left {{Request::url() ===  url('/masterpoint')  ? 'btn-secondary' : 'btn-dark'}}" href="{{ url('/masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
           </li>
           <div id="dashboard" class="collapse show">
             <li class="list-group">
-              <a class="btn btn-dark btn-block text-left" href="javascript:;" data-toggle="collapse" data-target="#kas"></i><i class="fas fa-balance-scale-right"></i> Kas<i class="fa fa-fw fa-caret-down"></i></a>
+              <a class="btn btn-block text-left {{
+                Request::url() ===  url('/iuranSk') || 
+                Request::url() ===  url('/pengeluaran')
+                ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#kas"></i><i class="fas fa-balance-scale-right"></i> Kas<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="kas" class="collapse list-group">
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/iuranSk') }}"><i class="fas fa-money-bill-wave"></i> Iuran SK</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/iuranSk')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/iuranSk') }}"><i class="fas fa-money-bill-wave"></i> Iuran SK</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/pengeluaran') }}"><i class="fas fa-credit-card"></i> Pengeluaran</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/pengeluaran')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/pengeluaran') }}"><i class="fas fa-credit-card"></i> Pengeluaran</a>
                 </li>
               </ul>
             </li>
           </div>
           <li id="dashboard" class="list-group collapse show">
-            <a class="btn btn-dark btn-block text-left" href="{{ url('/user') }}"><i class="fas fa-users-cog"></i> User Management</a>
+            <a class="btn btn-block text-left {{Request::url() ===  url('/user')  ? 'btn-secondary' : 'btn-dark'}}" href="{{ url('/user') }}"><i class="fas fa-users-cog"></i> User Management</a>
           </li>
         </div>
       </div> {{-- end menu sidebar --}}
@@ -138,21 +148,24 @@
       <div class="col-lg-2 mb-1">
         <div id="sidebar" class="col-lg-2 collapse show">
           <a class="opacity-1 font-weight-bold btn-dark btn-lg btn-block" href="javascript:;" data-toggle="collapse" data-target="#dashboard"><i class="fa fa-list"></i> Menu</a>
-          <div id="dashboard" class="collapse">
+          <div id="dashboard" class="collapse show">
             <li class="list-group">
-              <a class="btn btn-dark btn-block text-left" href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
+              <a class="btn btn-block text-left {{
+                Request::url() ===  url('/_materi') || 
+                Request::url() ===  url('/_history')
+                ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="data" class="collapse list-group">
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/_materi') }}"><i class="fas fa-book"></i> Materi</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/_materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn btn-light text-left ml-2" href="{{ url('/_history') }}"><i class="fas fa-history"></i> Pelatihan</a>
+                  <a class="btn text-left ml-2 {{Request::url() ===  url('/_history')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_history') }}"><i class="fas fa-history"></i> Pelatihan</a>
                 </li>
               </ul>
             </li>
           </div>
-          <li id="dashboard" class="list-group collapse">
-            <a class="btn btn-dark btn-block text-left" href="{{ url('_masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
+          <li id="dashboard" class="list-group collapse show">
+            <a class="btn btn-block text-left {{Request::url() ===  url('/_masterpoint')  ? 'btn-secondary' : 'btn-dark'}}" href="{{ url('_masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
           </li>
         </div>
       </div> {{-- end menu sidebar --}}

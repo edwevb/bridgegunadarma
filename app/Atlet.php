@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 class Atlet extends Model
 {
@@ -31,10 +30,6 @@ class Atlet extends Model
 
     public function history()
     {   
-        //with pivot
-        // return $this->belongsToMany('App\History')->withPivot(['pivot'])->withTimeStamps();
-        
-        //without pivot
         return $this->belongsToMany('App\History')->withTimeStamps();
     }
 

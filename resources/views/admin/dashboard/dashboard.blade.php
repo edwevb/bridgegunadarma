@@ -7,7 +7,7 @@
     <div class="col-lg d-flex">
       <div class="container">
       @if (session('AlertSuccess'))
-        <div class="alert alert-success alert-dismissible text-center fade show col-md-6 mx-auto" role="alert">
+        <div class="alert alert-success alert-dismissible text-center fade show col-md-6" role="alert">
           <strong>{{ session('AlertSuccess') }}</strong>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>

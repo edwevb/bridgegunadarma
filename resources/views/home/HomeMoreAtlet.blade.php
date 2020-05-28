@@ -6,6 +6,7 @@
 			<div class="p-2">
 				<div class="text-dark text-shadow mx-auto my-4">
     			<h1 class="font-weight-bold">List Atlet Bridge Gunadarma</h1>
+    			<hr class="bg-gradient-success" width="400" style="border-width: 3px;">
     		</div>
 	      <div class="row justify-content-center row-cols-1 row-cols-md-3" >
 					@foreach ($data_atlet as $atlet)

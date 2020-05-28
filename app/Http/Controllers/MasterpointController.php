@@ -10,7 +10,13 @@ class MasterpointController extends Controller
 
     public function index()
     {
-        $data_mpoint = Masterpoint::orderBy('atlet_id','asc')->get();
+        $data_mpoint = Masterpoint::all();
+        $data_mpoint->map(function($avg){
+            $avg->AvarageMasterpoint = $avg->AvarageMasterpoint();
+            return $avg;
+        });
+        $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint');
+        
         $data_atlet  = \App\Atlet::orderBy('atlet_name','asc')->get();
         return view('admin.masterpoint.masterpoint', compact('data_mpoint','data_atlet'));
     }

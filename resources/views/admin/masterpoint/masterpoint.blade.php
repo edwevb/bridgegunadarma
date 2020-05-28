@@ -60,10 +60,7 @@
                     <td class="text-center">{{$mp->bidding}}</td>
                     <td class="text-center">{{$mp->play}}</td>
                     <td class="text-center">
-                    	@php
-                        $total = ($mp->discipline + $mp->bidding + $mp->play)/3;
-                    		echo number_format($total,2);
-                    	@endphp
+                    		{{number_format($mp->AvarageMasterpoint(),2)}}
                     </td>
                     <td class="text-center">
                       <a class="btn-table btn btn-transparent" href="{{ url('/masterpoint/'.$mp->id.'/edit') }}"><i class="fa fa-edit"></i></a>
