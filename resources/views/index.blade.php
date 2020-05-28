@@ -161,8 +161,8 @@
 		<section id="about">
 			<div class="no-gutters">
 	 			<div class="col-lg">
-				 	<div class="no-gutters">
-				 		<div class="bridge-bg container">
+				 	<div class="bridge-bg">
+				 		<div class="container pt-5">
 					 		<div class="bg-light rounded col-md-5 mx-auto shadow">
 		 						<div class="my-3">
 									<div class="col-md mx-auto rounded-circle p-4 about-border">
@@ -199,12 +199,10 @@
 				 					</div> {{-- end maps --}}
 				 				</div> {{-- end row --}}		  
 						  </article>
-						</div>
-					</div> {{-- end jumbotron --}}
+						</div> {{-- end container --}}
+					</div> {{-- end bridgebg --}}
 				</div>
 			</div>
 		</section> {{-- end about --}}
-
-
 	</div>
 @endsection
