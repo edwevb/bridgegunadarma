@@ -2,14 +2,14 @@
  @section('title', 'Home')
  @section('section')
 	 <div class="content-mobile">
-	 	<div class="">
-	 		<div class="col-lg d-flex">
+	 	<div class="no-gutters">
+	 		<div class="col-lg">
 	 			<section id="home"> {{-- main --}}
 			 		{{-- start Jumbotron --}}
 					<div class="jumbotron bg-gradient-light">
 						<header class="content-wrapper mb-5">
 							<div class="row">{{-- row welcome --}}
-								<div class="col-lg-6 mb-5">
+								<div class="col-xl-6 mb-5">
 								  <h1 class="display-4 text-gradient-danger font-weight-bold">Hello, Bridge Lovers!</h1>
 								  <p class="lead">Welcome to Bridge Gunadarma's website</p>
 								  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
@@ -159,21 +159,19 @@
 	 	</div> {{-- end row --}}
 	 	
 		<section id="about">
-			<div class="">
+			<div class="no-gutters">
 	 			<div class="col-lg">
-				 	<div class="">
-				 		<div class="bridge-bg p-4">
+				 	<div class="no-gutters">
+				 		<div class="bridge-bg container">
 					 		<div class="bg-light rounded col-md-5 mx-auto shadow">
-					 			<div class="container">
-			 						<div class="my-3">
-										<div class="col-md mx-auto rounded-circle p-4 about-border">
-											<h1 class="display-4 text-shadow text-center text-dark font-weight-bold">About</h1>
-										</div>
+		 						<div class="my-3">
+									<div class="col-md mx-auto rounded-circle p-4 about-border">
+										<h1 class="display-4 text-shadow text-center text-dark font-weight-bold">About</h1>
 									</div>
-					 				<div class="col-md mx-auto text-center py-4">
-							  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
-								  </div>
 								</div>
+				 				<div class="col-md mx-auto text-center py-4">
+						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+							  </div>
 							</div>
 						  <article id="contact" class="mt-5">	
 				 				<div class="row justify-content-center px-2">
