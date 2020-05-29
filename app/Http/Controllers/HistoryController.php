@@ -35,7 +35,7 @@ class HistoryController extends Controller
         ]);
         if ($history = History::create($request->all()))
         {
-            if ($request->hist_dist == "")
+            if ($request->hist_dist == NULL)
             {
                 $history->hist_dist = '';
             }
@@ -74,7 +74,7 @@ class HistoryController extends Controller
         ]);
         if($history->update($request->all()))
         {
-            if($request->file('hist_dist') == "")
+            if($request->file('hist_dist') == NULL)
             {
                 $history->hist_dist = $history->hist_dist;
             }
@@ -90,7 +90,7 @@ class HistoryController extends Controller
                 if($request->hasFile('hist_dist'))
                 {
                     // get previous image from folder
-                    $histFile = public_path("assets/file/thumbnail/{$history->hist_dist}"); 
+                    $histFile = public_path("assets/file/hist_dist/{$history->hist_dist}"); 
                     if ($request->exists($histFile))
                     {
                         // unlink or remove previous image from folder

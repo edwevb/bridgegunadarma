@@ -17,11 +17,6 @@ class EventController extends Controller
         return view('admin.event.event',compact('data_event'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
          $request->validate([
@@ -40,8 +35,7 @@ class EventController extends Controller
             'eve_url'       => 'nullable|string|max:128',
             'img_eve'       => 'nullable|image|max:2048'
         ]);
-         // return $request->all();
-        //Cara 3
+
         if ($event = Event::create($request->all()))
         {   
             if($request->file('img_eve') == "")
@@ -90,7 +84,7 @@ class EventController extends Controller
         ]);
         if ($event->update($request->all()))
         {
-            if($request->file('img_eve') == "")
+            if($request->file('img_eve') == NULL)
             {
                 $event->img_eve = $event->img_eve;
             }
@@ -103,12 +97,10 @@ class EventController extends Controller
 
                 if($request->hasFile('img_eve'))
                 {
-                    // get previous image from folder
-                    $eventImage = public_path("assets/img/thumbnail/{$event->img_eve}"); 
-                    if ($request->exists($eventImage))
+                    $imageFile = public_path("assets/img/img_eve/{$event->img_eve}"); 
+                    if ($request->exists($imageFile))
                     {
-                        // unlink or remove previous image from folder
-                        unlink($eventImage);
+                         File::delete($imageFile);
                     }
                 }
             }

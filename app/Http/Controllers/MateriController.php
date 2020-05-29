@@ -33,7 +33,7 @@ class MateriController extends Controller
         ]);
         if ($materi = Materi::create($request->all()))
         {
-            if($request->file('file_mat') == "")
+            if($request->file('file_mat') == NULL)
             {
                 $materi->file_mat = '';
             }
@@ -69,35 +69,28 @@ class MateriController extends Controller
             'file_mat'  => 'nullable|file|max:10024'
         ]);
 
-        if($materi->update($request->all()))
+        if ($request->file_mat != NULL)
         {
-            if($request->file('file_mat') == "")
+            if ($materi->exists('file_mat') && $materi) 
             {
-                $materi->file_mat = $materi->file_mat;
+                $imageFile = public_path("assets/file/file_mat/".$materi->file_mat);
+                File::delete($imageFile);
             }
-            else
-            {
-                $file             = $request->file('file_mat');
-                $file_extension   = $file->getClientOriginalExtension();
-                $fileName         = $request->mat_title.'.'.$file_extension;
-                $file->move("assets/file/file_mat", $fileName);
-                $materi->file_mat = $fileName;
-                $materi->save();
-
-                if($request->hasFile('file_mat'))
-                {
-                    // get previous image from folder
-                    $matFile = public_path("assets/file/file_mat/{$materi->file_mat}"); 
-                    if ($request->exists($matFile))
-                    {
-                        // unlink or remove previous image from folder
-                        unlink($matFile);
-                    }
-                }
-            }
-            return redirect('/materi')->with('AlertSuccess','Data '.$materi->mat_title.' diperbaharui!');
         }
-        return abort(403,'Oops failed, coba edit lagi.');
+        $materi->update($request->all());
+        if ($request->file_mat != NULL) 
+        {
+            $file       = $request->file('file_mat');
+            $fileName   = '(BridgeGunadarma)'.$materi->pre_date.'.'.$file->getClientOriginalExtension();
+            $file->move("assets/file/file_mat", $fileName);
+            $materi->file_mat = $fileName;
+            $materi->save();
+        }
+        else
+        {
+            $request->file_mat = $materi->file_mat;
+        }
+        return redirect('/materi')->with('AlertSuccess','Data '.$materi->mat_title.' diperbaharui!');
     }
 
     public function destroy(Materi $materi)
@@ -124,7 +117,7 @@ class MateriController extends Controller
                 return response()->download($filepath);
                 // return response()->file($filepath);
             }
-            return redirect()->back()->with('AlertDanger','Terjadi kesalahan! File tidak tersedia. Silahkan download kembali lain waktu.');
+            return redirect()->back()->with('AlertDanger','File belum tersedia. Silahkan download kembali lain waktu.');
         }
         return redirect()->back()->with('AlertWarning','File belum tersedia. Silahkan download kembali lain waktu.');
     }

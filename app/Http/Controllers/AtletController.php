@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use App\Atlet;
 use PDF;
@@ -11,7 +10,6 @@ class AtletController extends Controller
 {
     public function index()
     {
-        // $atlet = DB::table('tb_atlet')->get();
         if (!$data_atlet = Atlet::orderBy('atlet_name','ASC')->get())
         {
             return abort(500);
@@ -24,7 +22,6 @@ class AtletController extends Controller
         //Cara 1
         // $atlet             = new Atlet;
         // $atlet->nik        = $request->nik;
-        // $atlet->atlet_name = $request->atlet_name;
         // $atlet->save();
 
         //Cara 2
@@ -64,7 +61,7 @@ class AtletController extends Controller
             }
             else{
                 $file             = $request->file('img_atlet');
-                $fileName         = $atlet->nik.'.jpg'/*.getClientOriginalExtension()*/;
+                $fileName         = $atlet->nik.$file.getClientOriginalExtension();
                 $file->move("assets/img/img_atlet", $fileName);
                 $atlet->img_atlet = $fileName;
             }
@@ -106,46 +103,28 @@ class AtletController extends Controller
             'img_atlet'  => 'nullable|image|max:2048'
         ]);
 
-        /*Atlet::where('id', $atlet->id)
-                ->update([
-                    'nik'        => $request->nik,
-                    'atlet_name' => $request->atlet_name,
-                ]);*/
-
-        /*if($request->hasFile('img_atlet'))
+        if ($request->img_atlet != NULL)
         {
-            $request->file('img_atlet')->move('assets/img/', $request->file('img_atlet')->getClientOriginalName());
-
-            $atlet->img_atlet = $request->file('img_atlet')->getClientOriginalName();
+            if ($atlet->exists('img_atlet') && $atlet->img_atlet != 'default.png') 
+            {
+                $imageFile = public_path("assets/img/img_atlet/".$atlet->img_atlet);
+                File::delete($imageFile);
+            }
+        }
+        $atlet->update($request->all());
+        if ($request->img_atlet != NULL) {
+            $file       = $request->file('img_atlet');
+            $fileName   = '(BridgeGunadarma)'.$atlet->nik.'.'.$file->getClientOriginalExtension();
+            $file->move("assets/img/img_atlet", $fileName);
+            $atlet->img_atlet = $fileName;
             $atlet->save();
-        }else
+        }
+        else
         {
-            $atlet->img_atlet = $atlet->img_atlet;
-        }*/
+            $request->img_atlet = $atlet->img_atlet;
+        }
         
-        //return $atlet;
-            $atlet->update($request->all());
-
-            if($request->file('img_atlet') == "")
-            {
-                $atlet->img_atlet = $atlet->img_atlet;
-            }
-
-            if($request->hasFile('img_atlet'))
-            {
-                $atletImage = public_path("assets/img/img_atlet/".$atlet->img_atlet);
-                if (File::exists($atletImage))
-                {
-                    // unlink or remove previous image from folder
-                    File::delete($atletImage);
-                }
-                $file       = $request->file('img_atlet');
-                $fileName   = $atlet->nik.'.jpg'/*.getClientOriginalExtension()*/;
-                $file->move("assets/img/img_atlet", $fileName);
-                $atlet->img_atlet = $fileName;
-                $atlet->save();
-            }
-            return redirect('/atlet')->with('AlertSuccess','Data '.$atlet->atlet_name.' berhasil diperbaharui!');
+        return redirect('/atlet')->with('AlertSuccess','Data '.$atlet->atlet_name.' berhasil diperbaharui!');
     }
 
     public function destroy(Atlet $atlet)
