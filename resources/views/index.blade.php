@@ -124,7 +124,7 @@
 						 <article id="event"> {{-- event article --}}
 						  <div class="card-borderless">
 	            	<div class="rounded">
-	            		<div class="col-md p-1 text-center">
+	            		<div class="col-md text-center">
             				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
 	            			<div class="collapse hide bg-transparent" id="event-collapse">
 	            				<div class="p-4">
