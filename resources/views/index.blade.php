@@ -81,7 +81,7 @@
 		            </div>
 		          </div> {{-- end card atlet button --}}
 		        </article>{{-- end atlet --}}
-						<hr id="bridgeHr" class="my-5" width="400">
+						<hr id="bridgeHr" class="my-5 col-6">
 						<article id="prestasi"> {{-- prestasi article --}}
 						  <div class="card-borderless">
 	            	<div class="rounded">
@@ -120,14 +120,12 @@
 		            </div>{{-- end card deskripsi --}}
 		          </div>
 		        </article>{{-- end prestasi --}}
-		        <hr id="bridgeHr" class="my-5" width="400">
+		        <hr id="bridgeHr" class="my-5 col-6">
 						 <article id="event"> {{-- event article --}}
 						  <div class="card-borderless">
 	            	<div class="rounded">
 	            		<div class="col-md p-1 text-center">
-	            			<div class="col-md-10 mx-auto">
-	            				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
-	            			</div>
+            				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
 	            			<div class="collapse hide bg-transparent" id="event-collapse">
 	            				<div class="p-4">
 					            	<div class="card-borderless">
