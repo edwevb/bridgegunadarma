@@ -17,7 +17,6 @@
       {{--ADMIN PAGES--}}
       @if (auth()->user()->role_id == '1')
         <div class="row justify-content-center">
-
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="card bg-gradient-primary border-left-dark shadow py-2">
               <div class="card-body">
@@ -84,14 +83,14 @@
         </div> {{-- end row --}}
 
         
-        <div class="text-center mt-5">
-          <h1><i class="fas fa-user-tie"></i> Welcome (Admin)</h1><br>
+        <div class="my-5 text-center">
+          <h1>Welcome, Admin <i class="fas fa-user-tie"></i></h1><br>
           <a class="btn btn-dark text-white mb-1 rounded-pill px-5" data-toggle="modal" data-target="#modal-announcement" ><h3><i class="fas fa-bullhorn"></i> Announcement</h3></a>
           <button data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-table btn-transparent"><h3><i class="fa fa-edit"></i></h3> </button>
           {{-- <button class="btn btn-light bg-transparent btn-md" href="javascript:;" data-toggle="collapse" data-target="#form" style="width: 8rem"><h3><i class="fa fa-edit"></i> Edit</h3></button> --}}
         </div>
       @else
-        <i class="ml-4 fas fa-user-tie fa-2x"></i>
+        <i class="ml-4 fas fa-user fa-2x"></i>
         <div class="pt-2 ml-3">
           <h1>Hello, {{auth()->user()->name}}</h1>
           <br>
