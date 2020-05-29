@@ -1,7 +1,7 @@
  @extends('layout/main')
  @section('title', 'Home')
  @section('section')
- 	<div class="no-gutters">
+ 	<div class="content-mobile no-gutters">
  		<div class="col-lg">
  			<section id="home"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
