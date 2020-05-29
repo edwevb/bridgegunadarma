@@ -51,7 +51,7 @@
 	            	<div class="rounded">
 	            		<div class="col-md p-1 text-center">
 	            			<div class="col-md-10 mx-auto">
-	          					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
+	          					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-4 font-weight-bold text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
 	          				</div>
 	            			<div class="collapse hide bg-transparent" id="atlet-collapse">
 	            				<div class="p-3">
@@ -87,7 +87,7 @@
 	            	<div class="rounded">
 	            		<div class="col-md p-1 text-center">
 	            			<div class="col-md-10 mx-auto">
-	          					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
+	          					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-4 font-weight-bold text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
 	          				</div>
 	            			<div class="collapse hide bg-transparent" id="prestasi-collapse">
 	            				<div class="p-4">
@@ -124,8 +124,8 @@
 						 <article id="event"> {{-- event article --}}
 						  <div class="card-borderless">
 	            	<div class="rounded">
-	            		<div class="col-md text-center">
-            				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow d-inline">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+	            		<div class="col-md p-1 text-center">
+            				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
 	            			<div class="collapse hide bg-transparent" id="event-collapse">
 	            				<div class="p-4">
 					            	<div class="card-borderless">
