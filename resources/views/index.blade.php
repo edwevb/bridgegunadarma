@@ -48,8 +48,8 @@
 						</header>
 					  <article id="atlet"> {{-- atlet article --}}
 						  <div class="card-borderless">
-	            	<div class="rounded">
-	            		<div class="col-md p-1 text-center">
+	            	<div class="col-md">
+	            		<div class="text-center">
 	            			<div class="col-md-10 mx-auto">
 	          					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-4 font-weight-bold text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
 	          				</div>
@@ -84,8 +84,8 @@
 						<hr id="bridgeHr" class="my-5 col-6">
 						<article id="prestasi"> {{-- prestasi article --}}
 						  <div class="card-borderless">
-	            	<div class="rounded">
-	            		<div class="col-md p-1 text-center">
+	            	<div class="col-md">
+	            		<div class="text-center">
 	            			<div class="col-md-10 mx-auto">
 	          					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-4 font-weight-bold text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
 	          				</div>
@@ -123,8 +123,8 @@
 		        <hr id="bridgeHr" class="my-5 col-6">
 						 <article id="event"> {{-- event article --}}
 						  <div class="card-borderless">
-	            	<div class="rounded">
-	            		<div class="col-md p-1 text-center">
+	            	<div class="col-md">
+	            		<div class="text-center">
             				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-4 font-weight-bold text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
 	            			<div class="collapse hide bg-transparent" id="event-collapse">
 	            				<div class="p-4">
