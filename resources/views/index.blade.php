@@ -1,157 +1,154 @@
  @extends('layout/main')
  @section('title', 'Home')
  @section('section')
-	 <div class="content-mobile">
-	 	<div class="no-gutters">
-	 		<div class="col-lg">
-	 			<section id="home"> {{-- main --}}
-			 		{{-- start Jumbotron --}}
-					<div class="jumbotron bg-gradient-light">
-						<header class="content-wrapper mb-5">
-							<div class="row">{{-- row welcome --}}
-								<div class="col-xl-6 mb-5">
-								  <h1 class="display-4 text-gradient-danger font-weight-bold">Hello, Bridge Lovers!</h1>
-								  <p class="lead">Welcome to Bridge Gunadarma's website</p>
-								  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
-								</div>
-								<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
-									<article id="slider"> {{-- slider --}}
-										<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-										  <ol class="carousel-indicators">
-										    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-										    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-										    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-										  </ol>
-										  <div class="carousel-inner">
-										    <div class="carousel-item active">
-										      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded" alt="...">
-										    </div>
-										    <div class="carousel-item">
-										      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded" alt="...">
-										    </div>
-										    <div class="carousel-item">
-										      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded" alt="...">
-										    </div>
-										  </div>
-										  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-										    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-										    <span class="sr-only">Previous</span>
-										  </a>
-										  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-										    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-										    <span class="sr-only">Next</span>
-										  </a>
-										</div>
-								 	</article> {{-- end slider --}}
-								</div>
-							</div> {{-- end row welcome --}}
-						</header>
-					  <article id="atlet"> {{-- atlet article --}}
-						  <div class="card-borderless">
-            		<div class="p-1 text-center">
-        					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-5 font-weight-bold text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
-            			<div class="collapse hide bg-transparent" id="atlet-collapse">
-            				<div class="p-3">
-			                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
-												@foreach ($data_mpoint as $mp)
+ 	<div class="no-gutters">
+ 		<div class="col-lg">
+ 			<section id="home"> {{-- main --}}
+		 		{{-- start Jumbotron --}}
+				<div class="jumbotron bg-gradient-light">
+					<header class="content-wrapper mb-5">
+						<div class="row">{{-- row welcome --}}
+							<div class="col-xl-6 mb-5">
+							  <h1 class="display-4 text-gradient-danger font-weight-bold">Hello, Bridge Lovers!</h1>
+							  <p class="lead">Welcome to Bridge Gunadarma's website</p>
+							  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
+							</div>
+							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
+								<article id="slider"> {{-- slider --}}
+									<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+									  <ol class="carousel-indicators">
+									    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+									    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+									    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+									  </ol>
+									  <div class="carousel-inner">
+									    <div class="carousel-item active">
+									      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded" alt="...">
+									    </div>
+									    <div class="carousel-item">
+									      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded" alt="...">
+									    </div>
+									    <div class="carousel-item">
+									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded" alt="...">
+									    </div>
+									  </div>
+									  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+									    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									    <span class="sr-only">Previous</span>
+									  </a>
+									  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+									    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+									    <span class="sr-only">Next</span>
+									  </a>
+									</div>
+							 	</article> {{-- end slider --}}
+							</div>
+						</div> {{-- end row welcome --}}
+					</header>
+				  <article id="atlet"> {{-- atlet article --}}
+					  <div class="card-borderless">
+          		<div class="p-1 text-center">
+      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-5 font-weight-bold text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
+          			<div class="collapse hide bg-transparent" id="atlet-collapse">
+          				<div class="p-3">
+		                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
+											@foreach ($data_mpoint as $mp)
+											<div class="px-1 mb-5">
+											  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
+											  	<div class="col-md p-2">
+											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$mp->atlet->atlet_name!!}">
+											  	</div>
+											    <div class="card-body text-center">
+											      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
+											      <hr id="atletHr">
+											      <div class="text-white lead font-italic">
+											      	<h6>{{$mp->atlet->alamat}}</h6>
+											      </div>
+											    </div>
+											  </div> {{-- end card --}}
+											   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+											</div>
+											@endforeach
+										</div> {{-- end atlet row --}}
+										<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
+		              </div>
+		            </div> {{-- end collapse --}}
+            	</div>
+	          </div> {{-- end card atlet button --}}
+	        </article>{{-- end atlet --}}
+					<hr id="bridgeHr" class="my-5 col-6">
+					<article id="prestasi"> {{-- prestasi article --}}
+					  <div class="card-borderless">
+          		<div class="p-1 text-center">
+      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-5 font-weight-bold text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
+          			<div class="collapse hide bg-transparent" id="prestasi-collapse">
+          				<div class="p-4">
+			            	<div class="card-borderless">
+			                <div class="row row-cols-1 row-cols-lg-3">
+												@foreach ($data_prestasi as $prestasi)
 												<div class="px-1 mb-5">
-												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
+												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
 												  	<div class="col-md p-2">
-												  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$mp->atlet->atlet_name!!}">
+												  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded" alt="{!!$prestasi->pre_title!!}">
 												  	</div>
-												    <div class="card-body text-center">
-												      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
-												      <hr id="atletHr">
-												      <div class="text-white lead font-italic">
-												      	<h6>{{$mp->atlet->alamat}}</h6>
-												      </div>
+												    <div class="card-body">
+												      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
+												      <p class="mb-4 card-subtitle text-muted">
+												      	<?php $date = strtotime($prestasi->pre_date);
+												      		echo date('d M Y',$date);
+												      	?>
+												      </p>
 												    </div>
 												  </div> {{-- end card --}}
-												   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+												  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn btn-info rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 												</div>
 												@endforeach
-											</div> {{-- end atlet row --}}
-											<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
-			              </div>
-			            </div> {{-- end collapse --}}
-	            	</div>
-		          </div> {{-- end card atlet button --}}
-		        </article>{{-- end atlet --}}
-						<hr id="bridgeHr" class="my-5 col-6">
-						<article id="prestasi"> {{-- prestasi article --}}
-						  <div class="card-borderless">
-            		<div class="p-1 text-center">
-        					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-5 font-weight-bold text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
-            			<div class="collapse hide bg-transparent" id="prestasi-collapse">
-            				<div class="p-4">
-				            	<div class="card-borderless">
-				                <div class="row row-cols-1 row-cols-lg-3">
-													@foreach ($data_prestasi as $prestasi)
-													<div class="px-1 mb-5">
-													  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
-													  	<div class="col-md p-2">
-													  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded" alt="{!!$prestasi->pre_title!!}">
-													  	</div>
-													    <div class="card-body">
-													      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
-													      <p class="mb-4 card-subtitle text-muted">
-													      	<?php $date = strtotime($prestasi->pre_date);
-													      		echo date('d M Y',$date);
-													      	?>
-													      </p>
-													    </div>
-													  </div> {{-- end card --}}
-													  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn btn-info rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
-													</div>
-													@endforeach
-												</div> {{-- end prestasi row --}}
-												<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
-					          	</div>
-			              </div>
-			            </div> {{-- end collapse --}}
-	            	</div>
-		          </div>
-		        </article>{{-- end prestasi --}}
-		        <hr id="bridgeHr" class="my-5 col-6">
-						 <article id="event"> {{-- event article --}}
-						  <div class="card-borderless">
-            		<div class="p-1 text-center">
-          				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-5 font-weight-bold text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
-            			<div class="collapse hide bg-transparent" id="event-collapse">
-            				<div class="p-4">
-				            	<div class="card-borderless">
-				                <div class="row row-cols-1 row-cols-md-3">
-													@foreach ($data_event as $event)
-													<div class="px-1 mb-5">
-													  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
-													  	<div class="col-md p-2">
-													  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded" alt="{!!$event->eve_title!!}">
-													  	</div>
-													    <div class="card-body">
-													      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
-													      <p class="mb-4 card-subtitle text-muted">
-													      	<?php $date = strtotime($event->eve_date);
-													      		echo date('d M Y',$date);
-													      	?>
-													      </p>
-													    </div>
-													  </div> {{-- end card --}}
-													  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn btn-warning rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
-													</div>
-													@endforeach
-												</div> {{-- end event row --}}
-												<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
-					          	</div>
-			              </div>
-			            </div> {{-- end collapse --}}
-	            	</div>
-		          </div>
-		        </article> {{-- end event --}}
-					</div> {{-- end jumbotron --}}
-				</section> {{-- end section main --}}
-	 		</div>
-	 	</div> {{-- end row --}}
-	 	
+											</div> {{-- end prestasi row --}}
+											<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
+				          	</div>
+		              </div>
+		            </div> {{-- end collapse --}}
+            	</div>
+	          </div>
+	        </article>{{-- end prestasi --}}
+	        <hr id="bridgeHr" class="my-5 col-6">
+					 <article id="event"> {{-- event article --}}
+					  <div class="card-borderless">
+          		<div class="p-1 text-center">
+        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-5 font-weight-bold text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+          			<div class="collapse hide bg-transparent" id="event-collapse">
+          				<div class="p-4">
+			            	<div class="card-borderless">
+			                <div class="row row-cols-1 row-cols-md-3">
+												@foreach ($data_event as $event)
+												<div class="px-1 mb-5">
+												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
+												  	<div class="col-md p-2">
+												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded" alt="{!!$event->eve_title!!}">
+												  	</div>
+												    <div class="card-body">
+												      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
+												      <p class="mb-4 card-subtitle text-muted">
+												      	<?php $date = strtotime($event->eve_date);
+												      		echo date('d M Y',$date);
+												      	?>
+												      </p>
+												    </div>
+												  </div> {{-- end card --}}
+												  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn btn-warning rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+												</div>
+												@endforeach
+											</div> {{-- end event row --}}
+											<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+				          	</div>
+		              </div>
+		            </div> {{-- end collapse --}}
+            	</div>
+	          </div>
+	        </article> {{-- end event --}}
+				</div> {{-- end jumbotron --}}
+			</section> {{-- end section main --}}
+ 		</div>
 		<section id="about">
 			<div class="no-gutters">
 	 			<div class="col-lg">

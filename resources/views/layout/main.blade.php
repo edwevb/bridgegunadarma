@@ -28,13 +28,15 @@
     @media (min-width: 992px){
       nav{
         padding-top: 2rem!important;
-        padding-bottom: 18rem !important;
+        padding-bottom: 18rem!important;
         background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;
         background-size: cover;
         background-attachment: fixed;
       }
+      #about .container{
+        opacity: 0.94;
+      }
     }
-    
     footer{
       opacity: 0.8;
       margin-top:-20px;
