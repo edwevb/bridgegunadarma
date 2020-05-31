@@ -1,5 +1,8 @@
 @extends('layout.admin_cms')
 @section('title', 'User Management')
+@section('header')
+  <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
+@stop
 @section('section')
 	<div class="row no-gutters">
 		<div class="col-md-2"></div>
@@ -97,7 +100,7 @@
 						<input type="hidden" name="remember_token" value="{{csrf_token()}}">
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="name">Atlet</label>
+                <label for="name">Nama</label>
               	<input type="text" name="name" id="name" class="form-style  @error('name') is-invalid @enderror" value="{{old('name')}}">
                 @error('name')
                   <div class="invalid-feedback">
@@ -159,4 +162,14 @@
       </div>
     </div>
   </div>{{-- end modal tambah user --}}
+@section('footer')
+  <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script>
+    $(document).ready(function()
+    {
+      $('#dataTable').DataTable();
+    });
+  </script>
+@stop
 @endsection

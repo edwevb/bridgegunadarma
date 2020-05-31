@@ -1,5 +1,8 @@
 @extends('layout.admin_cms')
 @section('title', 'Kas (Iuran SK) Bridge Gunadarma')
+@section('header')
+  <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
+@stop
 @section('section')
 	<div class="row no-gutters mb-5">
 		<div class="col-md-2"></div>
@@ -140,4 +143,14 @@
       </div>
     </div>
   </div>{{-- End Modal --}}
+@section('footer')
+  <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script>
+    $(document).ready(function()
+    {
+      $('#dataTable').DataTable();
+    });
+  </script>
+@stop
 @endsection

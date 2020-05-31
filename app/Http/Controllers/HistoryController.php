@@ -157,7 +157,7 @@ class HistoryController extends Controller
                 return response()->download($filepath);
                 // return response()->file($filepath);
             }
-            return redirect()->back()->with('AlertDanger','Terjadi kesalahan! File tidak tersedia. Silahkan download kembali lain waktu.');
+            return redirect()->back()->with('AlertDanger','File tidak tersedia. Silahkan download kembali lain waktu.');
         }
         return redirect()->back()->with('AlertWarning','File belum tersedia. Silahkan download kembali lain waktu.');
     }

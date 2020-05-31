@@ -183,4 +183,7 @@
       </div> {{-- end container --}}
     </div> {{-- end content --}}
   </div>
+@section('footer')
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+@stop
 @endsection

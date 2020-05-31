@@ -19,11 +19,10 @@
 
   {{--  Page fonts & Icon --}}
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  
-  {{--  Page styles --}}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.bridge.css') }}"> --}}
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   <style>
     @media (min-width: 992px){
@@ -37,7 +36,6 @@
     }
   </style>
 </head>
-
   {{-- sidebar --}}
   <body class="bg-dark">
   {{-- <script>
@@ -90,6 +88,7 @@
 	
   @yield('content')
 
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
   {{-- Page scripts --}}
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -97,6 +96,23 @@
   {{-- <script src="{{ asset('assets/js/bridge/bridge-popper.js') }}"></script>
   <script src="{{ asset('assets/js/bridge/bridge.js') }}"></script> --}}
   {{-- <script src="{{ asset('assets/js/bridge/bridge-home.js') }}"></script> --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    //Back to top
+    $(document).ready(function(){ 
+      $(window).scroll(function(){ 
+          if ($(this).scrollTop() > 400) { 
+              $('#scroll').fadeIn(); 
+          } else { 
+              $('#scroll').fadeOut(); 
+          } 
+      }); 
+      $('#scroll').click(function(){ 
+          $("html, body").animate({ scrollTop: 0 }, 600); 
+          return false; 
+      }); 
+    });
+  </script>
   </body>
 </html>
 

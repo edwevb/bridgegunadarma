@@ -53,7 +53,7 @@
                     <th scope="col">Atlet</th>
                     <th scope="col">Tanggal bayar</th>
                     <th scope="col">Jumlah bayar</th>
-                    <th ></th>
+                    <th class="text-center" scope="col"> Remove</th>
                   </tr>
                 </thead>
                 <tbody>

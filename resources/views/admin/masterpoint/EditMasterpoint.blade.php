@@ -73,5 +73,7 @@
 			</div>	{{-- end container --}}
 		</div>
 	</div>
-
+@section('footer')
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+@stop
 @endsection

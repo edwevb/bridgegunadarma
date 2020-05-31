@@ -81,10 +81,9 @@ route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 	route::get('/_history/{history}/download','UserPageController@_historyDownload');
 	route::get('/_masterpoint','UserPageController@_masterpoint');
 	route::get('/_masterpoint/{masterpoint}','UserPageController@show_masterpoint');
-	
 });
 
 //Login
-Auth::routes(['register'=>false]);
+Auth::routes(['register'=>false, 'reset'=>false]);
 
 

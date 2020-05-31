@@ -168,4 +168,7 @@
       </div>
     </div>
   </div> {{-- end modal --}}
+@section('footer')
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+@stop
 @endsection

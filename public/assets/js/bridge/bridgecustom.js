@@ -54,12 +54,6 @@ function previewImage()
 
 };
 
-//function dataTables
-$(document).ready(function()
-{
-  $('#dataTable').DataTable();
-});
-
 //function tooltip
 $(function()
 {

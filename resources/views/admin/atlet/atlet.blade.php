@@ -1,5 +1,8 @@
 @extends('layout.admin_cms')
 @section('title', 'Atlet Bridge Gunadarma')
+@section('header')
+  <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
+@stop
 @section('section')
   <div class="row no-gutters">
     <div class="col-md-2"></div>
@@ -244,4 +247,15 @@
       </div>
     </div>
   </div>{{-- end modal tambah atlet --}}
+@section('footer')
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script>
+    $(document).ready(function()
+    {
+      $('#dataTable').DataTable();
+    });
+  </script>
+@stop
 @endsection
