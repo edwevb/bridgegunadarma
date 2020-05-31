@@ -315,17 +315,16 @@ small.form-text{
   margin-bottom: 2rem;
 }
 
-
+.content-mobile{
+  margin-top:130px;
+}
 
 .bridge-side-bg{
-    display: none;
-  }
+  display: none;
+}
 
 @media (min-width: 576px)
 {
-  .content-mobile{
-    margin-top:130px;
-  }
 }
 
 @media (min-width: 992px)
