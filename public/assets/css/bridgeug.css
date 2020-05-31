@@ -315,9 +315,7 @@ small.form-text{
   margin-bottom: 2rem;
 }
 
-.content-mobile{
-  margin-top:130px;
-}
+
 
 .bridge-side-bg{
     display: none;
@@ -325,6 +323,9 @@ small.form-text{
 
 @media (min-width: 576px)
 {
+  .content-mobile{
+    margin-top:130px;
+  }
 }
 
 @media (min-width: 992px)
@@ -362,11 +363,11 @@ small.form-text{
   }
   
   small.form-text{
-      margin-bottom: 0rem;
-    }
+    margin-bottom: 0rem;
+  }
 
   .content-mobile{
-    margin:0;
+    margin-top: 5px;
   }
 
   .dashboard-heading{

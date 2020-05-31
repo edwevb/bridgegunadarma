@@ -192,7 +192,7 @@
   {{-- Page plugins --}}
   @yield('footer')
   {{-- Page custom scripts --}}
-  <script src="{{ asset('assets/js/bridge/bridgecustom.js') }}"></script> --}}
+  <script src="{{ asset('assets/js/bridge/bridgecustom.js') }}"></script>
   </body>
 </html>
 

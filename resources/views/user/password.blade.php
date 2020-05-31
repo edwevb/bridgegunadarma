@@ -7,9 +7,9 @@
 		<div class="col-lg d-flex">
 			<div class="container">
 				<section id="edit">
-	        <div class="card-borderless"> {{-- card --}}
-	          <div class="card-header borderless bg-dark">
-	            <h3 class="text-center text-primary font-weight-bold">Form Change Password</h3>
+	        <div class="card-borderless p-1"> {{-- card --}}
+	          <div class="card-header">
+	            <h3 class="text-center font-weight-bold">Form Change Password</h3>
 	          </div>
 	          <div class="card-body">
 	            <form method="post" action="{{ url('/changePassword/'.auth()->user()->id) }}">

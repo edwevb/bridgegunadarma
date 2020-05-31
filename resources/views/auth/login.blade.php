@@ -4,14 +4,6 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        @if (session('AlertSuccess'))
-          <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-            <strong>{{ session('AlertSuccess') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        @endif
         <div class="text-center mb-2">
           <img height="100" width="auto" src="{{ asset('assets/img/bridgeug.png') }}" alt="Bridge Gunadarma">
         </div>
@@ -25,7 +17,7 @@
               <div class="form-group row text-dark">
                 <label for="email" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Email') }}</label>
                 <div class="col-md-8">
-                  <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="current-email" autofocus>
+                  <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="current email" autofocus>
                   @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -74,6 +66,14 @@
             <i class="fa fa-home fa-2x"></i>
           </a>
         </div>
+        @if (session('AlertSuccess'))
+          <div class="alert alert-success alert-dismissible fade show text-center mt-2" role="alert">
+            <strong>{{ session('AlertSuccess') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endif
       </div>
     </div>
   </div>

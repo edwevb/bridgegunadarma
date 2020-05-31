@@ -47,7 +47,7 @@
                     <th scope="col">Atlet</th>
                     <th scope="col">Email</th>
                     <th scope="col">Level</th>
-                    <th scope="col">Date Created</th>
+                    <th scope="col">Created</th>
                     <th class="text-center" width="50" scope="col">Edit</th>
                     <th class="text-center" width="50" scope="col">Delete</th>
                   </tr>
