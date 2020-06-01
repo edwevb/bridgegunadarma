@@ -5,9 +5,9 @@
 		<div class="no-gutters py-5 bg-gradient-light">
 	    <div class="col-lg d-flex">
 	      <div class="container">
-	        <section>
+	        <section id="home-detail-header">
 	        	<div class="text-success mx-auto mb-5">
-	        		<h1 class="text-center font-weight-bold">Atlet Bridge Gunadarma</h1>
+	        		<h1 class="text-center">Atlet Bridge Gunadarma</h1>
 	        	</div>
 	          <div class="row">
 	            <div class="col-md-6 mb-4">{{-- content 1 --}}
@@ -49,7 +49,7 @@
 	              <div id="brg_taught" class="mb-3">
 	                <div class="card-borderless shadow rounded border-left-dark p-1">
 	                  <div class="card-body rounded">
-	                    <h5 class="card-title text-muted font-italic p-2">What have I learned from bridge?</h5>
+	                    <h5 class="card-title text-muted p-2">What have I learned from bridge?</h5>
 	                    <div class="card-text font-italic p-2">
 	                      @isset($atlet->brg_taught)
 	                      	{!! $atlet->brg_taught !!}

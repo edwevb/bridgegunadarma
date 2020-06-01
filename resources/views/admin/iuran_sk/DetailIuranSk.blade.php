@@ -8,7 +8,7 @@
 			<div class="container">
 				<div class="card-borderless borderless">
           <div class="card-header">
-            <h1 class="text-center font-weight-bold text-info">Kas (Iuran SK) Bridge Gunadarma </h1>
+            <h1 id="cms-header" class="text-center font-weight-bold">Kas (Iuran SK) Bridge Gunadarma </h1>
           </div>
 					<div class="card-body">
 						<div class="text-center mb-4 lead">
@@ -37,7 +37,7 @@
               </div>
             @endif
             <div class="mb-2">
-              <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-iuransk-atlet"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-iuransk-atlet"><i class="far fa-plus-square"></i> Tambah data</a>
               <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
                 <div class='no-overfolw lead'>
                   <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam veritatis, obcaecati autem! Quibusdam dolor quam est, ad adipisci earum odit doloremque, velit teskore quisquam voluptatibus magni nam eos, delectus ipsam.</p>

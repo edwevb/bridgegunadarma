@@ -11,25 +11,9 @@
       <div class="container">
         <div class="card shadow borderless">
           <div class="card-header">
-            <h1 class="text-center font-weight-bold text-info">Pengeluaran Bridge Gunadarma</h1>
+            <h1 id="cms-header" class="text-center font-weight-bold">Pengeluaran Bridge Gunadarma</h1>
           </div>
           <div class="card-body">
-            @if(session('AlertDanger'))
-              <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                <strong>{{ session('AlertDanger')}}</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            @endif
-            @if(session('AlertWarning'))
-              <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-                <strong>{{ session('AlertWarning')}}</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            @endif
             @if ($errors->any())
               <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                 <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-pengeluaran" data-toggle="modal" data-target="#modal-tambah-pengeluaran">Click disini</a> untuk melihat error.</p>
@@ -47,7 +31,7 @@
               </div>
             @endif
             <div class="mb-2">
-              <a id="btn-wh" class="btn bg-gradient-info" data-toggle="modal" data-target="#modal-tambah-pengeluaran"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-pengeluaran"><i class="far fa-plus-square"></i> Tambah data</a>
               <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
             </div>
             <div class="table-responsive-xl mt-4">

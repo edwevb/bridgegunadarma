@@ -11,7 +11,7 @@
 			<div class="container">
 			 	<div class="card-borderless">
 	        <div class="card-header">
-	          <h1 class="text-center font-weight-bold text-info">Table Event</h1>
+	          <h1 id="cms-header" class="text-center font-weight-bold">Table Event</h1>
 	        </div>
 	        <div class="card-body">
 	        	@if ($errors->any())
@@ -33,7 +33,7 @@
               </div>
             @endif
 						<div class="mb-2">
-              <a id="btn-wh" class="btn bg-gradient-info" data-toggle="modal" data-target="#modal-tambah-event"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-event"><i class="far fa-plus-square"></i> Tambah data</a>
               <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
             </div>
             <div class="table-responsive-xl mt-4">

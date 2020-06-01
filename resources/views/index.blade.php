@@ -9,7 +9,7 @@
 					<header class="content-wrapper mb-5">
 						<div class="row">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
-							  <h1 class="display-4 text-gradient-danger font-weight-bold">Hello, Bridge Lovers!</h1>
+							  <h1 class="display-4 text-danger text-shadow">Hello, Bridge Lovers!</h1>
 							  <p class="lead">Welcome to Bridge Gunadarma's website</p>
 							  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
@@ -48,7 +48,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="display-5 font-weight-bold text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="atlet-collapse">
           				<div class="p-3">
 		                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
@@ -80,7 +80,7 @@
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="display-5 font-weight-bold text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="prestasi-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -115,7 +115,7 @@
 					 <article id="event"> {{-- event article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="display-5 font-weight-bold text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="event-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -157,7 +157,7 @@
 					 		<div class="bg-light rounded col-md-5 mx-auto shadow">
 		 						<div class="my-3">
 									<div class="col-md mx-auto rounded-circle p-4 about-border">
-										<h1 class="display-4 text-shadow text-center text-dark font-weight-bold">About</h1>
+										<h1 class="text-shadow text-center text-dark">About</h1>
 									</div>
 								</div>
 				 				<div class="col-md mx-auto text-center py-4">

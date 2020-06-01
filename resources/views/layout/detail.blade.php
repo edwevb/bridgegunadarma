@@ -34,6 +34,11 @@
         background-attachment: fixed;
       }
     }
+
+    @font-face{
+      font-family: HeaderContent;
+      src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
+    }
   </style>
 </head>
   {{-- sidebar --}}

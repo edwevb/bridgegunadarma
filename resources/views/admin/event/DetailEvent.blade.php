@@ -48,7 +48,7 @@
 		          <div class="card-borderless">
 	            	<div class="bg-gradient-info rounded">
 	            		<div class="col-md p-1">
-	          				<a href="#deskripsi" class="btn btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
+	          				<a href="#deskripsi" class="btn btn-block text-white bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
 	            			<div class="collapse" id="deskripsi">
 	            				<div class="p-4">
 					            	<div class="card-borderless bg-white p-4 shadow rounded">
@@ -76,7 +76,7 @@
 						{{-- content 2 --}}
 						<div class="col-md mt-3">
 							<div class="border-l-i_border-r-d py-2 mb-3 shadow-sm rounded">
-                <h5 class="text-muted lead text-center font-italic">Biaya Pendaftaran</h5>
+                <h5 class="text-muted lead text-center">Biaya Pendaftaran</h5>
               </div>
 							<table class="table table-borderless mx-auto">
 		          	<tbody>
@@ -138,7 +138,7 @@
 		          <div class="card-borderless ">
 	            	<div class="bg-gradient-dark rounded">
 	            		<div class="col-md p-1">
-	          				<a href="#prizepool" class="btn btn-prizepool btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
+	          				<a href="#prizepool" class="btn btn-prizepool btn-block text-white bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
 	            			<div class="collapse" id="prizepool">
 				            	<div class="card-borderless ">
 				            		<div class="rounded text-white my-2 py-2 ">

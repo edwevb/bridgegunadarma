@@ -78,9 +78,9 @@
               </div>
               <hr width="300">
               <div id="brg_taught" class="my-5">
-                <div class="card-borderless shadow rounded">
+                <div class="card-borderless border-left-dark shadow rounded">
                   <div class="card-body">
-                    <p class="card-title text-center text-muted font-italic">What have I learned from bridge?</p>
+                    <p class="card-title text-muted font-italic">What have I learned from bridge?</p>
                     <h5 class="card-text font-italic">
                       @isset($atlet->brg_taught)
                           {!! $atlet->brg_taught !!}
@@ -174,7 +174,7 @@
               <div class="card-borderless">
                 <div class="bg-gradient-info rounded">
                   <div class="col-md p-1">
-                    <a href="#prestasi" class="btn btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi"><h5><i class="fas fa-trophy"></i> List Prestasi Atlet<i class="fa fa-fw fa-caret-down"></i></h5></a>
+                    <a href="#prestasi" class="btn btn-block text-white bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi"><h5><i class="fas fa-trophy"></i> List Prestasi Atlet<i class="fa fa-fw fa-caret-down"></i></h5></a>
                     <div class="collapse" id="prestasi">
                       <div class="p-4">
                         <div class="card-borderless bg-white p-4 shadow rounded">
@@ -218,7 +218,7 @@
               <div class="card-borderless">
                 <div class="bg-gradient-info rounded">
                   <div class="col-md p-1">
-                    <a href="#pelatihan" class="btn btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pelatihan"><h5><i class="far fa-lightbulb"></i> List Pelatihan Atlet<i class="fa fa-fw fa-caret-down"></i></h5></a>
+                    <a href="#pelatihan" class="btn btn-block text-white bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pelatihan"><h5><i class="far fa-lightbulb"></i> List Pelatihan Atlet<i class="fa fa-fw fa-caret-down"></i></h5></a>
                     <div class="collapse" id="pelatihan">
                       <div class="p-4">
                         <div class="card-borderless bg-white p-4 shadow rounded">

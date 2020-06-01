@@ -8,7 +8,7 @@
       <section id="edit">
         <div class="card-borderless"> {{-- card --}}
           <div class="card-header borderless rounded border-l-i_border-r-d shadow-sm bg-white">
-            <h3 class="text-center text-info">Form Edit Materi</h3>
+            <h3 id="cms-header" class="text-center">Form Edit Materi</h3>
           </div>
            @if ($errors->any())
               <div class="alert alert-danger alert-dismissible fade show text-center m-4" role="alert">

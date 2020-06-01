@@ -5,9 +5,9 @@
 		<div class="no-gutters py-5 bg-gradient-light">
 	    <div class="col-lg d-flex">
 	      <div class="container">
-	        <section class="pb-5">
+	        <section id="home-detail-header" class="pb-5">
 	        	<div class="text-info mb-5">
-	        		<h1 class="text-center font-weight-bold">Prestasi Bridge Gunadarma</h1>
+	        		<h1 class="text-center">Prestasi Bridge Gunadarma</h1>
 	        	</div>
             <div class="col-lg">
             	<div class="card-borderless rounded p-1">

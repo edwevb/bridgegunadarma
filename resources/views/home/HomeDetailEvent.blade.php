@@ -46,7 +46,7 @@
 			          <div class="card-borderless">
 		            	<div class="bg-warning rounded">
 		            		<div class="col-md p-1">
-		          				<a href="#deskripsi" class="btn btn-block btn-detail-event" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
+		          				<a href="#deskripsi" class="btn btn-block bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
 		            			<div class="collapse" id="deskripsi">
 		            				<div class="p-4">
 						            	<div class="card-borderless bg-white p-4 shadow rounded">
@@ -134,7 +134,7 @@
 			          <div class="card-borderless">
 		            	<div class="bg-dark rounded">
 		            		<div class="col-md p-1">
-		          				<a href="#prizepool" class="btn btn-detail-event btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
+		          				<a href="#prizepool" class="btn bx-none btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
 		            			<div class="collapse" id="prizepool">
 					            	<div class="card-borderless ">
 					            		<div class="rounded text-white my-2 py-2 ">

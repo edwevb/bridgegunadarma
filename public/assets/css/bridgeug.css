@@ -21,9 +21,32 @@
   --light: #f8f9fa;
   --dark: #343a40;
 }
+@font-face{
+  font-family: OpenSans-R;
+  src: url("{{ asset('assets/font/OpenSans-Regular.ttf') }}"); 
+}
+
+@font-face{
+  font-family: Poppins-R;
+  src: url("{{ asset('assets/font/Poppins-Regular.ttf') }}"); 
+}
+
+@font-face{
+  font-family: HeaderContent;
+  src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
+}
 
 body{
-  font-family: 'Open Sans', 'Ubuntu', 'Nunito', 'Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important;
+  font-family: 'OpenSans-R', 'Nunito', 'Poppins-R','Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important;
+}
+
+#cms-header{
+  font-family: 'Poppins-R';
+  color: #4E4E4E;
+}
+
+.navbar, #sidebar{
+  font-family: 'Poppins-R';
 }
 
 .btn-fade{
@@ -655,6 +678,18 @@ small.form-text{
   transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.btn-detail-event{
+.bx-none{
   box-shadow: none !important;
+}
+
+#home-detail-header h1{
+  font-family: 'HeaderContent';
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+#home h1, #about h1 {
+  font-family: 'HeaderContent';
+  letter-spacing: 2px;
+  font-weight: 400;
 }
