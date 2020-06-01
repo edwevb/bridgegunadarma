@@ -6,13 +6,13 @@
 	    <div class="col-lg d-flex">
 	      <div class="container">
 	        <section id="home-detail-header">
-	        	<div class="text-success mx-auto mb-5">
+	        	<div class="text-dark mx-auto mb-5">
 	        		<h1 class="text-center">Atlet Bridge Gunadarma</h1>
 	        	</div>
 	          <div class="row">
 	            <div class="col-md-6 mb-4">{{-- content 1 --}}
 	              <div class="text-center px-3">
-              		<img class="shadow-lg col rounded p-2 bg-dark" alt="{{$atlet->atlet_name}}" src="{{ url('/assets/img/img_atlet/'.$atlet->img_atlet) }}">
+              		<img class="shadow-lg col rounded p-2 bg-dark text-white" alt="{{$atlet->atlet_name}}" src="{{ url('/assets/img/img_atlet/'.$atlet->img_atlet) }}">
 	              </div>
 	              <div class="text-center mt-4">
 	            		<h3 class="text-shadow">{{ $atlet->atlet_name }}</h3>
@@ -83,7 +83,7 @@
 	          </div> {{-- end row --}}
 	        </section>
 	        <div class="text-center mt-5">
-	        	<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill px-5 shadow"><span class="lead font-weight-bold">MORE ATLET <i class="fas fa-users"></i></span></a>
+	        	<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill px-5 shadow"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
 	        </div>
 	      </div> {{-- end container --}}
 	    </div> {{-- end content --}}

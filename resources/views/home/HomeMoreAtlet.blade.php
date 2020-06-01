@@ -13,7 +13,7 @@
 					<div class="px-1 mb-5">
 					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
 					  	<div class="col-md p-2">
-					  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$atlet->atlet_name!!}">
+					  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded text-muted" alt="{!!$atlet->atlet_name!!}">
 					  	</div>
 					    <div class="card-body">
 					      <h5 class="card-title text-shadow text-white">{{$atlet->atlet_name}}</h5>

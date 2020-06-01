@@ -6,7 +6,7 @@
 	    <div class="col-lg d-flex">
 	      <div class="container">
 	        <section id="home-detail-header" class="pb-5">
-	        	<div class="text-info mb-5">
+	        	<div class="mb-5 text-dark">
 	        		<h1 class="text-center">Prestasi Bridge Gunadarma</h1>
 	        	</div>
             <div class="col-lg">
@@ -14,7 +14,7 @@
             		<div class="row">
             			<div class="col-md-6">
 	            			<div class="text-center">
-		              		<img class="shadow col-md rounded p-1 bg-dark" alt="{{$prestasi->pre_title}}" src="{{ url('/assets/img/img_pre/'.$prestasi->img_pre) }}">
+		              		<img class="shadow col-md rounded p-1 bg-dark text-white" alt="{{$prestasi->pre_title}}" src="{{ url('/assets/img/img_pre/'.$prestasi->img_pre) }}">
 			              </div>
 	            		</div>
 	            		<div class="col-md-6">
@@ -47,7 +47,7 @@
             </div>
 	        </section>
 	        <div class="text-center mt-5">
-	        	<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill px-5 shadow"><span class="lead font-weight-bold">MORE PRESTASI <i class="fas fa-medal"></i></span></a>
+	        	<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill px-5 shadow"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
 	        </div>
 	      </div> {{-- end container --}}
 	    </div> {{-- end content --}}

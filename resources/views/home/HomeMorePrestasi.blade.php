@@ -12,7 +12,7 @@
 					<div class="px-1 mb-5">
 					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
 					  	<div class="col-md p-2">
-					  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded" alt="{!!$prestasi->pre_title!!}">
+					  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="{!!$prestasi->pre_title!!}">
 					  	</div>
 					    <div class="card-body">
 					      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
@@ -21,7 +21,7 @@
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" target="_blank" class="btn btn-info p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn btn-info p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>

@@ -12,7 +12,7 @@
 					<div class="px-1 mb-5">
 					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
 					  	<div class="col-md p-2">
-					  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded" alt="{!!$event->eve_title!!}">
+					  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-muted" alt="{!!$event->eve_title!!}">
 					  	</div>
 					    <div class="card-body">
 					      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
@@ -21,7 +21,7 @@
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailevent/'.$event->id) }}" target="_blank" class="btn btn-warning p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailevent/'.$event->id) }}" class="btn btn-warning p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>

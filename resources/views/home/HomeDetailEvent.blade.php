@@ -12,7 +12,7 @@
 							<div class="col-md-6">
 								<div class="text-center">
 									<div class="text-center px-3">
-	              		<img class="shadow-lg col-md rounded p-1  bg-dark" alt="{{$event->pre_title}}" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}">
+	              		<img class="shadow-lg col-md rounded p-1 text-white bg-dark" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
 		              </div>
 		              <div class="text-center my-4">
 		            		<h3 class="text-shadow">{{ $event->eve_title }}</h3>
@@ -156,7 +156,7 @@
 						</div>{{--  end row --}}
 					</section>
 					<div class="text-center mt-5">
-	        	<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill px-5 shadow"><span class="lead font-weight-bold">MORE EVENT <i class="far fa-clipboard"></i></span></a>
+	        	<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill px-5 shadow"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 	        </div>
 				</div> {{-- end container --}}
 			</div> {{-- end content --}}

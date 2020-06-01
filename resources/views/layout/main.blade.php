@@ -42,6 +42,17 @@
       opacity: 0.8;
       margin-top:-20px;
     }
+
+    @font-face{
+      font-family: HeaderContent;
+      src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
+    }
+    
+    #home h1, #atlet h1, #event h1, #prestasi h1, #about h1 {
+      font-family: 'HeaderContent';
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
   </style>
 </head>
 

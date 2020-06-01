@@ -23,13 +23,13 @@
 									  </ol>
 									  <div class="carousel-inner">
 									    <div class="carousel-item active">
-									      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded" alt="...">
+									      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
 									    </div>
 									    <div class="carousel-item">
-									      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded" alt="...">
+									      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
 									    </div>
 									    <div class="carousel-item">
-									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded" alt="...">
+									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
 									    </div>
 									  </div>
 									  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,7 +56,7 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
 											  	<div class="col-md p-2">
-											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded" alt="{!!$mp->atlet->atlet_name!!}">
+											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 											  	</div>
 											    <div class="card-body text-center">
 											      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
@@ -89,7 +89,7 @@
 												<div class="px-1 mb-5">
 												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
 												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded" alt="{!!$prestasi->pre_title!!}">
+												  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 												  	</div>
 												    <div class="card-body">
 												      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
@@ -124,7 +124,7 @@
 												<div class="px-1 mb-5">
 												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
 												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded" alt="{!!$event->eve_title!!}">
+												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 												  	</div>
 												    <div class="card-body">
 												      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
