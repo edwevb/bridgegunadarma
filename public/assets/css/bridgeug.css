@@ -23,17 +23,17 @@
 }
 @font-face{
   font-family: OpenSans-R;
-  src: url('../font/Poppins-Regular.ttf'); 
+  src: url("{{ asset('assets/font/OpenSans-Regular.ttf') }}"); 
 }
 
 @font-face{
   font-family: Poppins-R;
-  src: url('../font/Poppins-Regular.ttf'); 
+  src: url("{{ asset('assets/font/Poppins-Regular.ttf') }}"); 
 }
 
 @font-face{
   font-family: HeaderContent;
-  src: url("{{ asset('../font/Righteous-Regular.ttf') }}"); 
+  src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
 }
 
 body{
@@ -41,12 +41,12 @@ body{
 }
 
 #cms-header{
-  font-family: 'Poppins-R' !important;
+  font-family: 'Poppins-R';
   color: #4E4E4E;
 }
 
 .navbar, #sidebar{
-  font-family: 'Poppins-R' !important;
+  font-family: 'Poppins-R';
 }
 
 .btn-fade{
