@@ -46,7 +46,7 @@ body{
 }
 
 .navbar, #sidebar{
-  font-family: 'Poppins-R';
+  font-family: 'Poppins-R' !important;
 }
 
 .btn-fade{
