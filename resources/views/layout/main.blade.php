@@ -24,7 +24,6 @@
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
-  
   <style>
     @media (min-width: 992px){
       nav{
@@ -38,6 +37,7 @@
         opacity: 0.94;
       }
     }
+
     footer{
       opacity: 0.8;
       margin-top:-20px;

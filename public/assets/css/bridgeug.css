@@ -682,13 +682,13 @@ small.form-text{
   box-shadow: none !important;
 }
 
-#home-detail-header h1{
-  font-family: 'HeaderContent';
+#home h1,#atlet h1, #event h1, #prestasi h1, #about h1 {
+  font-family: 'HeaderContent' !important;
   letter-spacing: 2px;
   font-weight: 400;
 }
 
-#home h1, #about h1 {
+#home-detail-header h1{
   font-family: 'HeaderContent';
   letter-spacing: 2px;
   font-weight: 400;
