@@ -41,7 +41,7 @@ body{
 }
 
 #cms-header{
-  font-family: 'Poppins-R';
+  font-family: 'Poppins-R' !important;
   color: #4E4E4E;
 }
 
