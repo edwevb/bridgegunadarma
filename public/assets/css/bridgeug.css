@@ -23,17 +23,17 @@
 }
 @font-face{
   font-family: OpenSans-R;
-  src: url("{{ asset('assets/font/OpenSans-Regular.ttf') }}"); 
+  src: url('../font/Poppins-Regular.ttf'); 
 }
 
 @font-face{
   font-family: Poppins-R;
-  src: url("{{ asset('assets/font/Poppins-Regular.ttf') }}"); 
+  src: url('../font/Poppins-Regular.ttf'); 
 }
 
 @font-face{
   font-family: HeaderContent;
-  src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
+  src: url("{{ asset('../font/Righteous-Regular.ttf') }}"); 
 }
 
 body{
