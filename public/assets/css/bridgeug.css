@@ -21,20 +21,7 @@
   --light: #f8f9fa;
   --dark: #343a40;
 }
-@font-face{
-  font-family: OpenSans-R;
-  src :url('assets/font/OpenSans-Regular.ttf');
-}
 
-@font-face{
-  font-family: Poppins-R;
-  src :url('assets/font/Poppins-Regular.ttf');
-}
-
-@font-face{
-  font-family: HeaderContent;
-  src :url('assets/font/Righteous-Regular.ttf');
-}
 
 body{
   font-family: 'OpenSans-R', 'Nunito', 'Poppins-R','Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important;
