@@ -23,17 +23,17 @@
 }
 @font-face{
   font-family: OpenSans-R;
-  src: url("{{ asset('assets/font/OpenSans-Regular.ttf') }}"); 
+  src: url('../font/OpenSans-Regular.ttf'); 
 }
 
 @font-face{
   font-family: Poppins-R;
-  src: url("{{ asset('assets/font/Poppins-Regular.ttf') }}"); 
+  src: url('../font/Poppins-Regular.ttf'); 
 }
 
 @font-face{
   font-family: HeaderContent;
-  src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
+  src: url('../font/Righteous-Regular.ttf'); 
 }
 
 body{
@@ -680,6 +680,12 @@ small.form-text{
 
 .bx-none{
   box-shadow: none !important;
+}
+
+#home h1, #atlet h1, #event h1, #prestasi h1, #about h1 {
+  font-family: 'HeaderContent';
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 #home-detail-header h1{

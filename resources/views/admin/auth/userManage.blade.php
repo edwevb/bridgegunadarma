@@ -135,7 +135,7 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror">
+                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror"> <a href="#VisiblePassword" class="btn bx-none" onclick="VisiblePassword()"><i class="fa fa-eye"></i></a>
                 @error('password')
                   <div class="invalid-feedback">
                     {{$message}}
