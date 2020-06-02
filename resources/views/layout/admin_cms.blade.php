@@ -22,7 +22,7 @@
   
   {{--  Page styles --}}
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
+
   @yield('header')
 </head>
   <body>

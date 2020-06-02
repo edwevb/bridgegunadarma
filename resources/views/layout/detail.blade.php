@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
+
   <style>
     @media (min-width: 992px){
       nav{

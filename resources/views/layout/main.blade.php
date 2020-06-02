@@ -21,7 +21,7 @@
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
+
   <style>
     @media (min-width: 992px){
       nav{
