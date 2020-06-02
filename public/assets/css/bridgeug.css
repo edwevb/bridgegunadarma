@@ -23,17 +23,17 @@
 }
 @font-face{
   font-family: OpenSans-R;
-  src :url('/public/assets/font/OpenSans-Regular.ttf');
+  src :url('assets/font/OpenSans-Regular.ttf');
 }
 
 @font-face{
   font-family: Poppins-R;
-  src :url('/public/assets/font/Poppins-Regular.ttf');
+  src :url('assets/font/Poppins-Regular.ttf');
 }
 
 @font-face{
   font-family: HeaderContent;
-  src :url('/public/assets/font/Righteous-Regular.ttf');
+  src :url('assets/font/Righteous-Regular.ttf');
 }
 
 body{
