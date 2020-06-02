@@ -17,7 +17,7 @@
               <div class="form-group row text-dark">
                 <label for="email" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Email') }}</label>
                 <div class="col-md-8">
-                  <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="current email" autofocus>
+                  <input id="email" type="text" class="form-control rounded-0 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="current email" autofocus>
                   @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -26,9 +26,10 @@
                 </div>
               </div>
               <div class="form-group row text-dark">
-                <label for="password" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Password') }}</label>
+                <label for="password" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Password') }} </label>
                 <div class="col-md-8">
-                  <input id="password" type="password" class="form-control @error('password') is-invalid  @enderror" name="password" required autocomplete="off">
+                  <input id="password" type="password" class="form-control rounded-0 @error('password') is-invalid  @enderror" name="password" required autocomplete="off">
+                  <a type="button" class="bx-none btn-sm btn btn-light mt-1"onclick="VisiblePassword()"> <small>Show password <i class="far fa-eye"></i></small></a>
                   @error('password')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -77,4 +78,21 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function VisiblePassword() {
+      var x = document.getElementById("password");
+      var y = document.getElementById("confirm_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+      if (y.type === "password") {
+        y.type = "text";
+      } else {
+        y.type = "password";
+      }
+    }
+  </script>
 @endsection

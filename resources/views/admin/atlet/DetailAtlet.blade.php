@@ -292,7 +292,7 @@
               </select>
             </div>
             <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Insert</button>
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>
               <button type="reset" class="btn-form btn btn-danger">Reset</button>
               <button type="button" class="btn-form btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -329,7 +329,7 @@
               </select>
             </div>
             <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Insert</button>
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>
               <button type="reset" class="btn-form btn btn-danger">Reset</button>
               <button type="button" class="btn-form btn btn-secondary" data-dismiss="modal">Close</button>
             </div>

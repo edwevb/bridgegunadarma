@@ -168,7 +168,7 @@
               </div>
               <div class="col-md-4">
               	<label for="fee_team_mhs">Mahasiswa / U26</label>
-                <input type="text" name="fee_team_mhs" id="fee_team_mhs" class="form-style  @error('fee_team_mhs') is-invalid @enderror" value="{{old('fee_team_mhs')}}">
+                <input type="text" name="fee_team_mhs" id="fee_team_mhs" class="form-style @error('fee_team_mhs') is-invalid @enderror" value="{{old('fee_team_mhs')}}">
                 @error('fee_team_mhs')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -258,7 +258,7 @@
               </div>
             </div>
             <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary form-btn">Insert</button>
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary form-btn">Insert</button>
               <button type="reset" class="btn-form btn btn-danger form-btn">Reset</button>
               <button type="button" class="btn-form btn btn-secondary form-btn" data-dismiss="modal">Close</button>
             </div>

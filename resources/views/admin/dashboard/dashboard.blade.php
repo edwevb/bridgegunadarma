@@ -159,7 +159,7 @@
               <textarea name="ann_isi" id="ann_isi" class="form-style" placeholder="Announce.."required>{!! $data_ann->ann_isi !!}</textarea>
             </div>
             <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary form-btn">Save Changes</button>
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary form-btn">Save Changes</button>
               <button type="clear" class="btn-form btn btn-danger form-btn">Reset</button>
               <button type="button" class="btn-form btn btn-secondary form-btn" data-dismiss="modal">Close</button>
             </div>

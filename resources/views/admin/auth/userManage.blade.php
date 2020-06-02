@@ -36,7 +36,7 @@
               </div>
             @endif
             <div class="mb-2">
-              <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-user"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-user" data-backdrop="static"><i class="far fa-plus-square"></i> Tambah data</a>
               <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
             </div>
             <div class="table-responsive-xl mt-4">
@@ -134,8 +134,8 @@
             </div>
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror"> <a href="#VisiblePassword" class="btn bx-none" onclick="VisiblePassword()"><i class="fa fa-eye"></i></a>
+                <label for="password">Password <a type="button" class="bx-none btn-sm btn "onclick="VisiblePassword()"><i class="far fa-eye"></i></a></label>
+                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror">
                 @error('password')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -152,8 +152,8 @@
                 @enderror
               </div>
             </div>
-            <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Insert</button>
+            <div class="pb-5">
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>
               <button type="reset" class="btn-form btn btn-danger">Reset</button>
               <button type="button" class="btn-form btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -162,14 +162,29 @@
       </div>
     </div>
   </div>{{-- end modal tambah user --}}
-@section('footer')
-  <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-  <script>
-    $(document).ready(function()
-    {
-      $('#dataTable').DataTable();
-    });
-  </script>
-@stop
+  @section('footer')
+    <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script>
+      $(document).ready(function()
+      {
+        $('#dataTable').DataTable();
+      });
+
+      function VisiblePassword() {
+        var x = document.getElementById("password");
+        var y = document.getElementById("confirm_password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+        if (y.type === "password") {
+          y.type = "text";
+        } else {
+          y.type = "password";
+        }
+      }
+    </script>
+  @stop
 @endsection

@@ -98,12 +98,13 @@ table,th,td{
   margin-right: 5px;
   color: #fff ;
   text-decoration: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   overflow: 0;
   transition: padding 0.35s ease-in-out !important;
 }
 
 .btn-form:hover, .btn-form:focus{
-  padding: 10px 25px;
+  padding: 10px 15px;
   text-decoration: none;
 }
 
@@ -368,6 +369,7 @@ small.form-text{
     display : flex;
     z-index: 1 !important;
   }
+
   .bridge-side-bg img{
     margin-left: 2em;
     transition: padding 1s;
@@ -407,6 +409,21 @@ small.form-text{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  #about .bridge-bg{
+    padding-bottom: 6rem!important;
+  }
+
+  .footer{
+    opacity: 0.8;
+    margin-top:-20px !important;
+  }
+
+  .footer blockquote{
+    background-color: #fff !important;
+    color: #000 !important;
+    font-weight: bold;
   }
 }
 
@@ -627,10 +644,6 @@ small.form-text{
   width: 150px;
 }
 
-#about .bridge-bg{
-  padding-bottom: 10rem!important;
-}
-
 .btn-detail{
   padding: 5px 35px;
   margin-top: -20px;
@@ -694,4 +707,13 @@ small.form-text{
   font-family: 'HeaderContent';
   letter-spacing: 2px;
   font-weight: 400;
+}
+
+.footer{
+  margin-top : 20px;
+}
+
+.footer blockquote{
+    background-color: transparent;
+    color: #fff;
 }

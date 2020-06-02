@@ -62,7 +62,7 @@
 		              </div>
 		            </div>
 	              <div class="ml-3">
-	                <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Save Changes</button>
+	                <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Save Changes</button>
 	                <button type="reset" class="btn-form btn btn-danger">Reset</button>
 	                <a href="{{ url('/masterpoint') }}" class="btn-form btn btn-secondary form-btn" data-dismiss="modal">Back</a>
 	              </div>

@@ -58,7 +58,7 @@
 		            </div>
 		            <div class="row">
 		              <div class="form-group col-md-6">
-		                <label for="password">Password</label>
+		                <label for="password">Password <a type="button" class="bx-none btn-sm btn "onclick="VisiblePassword()"><i class="far fa-eye"></i></a></label>
 		                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror">
 		                @error('password')
 		                  <div class="invalid-feedback">
@@ -76,10 +76,10 @@
 		                @enderror
 		              </div>
 		            </div>
-	              <div class="ml-3">
-	                <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary">Save Changes</button>
+	              <div class="">
+	                <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Save Changes</button>
 	                <button type="reset" class="btn-form btn btn-danger">Reset</button>
-	                <a href="{{ url('/user') }}" class="btn-form btn btn-secondary form-btn" data-dismiss="modal">Back</a>
+	                <a href="{{ url('/user') }}" class="btn-form btn btn-secondary" data-dismiss="modal">Back</a>
 	              </div>
 	            </form>
 	          </div>
@@ -88,4 +88,22 @@
 			</div>
 		</div>
 	</div>
+	@section('footer')
+	  <script>
+	    function VisiblePassword() {
+	      var x = document.getElementById("password");
+	      var y = document.getElementById("confirm_password");
+	      if (x.type === "password") {
+	        x.type = "text";
+	      } else {
+	        x.type = "password";
+	      }
+	      if (y.type === "password") {
+	        y.type = "text";
+	      } else {
+	        y.type = "password";
+	      }
+	    }
+	  </script>
+	@stop
 @endsection

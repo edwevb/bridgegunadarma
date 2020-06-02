@@ -48,11 +48,8 @@ class AtletController extends Controller
             'twt'        => 'nullable|string|max:128',
             'ig'         => 'nullable|string|max:128',
             'img_atlet'  => 'nullable|image|max:2048'
-        ],
-        [
-            'telp.required' => 'tidak boleh kosong'
         ]);
-        //Cara 3
+
         if ($atlet = Atlet::create($request->all()))
         {
             if($request->file('img_atlet') == "")

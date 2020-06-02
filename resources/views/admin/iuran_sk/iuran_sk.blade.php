@@ -134,7 +134,7 @@
               </div>
             </div>
             <div class="ml-5 pb-5">
-              <button onclick="javascript: return confirm('Tambahkan ke DATABASE ?')" type="submit" class="btn-form btn btn-primary form-btn">Insert</button>
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary form-btn">Insert</button>
               <button type="reset" class="btn-form btn btn-danger form-btn">Reset</button>
               <button type="button" class="btn-form btn btn-secondary form-btn" data-dismiss="modal">Close</button>
             </div>

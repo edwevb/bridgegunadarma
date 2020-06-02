@@ -31,18 +31,17 @@
         background-size: cover;
         background-attachment: fixed;
       }
+
       #about .container{
         opacity: 0.94;
       }
-    }
 
-    footer{
-      opacity: 0.8;
-      margin-top:-20px;
+      #home{
+        margin-top: -5px;
+      }
     }
   </style>
 </head>
-
   {{-- sidebar --}}
   <body class="bg-dark">
   {{-- <script>
@@ -54,7 +53,7 @@
       <div class="navbar-brand">
         <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"> Bridge Gunadarma</a>
       </div>
-        <button class ="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="btn btn-dark navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNav">
         <span class ="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -99,12 +98,10 @@
   @yield('section')
 
   {{-- footer --}}
-  <footer>
-    <div class="footer bg-white shadow-lg col-md-4 rounded-pill mx-auto"> 
-      <div class="col text-center">
-        <p class="font-weight-bold py-2">2020 All Rights Reserve by Edward Evbert</p>
-      </div>
-    </div>
+  <footer class="footer">
+    <blockquote class="text-center col-md-6 mx-auto rounded-pill">
+      <p class="py-2">&copy;2020 All Rights Reserve by <a class="text-primary" href="https://www.instagram.com/edwevb" target="_blank">edwevb</a></p>
+    </blockquote>
   </footer>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
