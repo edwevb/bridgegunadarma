@@ -118,7 +118,7 @@ form label, .file-desc{
 }
 
 .form-style-static{
-  background-color: #fff ;
+  background-color: transparent !important
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -141,7 +141,7 @@ form label, .file-desc{
 }
 
 .form-style{
-  background-color: #fff ;
+  background-color: transparent !important;
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);

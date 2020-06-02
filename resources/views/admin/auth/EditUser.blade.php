@@ -58,7 +58,7 @@
 		            </div>
 		            <div class="row">
 		              <div class="form-group col-md-6">
-		                <label for="password">Password <a type="button" class="bx-none btn-sm btn "onclick="VisiblePassword()"><i class="far fa-eye"></i></a></label>
+		                <label for="password">Password <a type="button" class="bx-none btn-sm" onclick="VisiblePassword()"><i class="far fa-eye"></i></a></label>
 		                <input type="password" name="password" id="password" class="form-style  @error('password') is-invalid @enderror">
 		                @error('password')
 		                  <div class="invalid-feedback">
