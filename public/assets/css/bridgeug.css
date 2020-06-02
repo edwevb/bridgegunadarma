@@ -22,18 +22,33 @@
   --dark: #343a40;
 }
 
+@font-face{
+  font-family: OpenSans-R;
+  src :url('OpenSans-Regular.ttf');
+}
+
+@font-face{
+  font-family: Poppins-R;
+  src :url('Poppins-Regular.ttf');
+}
+
+@font-face{
+  font-family: HeaderContent;
+  src :url('Righteous-Regular.ttf');
+}
 
 body{
   font-family: 'OpenSans-R', 'Nunito', 'Poppins-R','Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important;
 }
 
 #cms-header{
-  font-family: 'Poppins-R';
+  font-family: 'Poppins-R', 'Nunito';
   color: #4E4E4E;
+  font-weight: 500;
 }
 
 .navbar, #sidebar{
-  font-family: 'Poppins-R';
+  font-family: 'Poppins-R', 'Nunito';
 }
 
 .btn-fade{
@@ -47,7 +62,7 @@ body{
 
 /*TABLE EDIT*/
 table,th,td{
-  font-family:'Roboto', 'Nunito', 'Open Sans', 'Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' ;
+  font-family:'OpenSans-R', 'Poppins-R', 'Nunito', 'Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important ;
 }
 
 .bridge-img-col{
