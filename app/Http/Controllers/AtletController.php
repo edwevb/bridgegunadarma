@@ -14,7 +14,6 @@ class AtletController extends Controller
         {
             return abort(500);
         }
-        return $data_atlet;
         return view('admin.atlet.atlet', ['data_atlet'=>$data_atlet]);
     }
 
