@@ -17,7 +17,6 @@
 	              <input type="text" id="name" name="name" value="{{auth()->user()->name}}" hidden>
 		            <div class="form-group row">
 	                <div class="col-md-12">
-	                  <label for="pesan">Deskripsi*</label>
 	                  <textarea type="text" name="pesan" id="pesan" class="form-style" placeholder="Write here.."></textarea>
 	                </div>
 	              </div>
