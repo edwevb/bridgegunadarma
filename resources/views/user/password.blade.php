@@ -1,5 +1,5 @@
 @extends('layout.admin_cms')
-@section('title','Edit '.$user->username)
+@section('title','Change Password '.$user->name)
 @section('section')
 	<div class="row no-gutters">
 		{{-- start content --}}
