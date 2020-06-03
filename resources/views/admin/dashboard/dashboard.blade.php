@@ -16,7 +16,7 @@
       @endif
       {{--ADMIN PAGES--}}
       @if (auth()->user()->role_id == '1')
-        <div class="row justify-content-center">
+        <div class="row">
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="card bg-gradient-primary border-left-dark shadow py-2">
               <div class="card-body">
@@ -40,7 +40,7 @@
           </div>
 
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card bg-gradient-danger border-left-dark shadow py-2">
+            <div class="card bg-gradient-success border-left-dark shadow py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
@@ -60,7 +60,7 @@
           </div>
 
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card bg-gradient-success border-left-dark shadow h-100 py-2">
+            <div class="card bg-gradient-info border-left-dark shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
@@ -69,12 +69,75 @@
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
-                        <a href="{{ url('prestasi') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
+                        <a href="{{ url('/prestasi') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
                       </div>
                     </div>
                   </div>
                   <div class="col-auto text-dark">
                     <i class="fas fa-trophy fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-gradient-danger border-left-dark shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2 text-center">
+                    <div class="font-weight-bold text-uppercase mb-1">
+                      <h3 class="font-weight-bold text-white">pesan ({{$data_pesan->count()}})</h3>
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-white">
+                      <div class="h5 mb-0 font-weight-bold text-white">
+                        <a href="{{ url('/pesan') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto text-dark">
+                    <i class="fas fa-envelope fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-gradient-warning border-left-dark shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2 text-center">
+                    <div class="font-weight-bold text-uppercase mb-1">
+                      <h3 class="font-weight-bold text-white">Event ({{$data_event->count()}})</h3>
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-white">
+                      <div class="h5 mb-0 font-weight-bold text-white">
+                        <a href="{{ url('/event') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto text-dark">
+                    <i class="fas fa-newspaper fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-gradient-secondary border-left-dark shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2 text-center">
+                    <div class="font-weight-bold text-uppercase mb-1">
+                      <h3 class="font-weight-bold text-white">Pelatihan ({{$data_history->count()}})</h3>
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-white">
+                      <div class="h5 mb-0 font-weight-bold text-white">
+                        <a href="{{ url('/history') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto text-dark">
+                    <i class="fas fa-history fa-3x"></i>
                   </div>
                 </div>
               </div>

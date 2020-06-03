@@ -76,6 +76,11 @@
               <div class="dropdown-menu collapse" id="account">
                 <a class="dropdown-item" href="{{ url('/dashboard') }}"><i class="fas fa-laptop"></i> Dashboard</a>
                 <a class="dropdown-item" href="{{ url('/passwordForm/'.auth()->user()->id) }}"><i class="fas fa-pen-alt"></i> Change Password</a>
+                @if (auth()->user()->role_id!=1)
+                  <a class="dropdown-item" href="{{ url('/pesan/form/'.auth()->user()->id) }}"><i class="far fa-envelope"></i>&nbsp;Kirim pesan Admin</a>
+                @else
+                  <a class="dropdown-item" href="{{ url('/pesan')}}"><i class="far fa-envelope"></i>&nbsp;Lihat pesan</a>
+                @endif
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf

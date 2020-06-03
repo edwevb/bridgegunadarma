@@ -14,8 +14,9 @@ class DashboardController extends Controller
         $data_atlet    = \App\Atlet::all();
         $data_prestasi = \App\Prestasi::all();
         $data_materi   = \App\Materi::all();
-        $data_history   = \App\History::all();
+        $data_history  = \App\History::all();
         $data_event    = \App\Event::all();
+        $data_pesan    = \App\Pesan::all();
         return view('admin.dashboard.dashboard',
             compact(
                 'data_ann',
@@ -23,7 +24,8 @@ class DashboardController extends Controller
                 'data_prestasi',
                 'data_materi',
                 'data_history',
-                'data_event'
+                'data_event',
+                'data_pesan'
             )); 
     }
 
@@ -41,7 +43,8 @@ class DashboardController extends Controller
 
     public function passwordForm(\App\User $user)
     {
-        if ($user->id != auth()->user()->id) {
+        if ($user->id != auth()->user()->id)
+        {
             return abort(403,'Access Forbidden');
         }
         return view('user.password',compact('user'));
