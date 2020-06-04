@@ -133,7 +133,7 @@
             scrollTop: $(hash).offset().top - 150
           }, 1000, function(){
 
-            window.location.hash = hash;
+            // window.location.hash = hash;
           });
         }
       });
