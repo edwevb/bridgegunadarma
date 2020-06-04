@@ -71,8 +71,8 @@ class AtletController extends Controller
     public function show(Atlet $atlet)
     {
         $data_prestasi = \App\Prestasi::all();
-        $data_history = \App\History::all();
-        $data_mpoint = \App\Masterpoint::all();
+        $data_history  = \App\History::all();
+        $data_mpoint   = \App\Masterpoint::all();
         return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint'));
     }
 
@@ -109,7 +109,8 @@ class AtletController extends Controller
             }
         }
         $atlet->update($request->all());
-        if ($request->img_atlet != NULL) {
+        if ($request->img_atlet != NULL)
+        {
             $file       = $request->file('img_atlet');
             $fileName   = '(BridgeGunadarma)'.$atlet->nik.'.'.$file->getClientOriginalExtension();
             $file->move("assets/img/img_atlet", $fileName);

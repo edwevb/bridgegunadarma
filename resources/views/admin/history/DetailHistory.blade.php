@@ -1,5 +1,5 @@
 @extends('layout.admin_cms')
-@section('title','History '.$history->hist_title)
+@section('title','Pelatihan '.$history->hist_title)
 @section('section')
 	<div class="row no-gutters">
 	  <div class="col-md-2"></div>
@@ -61,7 +61,7 @@
 		              	@endempty
                   </div>
                   <div class="mt-4">
-	                	<a id="btn-wh" class="btn bg-gradient-info" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
+	                	<a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
 	                </div>
 	                <div class="text-center my-4">
 	                	<h5 class="font-italic lead border-right-dark border-left-info p-2 shadow-sm rounded">List Participation</h5>

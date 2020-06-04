@@ -9,7 +9,7 @@ class PrestasiController extends Controller
 {
     public function index()
     {
-        if (!$data_prestasi = Prestasi::orderBy('pre_date','ASC')->get())
+        if (!$data_prestasi = Prestasi::orderBy('pre_date','DESC')->get())
         {
             return abort(404);
         }
@@ -35,7 +35,7 @@ class PrestasiController extends Controller
             else
             {
                 $file              = $request->file('img_pre');
-                $fileName          = $prestasi->pre_date.'.jpg'/*.getClientOriginalExtension()*/;
+                $fileName          = '(BridgeGunadarma)'.$prestasi->pre_date.'.'.$file->getClientOriginalExtension();
                 $file->move("assets/img/img_pre", $fileName);
                 $prestasi->img_pre = $fileName;
             }
@@ -47,7 +47,8 @@ class PrestasiController extends Controller
 
     public function show(Prestasi $prestasi)
     {
-        return view('admin.prestasi.DetailPrestasi',compact('prestasi'));
+        $data_atlet = \App\Atlet::all();
+        return view('admin.prestasi.DetailPrestasi',compact('prestasi','data_atlet'));
     }
 
     public function edit(Prestasi $prestasi)
@@ -103,5 +104,40 @@ class PrestasiController extends Controller
             return redirect('/prestasi')->with('AlertSuccess','Data Prestasi berhasil dihapus!');
         }
         return abort(500);
+    }
+
+    public function addAtlet(Request $request, Prestasi $prestasi)
+    {
+        if($prestasi->atlet()->where('atlet_id',$request->atlet)->exists())
+        {
+            return redirect()->back()->with('ErrorInput',
+                '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    Data atlet sudah ada
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>');
+        }
+        // With pivot 
+        // $prestasi->atlet()->attach($request->atlet,['pivot'=>$request->pivot]);
+        $prestasi->atlet()->attach($request->atlet);
+        return redirect()->back()->with('AlertSuccess',
+            '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                Atlet berhasil ditambahkan
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>');
+    }
+
+    public function removeAtlet(Prestasi $prestasi, $atlet)
+    {
+        $prestasi->atlet()->detach($atlet);
+        return redirect()->back()->with('AlertSuccess','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            Data prestasi berhasil dihapus
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
     }
 }

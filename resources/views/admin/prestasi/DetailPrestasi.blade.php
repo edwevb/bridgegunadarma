@@ -43,10 +43,33 @@
                     @endempty
                     <div class="py-4">
                       <hr class="bridgeHr">
-                      <h5>List Partisipasi Atlet</h5>
-                      @foreach ($prestasi->atlet as $atlet)
-                        <li class="ml-4"><a href="{{ url('/atlet/'.$atlet->id) }}">{{$atlet->atlet_name}}</a></li>
-                      @endforeach
+                      <div class="my-4">
+                        <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
+                      </div>
+                      <div class="mb-4">
+                        @if(session('ErrorInput'))
+                          {!! session('ErrorInput') !!}
+                        @endif
+                        @if(session('AlertSuccess'))
+                          {!!session('AlertSuccess') !!}
+                        @endif
+                        <h5>List Partisipasi Atlet</h5>
+                      </div>
+                      <div class="table-responsive-xl">
+                        <table class="table table-borderless mx-auto">
+                          <tbody>
+                            @foreach ($prestasi->atlet as $atlet)
+                            <tr>
+                              <th width="10" scope="row">{{$loop->iteration}}</th>
+                              <td>{{$atlet->atlet_name}}</td>
+                              <td>
+                                <a href="{{ url('/prestasi/'.$prestasi->id.'/'.$atlet->id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
+                              </td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                      </div>{{-- end table --}}
                     </div>
                   </div>
                   <p class="my-2"><small class="text-muted">
@@ -73,6 +96,59 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Delete From Database?</h5>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4 font-italic">
+            <small>Semua data yang berkaitan dengan <span class="text-danger font-weight-bold">{{$prestasi->pre_title}}</span> akan terhapus!</small>
+          </div>
+          <form class="d-inline" action="{{ url('/prestasi/'.$prestasi->id) }}" method="post">
+            @method('delete')
+            @csrf
+            <button class="btn btn-danger"><i class="fa fa-trash"></i> Ya, hapus</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>{{-- End Modal --}}
+  <!-- Modal Tambah Daftar Atlet-->
+  <div class="modal fade" id="modal-tambah-daftar-atlet" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Form Tambah Data Prestasi Atlet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ url('/prestasi/'.$prestasi->id.'/addAtlet') }}" method="POST">
+            @csrf
+            <div class="form-group col-md-9">
+              <label for="atlet">List atlet</label>
+              <select class="form-style-static" name="atlet" id="atlet">
+                @foreach ($data_atlet as $atlet)
+                  <option value="{{$atlet->id}}">{{$atlet->atlet_name}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="ml-5 pb-5">
+              <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>
+              <button type="reset" class="btn-form btn btn-danger">Reset</button>
+              <button type="button" class="btn-form btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> {{-- end modal --}}
+
+  {{-- Modal Delete Prestasi --}}
+  <div class="modal fade" id="delete-prestasi" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+         <h5 class="modal-title">Delete From Database?</h5>
         </div>
         <div class="modal-body">
           <div class="mb-4 font-italic">

@@ -42,7 +42,8 @@ class EventController extends Controller
             {
                 $event->img_eve = 'default.png';
             }
-            else{
+            else
+            {
                 $file           = $request->file('img_eve');
                 $fileName       = $event->eve_title.$event->eve_date.'.jpg'/*.getClientOriginalExtension()*/;
                 $file->move("assets/img/img_eve", $fileName);
@@ -88,7 +89,8 @@ class EventController extends Controller
             {
                 $event->img_eve = $event->img_eve;
             }
-            else{
+            else
+            {
                 $file           = $request->file('img_eve');
                 $fileName       = $event->eve_title.$event->eve_date.'.jpg'/*.getClientOriginalExtension()*/;
                 $file->move("assets/img/img_eve", $fileName);

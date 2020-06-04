@@ -35,7 +35,8 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 
 	//Prestasi
 	route::resource('/prestasi', 'PrestasiController');
-
+	route::post('/prestasi/{prestasi}/addAtlet', 'PrestasiController@addAtlet');
+	route::get('/prestasi/{prestasi}/{atlet}/removeAtlet', 'PrestasiController@removeAtlet');
 	//Materi
 	route::resource('/materi', 'MateriController');
 	route::get('/materi/{materi}/download','MateriController@download');
