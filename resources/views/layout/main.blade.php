@@ -105,7 +105,7 @@
   {{-- footer --}}
   <footer class="footer">
     <blockquote class="text-center col-md-6 mx-auto rounded-pill">
-      <p class="py-2">&copy;2020 All Rights Reserve by <a class="text-primary" href="https://www.instagram.com/edwevb" target="_blank">edwevb</a></p>
+      <p class="py-2">&copy;2020 All Rights Reserved{{-- <a class="text-primary" href="https://www.instagram.com/edwevb" target="_blank">edwevb</a> --}}</p>
     </blockquote>
   </footer>
 
