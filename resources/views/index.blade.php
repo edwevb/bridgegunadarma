@@ -89,7 +89,7 @@
 												<div class="px-1 mb-5">
 												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
 												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
+												  		<img height="auto" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 												  	</div>
 												    <div class="card-body">
 												      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
