@@ -70,8 +70,8 @@ class AtletController extends Controller
 
     public function show(Atlet $atlet)
     {
-        $data_prestasi = \App\Prestasi::all();
-        $data_history  = \App\History::all();
+        $data_prestasi = \App\Prestasi::orderBy('pre_date','DESC')->get();
+        $data_history  = \App\History::orderBy('hist_date','DESC')->get();
         $data_mpoint   = \App\Masterpoint::all();
         return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint'));
     }
