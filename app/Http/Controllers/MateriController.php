@@ -15,7 +15,7 @@ class MateriController extends Controller
      */
     public function index()
     {
-        $data_materi = Materi::orderBy('mat_date','ASC')->get();
+        $data_materi = Materi::orderBy('mat_date','DESC')->get();
         return view('admin.materi.materi',['data_materi'=>$data_materi]);
     }
 
