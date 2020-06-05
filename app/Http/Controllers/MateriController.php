@@ -80,8 +80,9 @@ class MateriController extends Controller
         $materi->update($request->all());
         if ($request->file_mat != NULL) 
         {
-            $file       = $request->file('file_mat');
-            $fileName   = '(BridgeGunadarma)'.$materi->pre_date.'.'.$file->getClientOriginalExtension();
+            $file             = $request->file('file_mat');
+            $file_extension   = $file->getClientOriginalExtension();
+            $fileName         = $request->mat_title.'.'.$file_extension;
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
