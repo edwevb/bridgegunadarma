@@ -193,5 +193,11 @@
 			</div>
 		</section> {{-- end about --}}
 	</div>
-
+	@section('script')
+		<script>
+			$(window).on('load', function(){
+				$('.startContent').addClass('showContent');
+			});
+		</script>
+	@stop	
 @endsection

@@ -717,7 +717,7 @@ small.form-text{
 .startContent{
   opacity: 0;
   transform: translate(0, -40px);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .showContent{
