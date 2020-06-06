@@ -43,7 +43,7 @@
       					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1><span class="title">ATLET</span><br><i class="fa fa-fw fa-caret-down fa-2x text-success"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="atlet-collapse">
           				<div class="p-3">
-		                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
+		                <div class="row row-cols-1 row-cols-md-3" >
 											@foreach ($data_mpoint as $mp)
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
@@ -76,7 +76,7 @@
           			<div class="collapse hide bg-transparent" id="prestasi-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
-			                <div class="row row-cols-1 row-cols-lg-3">
+			                <div class="row row-cols-1 row-cols-md-3">
 												@foreach ($data_prestasi as $prestasi)
 												<div class="px-1 mb-5">
 												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
