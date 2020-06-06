@@ -113,7 +113,8 @@
               </div>
               <div class="col-3">
                 <label for="pta_ata">PTA/ATA</label>
-                <select class="form-control" name="pta_ata" id="pta_ata">
+                <select class="form-control  @error('pta_ata') is-invalid @enderror" name="pta_ata" id="pta_ata">
+                  <option value="">Choose..</option>
                   <option value="PTA" {{(old('pta_ata') == 'PTA') ? 'selected' : ''}}>PTA</option>
                   <option value="ATA" {{(old('pta_ata') == 'ATA') ? 'selected' : ''}}>ATA</option>
                 </select>
@@ -125,7 +126,7 @@
               </div>
               <div class="col">
                 <label for="sk_tahun">Tahun Ajaran</label>
-                <input type="text" name="sk_tahun" id="sk_tahun" class="form-style  @error('sk_tahun') is-invalid @enderror" placeholder="example : 2017/2018" value="{{old('sk_tahun')}}">
+                <input type="text" name="sk_tahun" id="sk_tahun" class="form-style  @error('sk_tahun') is-invalid @enderror" placeholder="example : 2017/2018" value="{{old('sk_tahun')}}" autocomplete="off">
                 @error('sk_tahun')
                   <div class="invalid-feedback">
                     {{$message}}

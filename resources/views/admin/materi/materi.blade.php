@@ -122,7 +122,7 @@
             @csrf
             <div class="form-group">
               <label for="mat_title">Judul</label>
-              <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{old('mat_title')}}">
+              <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{old('mat_title')}}" autocomplete="off">
               @error('mat_title')
                 <div class="invalid-feedback">
                   {{$message}}

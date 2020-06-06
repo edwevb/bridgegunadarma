@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="pre_date">Date</label>
-                  <input type="date" name="pre_date" id="pre_date" class="form-style @error('pre_date') is-invalid @enderror" value="{{$prestasi->pre_date}}">
+                  <input type="date" name="pre_date" id="pre_date" class="form-style @error('pre_date') is-invalid @enderror" value="{{$prestasi->pre_date}}" autocomplete="off">
                   @error('pre_date')
                     <div class="invalid-feedback">
                       {{$message}}

@@ -210,6 +210,7 @@ return [
         'p_biaya'          => 'Biaya',
         'name'             => 'Nama',
         'username'         => 'Username',
+        'role_id'          => 'Role|Level',
         'password'         => 'Password',
         'confirm_password' => 'Confirm Password',
     ],

@@ -36,7 +36,7 @@
 		            <div class="row">
 		              <div class="form-group col-md-6">
 		                <label for="eve_title">Judul</label>
-		                <input type="text" name="eve_title" id="eve_title" class="form-style @error('eve_title') is-invalid @enderror" value="{{$event->eve_title}}">
+		                <input type="text" name="eve_title" id="eve_title" class="form-style @error('eve_title') is-invalid @enderror" value="{{$event->eve_title}}" autocomplete="off">
 		                @error('eve_title')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -56,7 +56,7 @@
 		            <div class="row">
 		              <div class="form-group col-md-6">
 		                <label for="eve_loc">Lokasi</label>
-		                <input type="text" name="eve_loc" id="eve_loc" class="form-style @error('eve_loc') is-invalid @enderror" value="{{$event->eve_loc}}">
+		                <input type="text" name="eve_loc" id="eve_loc" class="form-style @error('eve_loc') is-invalid @enderror" value="{{$event->eve_loc}}" autocomplete="off">
 		                @error('eve_loc')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -65,7 +65,7 @@
 		              </div>
 		              <div class="form-group col-md-6">
 		               <label for="gender">URL*</label>
-		                <input type="text" name="eve_url" id="eve_url" class="form-style @error('eve_url') is-invalid @enderror" placeholder="example : www.bridgegunadarma.com" value="{{$event->eve_url}}">
+		                <input type="text" name="eve_url" id="eve_url" class="form-style @error('eve_url') is-invalid @enderror" placeholder="example : www.bridgegunadarma.com" value="{{$event->eve_url}}" autocomplete="off">
 		                @error('eve_url')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -85,8 +85,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_open">Open</label>
-		                <input type="text" name="fee_team_open" id="fee_team_open" class="form-style @error('fee_team_open') is-invalid @enderror" value="{{$event->fee_team_open}}" min="0.1" step="0.01" placeholder="example : 50000.32 -> lima pulih ribu,32">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_team_open" id="fee_team_open" class="form-style-static @error('fee_team_open') is-invalid @enderror" value="{{$event->fee_team_open}}" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_team_open')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -95,8 +94,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_mhs">Mahasiswa / U26</label>
-		                <input type="text" name="fee_team_mhs" id="fee_team_mhs" class="form-style  @error('fee_team_mhs') is-invalid @enderror" value="{{$event->fee_team_mhs}}">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_team_mhs" id="fee_team_mhs" class="form-style  @error('fee_team_mhs') is-invalid @enderror" value="{{$event->fee_team_mhs}}" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_team_mhs')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -105,8 +103,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_u21">Pelajar / U-21</label>
-		                <input type="text" name="fee_team_u21" id="fee_team_u21" class="form-style @error('fee_team_u21') is-invalid @enderror" value="{{$event->fee_team_u21}}">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_team_u21" id="fee_team_u21" class="form-style-static @error('fee_team_u21') is-invalid @enderror" value="{{$event->fee_team_u21}}" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_team_u21')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -120,8 +117,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_open">Open</label>
-		                <input type="text" name="fee_pas_open" id="fee_pas_open" class="form-style @error('fee_pas_open') is-invalid @enderror" value="{{$event->fee_pas_open}}" min="0.1" step="0.01" placeholder="example : 50000.32 -> lima pulih ribu,32">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_pas_open" id="fee_pas_open" class="form-style-static @error('fee_pas_open') is-invalid @enderror" value="{{$event->fee_pas_open}}" min="0.1" step="0.01" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_pas_open')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -130,8 +126,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_mhs">Mahasiswa / U26</label>
-		                <input type="text" name="fee_pas_mhs" id="fee_pas_mhs" class="form-style  @error('fee_pas_mhs') is-invalid @enderror" value="{{$event->fee_pas_mhs}}">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_pas_mhs" id="fee_pas_mhs" class="form-style-static @error('fee_pas_mhs') is-invalid @enderror" value="{{$event->fee_pas_mhs}}" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_pas_mhs')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -140,8 +135,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_u21">Pelajar / U-21</label>
-		                <input type="text" name="fee_pas_u21" id="fee_pas_u21" class="form-style @error('fee_pas_u21') is-invalid @enderror" value="{{$event->fee_pas_u21}}">
-		                <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		                <input type="number" name="fee_pas_u21" id="fee_pas_u21" class="form-style-static @error('fee_pas_u21') is-invalid @enderror" value="{{$event->fee_pas_u21}}" min="0.1" step="0.01" autocomplete="off">
 		                @error('fee_pas_u21')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -153,8 +147,7 @@
 		              <div class="text-center">
 		                <label for="prizepool" class="lead">Prizepool*</label>
 		              </div>
-		              <input type="text" name="prizepool" id="prizepool" class="form-style-static @error('prizepool') is-invalid @enderror" placeholder="example : 50000.32 -> lima pulih ribu,32" value="{{$event->prizepool}}">
-		              <small class="form-text"><span class="font-weight-bold">dot(.)</span> pemisah decimal</small>
+		              <input type="number" name="prizepool" id="prizepool" class="form-style-static @error('prizepool') is-invalid @enderror" value="{{$event->prizepool}}" min="0.1" step="0.01" autocomplete="off">
 		              @error('prizepool')
 		                <div class="invalid-feedback">
 		                  {{$message}}

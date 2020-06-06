@@ -43,7 +43,6 @@ class IuranSk extends Model
       if ($this->atlet->isEmpty()) {
          return Null;
       }else{
-
          foreach ($this->atlet as $atlet)
          {
             $total = $atlet->pivot->sum('sk_bayar');

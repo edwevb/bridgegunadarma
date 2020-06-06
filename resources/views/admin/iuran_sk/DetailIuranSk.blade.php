@@ -113,11 +113,17 @@
             @csrf
           	<div class="form-group">
               <label for="atlet">List atlet</label>
-              <select class="form-style-static" name="atlet" id="atlet">
+              <select class="form-style-static @error('atlet') is-invalid @enderror" name="atlet" id="atlet">
+                <option value="">Choose..</option>
                 @foreach ($data_atlet as $atlet)
-                  <option value="{{$atlet->id}}">{{$atlet->atlet_name}}</option>
+                  <option value="{{$atlet->id}}" {{(old('atlet') == $atlet->id) ? 'selected':''}}>{{$atlet->atlet_name}}</option>
                 @endforeach
               </select>
+              @error('atlet')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="sk_date">Tanggal bayar</label>
@@ -129,12 +135,12 @@
               @enderror
             </div>
             <div class="form-group">
-              <label for="sk_bayar">Jumlah Tunai yang sudah dibayarkan</label>
+              <label for="sk_bayar">Jumlah Tunai yang dibayarkan</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-default">Rp</span>
                 </div>
-                <input type="text" name="sk_bayar" id="sk_bayar" class="form-control @error('sk_bayar') is-invalid @enderror rp" value="{{old('sk_bayar')}}">
+                <input type="number" name="sk_bayar" id="sk_bayar" class="form-control @error('sk_bayar') is-invalid @enderror" value="{{old('sk_bayar')}}" min="0.1" step="0.01" autocomplete="off">
                 @error('sk_bayar')
                   <div class="invalid-feedback">
                     {{$message}}

@@ -107,7 +107,7 @@
             @csrf
             <div class="form-group">
               <label for="hist_title">Judul</label>
-              <input type="text" name="hist_title" id="hist_title" class="form-style @error('hist_title') is-invalid @enderror" value="{{old('hist_title')}}">
+              <input type="text" name="hist_title" id="hist_title" class="form-style @error('hist_title') is-invalid @enderror" value="{{old('hist_title')}}" autocomplete="off">
               @error('hist_title')
                 <div class="invalid-feedback">
                   {{$message}}
@@ -125,7 +125,7 @@
             </div>
             <div class="form-group">
               <label for="hist_loc">Lokasi</label>
-              <input type="text" name="hist_loc" id="hist_loc" class="form-style @error('hist_loc') is-invalid @enderror" value="{{old('hist_loc')}}">
+              <input type="text" name="hist_loc" id="hist_loc" class="form-style @error('hist_loc') is-invalid @enderror" value="{{old('hist_loc')}}" autocomplete="off">
               @error('hist_loc')
                 <div class="invalid-feedback">
                   {{$message}}

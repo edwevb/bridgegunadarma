@@ -5,13 +5,13 @@
  		<div class="col-lg">
  			<section id="home"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
-				<div class="jumbotron bg-gradient-light">
+				<div class="jumbotron bg-light">
 					<header class="content-wrapper mb-5">
 						<div class="row">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
-							  <h1 class="display-4 text-danger text-shadow">Hello, Bridge Lovers!</h1>
+							  <h1 class="display-4 text-danger">Hello, Bridge Lovers!</h1>
 							  <p class="lead">Welcome to Bridge Gunadarma's website</p>
-							  <a href="#about" class="btn btn-primary btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
+							  <a href="#about" class="btn btn-dark btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
 								<article id="slider"> {{-- slider --}}
@@ -48,7 +48,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1 class="text-shadow">ATLET<i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1><span class="title">ATLET</span><i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="atlet-collapse">
           				<div class="p-3">
 		                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
@@ -80,7 +80,7 @@
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1 class="text-shadow">PRESTASI<i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1><span class="title">PRESTASI</span><i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="prestasi-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -115,7 +115,7 @@
 					 <article id="event"> {{-- event article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1 class="text-shadow">TOURNAMENT / EVENT<i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1><span class="title">TOURNAMENT/EVENT</span><i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="event-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -154,15 +154,21 @@
 	 			<div class="col-lg">
 				 	<div class="bridge-bg">
 				 		<div class="container pt-5">
-					 		<div class="bg-light rounded col-lg-6 mx-auto shadow">
+					 		<div class="bg-light rounded col-lg-10 mx-auto shadow">
 		 						<div class="my-3">
-									<div class="col-lg mx-auto rounded-circle p-4 about-border">
+									<div class="col-lg mx-auto rounded-circle pt-4">
 										<h1 class="text-shadow text-center text-dark">About</h1>
 									</div>
 								</div>
-				 				<div class="col-lg mx-auto text-center py-4">
+								<div class="row">
+									<div class="col-md-6 mx-auto text-justify py-4">
 						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
 							  </div>
+							  <div class="col-md-6 mx-auto text-justify py-4">
+						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+							  </div>
+								</div>
+				 				
 							</div>
 						  <article id="contact" class="mt-5">	
 				 				<div class="row justify-content-center px-2">

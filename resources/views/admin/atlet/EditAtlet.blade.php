@@ -32,7 +32,7 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="nik">NIK/NPM</label>
-                    <input type="text" name="nik" id="nik" class="form-style @error('nik') is-invalid @enderror" value="{{$atlet->nik}}">
+                    <input type="text" name="nik" id="nik" class="form-style @error('nik') is-invalid @enderror" value="{{$atlet->nik}}" autocomplete="off">
                     @error('nik')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -41,7 +41,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="atlet_name">Nama</label>
-                    <input type="text" name="atlet_name" id="atlet_name" class="form-style @error('atlet_name') is-invalid @enderror" value="{{$atlet->atlet_name}}">
+                    <input type="text" name="atlet_name" id="atlet_name" class="form-style @error('atlet_name') is-invalid @enderror" value="{{$atlet->atlet_name}}" autocomplete="off">
                     @error('atlet_name')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -61,23 +61,28 @@
                   </div>
                   <div class="form-group col-md-6">
                    <label for="gender">Jenis Kelamin</label><br>
-                   <?php $gender = ['male', 'female'] ?>
-                    <select class="form-style" name="gender" id="gender">
+                    <select class="form-style-static @error('gender') is-invalid @enderror" name="gender" id="gender">
+                      <option value="">Choose..</option>
                       <?php $gender = ['Male', 'Female'];
                       foreach($gender as $g):?>
-                      @if ($g == $atlet['gender'])
-                        <option value=" <?= $g; ?>" selected><?= $g ;?></option>
-                      @else
-                        <option value=" <?= $g; ?>"><?= $g ;?></option>
-                      @endif
+                        @if ($g == $atlet['gender'])
+                          <option value=" <?= $g; ?>" selected><?= $g ;?></option>
+                        @else
+                          <option value=" <?= $g; ?>"><?= $g ;?></option>
+                        @endif
                       <?php endforeach; ?>
                     </select>
+                    @error('gender')
+                      <div class="invalid-feedback">
+                        {{$message}}
+                      </div>
+                    @enderror
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="telp">No Telp</label>
-                    <input type="text" name="telp" id="telp" class="form-style @error('telp') is-invalid @enderror" value="{{$atlet->telp}}">
+                    <input type="tel" name="telp" id="telp" class="form-style @error('telp') is-invalid @enderror" value="{{$atlet->telp}}" autocomplete="off">
                     @error('telp')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -86,7 +91,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" class="form-style @error('email') is-invalid @enderror" value="{{$atlet->email}}">
+                    <input type="text" name="email" id="email" class="form-style @error('email') is-invalid @enderror" value="{{$atlet->email}}" autocomplete="off">
                     @error('email')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -121,7 +126,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="angkatan">Angkatan*</label>
-                    <input type="text" name="angkatan" id="angkatan" class="form-style @error('angkatan') is-invalid @enderror" value="{{$atlet->angkatan}}">
+                    <input type="text" name="angkatan" id="angkatan" class="form-style @error('angkatan') is-invalid @enderror" value="{{$atlet->angkatan}}" autocomplete="off">
                     @error('angkatan')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -134,13 +139,13 @@
                     <label for="fb">Social Media*</label>
                   </div>
                   <div class="col-md-4 mb-4">
-                    <input type="text" name="fb" id="fb" class="form-style @error('fb') is-invalid @enderror" value="{{$atlet->fb}}" placeholder="Facebook ID/URL">
+                    <input type="text" name="fb" id="fb" class="form-style @error('fb') is-invalid @enderror" value="{{$atlet->fb}}" placeholder="Facebook ID/URL" autocomplete="off">
                   </div>
                   <div class="col-md-4 mb-4">
-                    <input type="text" name="twt" id="twt" class="form-style @error('twt') is-invalid @enderror" value="{{$atlet->twt}}" placeholder="Twitter ID/URL">
+                    <input type="text" name="twt" id="twt" class="form-style @error('twt') is-invalid @enderror" value="{{$atlet->twt}}" placeholder="Twitter ID/URL" autocomplete="off">
                   </div>
                   <div class="col-md-4">
-                    <input type="text" name="ig" id="ig" class="form-style @error('ig') is-invalid @enderror" value="{{$atlet->ig}}" placeholder="Instagram ID/URL">
+                    <input type="text" name="ig" id="ig" class="form-style @error('ig') is-invalid @enderror" value="{{$atlet->ig}}" placeholder="Instagram ID/URL" autocomplete="off">
                   </div>
                 </div>
                 <div class="form-group">

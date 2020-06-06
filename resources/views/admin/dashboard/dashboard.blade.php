@@ -215,7 +215,7 @@
             @csrf
             <div class="form-group">
               <label for="ann_title">Judul</label>
-              <input type="text" name="ann_title" id="ann_title" class="form-style" value="{{$data_ann->ann_title}}" required>
+              <input type="text" name="ann_title" id="ann_title" class="form-style" value="{{$data_ann->ann_title}}" required autocomplete="off">
             </div>
             <div class="form-group">
               <label>Deskripsi</label>

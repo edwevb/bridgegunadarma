@@ -103,7 +103,7 @@
             @csrf
             <div class="form-group">
               <label for="pre_title">Nama Tournament / Event</label>
-              <input type="text" name="pre_title" id="pre_title" class="form-style @error('pre_title') is-invalid @enderror" value="{{old('pre_title')}}">
+              <input type="text" name="pre_title" id="pre_title" class="form-style @error('pre_title') is-invalid @enderror" value="{{old('pre_title')}}" autocomplete="off">
               @error('pre_title')
                 <div class="invalid-feedback">
                   {{$message}}

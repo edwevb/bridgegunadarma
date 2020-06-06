@@ -23,7 +23,6 @@
 	            <form method="post" action="{{ url('/user/'.$user->id) }}">
 	              @method('patch')
 	              @csrf
-	              <input type="hidden" name="remember_token" value="{{$user->remember_token}}">
 		            <div class="row">
 		              <div class="form-group col-md-6">
 		                <label for="name">Nama</label>
@@ -36,10 +35,17 @@
 		            <div class="row">
 		            	<div class="form-group col-md-6">
 		                <label for="role_id">Role | Level</label>
-		                 <select class="form-style-static" name="role_id" id="role_id">
-		                  <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>
-		                  <option value="1" {{(old('role_id') == '1') ? 'selected' : ''}}>Admin</option>
-		                </select>
+		                 <select class="form-style-static @error('role_id') is-invalid @enderror" name="role_id" id="role_id">
+		                 	<option value="">Choose..</option>
+                      <?php $role_id = [0,1];
+                      foreach($role_id as $role):?>
+	                      @if ($role == $user['role_id'])
+	                        <option value=" <?= $role; ?>" selected><?= $role ;?></option>
+	                      @else
+	                        <option value=" <?= $role; ?>"><?= $role ;?></option>
+	                      @endif
+                      <?php endforeach; ?>
+                    </select>
 		                @error('role_id')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -48,7 +54,7 @@
 		              </div>
 		              <div class="form-group col-md-6">
 		                <label for="email">Email</label>
-		                <input type="text" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{$user->email}}">
+		                <input type="text" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{$user->email}}" autocomplete="off">
 		                @error('email')
 		                  <div class="invalid-feedback">
 		                    {{$message}}

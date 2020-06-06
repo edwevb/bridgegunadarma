@@ -25,6 +25,7 @@ class IuranSkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'pta_ata'  => 'required',
             'sk_tahun' => 'required|max:16'
         ]);
 
@@ -63,6 +64,7 @@ class IuranSkController extends Controller
     public function addAtlet(Request $request, IuranSk $iuranSk)
     {
          $request->validate([
+            'atlet' => 'required',
             'sk_date'  => 'required|date',
             'sk_bayar' => 'required|numeric|between:0.1,999999999999.999'
         ]);

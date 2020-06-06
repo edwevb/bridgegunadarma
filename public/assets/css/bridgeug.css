@@ -627,11 +627,12 @@ small.form-text{
 #header-article{
   text-decoration: none;
   color: #343a40;
-  transition: opacity 0.5s;
+  text-shadow: none;
 }
 
-#header-article:hover{
-  opacity: 0.5;
+#header-article .title:hover{
+  color: #dc3545;
+  transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .about-border{

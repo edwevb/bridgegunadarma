@@ -33,7 +33,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="p_title">Title</label>
-                  <input type="text" name="p_title" id="p_title" class="form-style @error('p_title') is-invalid @enderror" value="{{$pengeluaran->p_title}}">
+                  <input type="text" name="p_title" id="p_title" class="form-style @error('p_title') is-invalid @enderror" value="{{$pengeluaran->p_title}}" autocomplete="off">
                   @error('p_title')
                     <div class="invalid-feedback">
                       {{$message}}
@@ -56,7 +56,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Rp</span>
                   </div>
-                  <input type="text" name="p_biaya" id="p_biaya" class="form-control @error('p_biaya') is-invalid @enderror rp" value="{{$pengeluaran->p_biaya}}">
+                  <input type="number" name="p_biaya" id="p_biaya" class="form-control @error('p_biaya') is-invalid @enderror rp" value="{{$pengeluaran->p_biaya}}" min="0.1" step="0.01" autocomplete="off">
                   @error('p_biaya')
                     <div class="invalid-feedback">
                       {{$message}}

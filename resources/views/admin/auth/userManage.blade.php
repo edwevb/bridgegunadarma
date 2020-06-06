@@ -97,11 +97,10 @@
         <div class="modal-body">
           <form method="post" action="{{ url('/user') }}">
             @csrf
-						<input type="hidden" name="remember_token" value="{{csrf_token()}}">
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Nama</label>
-              	<input type="text" name="name" id="name" class="form-style  @error('name') is-invalid @enderror" value="{{old('name')}}">
+              	<input type="text" name="name" id="name" class="form-style  @error('name') is-invalid @enderror" value="{{old('name')}}" autocomplete="off">
                 @error('name')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -112,7 +111,8 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="role_id">Role | Level</label>
-                 <select class="form-style-static" name="role_id" id="role_id">
+                 <select class="form-style-static @error('role_id') is-invalid @enderror" name="role_id" id="role_id">
+                  <option value="">Choose..</option>
                   <option value="1" {{(old('role_id') == '1') ? 'selected' : ''}}>Admin</option>
                   <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>
                 </select>
@@ -124,7 +124,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{old('email')}}">
+                <input type="text" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{old('email')}}" autocomplete="off">
                 @error('email')
                   <div class="invalid-feedback">
                     {{$message}}

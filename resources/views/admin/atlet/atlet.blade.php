@@ -108,14 +108,14 @@
                 <label for="atlet_name">Nama</label>
                 <input type="text" name="atlet_name" id="atlet_name" class="form-style  @error('atlet_name') is-invalid @enderror" value="{{old('atlet_name')}}">
                 @error('atlet_name')
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" autocomplete="off">
                     {{$message}}
                   </div>
                 @enderror
               </div>
               <div class="form-group col-md-6">
                 <label for="nik">NIK/NPM</label>
-                <input type="text" name="nik" id="nik" class="form-style  @error('nik') is-invalid @enderror" value="{{old('nik')}}">
+                <input type="text" name="nik" id="nik" class="form-style  @error('nik') is-invalid @enderror" value="{{old('nik')}}" autocomplete="off">
                 @error('nik')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -135,7 +135,8 @@
               </div>
               <div class="form-group col-md-6">
                <label for="gender">Jenis Kelamin</label>
-                <select class="form-style" name="gender" id="gender">
+                <select class="form-style-static @error('gender') is-invalid @enderror" name="gender" id="gender">
+                  <option value="">Choose..</option>
                   <option value="Male" {{(old('gender') == 'Male') ? 'selected' : ''}}>Male</option>
                   <option value="Female" {{(old('gender') == 'Female') ? 'selected' : ''}}>Female</option>
                 </select>
@@ -149,7 +150,7 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="telp">Telp</label>
-                <input type="text" name="telp" id="telp" class="form-style  @error('telp') is-invalid @enderror" value="{{old('telp')}}">
+                <input type="tel" name="telp" id="telp" class="form-style  @error('telp') is-invalid @enderror" value="{{old('telp')}}" autocomplete="off">
                 @error('telp')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -158,7 +159,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{old('email')}}">
+                <input type="email" name="email" id="email" class="form-style  @error('email') is-invalid @enderror" value="{{old('email')}}" autocomplete="off">
                 @error('email')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -193,7 +194,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="angkatan">Angkatan*</label>
-                <input type="text" name="angkatan" id="angkatan" class="form-style  @error('angkatan') is-invalid @enderror" value="{{old('angkatan')}}">
+                <input type="text" name="angkatan" id="angkatan" class="form-style  @error('angkatan') is-invalid @enderror" value="{{old('angkatan')}}" autocomplete="off">
                 @error('angkatan')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -206,13 +207,13 @@
                 <label for="fb">Social Media*</label>
               </div>
               <div class="col-md-4">
-                <input type="text" name="fb" id="fb" class="form-style  @error('fb') is-invalid @enderror" value="{{old('fb')}}" placeholder="Facebook ID/URL">
+                <input type="text" name="fb" id="fb" class="form-style  @error('fb') is-invalid @enderror" value="{{old('fb')}}" placeholder="Facebook ID/URL" autocomplete="off">
               </div>
               <div class="col-md-4">
-                <input type="text" name="twt" id="twt" class="form-style  @error('twt') is-invalid @enderror" value="{{old('twt')}}" placeholder="Twitter ID/URL">
+                <input type="text" name="twt" id="twt" class="form-style  @error('twt') is-invalid @enderror" value="{{old('twt')}}" placeholder="Twitter ID/URL" autocomplete="off">
               </div>
               <div class="col-md-4">
-                <input type="text" name="ig" id="ig" class="form-style  @error('ig') is-invalid @enderror" value="{{old('ig')}}" placeholder="Instagram ID/URL">
+                <input type="text" name="ig" id="ig" class="form-style  @error('ig') is-invalid @enderror" value="{{old('ig')}}" placeholder="Instagram ID/URL" autocomplete="off">
               </div>
             </div>
             <div class="form-group row">

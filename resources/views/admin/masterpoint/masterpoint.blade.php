@@ -109,9 +109,7 @@
                 <select class="form-style-static" name="atlet_id" id="atlet_id">
 	                @foreach ($data_atlet as $atlet)
                     <option value="{{$atlet->id}}" {{ old('atlet_id') == $atlet->id ? 'selected' : ''}}>
-                      {{$atlet->atlet_name}}
-                    </option>
-	                  {{-- <option value="{{$atlet->id}}">{{$atlet->atlet_name}}</option> --}}
+                      {{$atlet->atlet_name}}</option>
 	                @endforeach
 	              </select>
                 @error('atlet_id')
@@ -124,7 +122,7 @@
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="discipline">Kedisiplinan</label>
-                <input type="text" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" value="{{old('discipline')}}">
+                <input type="number" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" value="{{old('discipline')}}" autocomplete="off">
                 @error('discipline')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -133,7 +131,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="bidding">Penguasaan Sistem</label>
-                <input type="text" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" value="{{old('bidding')}}">
+                <input type="number" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" value="{{old('bidding')}}" autocomplete="off">
                 @error('bidding')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -142,7 +140,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="play">Teknik Play</label>
-                <input type="text" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{old('play')}}">
+                <input type="number" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{old('play')}}" autocomplete="off">
                 @error('play')
                   <div class="invalid-feedback">
                     {{$message}}

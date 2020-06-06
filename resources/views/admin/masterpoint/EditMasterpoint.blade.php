@@ -35,7 +35,7 @@
 	              <div class="row">
 		              <div class="form-group col-md-4">
 		                <label for="discipline">Kedisiplinan</label>
-		                <input type="text" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" value="{{$masterpoint->discipline}}">
+		                <input type="text" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" value="{{$masterpoint->discipline}}" autocomplete="off">
 		                @error('discipline')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -44,7 +44,7 @@
 		              </div>
 		              <div class="form-group col-md-4">
 		                <label for="bidding">Penguasaan Sistem</label>
-		                <input type="text" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" value="{{$masterpoint->bidding}}">
+		                <input type="text" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" value="{{$masterpoint->bidding}}" autocomplete="off">
 		                @error('bidding')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -53,7 +53,7 @@
 		              </div>
 		              <div class="form-group col-md-4">
 		                <label for="play">Teknik Play</label>
-		                <input type="text" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{$masterpoint->play}}">
+		                <input type="text" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{$masterpoint->play}}" autocomplete="off">
 		                @error('play')
 		                  <div class="invalid-feedback">
 		                    {{$message}}

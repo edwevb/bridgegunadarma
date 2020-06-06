@@ -4,7 +4,7 @@
 	<article id="atlet" class="content-mobile"> {{-- atlet article --}}
 		<div class="col-md mt-1 text-center bg-gradient-light rounded">
 			<div class="p-2">
-				<div class="text-dark text-shadow mx-auto my-4">
+				<div class="text-dark mx-auto my-4">
     			<h1>List Atlet Bridge Gunadarma</h1>
     			<hr class="bg-gradient-success w-50" style="border-width: 3px;">
     		</div>

@@ -3,7 +3,7 @@
 @section('content')
 	<article id="prestasi"> {{-- prestasi article --}}
 		<div class="p-5 bg-gradient-light text-center rounded content-mobile">
-			<div class="text-shadow text-dark mx-auto my-4">
+			<div class="text-dark mx-auto my-4">
     		<h1>List Prestasi Bridge Gunadarma</h1>
     		<hr class="bg-gradient-info w-50" style="border-width: 3px;">
     	</div>

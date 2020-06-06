@@ -31,7 +31,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="mat_title">Title</label>
-                  <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{$materi->mat_title}}">
+                  <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{$materi->mat_title}}" autocomplete="off">
                   @error('mat_title')
                     <div class="invalid-feedback">
                       {{$message}}

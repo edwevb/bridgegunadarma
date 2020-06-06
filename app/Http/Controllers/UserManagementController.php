@@ -18,10 +18,10 @@ class UserManagementController extends Controller
         $request->validate([
             'name'             => 'required|alpha_spaces|max:64',
             'email'            => 'required|unique:users|email',
+            'role_id'          => 'required',
             'password'         => 'required|min:6',
             'confirm_password' => 'required|min:6|same:password'
         ]);
-
         $user = new User;
         $user->name           = $request->name;
         $user->role_id        = $request->role_id;
@@ -42,6 +42,7 @@ class UserManagementController extends Controller
     	$request->validate([
 			'email'            => 'required|email',
 			'password'         => 'required|min:6',
+            'role_id'          => 'required',
 			'confirm_password' => 'required|min:6|same:password'
         ]);
 
@@ -51,7 +52,7 @@ class UserManagementController extends Controller
 				'role_id'        => $request->role_id,
 				'email'          => $request->email,
 				'password'       => bcrypt($request->password),
-				'remember_token' => $request->remember_token
+				'remember_token' => $user->remember_token
             ]);
             
         return redirect('/user')->with('AlertSuccess','Data '.$user->username.' berhasil diperbaharui!');
