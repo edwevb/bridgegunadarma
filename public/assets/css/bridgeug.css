@@ -711,7 +711,7 @@ small.form-text{
 
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 400px;}
+  to{width: 380px;}
 }
 
 .startContent{
