@@ -52,7 +52,7 @@
 	      {
 	         setTimeout(function(){
 	          $('.moreEvent').eq(i).addClass('moreEventShow'); 
-	         }, 300*(i+1));
+	         }, 1000*(i+1));
 	      });
 	    });
 	  </script>
