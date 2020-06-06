@@ -6,11 +6,11 @@
  			<section id="home"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
 				<div class="jumbotron bg-light">
-					<header class="content-wrapper mb-5">
-						<div class="row">{{-- row welcome --}}
+					<header class="content-wrapper mb-5 startContent">
+						<div class="row showContent">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
 							  <h1 class="display-4 text-danger">Hello, Bridge Lovers!</h1>
-							  <p class="lead">Welcome to Bridge Gunadarma's website</p>
+							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
 							  <a href="#about" class="btn btn-dark btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
@@ -32,14 +32,6 @@
 									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
 									    </div>
 									  </div>
-									  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-									    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									    <span class="sr-only">Previous</span>
-									  </a>
-									  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-									    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-									    <span class="sr-only">Next</span>
-									  </a>
 									</div>
 							 	</article> {{-- end slider --}}
 							</div>
@@ -48,7 +40,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1><span class="title">ATLET</span><i class="fa fa-fw fa-caret-down bg-gradient-success rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#atlet-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse"><h1><span class="title">ATLET</span><br><i class="fa fa-fw fa-caret-down fa-2x text-success"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="atlet-collapse">
           				<div class="p-3">
 		                <div class="row justify-content-center row-cols-1 row-cols-lg-3" >
@@ -80,7 +72,7 @@
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1><span class="title">PRESTASI</span><i class="fa fa-fw fa-caret-down  bg-gradient-info rounded-circle ml-2"></i></h1></a>
+      					<a id="header-article" href="#prestasi-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse"><h1><span class="title">PRESTASI</span><br><i class="fa fa-fw fa-caret-down fa-2x text-info"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="prestasi-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -115,7 +107,7 @@
 					 <article id="event"> {{-- event article --}}
 					  <div class="card-borderless">
           		<div class="p-1 text-center">
-        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1><span class="title">TOURNAMENT/EVENT</span><i class="fa fa-fw fa-caret-down  bg-gradient-warning rounded-circle ml-2"></i></h1></a>
+        				<a id="header-article" href="#event-collapse" class="text-shadow" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse"><h1><span class="title">TOURNAMENT/EVENT</span><br><i class="fa fa-fw fa-caret-down fa-2x text-warning"></i></h1></a>
           			<div class="collapse hide bg-transparent" id="event-collapse">
           				<div class="p-4">
 			            	<div class="card-borderless">
@@ -154,28 +146,28 @@
 	 			<div class="col-lg">
 				 	<div class="bridge-bg">
 				 		<div class="container pt-5">
-					 		<div class="bg-light rounded col-lg-10 mx-auto shadow">
-		 						<div class="my-3">
-									<div class="col-lg mx-auto rounded-circle pt-4">
-										<h1 class="text-shadow text-center text-dark">About</h1>
+					 		<div class="bg-light rounded col-lg-10 mx-auto shadow about">
+		 						<div class="p-2">
+									<div class="mt-4 showAbout">
+										<h1 class="text-center">ABOUT</h1>
 									</div>
+									<hr id="bridgeHr" class="bg-gradient-primary" width="200">
 								</div>
 								<div class="row">
-									<div class="col-md-6 mx-auto text-justify py-4">
-						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
-							  </div>
-							  <div class="col-md-6 mx-auto text-justify py-4">
-						  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
-							  </div>
+									<div class="col-md-6 mx-auto text-justify py-2">
+							  		<p class="aboutLeft">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+								  </div>
+								  <div class="col-md-6 mx-auto text-justify py-2">
+							  		<p class="aboutRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+								  </div>
 								</div>
-				 				
 							</div>
 						  <article id="contact" class="mt-5">	
-				 				<div class="row justify-content-center px-2">
-				 					<div class="col-lg-5 mt-2 bg-primary rounded">
+				 				<div class="row justify-content-center px-2 contact">
+				 					<div class="col-lg-5 mt-2 bg-gradient-primary rounded showContact1">
 				 						<div class="card-borderless text-white bg-transparent">
 										  <div class="card-body">
-										  	<h1 class="text-shadow font-weight-bold">Contact</h1>
+										  	<h1 class="text-shadow font-weight-bold">CONTACT</h1>
 										  		<hr id="bridgeHr">
 										  	<h2 class="card-title ml-2"><i class="fas fa-mobile-alt"></i></h2>
 										    <p class="card-text ml-2">xxxx-xxxx-xxxx</p>
@@ -188,7 +180,7 @@
 										  </div>
 										</div> {{-- end card --}}
 				 					</div> {{-- end card row --}}
-				 					<div class="col-lg-5 rounded bg-light mt-2 p-3">
+				 					<div class="col-lg-5 rounded bg-light mt-2 p-3 showContact2">
 				 						<h2 class="card-title"><i class="fas fa-map-marked-alt"></i></h2>
 								    <p class="card-text">Universitas Gunadarma, Kampus C Salemba, Jakarta Pusat.</p>
 				 							<iframe class="rounded col-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8404.702815305292!2d106.85095023492941!3d-6.198698104947517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4680ba8956b%3A0x6ce461d1f179ab40!2sJl.%20Murtado%203%20No.33%2C%20RT.11%2FRW.5%2C%20Paseban%2C%20Kec.%20Senen%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010440!5e0!3m2!1sen!2sid!4v1589984686992!5m2!1sen!2sid" height="250" width="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

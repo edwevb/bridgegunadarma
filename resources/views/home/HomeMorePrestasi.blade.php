@@ -9,8 +9,8 @@
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_prestasi as $prestasi)
-					<div class="px-1 mb-5">
-					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
+					<div class="px-1 mb-5 morePrestasi">
+					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info morePrestasiShow">
 					  	<div class="col-md p-2">
 					  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="{!!$prestasi->pre_title!!}">
 					  	</div>
@@ -30,4 +30,31 @@
 			<a href="{{ url('/') }}" class="btn btn-dark rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
 		</div>
   </article>{{-- end prestasi --}}
+  @section('script')
+	  <script>
+	    //Back to top
+	    $(document).ready(function(){ 
+	      $(window).scroll(function(){ 
+	          if ($(this).scrollTop() > 400) { 
+	              $('#scroll').fadeIn(); 
+	          } else { 
+	              $('#scroll').fadeOut(); 
+	          } 
+	      }); 
+	      $('#scroll').click(function(){ 
+	          $("html, body").animate({ scrollTop: 0 }, 600); 
+	          return false; 
+	      }); 
+	    });
+
+	    $(window).on('load', function(){
+	      $('.morePrestasi').each(function(i)
+	      {
+	         setTimeout(function(){
+	          $('.morePrestasi').eq(i).addClass('morePrestasiShow'); 
+	         }, 300*(i+1));
+	      });
+	    });
+	  </script>
+	@stop
 @endsection

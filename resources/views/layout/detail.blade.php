@@ -106,23 +106,8 @@
   {{-- <script src="{{ asset('assets/js/bridge/bridge-popper.js') }}"></script>
   <script src="{{ asset('assets/js/bridge/bridge.js') }}"></script> --}}
   {{-- <script src="{{ asset('assets/js/bridge/bridge-home.js') }}"></script> --}}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    //Back to top
-    $(document).ready(function(){ 
-      $(window).scroll(function(){ 
-          if ($(this).scrollTop() > 400) { 
-              $('#scroll').fadeIn(); 
-          } else { 
-              $('#scroll').fadeOut(); 
-          } 
-      }); 
-      $('#scroll').click(function(){ 
-          $("html, body").animate({ scrollTop: 0 }, 600); 
-          return false; 
-      }); 
-    });
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  @yield('script')
   </body>
 </html>
 

@@ -44,10 +44,6 @@
 </head>
   {{-- sidebar --}}
   <body class="bg-dark">
-  {{-- <script>
-  alert('Direkomendasikan untuk membuka halaman website ini dengan browser GOOGLE CHROME');
-  </script> --}}
-  {{-- Top menu --}}
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
@@ -119,41 +115,7 @@
   <script src="{{ asset('assets/js/bridge/bridge.js') }}"></script> --}}
   {{-- <script src="{{ asset('assets/js/bridge/bridge-home.js') }}"></script> --}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    //smooth scroll
-    $(document).ready(function(){
-      $(".js-scroll-trigger").on('click', function(event) {
-
-        if (this.hash !== "") {
-          event.preventDefault();
-
-          var hash = this.hash;
-
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top - 150
-          }, 1000, function(){
-
-            // window.location.hash = hash;
-          });
-        }
-      });
-    });
-
-    //Back to top
-    $(document).ready(function(){ 
-      $(window).scroll(function(){ 
-          if ($(this).scrollTop() > 400) { 
-              $('#scroll').fadeIn(); 
-          } else { 
-              $('#scroll').fadeOut(); 
-          } 
-      }); 
-      $('#scroll').click(function(){ 
-          $("html, body").animate({ scrollTop: 0 }, 600); 
-          return false; 
-      }); 
-    });
-  </script>
+  <script src="{{ asset('assets/js/bridge/bridge-home.js') }}"></script>
   </body>
 </html>
 

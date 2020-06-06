@@ -1,38 +1,55 @@
-/*// Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top - 50
-        }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-        });
+//smooth scroll
+    $(document).ready(function(){
+      $(".js-scroll-trigger").on('click', function(event) {
+
+        if (this.hash !== "") {
+          event.preventDefault();
+
+          var hash = this.hash;
+
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - 130
+          }, 1000, function(){
+
+            // window.location.hash = hash;
+          });
+        }
+      });
+    });
+
+    //Back to top
+    $(document).ready(function(){ 
+      $(window).scroll(function(){ 
+          if ($(this).scrollTop() > 400) { 
+              $('#scroll').fadeIn(); 
+          } else { 
+              $('#scroll').fadeOut(); 
+          } 
+      }); 
+      $('#scroll').click(function(){ 
+          $("html, body").animate({ scrollTop: 0 }, 600); 
+          return false; 
+      }); 
+    });
+
+    $(window).on('load', function()
+    {
+        $('.startContent').addClass('showContent');
+    });
+
+    $(window).scroll(function(){
+      var wScroll = $(this).scrollTop();
+
+      if (wScroll > $('.about').offset().top - 300)
+      {
+        $('.about').addClass('showAbout');
+        $('.about').addClass('aboutLeft');
+        $('.about').addClass('aboutRight');
       }
-    }
-  });
 
-
-
-  //popover
-$(function()
-{
-  $("[data-toggle=popover]").popover();
-});*/
+      if (wScroll > $('.contact').offset().top - 300)
+      {
+        $('.contact').addClass('showContact1');
+        $('.contact').addClass('showContact2');
+      }
+    });

@@ -22,6 +22,7 @@
   --dark: #343a40;
 }
 
+
 @font-face{
   font-family: OpenSans-R;
   src :url('OpenSans-Regular.ttf');
@@ -632,11 +633,11 @@ small.form-text{
 }
 
 #header-article .title{
-  transition: color 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #header-article .title:hover{
-  color: #dc3545;
+  opacity: 0.8;
 }
 
 .about-border{
@@ -698,6 +699,32 @@ small.form-text{
   transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
+#home .textWrite {
+  white-space: nowrap;
+  overflow: hidden;    
+  animation: animated-text 4s linear 1s 1 normal both;
+}
+
+#drop-icon{
+   white-space: pre-line;
+}
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
+}
+
+.startContent{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.showContent{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .bx-none{
   box-shadow: none !important;
 }
@@ -713,6 +740,67 @@ small.form-text{
   letter-spacing: 2px;
   font-weight: 400;
 }
+
+.about{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.showAbout{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.aboutLeft, .aboutRight{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.contact{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.showContact1, .showContact2{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.moreAtlet{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.moreAtletShow{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.morePrestasi{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.morePrestasiShow{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.moreEvent{
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: .5s;
+}
+
+.moreEventShow{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 
 .footer{
   margin-top : 20px;

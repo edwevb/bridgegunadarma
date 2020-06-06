@@ -8,10 +8,10 @@
     			<h1>List Atlet Bridge Gunadarma</h1>
     			<hr class="bg-gradient-success w-50" style="border-width: 3px;">
     		</div>
-	      <div class="row justify-content-center row-cols-1 row-cols-md-3" >
+	      <div class="row justify-content-center row-cols-1 row-cols-md-3 ">
 					@foreach ($data_atlet as $atlet)
-					<div class="px-1 mb-5">
-					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
+					<div class="px-1 mb-5 moreAtlet">
+					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success moreAtletShow">
 					  	<div class="col-md p-2">
 					  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded text-muted" alt="{!!$atlet->atlet_name!!}">
 					  	</div>
@@ -31,4 +31,31 @@
 	    </div>
 		</div>
   </article>{{-- end atlet --}}
+  @section('script')
+	  <script>
+	    //Back to top
+	    $(document).ready(function(){ 
+	      $(window).scroll(function(){ 
+	          if ($(this).scrollTop() > 400) { 
+	              $('#scroll').fadeIn(); 
+	          } else { 
+	              $('#scroll').fadeOut(); 
+	          } 
+	      }); 
+	      $('#scroll').click(function(){ 
+	          $("html, body").animate({ scrollTop: 0 }, 600); 
+	          return false; 
+	      }); 
+	    });
+
+	    $(window).on('load', function(){
+	      $('.moreAtlet').each(function(i)
+	      {
+	         setTimeout(function(){
+	          $('.moreAtlet').eq(i).addClass('moreAtletShow'); 
+	         }, 300*(i+1));
+	      });
+	    });
+	  </script>
+	@stop
 @endsection

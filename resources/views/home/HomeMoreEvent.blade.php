@@ -9,8 +9,8 @@
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_event as $event)
-					<div class="px-1 mb-5">
-					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
+					<div class="px-1 mb-5 moreEvent">
+					  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning moreEventShow">
 					  	<div class="col-md p-2">
 					  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-muted" alt="{!!$event->eve_title!!}">
 					  	</div>
@@ -21,7 +21,7 @@
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailevent/'.$event->id) }}" class="btn btn-warning p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn btn-warning p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>
@@ -30,4 +30,31 @@
 			<a href="{{ url('/') }}" class="btn btn-dark rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
 		</div>
   </article>{{-- end event --}}
+  @section('script')
+	  <script>
+	    //Back to top
+	    $(document).ready(function(){ 
+	      $(window).scroll(function(){ 
+	          if ($(this).scrollTop() > 400) { 
+	              $('#scroll').fadeIn(); 
+	          } else { 
+	              $('#scroll').fadeOut(); 
+	          } 
+	      }); 
+	      $('#scroll').click(function(){ 
+	          $("html, body").animate({ scrollTop: 0 }, 600); 
+	          return false; 
+	      }); 
+	    });
+
+	    $(window).on('load', function(){
+	      $('.moreEvent').each(function(i)
+	      {
+	         setTimeout(function(){
+	          $('.moreEvent').eq(i).addClass('moreEventShow'); 
+	         }, 300*(i+1));
+	      });
+	    });
+	  </script>
+	@stop
 @endsection
