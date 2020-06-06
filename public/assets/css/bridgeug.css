@@ -628,6 +628,10 @@ small.form-text{
   text-decoration: none;
   color: #343a40;
   text-shadow: none;
+  
+}
+
+#header-article .title{
   transition: color 0.5s ease-in-out;
 }
 
