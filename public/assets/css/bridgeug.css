@@ -628,11 +628,11 @@ small.form-text{
   text-decoration: none;
   color: #343a40;
   text-shadow: none;
+  transition: color 0.5s ease-in-out;
 }
 
 #header-article .title:hover{
   color: #dc3545;
-  transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .about-border{
