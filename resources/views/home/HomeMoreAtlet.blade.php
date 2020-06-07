@@ -53,7 +53,7 @@
 	      {
 	         setTimeout(function(){
 	          $('.moreAtlet').eq(i).addClass('moreAtletShow'); 
-	         }, 300*i);
+	         }, 1000*i);
 	      });
 	    });
 	  </script>

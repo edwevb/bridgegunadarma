@@ -38,7 +38,7 @@
 						</div> {{-- end row welcome --}}
 					</header>
 				  <article id="atlet"> {{-- atlet article --}}
-					  <div class="col">
+					  <div class="d-block">
           		<div class="p-1 text-center">
       					<a id="header-article" href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-success"></i></a>
           			<div class="collapse hide bg-transparent" id="atlet-collapse">
@@ -70,7 +70,7 @@
 	        </article>{{-- end atlet --}}
 					<hr id="bridgeHr" class="my-5 col-6">
 					<article id="prestasi"> {{-- prestasi article --}}
-					  <div class="col">
+					  <div class="d-block">
           		<div class="p-1 text-center">
       					<a id="header-article" href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-info"></i></a>
           			<div class="collapse hide bg-transparent" id="prestasi-collapse">
@@ -105,7 +105,7 @@
 	        </article>{{-- end prestasi --}}
 	        <hr id="bridgeHr" class="my-5 col-6">
 					 <article id="event"> {{-- event article --}}
-					  <div class="col">
+					  <div class="d-block">
           		<div class="p-1 text-center">
         				<a id="header-article" href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-warning"></i></a>
           			<div class="collapse hide bg-transparent" id="event-collapse">
@@ -143,7 +143,7 @@
  		</div>
 		<section id="about">
 			<div class="no-gutters">
-	 			<div class="col-lg">
+	 			<div class="d-block">
 				 	<div class="bridge-bg">
 				 		<div class="container pt-5">
 					 		<div class="bg-light rounded col-lg-10 mx-auto shadow about">
