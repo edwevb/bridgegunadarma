@@ -11,7 +11,7 @@
 	        	</div>
 	          <div class="row">
 	            <div class="col-md-6 mb-4">{{-- content 1 --}}
-	              <div class="text-center px-3">
+	              <div class="text-center px-3" id="atlet">
               		<img class="shadow-lg col rounded p-2 bg-dark text-white" alt="{{$atlet->atlet_name}}" src="{{ url('/assets/img/img_atlet/'.$atlet->img_atlet) }}">
 	              </div>
 	              <div class="text-center mt-4">

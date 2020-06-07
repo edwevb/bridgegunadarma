@@ -13,7 +13,7 @@
             	<div class="card-borderless rounded p-1">
             		<div class="row">
             			<div class="col-md-6">
-	            			<div class="text-center">
+	            			<div class="text-center" id="prestasi">
 		              		<img class="shadow col-md rounded p-1 bg-dark text-white" alt="{{$prestasi->pre_title}}" src="{{ url('/assets/img/img_pre/'.$prestasi->img_pre) }}">
 			              </div>
 	            		</div>

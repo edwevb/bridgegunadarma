@@ -11,7 +11,7 @@
 							{{-- content 1 --}}
 							<div class="col-md-6">
 								<div class="text-center">
-									<div class="text-center px-3">
+									<div class="text-center px-3" id="event">
 	              		<img class="shadow-lg col-md rounded p-1 text-white bg-dark" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
 		              </div>
 		              <div class="text-center my-4">
