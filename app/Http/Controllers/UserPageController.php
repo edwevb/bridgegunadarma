@@ -18,7 +18,7 @@ class UserPageController extends Controller
 
     public function _materi()
     {
-		$data_materi = Materi::orderBy('mat_date','ASC')->get();
+		$data_materi = Materi::orderBy('mat_date','DESC')->get();
 		return view('user._materi',compact('data_materi'));
     }
 
@@ -44,7 +44,7 @@ class UserPageController extends Controller
 
     public function _history()
     {
-		$data_history = History::orderBy('hist_date','ASC')->get();
+		$data_history = History::orderBy('hist_date','DESC')->get();
 		return view('user._history',compact('data_history'));
     }
 
@@ -70,7 +70,12 @@ class UserPageController extends Controller
 
     public function _masterpoint()
     {
-		$data_mpoint = Masterpoint::all()->sortByDesc('atlet_id');
+		$data_mpoint = Masterpoint::all();
+        $data_mpoint->map(function($avg){
+                            $avg->AvarageMasterpoint = $avg->AvarageMasterpoint();
+                            return $avg;
+                        });
+        $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint');
 		return view('user._masterpoint',compact('data_mpoint'));
     }
 

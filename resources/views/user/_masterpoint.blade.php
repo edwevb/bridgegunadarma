@@ -23,6 +23,7 @@
                     <th class="text-center" scope="col">Kedisplinan</th>
                     <th class="text-center" scope="col">Penguasaan Sistem</th>
                     <th class="text-center" scope="col">Teknik Play</th>
+                     <th class="text-center" scope="col">Avarage</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,9 @@
                     <td class="text-center">{{$mp->discipline}}</td>
                     <td class="text-center">{{$mp->bidding}}</td>
                     <td class="text-center">{{$mp->play}}</td>
+                    <td class="text-center">
+                        {{number_format($mp->AvarageMasterpoint(),2)}}
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
