@@ -350,9 +350,28 @@ small.form-text{
   display: none;
 }
 
+.collapsing {
+    transition: 1s;
+}
+
 @media (min-width: 576px)
 {
+
 }
+
+@media (min-width: 75px)
+{
+  .title{
+    font-family: 'HeaderContent';
+    font-size: 6vh;
+    letter-spacing: 2px;
+    overflow: 0;
+    margin :0;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+
 
 @media (min-width: 992px)
 { 
@@ -425,6 +444,15 @@ small.form-text{
     background-color: #fff !important;
     color: #000 !important;
     font-weight: bold;
+  }
+
+  .title{
+    font-family: 'HeaderContent';
+    font-size: 9vh;
+    letter-spacing: 2px;
+    overflow: 0;
+    margin :0;
+    transition: opacity 0.5s ease-in-out;
   }
 }
 
@@ -632,12 +660,9 @@ small.form-text{
   
 }
 
-#header-article .title{
-  transition: opacity 0.5s ease-in-out;
-}
 
-#header-article .title:hover{
-  opacity: 0.8;
+.title:hover{
+  opacity: 0.75;
 }
 
 .about-border{
