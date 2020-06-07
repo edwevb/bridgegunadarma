@@ -3,7 +3,7 @@
  @section('section')
  	<div class="content-mobile no-gutters">
  		<div class="col-lg">
- 			<section id="home"> {{-- main --}}
+ 			<section id="home" class="bg-light pb-2"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
 				<div class="jumbotron bg-transparent">
 					<header class="content-wrapper mb-5 startContent">

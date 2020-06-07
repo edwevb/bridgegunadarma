@@ -43,7 +43,7 @@
   </style>
 </head>
   {{-- sidebar --}}
-  <body class="bg-light">
+  <body class="bg-dark">
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-purple shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">

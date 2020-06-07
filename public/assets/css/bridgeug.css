@@ -259,11 +259,11 @@ form label, .file-desc{
 .navbar-brand a{
   text-decoration: none !important;
   color:#fff ;
-  transition: opacity 1s;
+  transition: opacity 1s ease-in-out, color 1s ease-in-out;
 }
 
 .navbar-brand:hover a{
-  color:#fff ;
+  color:#ad5389;
   opacity: 0.5;
 }
 
@@ -333,7 +333,7 @@ a.nav-link-style{
 }
 
 a.nav-link-style:hover {
-  color: #dae0e5;
+  color: #7B7B7B;
   background-color: transparent;
   box-shadow: none;
 }
@@ -359,7 +359,11 @@ td,th{
 }
 
 .dropdown-item:hover{
-  background-color: #17a2b8 !important;
+  background-color: #ad5389;
+  background-image: -webkit-linear-gradient(left, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: -o-linear-gradient(left, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-size: cover;
 }
 
 small.form-text{
@@ -404,7 +408,7 @@ small.form-text{
   }
 
   .dropdown .dropdown-menu{
-     margin-left: 9rem !important;
+     margin-left: 5rem !important;
      min-width: 5rem ;
      padding: 0.5rem 0;
   }
