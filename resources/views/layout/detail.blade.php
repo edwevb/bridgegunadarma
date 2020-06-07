@@ -47,7 +47,7 @@
   alert('Direkomendasikan untuk membuka halaman website ini dengan browser GOOGLE CHROME');
   </script> --}}
   {{-- Top menu --}}
-  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark shadow fixed-top" id ="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
         <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"> Bridge Gunadarma</a>
