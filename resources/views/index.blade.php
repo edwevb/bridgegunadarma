@@ -5,13 +5,13 @@
  		<div class="col-lg">
  			<section id="home"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
-				<div class="jumbotron bg-light">
+				<div class="jumbotron bg-transparent">
 					<header class="content-wrapper mb-5 startContent">
 						<div class="row showContent">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
-							  <h1 class="display-4 text-danger">Hello, Bridge Lovers!</h1>
+							  <h1 class="display-4 text-purple">Hello, Bridge Lovers!</h1>
 							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
-							  <a href="#about" class="btn btn-dark btn-lg rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
+							  <a href="#about" class="btn bg-gradient-purple btn-lg btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
 								<article id="slider"> {{-- slider --}}
@@ -37,16 +37,18 @@
 							</div>
 						</div> {{-- end row welcome --}}
 					</header>
+				</div> {{-- end jumbotron --}}
+				<div class="bg-transparent">
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="d-block">
-          		<div class="p-1 text-center">
-      					<a id="header-article" href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-success"></i></a>
-          			<div class="collapse hide bg-transparent" id="atlet-collapse">
-          				<div class="p-3">
+	        		<div class="p-1 text-center">
+	    					<a id="header-article" href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	        			<div class="collapse hide" id="atlet-collapse">
+	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3" >
 											@foreach ($data_mpoint as $mp)
 											<div class="px-1 mb-5">
-											  <div class="card-borderless shadow h-100 bg-dark rounded border-left-success">
+											  <div class="card-borderless h-100 shadow bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
 											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 											  	</div>
@@ -58,63 +60,61 @@
 											      </div>
 											    </div>
 											  </div> {{-- end card --}}
-											   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn btn-success rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+											   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 											</div>
 											@endforeach
 										</div> {{-- end atlet row --}}
-										<a href="{{ url('/moreAtlet') }}" class="btn btn-success rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
+										<a href="{{ url('/moreAtlet') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
-            	</div>
+	          	</div>
 	          </div> {{-- end card atlet button --}}
 	        </article>{{-- end atlet --}}
-					<hr id="bridgeHr" class="my-5 col-6">
+					<hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="d-block">
-          		<div class="p-1 text-center">
-      					<a id="header-article" href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-info"></i></a>
-          			<div class="collapse hide bg-transparent" id="prestasi-collapse">
-          				<div class="p-4">
-			            	<div class="card-borderless">
-			                <div class="row row-cols-1 row-cols-md-3">
-												@foreach ($data_prestasi as $prestasi)
-												<div class="px-1 mb-5">
-												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-info">
-												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
-												  	</div>
-												    <div class="card-body">
-												      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
-												      <p class="mb-4 card-subtitle text-muted">
-												      	<?php $date = strtotime($prestasi->pre_date);
-												      		echo date('d M Y',$date);
-												      	?>
-												      </p>
-												    </div>
-												  </div> {{-- end card --}}
-												  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn btn-info rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
-												</div>
-												@endforeach
-											</div> {{-- end prestasi row --}}
-											<a href="{{ url('/morePrestasi') }}" class="btn btn-info rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
-				          	</div>
+	        		<div class="p-1 text-center">
+	    					<a id="header-article" href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	        			<div class="collapse hide" id="prestasi-collapse">
+	        				<div class="p-3">
+		                <div class="row row-cols-1 row-cols-md-3">
+											@foreach ($data_prestasi as $prestasi)
+											<div class="px-1 mb-5">
+											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
+											  	<div class="col-md p-2">
+											  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
+											  	</div>
+											    <div class="card-body">
+											      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
+											      <p class="mb-4 card-subtitle text-muted">
+											      	<?php $date = strtotime($prestasi->pre_date);
+											      		echo date('d M Y',$date);
+											      	?>
+											      </p>
+											    </div>
+											  </div> {{-- end card --}}
+											  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+											</div>
+											@endforeach
+										</div> {{-- end prestasi row --}}
+										<a href="{{ url('/morePrestasi') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
-            	</div>
+	          	</div>
 	          </div>
 	        </article>{{-- end prestasi --}}
-	        <hr id="bridgeHr" class="my-5 col-6">
+	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
 					 <article id="event"> {{-- event article --}}
 					  <div class="d-block">
-          		<div class="p-1 text-center">
-        				<a id="header-article" href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-warning"></i></a>
-          			<div class="collapse hide bg-transparent" id="event-collapse">
-          				<div class="p-4">
+	        		<div class="p-1 text-center">
+	      				<a id="header-article" href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	        			<div class="collapse" id="event-collapse">
+	        				<div class="p-3">
 			            	<div class="card-borderless">
 			                <div class="row row-cols-1 row-cols-md-3">
 												@foreach ($data_event as $event)
 												<div class="px-1 mb-5">
-												  <div class="card-borderless shadow h-100 bg-dark rounded border-left-warning">
+												  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 												  	<div class="col-md p-2">
 												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
 												  	</div>
@@ -127,18 +127,19 @@
 												      </p>
 												    </div>
 												  </div> {{-- end card --}}
-												  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn btn-warning rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+												  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 												</div>
 												@endforeach
 											</div> {{-- end event row --}}
-											<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+											<a href="{{ url('/moreEvent') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 				          	</div>
 		              </div>
 		            </div> {{-- end collapse --}}
-            	</div>
+	          	</div>
 	          </div>
 	        </article> {{-- end event --}}
-				</div> {{-- end jumbotron --}}
+	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
+				</div>
 			</section> {{-- end section main --}}
  		</div>
 		<section id="about">
@@ -149,9 +150,9 @@
 					 		<div class="bg-light rounded col-lg-10 mx-auto shadow about">
 		 						<div class="p-2">
 									<div class="mt-4 showAbout">
-										<h1 class="text-center">ABOUT</h1>
+										<h1 class="text-center text-gradient-purple">ABOUT</h1>
 									</div>
-									<hr id="bridgeHr" class="bg-gradient-primary" width="200">
+									<hr id="bridgeHr" class="bg-gradient-purple" width="200">
 								</div>
 								<div class="row">
 									<div class="col-md-6 mx-auto text-justify py-2">
@@ -164,7 +165,7 @@
 							</div>
 						  <article id="contact" class="mt-5">	
 				 				<div class="row justify-content-center px-2 contact">
-				 					<div class="col-lg-5 mt-2 bg-gradient-primary rounded showContact1">
+				 					<div class="col-lg-5 mt-2 bg-gradient-purple rounded showContact1">
 				 						<div class="card-borderless text-white bg-transparent">
 										  <div class="card-body">
 										  	<h1 class="text-shadow font-weight-bold">CONTACT</h1>

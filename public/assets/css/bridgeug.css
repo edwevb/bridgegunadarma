@@ -42,6 +42,30 @@ body{
   font-family: 'OpenSans-R', 'Nunito', 'Poppins-R','Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important;
 }
 
+.btn-nav{
+  display: inline-block;
+  border: none!important;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color :#3c1053;  z
+  color :#ffff;
+}
+
+.btn-nav:hover{
+  background-color: #1d2124;
+}
+
+ .btn-nav:focus{
+  text-decoration: none;
+  outline: 0;
+ }
+
 #cms-header{
   font-family: 'Poppins-R', 'Nunito';
   color: #4E4E4E;
@@ -420,7 +444,7 @@ small.form-text{
     padding: 0.4rem 1rem;
   }
 
-  #detail-card{
+ #detail-card{
     margin-top: -100px
   }
 
@@ -436,14 +460,18 @@ small.form-text{
   }
 
   .footer{
-    opacity: 0.8;
-    margin-top:-20px !important;
-  }
+      opacity: 0.8;
+      margin-top:-20px !important;
+    }
 
   .footer blockquote{
-    background-color: #fff !important;
-    color: #000 !important;
-    font-weight: bold;
+     background: -webkit-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+     background: -o-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+     background: linear-gradient(to right, rgb(65, 41, 90), rgb(47, 7, 67));
+  }
+
+  .footer blockquote p{
+    color: #fff!important;
   }
 
   .title{
@@ -490,63 +518,105 @@ small.form-text{
   text-transform: uppercase;
 }
 
+.bg-purple{
+  background: -webkit-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+  background: -o-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+  background: linear-gradient(to right, rgb(65, 41, 90), rgb(47, 7, 67));
+}
+
 .bg-gradient-indigo {
   background-color: #6610f2;
-  background-image: linear-gradient(180deg, #6610f2 10%, #4B06BC 100%);
+  background-image: -webkit-linear-gradient(#6610f2 10%, #4B06BC 100%);
+  background-image: -o-linear-gradient(#6610f2 10%, #4B06BC 100%);
+  background-image: linear-gradient(#6610f2 10%, #4B06BC 100%);
   background-size: cover;
 }
 
 .bg-gradient-primary {
   background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-image: -webkit-linear-gradient(#4e73df 10%, #224abe 100%);
+  background-image: -o-linear-gradient(#4e73df 10%, #224abe 100%);
+  background-image: linear-gradient(#4e73df 10%, #224abe 100%);
   background-size: cover;
 }
 
 .bg-gradient-secondary {
   background-color: #858796;
-  background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+  background-image: -webkit-linear-gradient(#858796 10%, #60616f 100%);
+  background-image: -o-linear-gradient(#858796 10%, #60616f 100%);
+  background-image: linear-gradient(#858796 10%, #60616f 100%);
   background-size: cover;
 }
 
 .bg-gradient-success {
   background-color: #1cc88a;
-  background-image: linear-gradient(180deg, #1cc88a 10%, #13855c 100%);
+  background-image: -webkit-linear-gradient(#1cc88a 10%, #13855c 100%);
+  background-image: -o-linear-gradient(#1cc88a 10%, #13855c 100%);
+  background-image: linear-gradient(#1cc88a 10%, #13855c 100%);
   background-size: cover;
 }
 
 .bg-gradient-info {
   background-color: #36b9cc;
-  background-image: linear-gradient(180deg, #36b9cc 10%, #258391 100%);
+  background-image: -webkit-linear-gradient(#36b9cc 10%, #258391 100%);
+  background-image: -o-linear-gradient(#36b9cc 10%, #258391 100%);
+  background-image: linear-gradient(#36b9cc 10%, #258391 100%);
   background-size: cover;
 }
 
 .bg-gradient-warning {
   background-color: #f6c23e;
-  background-image: linear-gradient(180deg, #f6c23e 10%, #dda20a 100%);
+  background-image: -webkit-linear-gradient(#f6c23e 10%, #dda20a 100%);
+  background-image: -o-linear-gradient(#f6c23e 10%, #dda20a 100%);
+  background-image: linear-gradient(#f6c23e 10%, #dda20a 100%);
   background-size: cover;
 }
 
 .bg-gradient-danger {
   background-color: #e74a3b;
-  background-image: linear-gradient(180deg, #e74a3b 10%, #be2617 100%);
+  background-image: -webkit-linear-gradient(#e74a3b 10%, #be2617 100%);
+  background-image: -o-linear-gradient(#e74a3b 10%, #be2617 100%);
+  background-image: linear-gradient(#e74a3b 10%, #be2617 100%);
+  background-size: cover;
+}
+
+.bg-gradient-purple{
+  background-color: #ad5389;
+  background-image: -webkit-linear-gradient(left, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: -o-linear-gradient(left, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-size: cover;
+}
+
+.bg-gradient-sky{
+  background-color: #005C97;
+  background-image: -webkit-linear-gradient(left, rgb(0, 92, 151), rgb(54, 55, 149));
+  background-image: -o-linear-gradient(left, rgb(0, 92, 151), rgb(54, 55, 149));
+  background-image: linear-gradient(to right, rgb(0, 92, 151), rgb(54, 55, 149));
   background-size: cover;
 }
 
 .bg-gradient-light {
   background-color: #f8f9fc;
-  background-image: linear-gradient(180deg, #f8f9fc 10%, #c2cbe5 100%);
+  background-image: -webkit-linear-gradient(#f8f9fc 10%, #c2cbe5 100%);
+  background-image: -o-linear-gradient(#f8f9fc 10%, #c2cbe5 100%);
+  background-image: linear-gradient(#f8f9fc 10%, #c2cbe5 100%);
   background-size: cover;
 }
 
 .bg-gradient-dark {
   background-color: #5a5c69;
-  background-image: linear-gradient(180deg, #5a5c69 10%, #373840 100%);
+  background-image: -webkit-linear-gradient(#5a5c69 10%, #373840 100%);
+  background-image: -o-linear-gradient(#5a5c69 10%, #373840 100%);
+  background-image: linear-gradient(#5a5c69 10%, #373840 100%);
   background-size: cover;
 }
 
 .text-gradient-danger{
   /*background: -webkit-linear-gradient(#eee, #333);*/
-  background: -webkit-linear-gradient( #e74a3b 5%, #be2617 100%);
+  background: -webkit-linear-gradient(#e74a3b 5%, #be2617 100%);
+  background: -o-linear-gradient(#e74a3b 5%, #be2617 100%);
+  background: linear-gradient(#e74a3b 5%, #be2617 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -608,11 +678,11 @@ small.form-text{
 }
 
 .border-left-dark {
-  border-left: 0.25rem solid #5a5c69 !important;
+  border-left: 0.25rem solid #343a40 !important;
 }
 
 .border-bottom-dark {
-  border-bottom: 0.25rem solid #5a5c69 !important;
+  border-bottom: 0.25rem solid #343a40 !important;
 }
 
 .border-right-primary {
@@ -624,7 +694,7 @@ small.form-text{
 }
 
 .border-right-dark {
-  border-right: 0.25rem solid #5a5c69 !important;
+  border-right: 0.25rem solid #343a40 !important;
 }
 
 .border-right-warning {
@@ -652,14 +722,39 @@ small.form-text{
   border-right: 0.25rem solid #5a5c69 !important;
 }
 
+.text-purple{
+ background: -webkit-linear-gradient(#41295a, #2F0743);
+ background: -o-linear-gradient(#41295a, #2F0743);
+ background: linear-gradient(#41295a, #2F0743);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple{
+ background: -webkit-linear-gradient(#ad5389, #3c1053);
+ background: -o-linear-gradient(#ad5389, #3c1053);
+ background: linear-gradient(#ad5389, #3c1053);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
 /*HOME*/
 #header-article{
   text-decoration: none;
-  color: #343a40;
+  background: -webkit-linear-gradient(#41295a, #2F0743);
+  background: -o-linear-gradient(#41295a, #2F0743);
+  background: linear-gradient(#41295a, #2F0743);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow: none;
   
 }
 
+.btn-none{
+  border: none !important;
+  box-shadow: none !important;
+  box-shadow: 
+}
 
 .title:hover{
   opacity: 0.75;
@@ -671,20 +766,27 @@ small.form-text{
 
 #atletHr{
   border-width: 3px;
-  border-color: #28a745 ;
+  border-color: #3c1053 ;
   width: 150px;
+}
+
+#home img, #atlet img, #prestasi img, #event img{
+  filter: brightness(75%);
 }
 
 .btn-detail{
   padding: 5px 35px;
+  color :#EEEEEE !important;
+  background: -webkit-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+  background: -o-linear-gradient(left, rgb(65, 41, 90), rgb(47, 7, 67));
+  background: linear-gradient(to right, rgb(65, 41, 90), rgb(47, 7, 67));
   margin-top: -20px;
   transition: padding 0.3s ease-in-out !important;
 }
 
 .btn-detail:hover, .btn-detail:focus{
   border: none !important;
-  background-color :#343a40 !important;
-  color :#EEEEEE !important;
+  background :#343a40 !important;
   padding: 6px 100px;
   opacity: 0.9;
 }
@@ -825,13 +927,7 @@ small.form-text{
   opacity: 1;
   transform: translate(0, 0);
 }
-
-
-.footer{
-  margin-top : 20px;
-}
-
-.footer blockquote{
-    background-color: transparent;
-    color: #fff;
-}
+  .footer{
+    margin-top : 20px;
+    color: #3c1053;
+  }

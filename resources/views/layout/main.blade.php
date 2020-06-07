@@ -43,13 +43,13 @@
   </style>
 </head>
   {{-- sidebar --}}
-  <body class="bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top" id ="mainNav">
+  <body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-purple shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
         <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"> Bridge Gunadarma</a>
       </div>
-      <button class="btn btn-dark navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNav">
+      <button class="btn-nav navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNav">
         <span class ="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
