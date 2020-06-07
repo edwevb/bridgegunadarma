@@ -9,7 +9,7 @@
 					<header class="content-wrapper mb-5 startContent">
 						<div class="row showContent">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
-							  <h1 class="display-4 text-purple">Hello, Bridge Lovers!</h1>
+							  <h1 class="display-4 text-gradient-purple">Hello, Bridge Lovers!</h1>
 							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
 							  <a href="#about" class="btn bg-gradient-purple btn-lg btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
@@ -23,13 +23,13 @@
 									  </ol>
 									  <div class="carousel-inner">
 									    <div class="carousel-item active">
-									      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
+									      <img src="{{ asset('assets/img/bridgeug_1.jpg') }}" class="d-block w-100 rounded text-white" alt="ImagePreview">
 									    </div>
 									    <div class="carousel-item">
-									      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
+									      <img src="{{ asset('assets/img/bridgeug_2.jpg') }}" class="d-block w-100 rounded text-white" alt="ImagePreview">
 									    </div>
 									    <div class="carousel-item">
-									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded text-muted" alt="ImagePreview">
+									      <img src="{{ asset('assets/img/bridgeug_3.jpg') }}" class="d-block w-100 rounded text-white" alt="ImagePreview">
 									    </div>
 									  </div>
 									</div>
@@ -50,7 +50,7 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless h-100 shadow bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
+											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 											  	</div>
 											    <div class="card-body text-center">
 											      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
@@ -82,11 +82,11 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
+											  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 											  	</div>
 											    <div class="card-body">
 											      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
-											      <p class="mb-4 card-subtitle text-muted">
+											      <p class="mb-4 card-subtitle text-white">
 											      	<?php $date = strtotime($prestasi->pre_date);
 											      		echo date('d M Y',$date);
 											      	?>
@@ -116,11 +116,11 @@
 												<div class="px-1 mb-5">
 												  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-muted" alt="ImagePreview">
+												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 												  	</div>
 												    <div class="card-body">
 												      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
-												      <p class="mb-4 card-subtitle text-muted">
+												      <p class="mb-4 card-subtitle text-white">
 												      	<?php $date = strtotime($event->eve_date);
 												      		echo date('d M Y',$date);
 												      	?>

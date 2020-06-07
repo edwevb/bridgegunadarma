@@ -2,7 +2,7 @@
 @section('title', $event->eve_title)
 @section('content')
 	<div class="content-mobile">
-		<div class="no-gutters py-5 bg-gradient-light">
+		<div class="no-gutters py-5 bg-light">
 			{{-- start content --}}
 			<div class="col-lg d-flex">
 				<div class="container">
@@ -12,10 +12,10 @@
 							<div class="col-md-6">
 								<div class="text-center">
 									<div class="text-center px-3" id="event">
-	              		<img class="shadow-lg col-md rounded p-1 text-white bg-dark" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
+	              		<img class="shadow-lg col-md rounded p-1 text-white bg-purple" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
 		              </div>
 		              <div class="text-center my-4">
-		            		<h3 class="text-shadow">{{ $event->eve_title }}</h3>
+		            		<h3 class="font-weight-bold text-purple">{{ $event->eve_title }}</h3>
 		            	</div>
 		            </div>
 		            <div class="px-4">
@@ -44,12 +44,12 @@
 							<div class="col-md">
 								{{-- card deskripsi --}}
 			          <div class="card-borderless">
-		            	<div class="bg-warning rounded">
+		            	<div class="bg-gradient-purple rounded">
 		            		<div class="col-md p-1">
-		          				<a href="#deskripsi" class="btn btn-block bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
+		          				<a href="#deskripsi" class="btn btn-block bx-none text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="deskripsi"><h5 class="lead">Event Description<i class="fa fa-fw fa-caret-down"></i></h5></a>
 		            			<div class="collapse" id="deskripsi">
 		            				<div class="p-4">
-						            	<div class="card-borderless bg-white p-4 shadow rounded">
+						            	<div class="card-borderless bg-white p-4 shadow rounded bg-light">
 						                <h5 class="card-text">
 						                	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas maiores velit tempore laudantium ipsam illo impedit ex minus eos! Repellendus, iste eos! Atque dolorum deserunt pariatur perferendis, ex assumenda!
 						                	@isset($event->eve_isi)
@@ -72,7 +72,7 @@
 		            	</div>
 		            </div>{{-- end card deskripsi --}}
 								<div class="py-2 mt-4">
-	                <h5 class="lead font-italic">Biaya Pendaftaran</h5>
+	                <h5 class="lead text-purple">Biaya Pendaftaran</h5>
 	              </div>
 								<table class="table table-borderless mx-auto">
 			          	<tbody>
@@ -132,7 +132,7 @@
 		            </table>
 		            {{-- card prizepool --}}
 			          <div class="card-borderless">
-		            	<div class="bg-dark rounded">
+		            	<div class="bg-purple rounded">
 		            		<div class="col-md p-1">
 		          				<a href="#prizepool" class="btn bx-none btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
 		            			<div class="collapse" id="prizepool">
@@ -156,7 +156,7 @@
 						</div>{{--  end row --}}
 					</section>
 					<div class="text-center mt-5">
-	        	<a href="{{ url('/moreEvent') }}" class="btn btn-warning rounded-pill px-5 shadow"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+	        	<a href="{{ url('/moreEvent') }}" class="btn bg-gradient-purple btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 	        </div>
 				</div> {{-- end container --}}
 			</div> {{-- end content --}}

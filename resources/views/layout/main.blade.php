@@ -30,6 +30,7 @@
         background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;
         background-size: cover;
         background-attachment: fixed;
+        /*filter: brightness(75%);*/
       }
 
       #about .container{

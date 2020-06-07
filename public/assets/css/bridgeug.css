@@ -333,7 +333,7 @@ a.nav-link-style{
 }
 
 a.nav-link-style:hover {
-  color: #7B7B7B;
+  color: #C851CD;
   background-color: transparent;
   box-shadow: none;
 }
@@ -933,5 +933,5 @@ small.form-text{
 }
   .footer{
     margin-top : 20px;
-    color: #3c1053;
+    color: #fff;
   }
