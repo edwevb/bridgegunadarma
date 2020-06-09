@@ -407,9 +407,9 @@ small.form-text{
   }
 
   .title:hover{
-    background: -webkit-linear-gradient(#f07241, #C04848);
-    background: -o-linear-gradient(#f07241, #C04848);
-    background: linear-gradient(#f07241, #C04848);
+    background: -webkit-linear-gradient(#C04848, #f07241);
+    background: -o-linear-gradient(#C04848, #f07241);
+    background: linear-gradient(#C04848, #f07241);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -517,9 +517,9 @@ small.form-text{
   }
 
   .title:hover{
-    background: -webkit-linear-gradient(#f07241, #C04848);
-    background: -o-linear-gradient(#f07241, #C04848);
-    background: linear-gradient(#f07241, #C04848);
+    background: -webkit-linear-gradient(#C04848, #f07241);
+    background: -o-linear-gradient(#C04848, #f07241);
+    background: linear-gradient(#C04848, #f07241);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -781,11 +781,15 @@ small.form-text{
 }
 
 .text-orange{
- color: #f07241;
+  background:  #f07241;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-salmon{
- color: #C04848;
+  background:  #C04848;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-purple{

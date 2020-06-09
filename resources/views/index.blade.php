@@ -42,7 +42,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
+	    					<a href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-salmon"></i></a>
 	        			<div class="collapse hide" id="atlet-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3" >
@@ -74,7 +74,7 @@
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
+	    					<a href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-salmon"></i></a>
 	        			<div class="collapse hide" id="prestasi-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3">
@@ -107,7 +107,7 @@
 					 <article id="event"> {{-- event article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
+	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-salmon"></i></a>
 	        			<div class="collapse" id="event-collapse">
 	        				<div class="p-3">
 			            	<div class="card-borderless">

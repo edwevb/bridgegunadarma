@@ -106,7 +106,7 @@
   </nav>
 
   @yield('section')
-
+  
   {{-- footer --}}
   <footer class="footer">
     <blockquote class="text-center col-md-6 mx-auto rounded-pill">
@@ -114,6 +114,11 @@
     </blockquote>
   </footer>
 
+  <div class="text-center">
+    <img height="100" width="auto" src="{{ asset('assets/img/bridgeug.png') }}">
+    <img height="100" width="auto" src="{{ asset('assets/img/ug.png') }}">
+    <img height="90" width="auto" src="{{ asset('assets/img/dki.png') }}">
+  </div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 
   {{-- Page scripts --}}
