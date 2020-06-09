@@ -38,7 +38,7 @@
 						</div> {{-- end row welcome --}}
 					</header>
 				</div> {{-- end jumbotron --}}
-				<div class="d-block bg-gradient-salmon py-5">
+				<div class="d-block gunadarmaCup bg-gradient-purple py-5">
 					<div class="text-center">
 					  <div class="display-4 text-animate">GUNADARMA CUP</div>
 					  <div class="py-4">
@@ -51,7 +51,7 @@
 					    <div class="modal-content bg-purple">
 			      		<a class="p-5 text-white text-center" type="button" disabled>
 								  <span class="spinner-grow" role="status"></span>
-								  <h1 class="d-inline"><span class="text-salmon font-weight-bold">Postponed</span></h1><br><h3><i class="far fa-frown my-2"></i><br>due to Corona Virus.</h3>
+								  <h1 class="d-inline"><span class="text-salmon font-weight-bold">Postponed</span></h1><br><h3><i class="far fa-frown my-2"></i><br>Due to Corona Virus.</h3>
 								</a>
 									<small class="text-salmon m-1" role="button" data-dismiss="modal"><i class="text-white">Tap here or click the screen to close this. </i></small>
 					    </div>
