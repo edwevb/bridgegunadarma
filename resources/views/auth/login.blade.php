@@ -7,8 +7,8 @@
         <div class="text-center mb-2">
           <img height="100" width="auto" src="{{ asset('assets/img/bridgeug.png') }}" alt="Bridge Gunadarma">
         </div>
-        <div class="card-borderless rounded-top shadow">
-          <div class="text-center bg-purple p-2">
+        <div class="card-borderless shadow rounded">
+          <div class="text-center bg-purple p-2  rounded-top">
             <h3 class="card-title text-white pt-2"><i class="fas fa-user-alt"></i> {{ __('Login Page') }}</h3>
           </div>
           <div class="card-body">
