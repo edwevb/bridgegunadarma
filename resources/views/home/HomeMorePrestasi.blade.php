@@ -27,7 +27,7 @@
 					</div>
 				@endforeach
 			</div> {{-- end prestasi row --}}
-			<a href="{{ url('/') }}" class="btn btn-orange rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
+			<a href="{{ url('/') }}" class="btn btn-salmon rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
 		</div>
   </article>{{-- end prestasi --}}
   @section('script')

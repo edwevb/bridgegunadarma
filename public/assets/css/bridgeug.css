@@ -576,9 +576,9 @@ small.form-text{
 
 .bg-gradient-purple{
   background-color: #ad5389;
-  background-image: -webkit-linear-gradient(bottom, rgb(192,72,72), rgb(60, 16, 83));
-  background-image: -o-linear-gradient(bottom, rgb(192,72,72), rgb(60, 16, 83));
-  background-image: linear-gradient(to top, rgb(192,72,72), rgb(60, 16, 83));
+  background-image: -webkit-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
+  background-image: -o-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
+  background-image: linear-gradient(to left, rgb(192,72,72), rgb(60, 16, 83));
   background-size: cover;
 }
 

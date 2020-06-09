@@ -27,7 +27,7 @@
 					</div>
 					@endforeach
 				</div> {{-- end atlet row --}}
-				<a href="{{ url('/') }}" class="btn btn-orange rounded-pill px-5 shadow btn-none"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
+				<a href="{{ url('/') }}" class="btn btn-salmon rounded-pill px-5 shadow btn-none"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
 	    </div>
 		</div>
   </article>{{-- end atlet --}}
