@@ -21,7 +21,7 @@
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn btn-salmon p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn btn-salmon p-3 rounded-circle shadow"><span class="lead">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>

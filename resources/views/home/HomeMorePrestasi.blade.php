@@ -5,7 +5,7 @@
 		<div class="p-5 bg-light text-center rounded content-home">
 			<div class="text-dark mx-auto my-4">
     		<h1 class="text-gradient-purple">List Prestasi Bridge Gunadarma</h1>
-    		<hr class="bg-gradient-purple w-50" style="border-width: 3px;">
+    		<hr class="bg-gradient-salmon w-50" style="border-width: 3px;">
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_prestasi as $prestasi)
@@ -15,13 +15,13 @@
 					  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="{!!$prestasi->pre_title!!}">
 					  	</div>
 					    <div class="card-body text-white">
-					      <h5 class="card-title ">{{$prestasi->pre_title}}</h5>
+					      <h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5>
 					      <p class="mb-4 card-subtitle">
 					      	<?php $date = strtotime($prestasi->pre_date);
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn btn-salmon p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn btn-salmon p-3 rounded-circle shadow"><span class="lead">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>
