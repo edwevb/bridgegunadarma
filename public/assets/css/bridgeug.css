@@ -389,8 +389,30 @@ small.form-text{
 }
 
 
-@media (min-width: 75px)
+@media (min-width: 5px)
 {
+  .title{
+    text-decoration: none;
+    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
+    background: -o-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
+    background: linear-gradient(to right, rgb(192,72,72), rgb(240,114,65));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    font-family: 'HeaderContent';
+    font-size: 4vh;
+    letter-spacing: 2px;
+    overflow: 0;
+    margin :0;
+  }
+
+  .title:hover{
+    background: -webkit-linear-gradient(#ad5389, #3c1053);
+    background: -o-linear-gradient(#ad5389, #3c1053);
+    background: linear-gradient(#ad5389, #3c1053);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @media (min-width: 576px)
@@ -1002,27 +1024,4 @@ small.form-text{
 .footer{
   margin-top : 20px;
   color: #fff;
-}
-
-.title{
-  text-decoration: none;
-  background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-  background: -o-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-  background: linear-gradient(to right, rgb(192,72,72), rgb(240,114,65));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  font-family: 'HeaderContent';
-  font-size: 4vh;
-  letter-spacing: 2px;
-  overflow: 0;
-  margin :0;
-}
-
-.title:hover{
-  background: -webkit-linear-gradient(#ad5389, #3c1053);
-  background: -o-linear-gradient(#ad5389, #3c1053);
-  background: linear-gradient(#ad5389, #3c1053);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
