@@ -13,7 +13,7 @@
 							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
 							  <a href="#about" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
-							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
+							<div class="col-xl-6 p-1 bg-gradient-salmon shadow-lg rounded mb-5">
 								<article id="slider"> {{-- slider --}}
 									<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">

@@ -574,6 +574,14 @@ small.form-text{
   background-color: #f07241;
 }
 
+.bg-gradient-purple{
+  background-color: #ad5389;
+  background-image: -webkit-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: -o-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: linear-gradient(to top, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-size: cover;
+}
+
 .bg-gradient-salmon{
   background-color: #C04848;
   background-image: -webkit-linear-gradient(rgb(192,72,72), rgb(240,114,65));
@@ -643,14 +651,6 @@ small.form-text{
   background-image: -webkit-linear-gradient(#e74a3b 10%, #be2617 100%);
   background-image: -o-linear-gradient(#e74a3b 10%, #be2617 100%);
   background-image: linear-gradient(#e74a3b 10%, #be2617 100%);
-  background-size: cover;
-}
-
-.bg-gradient-purple{
-  background-color: #ad5389;
-  background-image: -webkit-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
-  background-image: -o-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
-  background-image: linear-gradient(to top, rgb(173, 83, 137), rgb(60, 16, 83));
   background-size: cover;
 }
 
