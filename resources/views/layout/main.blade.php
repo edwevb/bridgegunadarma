@@ -108,17 +108,15 @@
   @yield('section')
   
   {{-- footer --}}
-  <footer class="footer">
+  <footer class="mt-5">
     <blockquote class="text-center col-md-6 mx-auto rounded-pill">
       <p class="py-2">&copy;2020 All Rights Reserved{{-- <a class="text-primary" href="https://www.instagram.com/edwevb" target="_blank">edwevb</a> --}}</p>
     </blockquote>
+    <div class="text-center">
+      <img height="175" width="auto" src="{{ asset('assets/img/bridgeug.png') }}">
+      <img height="175" width="auto" src="{{ asset('assets/img/ug.png') }}">
+    </div>
   </footer>
-
-  <div class="text-center">
-    <img height="100" width="auto" src="{{ asset('assets/img/bridgeug.png') }}">
-    <img height="100" width="auto" src="{{ asset('assets/img/ug.png') }}">
-    <img height="90" width="auto" src="{{ asset('assets/img/dki.png') }}">
-  </div>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 
   {{-- Page scripts --}}

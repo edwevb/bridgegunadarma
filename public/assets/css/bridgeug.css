@@ -485,21 +485,6 @@ small.form-text{
     padding-bottom: 6rem!important;
   }
 
-  .footer{
-      opacity: 0.8;
-      margin-top:-20px !important;
-    }
-
-  .footer blockquote{
-     background: -webkit-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
-     background: -o-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
-     background: linear-gradient(to left, rgb(192,72,72), rgb(60, 16, 83));
-  }
-
-  .footer blockquote p{
-    color: #fff!important;
-  }
-
   .title{
     text-decoration: none;
     background: -webkit-linear-gradient(#ad5389, #3c1053);
@@ -570,31 +555,19 @@ small.form-text{
   background-color: #C04848;
 }
 
-.bg-orange{
-  background-color: #f07241;
-}
-
 .bg-gradient-purple{
-  background-color: #ad5389;
-  background-image: -webkit-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
-  background-image: -o-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
-  background-image: linear-gradient(to left, rgb(192,72,72), rgb(60, 16, 83));
+  background-color: #41295a;
+  background-image: -webkit-linear-gradient(right, rgb(192,72,72), #41295a);
+  background-image: -o-linear-gradient(right, rgb(192,72,72), #41295a);
+  background-image: linear-gradient(to left, rgb(192,72,72), #41295a);
   background-size: cover;
 }
 
 .bg-gradient-salmon{
   background-color: #C04848;
-  background-image: -webkit-linear-gradient(rgb(192,72,72), rgb(240,114,65));
-  background-image: -o-linear-gradient(rgb(192,72,72), rgb(240,114,65));
-  background-image: linear-gradient(rgb(192,72,72), rgb(240,114,65));
-  background-size: cover;
-}
-
-.bg-gradient-orange{
-  background-color: #f07241;
-  background-image: -webkit-linear-gradient(rgb(240,114,65), rgb(192,72,72));
-  background-image: -o-linear-gradient(rgb(240,114,65), rgb(192,72,72));
-  background-image: linear-gradient(rgb(240,114,65), rgb(192,72,72));
+  background-image: -webkit-linear-gradient(rgb(192,72,72), #ad5389);
+  background-image: -o-linear-gradient(rgb(192,72,72), #ad5389);
+  background-image: linear-gradient(rgb(192,72,72), #ad5389);
   background-size: cover;
 }
 
@@ -779,12 +752,6 @@ small.form-text{
   border-right: 0.25rem solid #5a5c69 !important;
 }
 
-.text-orange{
-  background:  #f07241;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .text-salmon{
   background:  #C04848;
   -webkit-background-clip: text;
@@ -799,18 +766,10 @@ small.form-text{
 -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-orange{
-  background: -webkit-linear-gradient(#f07241, #C04848);
-  background: -o-linear-gradient(#f07241, #C04848);
-  background: linear-gradient(#f07241, #C04848);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .text-gradient-salmon{
-  background: -webkit-linear-gradient(#C04848, #f07241);
-  background: -o-linear-gradient(#C04848, #f07241);
-  background: linear-gradient(#C04848, #f07241);
+  background: -webkit-linear-gradient(#C04848, #2F0743);
+  background: -o-linear-gradient(#C04848, #2F0743);
+  background: linear-gradient(#C04848, #2F0743);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -869,23 +828,15 @@ small.form-text{
 }
 
 .btn-salmon{
+  color: #fff;
   text-decoration: none;
   background-color: rgb(192,72,72);
   transition: 0.5s;
 }
 
 .btn-salmon:hover{
+  color: #fff;
   background-color: #2F0743;
-}
-
-.btn-orange{
-  text-decoration: none;
-  background-color: #f07241;
-  transition: 0.5s;
-}
-
-.btn-orange:hover{
-  background-color: #ad5389;
 }
 
 #scroll {
@@ -1025,7 +976,6 @@ small.form-text{
   transform: translate(0, 0);
 }
 
-.footer{
-  margin-top : 20px;
-  color: #fff;
+footer blockquote p{
+  color: #fff!important;
 }
