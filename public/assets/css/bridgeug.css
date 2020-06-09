@@ -384,7 +384,7 @@ small.form-text{
   display: none;
 }
 
-.collapsing {
+#atlet .collapsing, #event .collapsing, #prestasi .collapsing {
     transition: 1s;
 }
 
