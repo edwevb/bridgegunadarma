@@ -48,12 +48,12 @@
 		                <div class="row row-cols-1 row-cols-md-3" >
 											@foreach ($data_mpoint as $mp)
 											<div class="px-1 mb-5">
-											  <div class="card-borderless h-100 shadow bg-gradient-purple rounded">
+											  <div class="card-borderless h-100 shadow rounded">
 											  	<div class="col-md p-2">
 											  		<a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body text-center">
-											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><h5 class="card-title text-shadow font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
+											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><h5 class="card-title font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
 											      <hr id="atletHr" class="bg-gradient-salmon">
 											      <div class="text-white lead font-italic">
 											      	<h6>{{$mp->atlet->alamat}}</h6>

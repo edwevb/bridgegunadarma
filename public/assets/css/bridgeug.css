@@ -991,6 +991,11 @@ footer blockquote p{
 
 #atlet .card-borderless, #prestasi .card-borderless, #event .card-borderless{
   filter: brightness(80%);
+  background-color: #41295a;
+  background-image: -webkit-linear-gradient(right, rgb(192,72,72), #41295a);
+  background-image: -o-linear-gradient(right, rgb(192,72,72), #41295a);
+  background-image: linear-gradient(to left, rgb(192,72,72), #41295a);
+  background-size: cover;
   transition: 0.7s;
 }
 
@@ -1006,5 +1011,5 @@ footer blockquote p{
 }
 
 .card-body #body-link:hover{
-  color: #181818;
+  color: #C04848;
 }

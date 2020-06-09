@@ -32,12 +32,6 @@
                     @empty ($prestasi->pre_isi)
                       <p class="font-italic">No description found.</p>
                     @endempty
-                    <div class="py-4">
-                    	<h5>List Partisipasi Atlet</h5>
-                      @foreach ($prestasi->atlet as $atlet)
-                        <li class="ml-4"><a href="{{ url('/atlet/'.$atlet->id) }}">{{$atlet->atlet_name}}</a></li>
-                      @endforeach
-                    </div>
                   </div>
                 </div>
           		</div>
