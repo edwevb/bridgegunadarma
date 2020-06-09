@@ -49,6 +49,10 @@
         margin-top: -5px;
       }
     }
+    .vertical { 
+      border-left: 3px solid #C04848;
+      height: 50px;
+    } 
   </style>
 </head>
   {{-- sidebar --}}
@@ -113,8 +117,17 @@
       <p class="py-2">&copy;2020 All Rights Reserved{{-- <a class="text-primary" href="https://www.instagram.com/edwevb" target="_blank">edwevb</a> --}}</p>
     </blockquote>
     <div class="text-center">
-      <img height="175" width="auto" src="{{ asset('assets/img/bridgeug.png') }}">
-      <img height="175" width="auto" src="{{ asset('assets/img/ug.png') }}">
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="{{ url('/') }}">
+          <img height="175" width="auto" alt="BrigeGunadarma" src="{{ asset('assets/img/bridgeug.png') }}"></a>
+        </li>
+        <li class="list-inline-item">
+          <div class ="vertical"></div>
+        </li>
+        <li class="list-inline-item"><a target="_blank" href="https://www.gunadarma.ac.id/">
+          <img height="175" width="auto" alt="UniversitasGunadarma" src="{{ asset('assets/img/ug.png') }}"></a>
+        </li>
+      </ul>
     </div>
   </footer>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
