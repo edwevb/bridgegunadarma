@@ -393,9 +393,9 @@ small.form-text{
 {
   .title{
     text-decoration: none;
-    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-    background: -o-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-    background: linear-gradient(to right, rgb(192,72,72), rgb(240,114,65));
+    background: -webkit-linear-gradient(#ad5389, #3c1053);
+    background: -o-linear-gradient(#ad5389, #3c1053);
+    background: linear-gradient(#ad5389, #3c1053);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
@@ -407,9 +407,9 @@ small.form-text{
   }
 
   .title:hover{
-    background: -webkit-linear-gradient(#ad5389, #3c1053);
-    background: -o-linear-gradient(#ad5389, #3c1053);
-    background: linear-gradient(#ad5389, #3c1053);
+    background: -webkit-linear-gradient(#f07241, #C04848);
+    background: -o-linear-gradient(#f07241, #C04848);
+    background: linear-gradient(#f07241, #C04848);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -503,11 +503,12 @@ small.form-text{
 
   .title{
     text-decoration: none;
-    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-    background: -o-linear-gradient(left,rgb(192,72,72), rgb(240,114,65));
-    background: linear-gradient(to right, rgb(192,72,72), rgb(240,114,65));
+    background: -webkit-linear-gradient(#ad5389, #3c1053);
+    background: -o-linear-gradient(#ad5389, #3c1053);
+    background: linear-gradient(#ad5389, #3c1053);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
     font-family: 'HeaderContent';
     font-size: 10vh;
     letter-spacing: 2px;
@@ -515,10 +516,10 @@ small.form-text{
     margin :0;
   }
 
-  .title:hover, .title:focus{
-    background: -webkit-linear-gradient(#ad5389, #3c1053);
-    background: -o-linear-gradient(#ad5389, #3c1053);
-    background: linear-gradient(#ad5389, #3c1053);
+  .title:hover{
+    background: -webkit-linear-gradient(#f07241, #C04848);
+    background: -o-linear-gradient(#f07241, #C04848);
+    background: linear-gradient(#f07241, #C04848);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

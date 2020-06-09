@@ -42,7 +42,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-purple"></i></a>
+	    					<a href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
 	        			<div class="collapse hide" id="atlet-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3" >
@@ -74,7 +74,7 @@
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-purple"></i></a>
+	    					<a href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
 	        			<div class="collapse hide" id="prestasi-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3">
@@ -107,7 +107,7 @@
 					 <article id="event"> {{-- event article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-purple"></i></a>
+	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-salmon"></i></a>
 	        			<div class="collapse" id="event-collapse">
 	        				<div class="p-3">
 			            	<div class="card-borderless">
@@ -181,7 +181,7 @@
 										  </div>
 										</div> {{-- end card --}}
 				 					</div> {{-- end card row --}}
-				 					<div class="col-md-5 rounded bg-light mt-2 p-3 showContact2">
+				 					<div class="col-md-5 rounded bg-gradient-salmon mt-2 p-3 showContact2 text-white">
 				 						<h2 class="card-title"><i class="fas fa-map-marked-alt"></i></h2>
 								    <p class="card-text">Universitas Gunadarma, Kampus C Salemba, Jakarta Pusat.</p>
 				 							<iframe class="rounded col-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8404.702815305292!2d106.85095023492941!3d-6.198698104947517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4680ba8956b%3A0x6ce461d1f179ab40!2sJl.%20Murtado%203%20No.33%2C%20RT.11%2FRW.5%2C%20Paseban%2C%20Kec.%20Senen%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010440!5e0!3m2!1sen!2sid!4v1589984686992!5m2!1sen!2sid" height="250" width="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
