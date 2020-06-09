@@ -407,9 +407,9 @@ small.form-text{
   }
 
   .title:hover{
-    background: -webkit-linear-gradient(#C04848, #f07241);
-    background: -o-linear-gradient(#C04848, #f07241);
-    background: linear-gradient(#C04848, #f07241);
+    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+    background: -o-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+    background: linear-gradient(to right, rgb(192,72,72), rgb(60, 16, 83));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -491,10 +491,9 @@ small.form-text{
     }
 
   .footer blockquote{
-/*    background: #c04848;*/
-     background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(240,114,65));
-     background: -o-linear-gradient(left,rgb(192,72,72), rgb(240,114,65));
-     background: linear-gradient(to right, rgb(192,72,72), rgb(240,114,65));
+     background: -webkit-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
+     background: -o-linear-gradient(right, rgb(192,72,72), rgb(60, 16, 83));
+     background: linear-gradient(to left, rgb(192,72,72), rgb(60, 16, 83));
   }
 
   .footer blockquote p{
@@ -517,9 +516,9 @@ small.form-text{
   }
 
   .title:hover{
-    background: -webkit-linear-gradient(#C04848, #f07241);
-    background: -o-linear-gradient(#C04848, #f07241);
-    background: linear-gradient(#C04848, #f07241);
+    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+    background: -o-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+    background: linear-gradient(to right, rgb(192,72,72), rgb(60, 16, 83));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -577,9 +576,9 @@ small.form-text{
 
 .bg-gradient-purple{
   background-color: #ad5389;
-  background-image: -webkit-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
-  background-image: -o-linear-gradient(bottom, rgb(173, 83, 137), rgb(60, 16, 83));
-  background-image: linear-gradient(to top, rgb(173, 83, 137), rgb(60, 16, 83));
+  background-image: -webkit-linear-gradient(bottom, rgb(192,72,72), rgb(60, 16, 83));
+  background-image: -o-linear-gradient(bottom, rgb(192,72,72), rgb(60, 16, 83));
+  background-image: linear-gradient(to top, rgb(192,72,72), rgb(60, 16, 83));
   background-size: cover;
 }
 
@@ -840,7 +839,7 @@ small.form-text{
 
 #atletHr{
   border-width: 3px;
-  border-color: #C04848;
+  opacity: 0.7;
   width: 150px;
 }
 
@@ -864,7 +863,7 @@ small.form-text{
 
 .btn-detail:hover, .btn-detail:focus{
   border: none !important;
-  background :#ad5389 !important;
+  background :#2F0743 !important;
   padding: 6px 100px;
   opacity: 0.9;
 }
@@ -876,7 +875,7 @@ small.form-text{
 }
 
 .btn-salmon:hover{
-  background-color: #ad5389;
+  background-color: #2F0743;
 }
 
 .btn-orange{
