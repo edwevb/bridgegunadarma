@@ -1001,6 +1001,7 @@ footer blockquote p{
 
 #atlet .card-borderless:hover, #prestasi .card-borderless:hover, #event .card-borderless:hover{
   background: #41295a;
+  transform: scale(0.95); 
   filter: brightness(100%);
 }
 
@@ -1013,3 +1014,20 @@ footer blockquote p{
 .card-body #body-link:hover{
   color: #C04848;
 }
+
+.text-animate {
+  font-family: 'HeaderContent';
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: #2F0743;
+  /*animation: pulse 2s infinite;*/
+}
+
+/*@keyframes pulse {
+  0% {
+    color: #C02248;
+  }
+  100% {
+    color: #2F0743;
+  }
+}*/

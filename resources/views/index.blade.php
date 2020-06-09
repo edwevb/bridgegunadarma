@@ -6,7 +6,7 @@
  			<section id="home" class="bg-light pb-2"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
 				<div class="jumbotron bg-transparent">
-					<header class="content-wrapper mb-5 startContent">
+					<header class="mb-5 startContent">
 						<div class="row showContent">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
 							  <h1 class="display-4 text-gradient-purple">Hello, Bridge Lovers!</h1>
@@ -38,6 +38,27 @@
 						</div> {{-- end row welcome --}}
 					</header>
 				</div> {{-- end jumbotron --}}
+				<div class="d-block bg-gradient-salmon py-5">
+					<div class="text-center">
+					  <div class="display-4 text-animate">GUNADARMA CUP</div>
+					  <div class="py-4">
+					  	<a type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5" href="#" role="button">Learn more</a>
+					  </div>
+				  </div>
+					<!-- Modal -->
+					<div class="modal fade bg-gradient-salmon" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered modal-lg">
+					    <div class="modal-content bg-purple">
+			      		<a class="p-5 text-white text-center" type="button" disabled>
+								  <span class="spinner-grow" role="status"></span>
+								  <h1 class="d-inline"><span class="text-salmon font-weight-bold">Postponed</span></h1><br><h3><i class="far fa-frown my-2"></i><br>due to Corona Virus.</h3>
+								</a>
+									<small class="text-salmon m-1" role="button" data-dismiss="modal"><i class="text-white">Tap here or click the screen to close this. </i></small>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="mb-5 pb-5"></div>
 				<div class="bg-transparent">
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="d-block">
