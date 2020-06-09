@@ -1,7 +1,7 @@
 @extends('layout.detail')
 @section('title', $event->eve_title)
 @section('content')
-	<div class="content-mobile">
+	<div class="content-home">
 		<div class="no-gutters py-5 bg-light">
 			{{-- start content --}}
 			<div class="col-lg d-flex">
@@ -12,10 +12,10 @@
 							<div class="col-md-6">
 								<div class="text-center">
 									<div class="text-center px-3" id="event">
-	              		<img class="shadow-lg col-md rounded p-1 text-white bg-purple" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
+	              		<img class="shadow-lg col-md rounded p-1 text-white bg-gradient-salmon" src="{{ url('/assets/img/img_eve/'.$event->img_eve) }}" alt="{{$event->eve_title}}">
 		              </div>
 		              <div class="text-center my-4">
-		            		<h3 class="font-weight-bold text-purple">{{ $event->eve_title }}</h3>
+		            		<h3 class="font-weight-bold text-salmon">{{ $event->eve_title }}</h3>
 		            	</div>
 		            </div>
 		            <div class="px-4">
@@ -72,7 +72,7 @@
 		            	</div>
 		            </div>{{-- end card deskripsi --}}
 								<div class="py-2 mt-4">
-	                <h5 class="lead text-purple">Biaya Pendaftaran</h5>
+	                <h5 class="lead text-salmon font-weight-bold">Biaya Pendaftaran</h5>
 	              </div>
 								<table class="table table-borderless mx-auto">
 			          	<tbody>
@@ -132,7 +132,7 @@
 		            </table>
 		            {{-- card prizepool --}}
 			          <div class="card-borderless">
-		            	<div class="bg-purple rounded">
+		            	<div class="bg-gradient-salmon rounded">
 		            		<div class="col-md p-1">
 		          				<a href="#prizepool" class="btn bx-none btn-block text-white" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prizepool"><h5 class="lead">PRIZEPOOL<i class="fa fa-fw fa-caret-down"></i></h5></a>
 		            			<div class="collapse" id="prizepool">
@@ -156,7 +156,7 @@
 						</div>{{--  end row --}}
 					</section>
 					<div class="text-center mt-5">
-	        	<a href="{{ url('/moreEvent') }}" class="btn bg-gradient-purple btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+	        	<a href="{{ url('/moreEvent') }}" class="btn btn-salmon btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 	        </div>
 				</div> {{-- end container --}}
 			</div> {{-- end content --}}

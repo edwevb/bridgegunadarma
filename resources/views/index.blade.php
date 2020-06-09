@@ -1,7 +1,7 @@
  @extends('layout/main')
  @section('title', 'Home')
  @section('section')
- 	<div class="content-mobile no-gutters">
+ 	<div class="content-home no-gutters">
  		<div class="col-lg">
  			<section id="home" class="bg-light pb-2"> {{-- main --}}
 		 		{{-- start Jumbotron --}}
@@ -11,7 +11,7 @@
 							<div class="col-xl-6 mb-5">
 							  <h1 class="display-4 text-gradient-purple">Hello, Bridge Lovers!</h1>
 							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
-							  <a href="#about" class="btn bg-gradient-purple btn-lg btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
+							  <a href="#about" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-dark shadow-lg rounded mb-5">
 								<article id="slider"> {{-- slider --}}
@@ -42,7 +42,7 @@
 				  <article id="atlet"> {{-- atlet article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a id="header-article" href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	    					<a href="#atlet-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="atlet-collapse">ATLET<br><i class="fa fa-fw fa-caret-down fa-2x"></i></a>
 	        			<div class="collapse hide" id="atlet-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3" >
@@ -53,7 +53,7 @@
 											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 											  	</div>
 											    <div class="card-body text-center">
-											      <h5 class="card-title text-shadow text-white">{{$mp->atlet->atlet_name}}</h5>
+											      <h5 class="card-title text-shadow text-white font-weight-bold">{{$mp->atlet->atlet_name}}</h5>
 											      <hr id="atletHr">
 											      <div class="text-white lead font-italic">
 											      	<h6>{{$mp->atlet->alamat}}</h6>
@@ -64,17 +64,17 @@
 											</div>
 											@endforeach
 										</div> {{-- end atlet row --}}
-										<a href="{{ url('/moreAtlet') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
+										<a href="{{ url('/moreAtlet') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
 	          	</div>
 	          </div> {{-- end card atlet button --}}
 	        </article>{{-- end atlet --}}
-					<hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
+					<hr id="bridgeHr" class="my-5 col-6 bg-gradient-salmon">
 					<article id="prestasi"> {{-- prestasi article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	    					<a id="header-article" href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	    					<a href="#prestasi-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi-collapse">PRESTASI<br><i class="fa fa-fw fa-caret-down fa-2x"></i></a>
 	        			<div class="collapse hide" id="prestasi-collapse">
 	        				<div class="p-3">
 		                <div class="row row-cols-1 row-cols-md-3">
@@ -84,9 +84,9 @@
 											  	<div class="col-md p-2">
 											  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 											  	</div>
-											    <div class="card-body">
-											      <h5 class="card-title text-white">{{$prestasi->pre_title}}</h5>
-											      <p class="mb-4 card-subtitle text-white">
+											    <div class="card-body text-white">
+											      <h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5>
+											      <p class="mb-4 card-subtitle">
 											      	<?php $date = strtotime($prestasi->pre_date);
 											      		echo date('d M Y',$date);
 											      	?>
@@ -97,17 +97,17 @@
 											</div>
 											@endforeach
 										</div> {{-- end prestasi row --}}
-										<a href="{{ url('/morePrestasi') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
+										<a href="{{ url('/morePrestasi') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
 	          	</div>
 	          </div>
 	        </article>{{-- end prestasi --}}
-	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
+	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-salmon">
 					 <article id="event"> {{-- event article --}}
 					  <div class="d-block">
 	        		<div class="p-1 text-center">
-	      				<a id="header-article" href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-gradient-purple"></i></a>
+	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x"></i></a>
 	        			<div class="collapse" id="event-collapse">
 	        				<div class="p-3">
 			            	<div class="card-borderless">
@@ -118,9 +118,9 @@
 												  	<div class="col-md p-2">
 												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview">
 												  	</div>
-												    <div class="card-body">
-												      <h5 class="card-title text-white">{{$event->eve_title}}</h5>
-												      <p class="mb-4 card-subtitle text-white">
+												    <div class="card-body text-white">
+												      <h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5>
+												      <p class="mb-4 card-subtitle">
 												      	<?php $date = strtotime($event->eve_date);
 												      		echo date('d M Y',$date);
 												      	?>
@@ -131,14 +131,14 @@
 												</div>
 												@endforeach
 											</div> {{-- end event row --}}
-											<a href="{{ url('/moreEvent') }}" class="btn bg-purple text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+											<a href="{{ url('/moreEvent') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 				          	</div>
 		              </div>
 		            </div> {{-- end collapse --}}
 	          	</div>
 	          </div>
 	        </article> {{-- end event --}}
-	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-purple">
+	        <hr id="bridgeHr" class="my-5 col-6 bg-gradient-salmon">
 				</div>
 			</section> {{-- end section main --}}
  		</div>
@@ -152,7 +152,7 @@
 									<div class="mt-4 showAbout">
 										<h1 class="text-center text-gradient-purple">ABOUT</h1>
 									</div>
-									<hr id="bridgeHr" class="bg-gradient-purple" width="200">
+									<hr id="bridgeHr" class="bg-gradient-salmon" width="200">
 								</div>
 								<div class="row">
 									<div class="col-md-6 mx-auto text-justify py-2">
@@ -198,6 +198,23 @@
 		<script>
 			$(window).on('load', function(){
 				$('.startContent').addClass('showContent');
+			});
+
+			$(window).scroll(function(){
+			  var wScroll = $(this).scrollTop();
+
+			  if (wScroll > $('.about').offset().top - 400)
+			  {
+			    $('.about').addClass('showAbout');
+			    $('.about').addClass('aboutLeft');
+			    $('.about').addClass('aboutRight');
+			  }
+
+			  if (wScroll > $('.contact').offset().top - 400)
+			  {
+			    $('.contact').addClass('showContact1');
+			    $('.contact').addClass('showContact2');
+			  }
 			});
 		</script>
 	@stop	

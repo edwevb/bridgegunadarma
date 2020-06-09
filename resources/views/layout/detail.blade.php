@@ -25,6 +25,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   <style>
+    nav{
+      background-color: #ad5389;
+      background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
+      background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
+      background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));
+      background-size: cover;
+    }
     @media (min-width: 992px){
       nav{
         padding-top: 2rem!important;
@@ -47,7 +54,7 @@
   alert('Direkomendasikan untuk membuka halaman website ini dengan browser GOOGLE CHROME');
   </script> --}}
   {{-- Top menu --}}
-  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-purple shadow fixed-top" id ="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
         <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"> Bridge Gunadarma</a>

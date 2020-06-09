@@ -2,10 +2,10 @@
 @section('title', 'List Tournament / Event')
 @section('content')
 	<article id="event"> {{-- event article --}}
-		<div class="p-5 bg-light text-center rounded content-mobile">
+		<div class="p-5 bg-light text-center rounded content-home">
 			<div class="text-dark mx-auto my-4">
     		<h1 class="text-gradient-purple">List Tournament / Event</h1>
-    		<hr class="bg-gradient-purple w-50" style="border-width: 3px;">
+    		<hr class="bg-gradient-salmon w-50" style="border-width: 3px;">
     	</div>
 			<div class="row row-cols-1 row-cols-md-3 justify-content-center">
 				@foreach ($data_event as $event)
@@ -15,19 +15,19 @@
 					  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="{!!$event->eve_title!!}">
 					  	</div>
 					    <div class="card-body text-white">
-					      <h5 class="card-title">{{$event->eve_title}}</h5>
+					      <h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5>
 					      <p class="mb-4 card-subtitle">
 					      	<?php $date = strtotime($event->eve_date);
 					      		echo date('d M Y',$date);
 					      	?>
 					      </p>
-					       <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
+					       <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn btn-salmon p-3 rounded-circle shadow"><span class="lead font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>
 				@endforeach
 			</div> {{-- end event row --}}
-			<a href="{{ url('/') }}" class="btn bg-gradient-purple btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
+			<a href="{{ url('/') }}" class="btn btn-orange btn-none rounded-pill px-5 shadow"><span class="lead font-weight-bold">BACK TO HOME <i class="fas fa-home"></i></span></a>
 		</div>
   </article>{{-- end event --}}
   @section('script')

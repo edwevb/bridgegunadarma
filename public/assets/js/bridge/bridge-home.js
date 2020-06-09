@@ -31,20 +31,3 @@ $(document).ready(function(){
       return false; 
   }); 
 });
-
-$(window).scroll(function(){
-  var wScroll = $(this).scrollTop();
-
-  if (wScroll > $('.about').offset().top - 300)
-  {
-    $('.about').addClass('showAbout');
-    $('.about').addClass('aboutLeft');
-    $('.about').addClass('aboutRight');
-  }
-
-  if (wScroll > $('.contact').offset().top - 300)
-  {
-    $('.contact').addClass('showContact1');
-    $('.contact').addClass('showContact2');
-  }
-});
