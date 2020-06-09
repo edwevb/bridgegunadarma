@@ -48,15 +48,15 @@
 					<!-- Modal -->
 					<div class="modal fade bg-gradient-salmon" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					  <div class="modal-dialog modal-dialog-centered modal-lg">
-					    <div class="modal-content bg-purple">
+					    <div class="modal-content bg-purple br-50">
 			      		<a class="p-5 text-white text-center" type="button" disabled>
 								  <span class="spinner-grow" role="status"></span>
 								  <h1 class="d-inline"><span class="text-salmon font-weight-bold" style="letter-spacing:3px;">Postponed</span></h1><br><h3><i class="far fa-frown my-2"></i><br>Due to Corona Virus.</h3>
 								</a>
-									<small class="text-salmon m-1" role="button" data-dismiss="modal"><i class="text-white">Tap here or click the screen to close this. </i></small>
+									<small class="m-1 text-center text-white" role="button" data-dismiss="modal">X Close</small>
 					    </div>
 					  </div>
-					</div>
+					</div>{{-- end modal --}}
 				</div>
 				<div class="mb-5 pb-5"></div>
 				<div class="bg-transparent">
