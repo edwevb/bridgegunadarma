@@ -14,7 +14,7 @@
 							  <a href="#about" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-purple shadow-lg rounded mb-5">
-								<article id="slider"> {{-- slider --}}
+								<article id="slider">
 									<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">
 									    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -50,17 +50,16 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless h-100 shadow bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview">
+											  		<a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body text-center">
-											      <h5 class="card-title text-shadow text-white font-weight-bold">{{$mp->atlet->atlet_name}}</h5>
-											      <hr id="atletHr">
+											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><h5 class="card-title text-shadow font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
+											      <hr id="atletHr" class="bg-gradient-salmon">
 											      <div class="text-white lead font-italic">
 											      	<h6>{{$mp->atlet->alamat}}</h6>
 											      </div>
 											    </div>
 											  </div> {{-- end card --}}
-											   <a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 											</div>
 											@endforeach
 										</div> {{-- end atlet row --}}
@@ -82,18 +81,17 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview">
+											  		<a href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
-											    <div class="card-body text-white">
-											      <h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5>
-											      <p class="mb-4 card-subtitle">
+											    <div class="card-body">
+											      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5></a>
+											      <p class="mb-4 card-subtitle text-white">
 											      	<?php $date = strtotime($prestasi->pre_date);
 											      		echo date('d M Y',$date);
 											      	?>
 											      </p>
 											    </div>
 											  </div> {{-- end card --}}
-											  <a href="{{ url('/detailPrestasi/'.$prestasi->id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
 											</div>
 											@endforeach
 										</div> {{-- end prestasi row --}}
@@ -110,29 +108,26 @@
 	      				<a href="#event-collapse" class="title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="event-collapse">TOURNAMENT/EVENT<br><i class="fa fa-fw fa-caret-down fa-2x text-salmon"></i></a>
 	        			<div class="collapse" id="event-collapse">
 	        				<div class="p-3">
-			            	<div class="card-borderless">
-			                <div class="row row-cols-1 row-cols-md-3">
-												@foreach ($data_event as $event)
-												<div class="px-1 mb-5">
-												  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
-												  	<div class="col-md p-2">
-												  		<img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview">
-												  	</div>
-												    <div class="card-body text-white">
-												      <h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5>
-												      <p class="mb-4 card-subtitle">
-												      	<?php $date = strtotime($event->eve_date);
-												      		echo date('d M Y',$date);
-												      	?>
-												      </p>
-												    </div>
-												  </div> {{-- end card --}}
-												  <a href="{{ url('/detailEvent/'.$event->id) }}" class="btn-detail btn rounded-pill shadow"><span class="font-weight-bold">Detail <i class="fas fa-external-link-alt"></i></span></a>
-												</div>
-												@endforeach
-											</div> {{-- end event row --}}
-											<a href="{{ url('/moreEvent') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
-				          	</div>
+		                <div class="row row-cols-1 row-cols-md-3">
+											@foreach ($data_event as $event)
+											<div class="px-1 mb-5">
+											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
+											  	<div class="col-md p-2">
+											  		<a href="{{ url('/detailEvent/'.$event->id) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
+											  	</div>
+											    <div class="card-body">
+											      <a id="body-link" href="{{ url('/detailEvent/'.$event->id) }}"><h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5></a>
+											      <p class="mb-4 card-subtitle text-white">
+											      	<?php $date = strtotime($event->eve_date);
+											      		echo date('d M Y',$date);
+											      	?>
+											      </p>
+											    </div>
+											  </div> {{-- end card --}}
+											</div>
+											@endforeach
+										</div> {{-- end event row --}}
+										<a href="{{ url('/moreEvent') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
 	          	</div>

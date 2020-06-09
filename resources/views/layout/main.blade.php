@@ -118,13 +118,13 @@
     </blockquote>
     <div class="text-center">
       <ul class="list-inline">
-        <li class="list-inline-item"><a href="{{ url('/') }}">
+        <li class="list-inline-item footer-logo"><a href="{{ url('/') }}">
           <img height="175" width="auto" alt="BrigeGunadarma" src="{{ asset('assets/img/bridgeug.png') }}"></a>
         </li>
         <li class="list-inline-item">
           <div class ="vertical"></div>
         </li>
-        <li class="list-inline-item"><a target="_blank" href="https://www.gunadarma.ac.id/">
+        <li class="list-inline-item footer-logo"><a target="_blank" href="https://www.gunadarma.ac.id/">
           <img height="175" width="auto" alt="UniversitasGunadarma" src="{{ asset('assets/img/ug.png') }}"></a>
         </li>
       </ul>
