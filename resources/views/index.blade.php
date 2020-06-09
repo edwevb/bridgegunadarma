@@ -203,14 +203,14 @@
 			$(window).scroll(function(){
 			  var wScroll = $(this).scrollTop();
 
-			  if (wScroll > $('.about').offset().top - 400)
+			  if (wScroll > $('.about').offset().top - 500)
 			  {
 			    $('.about').addClass('showAbout');
 			    $('.about').addClass('aboutLeft');
 			    $('.about').addClass('aboutRight');
 			  }
 
-			  if (wScroll > $('.contact').offset().top - 400)
+			  if (wScroll > $('.contact').offset().top - 500)
 			  {
 			    $('.contact').addClass('showContact1');
 			    $('.contact').addClass('showContact2');
