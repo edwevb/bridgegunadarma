@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-     public function role()
+    public function role()
     {
        if ($this->role_id == 1)
         {

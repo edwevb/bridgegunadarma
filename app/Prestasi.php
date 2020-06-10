@@ -18,4 +18,12 @@ class Prestasi extends Model
     {
     	return $this->belongsToMany(Atlet::class)->orderBy('atlet_name');
     }
+
+    public function getData()
+    {
+        $prestasi = \App\Prestasi::orderBy('pre_date','Desc')
+                            ->take(3)
+                            ->get();
+        return $prestasi;
+    }
 }

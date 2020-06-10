@@ -87,7 +87,7 @@
 										<a href="{{ url('/moreAtlet') }}" class="btn btn-salmon text-white rounded-pill col-md-6 mx-auto shadow mt-5"><span class="lead font-weight-bold">Load More <i class="fas fa-users"></i></span></a>
 		              </div>
 		            </div> {{-- end collapse --}}
-	          	</div>
+	          	</div>`
 	          </div> {{-- end card atlet button --}}
 	        </article>{{-- end atlet --}}
 					<hr id="bridgeHr" class="my-5 col-6 bg-gradient-salmon">
