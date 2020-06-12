@@ -9,7 +9,7 @@
     {{-- Start content --}}
     <div class="col-lg d-flex">
       <div class="container">
-        <div class="card shadow borderless">
+        <div class="card borderless borderless">
           <div class="card-header">
             <h1 id="cms-header" class="text-center font-weight-bold">Pengeluaran Bridge Gunadarma</h1>
           </div>

@@ -10,7 +10,6 @@
     <div class="col-lg d-flex">
       <div class="container">
         <div class="card-borderless">
-          DASHBOARD / MENU / DATA / MATERI
           <div class="card-header">
             <h1 id="cms-header" class="text-center font-weight-bold">Materi Bridge Gunadarma</h1>
           </div>

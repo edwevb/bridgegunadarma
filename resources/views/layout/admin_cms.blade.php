@@ -139,9 +139,22 @@
       <div class="col-lg d-flex">
         <div class="container">
           <div class="breadcrumb bg-dark">
-            {{Request::url() ===  url('/materi')  ? 'ahahaha' : ''}}
             <small data-toggle="tooltip" data-placement="top" title="Home"><a href="{{ url('/') }}" class="text-light"><i class="fa fa-home"></i>&nbsp;Home</a></small>
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
+          </div>
+          <div class="ml-2 text-muted">
+            {{Request::url() ===  url('/materi')  ? 'Dashboard / Data / Materi' : ''}}
+            {{Request::url() ===  url('/history')  ? 'Dashboard / Data / Pelatihan' : ''}}
+            {{Request::url() ===  url('/atlet')  ? 'Dashboard / Data / Atlet' : ''}}
+            {{Request::url() ===  url('/prestasi')  ? 'Dashboard / Data / Prestasi' : ''}}
+            {{Request::url() ===  url('/event')  ? 'Dashboard / Data / Event' : ''}}
+            {{Request::url() ===  url('/masterpoint')  ? 'Dashboard / Masterpoint' : ''}}
+            {{Request::url() ===  url('/iuranSk')  ? 'Dashboard / Kas / Iuran SK' : ''}}
+            {{Request::url() ===  url('/pengeluaran')  ? 'Dashboard / Kas / Pengeluaran' : ''}}
+            {{Request::url() ===  url('/user')  ? 'Dashboard / User Management' : ''}}
+            {{Request::url() ===  url('/dashboard')  ? 'Dashboard / ' : ''}}
+            {{Request::url() ===  url('/pesan')  ? 'Dashboard / Pesan' : ''}}
+            {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
           </div>
         </div>
       </div>
