@@ -23,7 +23,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="text-xs font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">materi ({{$data_materi->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">materi ({{$data_materi}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
@@ -45,7 +45,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">atlet ({{$data_atlet->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">atlet ({{$data_atlet}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <a href="{{ url('/atlet') }}" class="btn btn-dark btn-sm btn-fade rounded-pill col-8"><i class="fas fa-arrow-right"></i> <i class="fas fa-folder-open"></i></a>
@@ -65,7 +65,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">prestasi ({{$data_prestasi->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">prestasi ({{$data_prestasi}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
@@ -86,7 +86,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">pesan ({{$data_pesan->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">pesan ({{$data_pesan}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
@@ -107,7 +107,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">Event ({{$data_event->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">Event ({{$data_event}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
@@ -128,7 +128,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2 text-center">
                     <div class="font-weight-bold text-uppercase mb-1">
-                      <h3 class="font-weight-bold text-white">Pelatihan ({{$data_history->count()}})</h3>
+                      <h3 class="font-weight-bold text-white">Pelatihan ({{$data_history}})</h3>
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-white">
                       <div class="h5 mb-0 font-weight-bold text-white">
@@ -144,20 +144,59 @@
             </div>
           </div>
         </div> {{-- end row --}}
-
-        
-        <div class="my-5 text-center">
-          <h1>Welcome, Admin <i class="fas fa-user-tie"></i></h1><br>
-          <a class="btn btn-dark text-white mb-1 rounded-pill px-5" data-toggle="modal" data-target="#modal-announcement" ><h3><i class="fas fa-bullhorn"></i> Announcement</h3></a>
-          <button data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-table btn-transparent"><h3><i class="fa fa-edit"></i></h3> </button>
-          {{-- <button class="btn btn-light bg-transparent btn-md" href="javascript:;" data-toggle="collapse" data-target="#form" style="width: 8rem"><h3><i class="fa fa-edit"></i> Edit</h3></button> --}}
+        <div class="my-5">
+          <h1 class="text-center">Welcome, Admin <i class="fas fa-user-tie"></i></h1><br>
+          <div class="card borderless bg-gradient-purple text-white">
+            <div class="card-body">
+              @isset($data_ann->ann_title)
+                <h5 class="card-title">{{$data_ann->ann_title}}</h5>
+              @endisset
+              @isset ($data_ann->ann_date)
+                <small>
+                  @php
+                    $ann_date = strtotime($data_ann->ann_date);
+                  @endphp
+                  {{date("d M Y", $ann_date)}}
+                </small>
+              @endisset
+              <hr id="bridgeHr">
+              @isset ($data_ann->ann_isi )
+                <div class="ml-2">
+                  {!! $data_ann->ann_isi !!}
+                </div>
+              @endisset
+              <div class="my-1">
+                <a role="button" data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon btn-none px-5"><i class="fa fa-edit"></i> Edit</a>
+              </div>
+            </div>
+          </div>
         </div>
       @else
         <i class="ml-4 fas fa-user fa-2x"></i>
-        <div class="pt-2 ml-3">
+        <div class="p-3">
           <h1>Hello, {{auth()->user()->name}}</h1>
           <br>
-          <a class="btn btn-dark text-white rounded-pill px-5" data-toggle="modal" data-target="#modal-announcement" ><h3><i class="fas fa-bullhorn"></i> Announcement</h3></a>
+          <div class="card borderless bg-gradient-purple text-white">
+            <div class="card-body">
+              @isset($data_ann->ann_title)
+                <h5 class="card-title">{{$data_ann->ann_title}}</h5>
+              @endisset
+              @isset ($data_ann->ann_date)
+                <small>
+                  @php
+                    $ann_date = strtotime($data_ann->ann_date);
+                  @endphp
+                  {{date("d M Y", $ann_date)}}
+                </small>
+              @endisset
+              <hr id="bridgeHr">
+              @isset ($data_ann->ann_isi )
+                <div class="ml-2">
+                  {!! $data_ann->ann_isi !!}
+                </div>
+              @endisset
+            </div>
+          </div>
         </div>
       @endif
       </div>{{-- end container --}}
@@ -198,7 +237,6 @@
       </div>
     </div>
   </div>{{-- End Modal --}}
-
   {{-- Modal Edit Announcement --}}
   <div class="modal fade" id="modal-edit-announcement" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">

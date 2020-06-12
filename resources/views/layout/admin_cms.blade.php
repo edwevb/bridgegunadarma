@@ -82,9 +82,15 @@
                 Request::url() ===  url('/atlet') || 
                 Request::url() ===  url('/prestasi') || 
                 Request::url() ===  url('/event')
-                ? 'btn-secondary' : 'btn-dark'}}" 
+                ? 'btn-secondary show' : 'btn-dark'}}" 
                 href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
-              <ul id="data" class="collapse list-group">
+              <ul id="data" class="collapse {{
+                Request::url() ===  url('/materi') || 
+                Request::url() ===  url('/history') ||
+                Request::url() ===  url('/atlet') || 
+                Request::url() ===  url('/prestasi') || 
+                Request::url() ===  url('/event')
+                ? 'show' : 'hide'}} list-group">
                 <li class="list-group">
                   <a class="btn text-left ml-2 {{Request::url() ===  url('/materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>
@@ -112,7 +118,10 @@
                 Request::url() ===  url('/iuranSk') || 
                 Request::url() ===  url('/pengeluaran')
                 ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#kas"></i><i class="fas fa-balance-scale-right"></i> Kas<i class="fa fa-fw fa-caret-down"></i></a>
-              <ul id="kas" class="collapse list-group">
+              <ul id="kas" class="collapse list-group {{
+                Request::url() ===  url('/iuranSk') || 
+                Request::url() ===  url('/pengeluaran')
+                ? 'show' : 'hide'}}">
                 <li class="list-group">
                   <a class="btn text-left ml-2 {{Request::url() ===  url('/iuranSk')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/iuranSk') }}"><i class="fas fa-money-bill-wave"></i> Iuran SK</a>
                 </li>
@@ -150,7 +159,10 @@
                 Request::url() ===  url('/_materi') || 
                 Request::url() ===  url('/_history')
                 ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
-              <ul id="data" class="collapse list-group">
+              <ul id="data" class="collapse list-group {{
+                Request::url() ===  url('/_materi') || 
+                Request::url() ===  url('/_history')
+                ? 'show' : 'hide'}}">
                 <li class="list-group">
                   <a class="btn text-left ml-2 {{Request::url() ===  url('/_materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>

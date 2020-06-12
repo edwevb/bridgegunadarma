@@ -107,6 +107,13 @@ class HistoryController extends Controller
     {
         if (History::destroy($history->id))
         {
+            $filePath = public_path("assets/img/hist_dist/{$event->hist_dist}");
+            if($event->hist_dist != NULL)
+            {
+                if (File::exists($filePath))
+                {
+                    unlink($filePath);
+                }
             $history->atlet()->detach($history->atlet);
         }
         return redirect('/history')->with('AlertSuccess','Data History berhasil dihapus!');

@@ -58,7 +58,7 @@ class AtletController extends Controller
             }
             else{
                 $file             = $request->file('img_atlet');
-                $fileName         = $atlet->nik.$file.getClientOriginalExtension();
+                $fileName         = $atlet->nik.'.'.$file->getClientOriginalExtension();
                 $file->move("assets/img/img_atlet", $fileName);
                 $atlet->img_atlet = $fileName;
             }
@@ -112,7 +112,7 @@ class AtletController extends Controller
         if ($request->img_atlet != NULL)
         {
             $file       = $request->file('img_atlet');
-            $fileName   = '(BridgeGunadarma)'.$atlet->nik.'.'.$file->getClientOriginalExtension();
+            $fileName   = $atlet->nik.'.'.$file->getClientOriginalExtension();
             $file->move("assets/img/img_atlet", $fileName);
             $atlet->img_atlet = $fileName;
             $atlet->save();
@@ -130,9 +130,12 @@ class AtletController extends Controller
         if (Atlet::destroy($atlet->id))
         {
             $imageFile = public_path("assets/img/img_atlet/{$atlet->img_atlet}");
-            if (File::exists($imageFile))
+            if($atlet->img_atlet != NULL)
             {
-                unlink($imageFile);
+                if (File::exists($imageFile))
+                {
+                    unlink($imageFile);
+                }
             }
             $atlet->masterpoint()->delete($atlet->masterpoint);
             $atlet->prestasi()->detach($atlet->prestasi, $atlet->history, $atlet->iuranSk);

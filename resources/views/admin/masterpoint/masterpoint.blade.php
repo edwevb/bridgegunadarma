@@ -22,6 +22,9 @@
                 </button>
               </div>
             @endif
+            @if(session('AlertWarning'))
+              {!! session('AlertWarning') !!}
+            @endif
             @if (session('AlertSuccess'))
               <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                 <strong>{{ session('AlertSuccess') }}</strong>
@@ -106,7 +109,7 @@
             <div class="row justify-content-center">
             	<div class="form-group col-md-6">
                 <label for="atlet_id">Atlet</label>
-                <select class="form-style-static" name="atlet_id" id="atlet_id">
+                <select class="form-style-static  @error('atlet_id') is-invalid @enderror" name="atlet_id" id="atlet_id">
 	                @foreach ($data_atlet as $atlet)
                     <option value="{{$atlet->id}}" {{ old('atlet_id') == $atlet->id ? 'selected' : ''}}>
                       {{$atlet->atlet_name}}</option>

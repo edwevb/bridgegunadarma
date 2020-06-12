@@ -111,7 +111,7 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="role_id">Role | Level</label>
-                 <select class="form-style-static @error('role_id') is-invalid @enderror" name="role_id" id="role_id">
+                <select class="form-style-static @error('role_id') is-invalid @enderror" name="role_id" id="role_id">
                   <option value="">Choose..</option>
                   <option value="1" {{(old('role_id') == '1') ? 'selected' : ''}}>Admin</option>
                   <option value="0" {{(old('role_id') == '0') ? 'selected' : ''}}>User</option>

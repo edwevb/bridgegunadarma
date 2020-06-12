@@ -31,7 +31,7 @@
 			              	<th><i class="fas fa-hourglass-half fa-2x"></i></th>
 		                	<td>:</td>
 		                	<th class="lead">
-												{{$atlet->getAge()}} yo
+												{{$atlet->getAge()}} Tahun
 			                </th>
 			              </tr>
 			              <tr>
@@ -49,7 +49,7 @@
 	              <div id="brg_taught" class="mb-3">
 	                <div class="card-borderless bg-gradient-purple shadow rounded p-1">
 	                  <div class="card-body rounded text-white">
-	                    <h5 class="card-title p-2">What have I learned from bridge?</h5>
+	                    <h5 class="card-title p-2">Hal-hal yang saya pelajari dari Bridge?</h5>
 	                    <div class="card-text font-italic p-2">
 	                      @isset($atlet->brg_taught)
 	                      	{!! $atlet->brg_taught !!}

@@ -27,7 +27,7 @@ class MateriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'mat_title' => 'required|string|max:128',
+            'mat_title' => 'required|alpha_spaces|max:128',
             'mat_date'  => 'required|date',
             'file_mat'  => 'nullable|file|max:10024'
         ]);
@@ -64,7 +64,7 @@ class MateriController extends Controller
     public function update(Request $request, Materi $materi)
     {
          $request->validate([
-            'mat_title' => 'required|string|max:128',
+            'mat_title' => 'required|alpha_spaces|max:128',
             'mat_date'  => 'required|date',
             'file_mat'  => 'nullable|file|max:10024'
         ]);
@@ -98,10 +98,13 @@ class MateriController extends Controller
     {
         if (Materi::destroy($materi->id))
         {
-            $matFile = public_path("assets/file/file_mat/{$materi->file_mat}");
-            if (File::exists($matFile))
+            $filePath = public_path("assets/file/file_mat/{$materi->file_mat}");
+            if ($materi->file_mat != NULL)
             {
-                unlink($matFile);
+                if (File::exists($filePath))
+                {
+                    unlink($filePath);
+                }
             }
             return redirect('/materi')->with('AlertSuccess','Data Materi berhasil dihapus!');
         }

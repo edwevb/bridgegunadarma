@@ -85,7 +85,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_open">Open</label>
-		                <input type="number" name="fee_team_open" id="fee_team_open" class="form-style-static @error('fee_team_open') is-invalid @enderror" value="{{$event->fee_team_open}}" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_team_open" id="fee_team_open" class="form-style-static @error('fee_team_open') is-invalid @enderror" value="{{$event->fee_team_open}}" autocomplete="off">
 		                @error('fee_team_open')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -94,7 +94,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_mhs">Mahasiswa / U26</label>
-		                <input type="number" name="fee_team_mhs" id="fee_team_mhs" class="form-style  @error('fee_team_mhs') is-invalid @enderror" value="{{$event->fee_team_mhs}}" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_team_mhs" id="fee_team_mhs" class="form-style-static @error('fee_team_mhs') is-invalid @enderror" value="{{$event->fee_team_mhs}}" autocomplete="off">
 		                @error('fee_team_mhs')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -103,7 +103,7 @@
 		              </div>
 		              <div class="col-md-4">
 		              	<label for="fee_team_u21">Pelajar / U-21</label>
-		                <input type="number" name="fee_team_u21" id="fee_team_u21" class="form-style-static @error('fee_team_u21') is-invalid @enderror" value="{{$event->fee_team_u21}}" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_team_u21" id="fee_team_u21" class="form-style-static @error('fee_team_u21') is-invalid @enderror" value="{{$event->fee_team_u21}}" autocomplete="off">
 		                @error('fee_team_u21')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -117,7 +117,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_open">Open</label>
-		                <input type="number" name="fee_pas_open" id="fee_pas_open" class="form-style-static @error('fee_pas_open') is-invalid @enderror" value="{{$event->fee_pas_open}}" min="0.1" step="0.01" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_pas_open" id="fee_pas_open" class="form-style-static @error('fee_pas_open') is-invalid @enderror" value="{{$event->fee_pas_open}}" autocomplete="off">
 		                @error('fee_pas_open')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -126,7 +126,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_mhs">Mahasiswa / U26</label>
-		                <input type="number" name="fee_pas_mhs" id="fee_pas_mhs" class="form-style-static @error('fee_pas_mhs') is-invalid @enderror" value="{{$event->fee_pas_mhs}}" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_pas_mhs" id="fee_pas_mhs" class="form-style-static @error('fee_pas_mhs') is-invalid @enderror" value="{{$event->fee_pas_mhs}}" autocomplete="off">
 		                @error('fee_pas_mhs')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -135,7 +135,7 @@
 		              </div>
 		              <div class="col-md-4">
 		                <label for="fee_pas_u21">Pelajar / U-21</label>
-		                <input type="number" name="fee_pas_u21" id="fee_pas_u21" class="form-style-static @error('fee_pas_u21') is-invalid @enderror" value="{{$event->fee_pas_u21}}" min="0.1" step="0.01" autocomplete="off">
+		                <input type="text" name="fee_pas_u21" id="fee_pas_u21" class="form-style-static @error('fee_pas_u21') is-invalid @enderror" value="{{$event->fee_pas_u21}}" autocomplete="off">
 		                @error('fee_pas_u21')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -147,7 +147,7 @@
 		              <div class="text-center">
 		                <label for="prizepool" class="lead">Prizepool*</label>
 		              </div>
-		              <input type="number" name="prizepool" id="prizepool" class="form-style-static @error('prizepool') is-invalid @enderror" value="{{$event->prizepool}}" min="0.1" step="0.01" autocomplete="off">
+		              <input type="text" name="prizepool" id="prizepool" class="form-style-static @error('prizepool') is-invalid @enderror" value="{{$event->prizepool}}" autocomplete="off">
 		              @error('prizepool')
 		                <div class="invalid-feedback">
 		                  {{$message}}
@@ -200,6 +200,18 @@
 		</div> {{-- end content --}}
 	</div>
 @section('footer')
-	<script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#fee_team_open').mask('#,##0.00', {reverse: true});
+        $('#fee_team_mhs').mask('#,##0.00', {reverse: true});
+        $('#fee_team_u21').mask('#,##0.00', {reverse: true});
+        $('#fee_pas_open').mask('#,##0.00', {reverse: true});
+        $('#fee_pas_mhs').mask('#,##0.00', {reverse: true});
+        $('#fee_pas_u21').mask('#,##0.00', {reverse: true});
+        $('#prizepool').mask('#,##0.00', {reverse: true});
+    })
+  </script>
 @stop
 @endsection

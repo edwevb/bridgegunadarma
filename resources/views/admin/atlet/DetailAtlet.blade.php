@@ -177,7 +177,7 @@
                     <a href="#prestasi" class="btn btn-block text-white bx-none" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="prestasi"><h5><i class="fas fa-trophy"></i> List Prestasi Atlet<i class="fa fa-fw fa-caret-down"></i></h5></a>
                     <div class="collapse" id="prestasi">
                       <div class="p-4">
-                        <div class="card-borderless bg-white p-4 shadow rounded">
+                        <div class="card borderless bg-white p-4 shadow rounded">
                           <div class="p-2 mt-3">
                             <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-atlet-prestasi"><i class="far fa-plus-square"></i>&nbsp; <i class="far fa-user"></i></a>
                           </div>

@@ -11,12 +11,12 @@ class DashboardController extends Controller
     public function index()
     {
         $data_ann      = DB::table('tb_ann')->first();
-        $data_atlet    = \App\Atlet::all();
-        $data_prestasi = \App\Prestasi::all();
-        $data_materi   = \App\Materi::all();
-        $data_history  = \App\History::all();
-        $data_event    = \App\Event::all();
-        $data_pesan    = \App\Pesan::all();
+        $data_atlet    = \App\Atlet::count();
+        $data_prestasi = \App\Prestasi::count();
+        $data_materi   = \App\Materi::count();
+        $data_history  = \App\History::count();
+        $data_event    = \App\Event::count();
+        $data_pesan    = \App\Pesan::count();
         return view('admin.dashboard.dashboard',
             compact(
                 'data_ann',

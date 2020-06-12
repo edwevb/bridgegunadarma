@@ -22,14 +22,17 @@ class KasPengeluaranController extends Controller
         $request->validate([
             'p_title' => 'required|max:256',
             'p_date'  => 'required|date',
-            'p_biaya' => 'required|numeric|between:0.1,999999999999.999'
+            'p_biaya' => 'required|between:0.1,999999999999.999'
         ]);
 
-        if ($pengeluaran = Pengeluaran::create($request->all()))
-        {
-            return redirect('/pengeluaran')->with('AlertSuccess','Data Pengeluaran berhasil ditambahkan!');
-        }
-        return abort(500);
+        Pengeluaran::create([
+            'p_title'       => $request->p_title,
+            'p_date'        => $request->p_date,
+            'p_biaya'       => (float) str_replace(",","",$request->p_biaya),
+            'p_keterangan'  => $request->p_keterangan
+        ]);
+
+        return redirect('/pengeluaran')->with('AlertSuccess','Data Pengeluaran berhasil ditambahkan!');
     }
 
     public function show(Pengeluaran $pengeluaran)
@@ -47,9 +50,17 @@ class KasPengeluaranController extends Controller
          $request->validate([
             'p_title' => 'required|max:256',
             'p_date'  => 'required|date',
-            'p_biaya' => 'required|numeric|between:0.1,999999999999.999'
+            'p_biaya' => 'required|between:0.1,999999999999.999'
         ]);
-        $pengeluaran->update($request->all());
+
+        Pengeluaran::where('id', $pengeluaran->id)
+                    ->update([
+                        'p_title'      => $request->p_title,
+                        'p_date'       => $request->p_date,
+                        'p_biaya'      => (float) str_replace(",","",$request->p_biaya),
+                        'p_keterangan' => $request->p_keterangan
+                    ]);
+
         return redirect('/pengeluaran')->with('AlertSuccess','Data Pengeluaran berhasil diperbaharui!');
     }
 

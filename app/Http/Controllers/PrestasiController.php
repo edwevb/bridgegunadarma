@@ -96,9 +96,12 @@ class PrestasiController extends Controller
         if (Prestasi::destroy($prestasi->id))
         {
             $imageFile = public_path("assets/img/img_pre/{$prestasi->img_pre}");
-            if (File::exists($imageFile))
+            if($prestasi->img_pre != NULL)
             {
-                unlink($imageFile);
+                if (File::exists($imageFile))
+                {
+                    unlink($imageFile);
+                }
             }
             $prestasi->atlet()->detach($prestasi->atlet);
             return redirect('/prestasi')->with('AlertSuccess','Data Prestasi berhasil dihapus!');

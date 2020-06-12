@@ -125,8 +125,10 @@
                 @enderror
               </div>
               <div class="col">
+                <?php $sk_tahun = date('Y',strtotime("-1 year")).'/'.date('Y') ?>
                 <label for="sk_tahun">Tahun Ajaran</label>
-                <input type="text" name="sk_tahun" id="sk_tahun" class="form-style  @error('sk_tahun') is-invalid @enderror" placeholder="example : 2017/2018" value="{{old('sk_tahun')}}" autocomplete="off">
+                <input name="sk_tahun" value="{{$sk_tahun}}" hidden>
+                <input class="form-control" value="{{$sk_tahun}}" disabled>
                 @error('sk_tahun')
                   <div class="invalid-feedback">
                     {{$message}}

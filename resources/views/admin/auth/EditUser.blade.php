@@ -40,9 +40,17 @@
                       <?php $role_id = [0,1];
                       foreach($role_id as $role):?>
 	                      @if ($role == $user['role_id'])
-	                        <option value=" <?= $role; ?>" selected><?= $role ;?></option>
+	                      	@if ($user['role_id']===1)
+	                        	<option value="<?= $role; ?>" selected>Admin</option>
+	                        @else
+	                        	<option value="<?= $role; ?>" selected>User</option>
+	                        @endif
 	                      @else
-	                        <option value=" <?= $role; ?>"><?= $role ;?></option>
+                        	@if ($user['role_id']!=0)
+	                        	<option value="{{0}}">User</option>
+	                        @else
+	                        	<option value="{{1}}">Admin</option>
+	                        @endif
 	                      @endif
                       <?php endforeach; ?>
                     </select>

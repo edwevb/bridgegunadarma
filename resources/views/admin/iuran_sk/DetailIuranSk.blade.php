@@ -140,7 +140,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-default">Rp</span>
                 </div>
-                <input type="number" name="sk_bayar" id="sk_bayar" class="form-control @error('sk_bayar') is-invalid @enderror" value="{{old('sk_bayar')}}" min="0.1" step="0.01" autocomplete="off">
+                <input type="text" name="sk_bayar" id="rupiah" class="form-control @error('sk_bayar') is-invalid @enderror" value="{{old('sk_bayar')}}" autocomplete="off">
                 @error('sk_bayar')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -158,4 +158,18 @@
       </div>
     </div>
   </div>
+  @section('footer')
+    <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#dataTable').DataTable();
+      });
+      
+      $(document).ready(function(){
+          $('#rupiah').mask('#,##0.00', {reverse: true});
+      })
+    </script>
+  @stop
 @endsection

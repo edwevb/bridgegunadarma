@@ -64,9 +64,9 @@ class IuranSkController extends Controller
     public function addAtlet(Request $request, IuranSk $iuranSk)
     {
          $request->validate([
-            'atlet' => 'required',
+            'atlet'    => 'required',
             'sk_date'  => 'required|date',
-            'sk_bayar' => 'required|numeric|between:0.1,999999999999.999'
+            'sk_bayar' => 'required|between:0.1,999999999999.999'
         ]);
 
         if ($iuranSk->atlet()->where('atlet_id',$request->atlet)->exists())
@@ -83,7 +83,7 @@ class IuranSkController extends Controller
             $request->atlet,
             [
                 'sk_date'  => $request->sk_date,
-                'sk_bayar' => $request->sk_bayar
+                'sk_bayar' => (float) str_replace(',','',$request->sk_bayar)
             ]);
         return redirect()->back()->with('AlertSuccessAtlet',
             '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">

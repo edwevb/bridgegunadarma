@@ -126,7 +126,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-default">Rp</span>
                 </div>
-                <input type="number" name="p_biaya" id="p_biaya" class="form-control @error('p_biaya') is-invalid @enderror rp" value="{{old('p_biaya')}}" min="0.1" step="0.01" autocomplete="off">
+                <input type="text" name="p_biaya" id="p_biaya" class="form-control @error('p_biaya') is-invalid @enderror rp" value="{{old('p_biaya')}}" min="0.1" step="0.01" autocomplete="off">
                 @error('p_biaya')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -152,11 +152,15 @@
   <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   <script>
     $(document).ready(function()
     {
       $('#dataTable').DataTable();
     });
+    $(document).ready(function(){
+        $('#p_biaya').mask('#,##0.00', {reverse: true});
+    })
   </script>
 @stop
 @endsection

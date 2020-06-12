@@ -21,16 +21,27 @@ class MasterpointController extends Controller
         return view('admin.masterpoint.masterpoint', compact('data_mpoint','data_atlet'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Masterpoint $masterpoint)
     {
          $request->validate([
-            'atlet_id'   => 'required|unique:tb_masterpoint',
+            'atlet_id'   => 'required',
             'discipline' => 'required|numeric|between:1,10',
             'bidding'    => 'required|numeric|between:1,10',
             'play'       => 'required|numeric|between:1,10'
         ]);
-        $masterpoint = Masterpoint::create($request->all());
-        return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil ditambahkan!');
+         if ($masterpoint->where('atlet_id',$request->atlet_id)->exists()){
+             return redirect()->back()->with('AlertWarning',
+                '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    Data Masterpoint Atlet sudah ada!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>');
+         }else{
+            $masterpoint = Masterpoint::create($request->all());
+            return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil ditambahkan!');
+         }
+        
     }
 
     public function edit(Masterpoint $masterpoint)

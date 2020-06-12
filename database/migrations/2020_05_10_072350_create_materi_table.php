@@ -18,7 +18,7 @@ class CreateMateriTable extends Migration
             $table->string('mat_title');
             $table->date('mat_date');
             $table->text('mat_keterangan')->nullable($value = true);
-            $table->text('file_mat');
+            $table->text('file_mat')->nullable($value = true);
             $table->timestamps();
         });
     }
