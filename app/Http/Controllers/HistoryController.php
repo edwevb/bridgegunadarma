@@ -114,9 +114,10 @@ class HistoryController extends Controller
                 {
                     unlink($filePath);
                 }
-            $history->atlet()->detach($history->atlet);
+                $history->atlet()->detach($history->atlet);
+            }
+            return redirect('/history')->with('AlertSuccess','Data History berhasil dihapus!');
         }
-        return redirect('/history')->with('AlertSuccess','Data History berhasil dihapus!');
     }
 
     public function addAtlet(Request $request, History $history)

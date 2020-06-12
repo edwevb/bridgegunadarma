@@ -139,6 +139,7 @@
       <div class="col-lg d-flex">
         <div class="container">
           <div class="breadcrumb bg-dark">
+            {{Request::url() ===  url('/materi')  ? 'ahahaha' : ''}}
             <small data-toggle="tooltip" data-placement="top" title="Home"><a href="{{ url('/') }}" class="text-light"><i class="fa fa-home"></i>&nbsp;Home</a></small>
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
           </div>
