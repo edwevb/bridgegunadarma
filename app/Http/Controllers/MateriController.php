@@ -27,7 +27,7 @@ class MateriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'mat_title' => 'required|alpha_spaces|max:128',
+            'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
             'file_mat'  => 'nullable|file|max:10024'
         ]);
@@ -41,7 +41,7 @@ class MateriController extends Controller
             {
                 $file             = $request->file('file_mat');
                 $file_extension   = $file->getClientOriginalExtension();
-                $fileName         = $request->mat_title.'.'.$file_extension;
+                $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
                 $file->move("assets/file/file_mat", $fileName);
                 $materi->file_mat = $fileName;
             }
@@ -64,7 +64,7 @@ class MateriController extends Controller
     public function update(Request $request, Materi $materi)
     {
          $request->validate([
-            'mat_title' => 'required|alpha_spaces|max:128',
+            'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
             'file_mat'  => 'nullable|file|max:10024'
         ]);
@@ -82,7 +82,7 @@ class MateriController extends Controller
         {
             $file             = $request->file('file_mat');
             $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = $request->mat_title.'.'.$file_extension;
+            $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
