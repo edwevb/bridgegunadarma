@@ -10,25 +10,26 @@
           <small>Dashboard / Data / Prestasi / {{$prestasi->pre_title}}</small>
         </div>
         <section>
-          <div class="card-borderless col-md-11 mx-auto border-left-info rounded">
-            <div class="row no-gutters m-3">
-              <div class="col-md-4 text-center mt-4">
-                <img class="rounded col-md" src="{{ url('assets/img/img_pre/'.$prestasi->img_pre) }}" alt="{{$prestasi->pre_title}}" height="auto" width="auto">
+          <div class="row">
+            <div class="card-borderless col-md-6 rounded">
+              <div class="m-1">
                 <div class="text-center mt-4">
-                  <a href="{{ url('/prestasi/'.$prestasi->id.'/edit') }}" class="text-primary px-2"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="#delete-prestasi" data-toggle="modal" data-target="#delete-prestasi" class="text-danger px-2"><i class="fa fa-trash"></i> Delete</a>
-                  <p class="my-4 text-left">
-                    <small class="text-muted">
-                      created : 
-                      @php
-                        $created = strtotime($prestasi->created_at);
-                        echo date('D, d-m-Y', $created);
-                      @endphp
-                    </small>
-                  </p>
+                  <img class="rounded col-md bg-dark p-1" src="{{ url('assets/img/img_pre/'.$prestasi->img_pre) }}" alt="{{$prestasi->pre_title}}">
+                  <div class="text-center mt-4">
+                    <a href="{{ url('/prestasi/'.$prestasi->id.'/edit') }}" class="text-primary px-2"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="#delete-prestasi" data-toggle="modal" data-target="#delete-prestasi" class="text-danger px-2"><i class="fa fa-trash"></i> Delete</a>
+                    <p class="my-4 text-left">
+                      <small class="text-muted">
+                        created : 
+                        @php
+                          $created = strtotime($prestasi->created_at);
+                          echo date('D, d-m-Y', $created);
+                        @endphp
+                      </small>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md">
+                <hr id="bridgeHr">
                 <div class="card-body">
                   <h5 class="card-title">{{$prestasi->pre_title}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">
@@ -44,36 +45,6 @@
                     @empty ($prestasi->pre_isi)
                       <p class="font-italic">No description found.</p>
                     @endempty
-                    <div class="py-4">
-                      <hr class="bridgeHr">
-                      <div class="my-4">
-                        <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
-                      </div>
-                      <div class="mb-4">
-                        @if(session('ErrorInput'))
-                          {!! session('ErrorInput') !!}
-                        @endif
-                        @if(session('AlertSuccess'))
-                          {!!session('AlertSuccess') !!}
-                        @endif
-                        <h5>List Partisipasi Atlet</h5>
-                      </div>
-                      <div class="table-responsive-xl">
-                        <table class="table table-borderless mx-auto">
-                          <tbody>
-                            @foreach ($prestasi->atlet as $atlet)
-                            <tr>
-                              <th width="10" scope="row">{{$loop->iteration}}</th>
-                              <td>{{$atlet->atlet_name}}</td>
-                              <td>
-                                <a href="{{ url('/prestasi/'.$prestasi->id.'/'.$atlet->id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
-                              </td>
-                            </tr>
-                            @endforeach
-                          </tbody>
-                        </table>
-                      </div>{{-- end table --}}
-                    </div>
                   </div>
                   <p class="my-2"><small class="text-muted">
                     last updated : 
@@ -84,8 +55,37 @@
                   </small></p>
                 </div>
               </div>
+            </div><!--end card-->
+            <div class="col-md-6">
+              <div class="my-4">
+                <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
+              </div>
+              <div class="mb-4">
+                @if(session('ErrorInput'))
+                  {!! session('ErrorInput') !!}
+                @endif
+                @if(session('AlertSuccess'))
+                  {!!session('AlertSuccess') !!}
+                @endif
+                <h5 class="m-1">List Atlet Berprestasi</h5>
+              </div>
+              <div class="table-responsive-xl m-1">
+                <table class="table table-borderless mx-auto">
+                  <tbody>
+                    @foreach ($prestasi->atlet as $atlet)
+                    <tr>
+                      <th width="10" scope="row">{{$loop->iteration}}</th>
+                      <td>{{$atlet->atlet_name}}</td>
+                      <td>
+                        <a href="{{ url('/prestasi/'.$prestasi->id.'/'.$atlet->id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>{{-- end table --}}
             </div>
-          </div><!--end card-->
+          </div> {{-- end row --}}
         </section>
       </div>
     </div>{{-- end content --}}

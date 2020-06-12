@@ -29,24 +29,17 @@ class MateriController extends Controller
         $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
-            'file_mat'  => 'nullable|file|max:10024'
+            'file_mat'  => 'required|file|max:10024'
         ]);
         if ($materi = Materi::create($request->all()))
         {
-            if($request->file('file_mat') == NULL)
-            {
-                $materi->file_mat = '';
-            }
-            else
-            {
-                $file             = $request->file('file_mat');
-                $file_extension   = $file->getClientOriginalExtension();
-                $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
-                $file->move("assets/file/file_mat", $fileName);
-                $materi->file_mat = $fileName;
-            }
-        $materi->save();
-        return redirect('/materi')->with('AlertSuccess','Data Materi berhasil ditambahkan!');
+            $file             = $request->file('file_mat');
+            $file_extension   = $file->getClientOriginalExtension();
+            $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
+            $file->move("assets/file/file_mat", $fileName);
+            $materi->file_mat = $fileName;
+            $materi->save();
+            return redirect('/materi')->with('AlertSuccess','Data Materi berhasil ditambahkan!');
         }
         return abort(404); 
     }
@@ -66,7 +59,7 @@ class MateriController extends Controller
          $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
-            'file_mat'  => 'nullable|file|max:10024'
+            'file_mat'  => 'required|file|max:10024'
         ]);
 
         if ($request->file_mat != NULL)

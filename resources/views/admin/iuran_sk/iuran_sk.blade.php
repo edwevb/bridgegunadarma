@@ -107,11 +107,11 @@
         <div class="modal-body">
           <form method="post" action="{{ url('/iuranSk') }}">
             @csrf
-            <div class="row form-group">
+            <div class="row justify-content-center form-group">
               <div class="form-group col-md-12 text-center mb-4">
                 <label>Iuran SK untuk periode :</label>
               </div>
-              <div class="col-3">
+              <div class="col-md-4">
                 <label for="pta_ata">PTA/ATA</label>
                 <select class="form-control  @error('pta_ata') is-invalid @enderror" name="pta_ata" id="pta_ata">
                   <option value="">Choose..</option>
@@ -124,7 +124,7 @@
                   </div>
                 @enderror
               </div>
-              <div class="col">
+              <div class="col-md-6">
                 <?php $sk_tahun = date('Y',strtotime("-1 year")).'/'.date('Y') ?>
                 <label for="sk_tahun">Tahun Ajaran</label>
                 <input name="sk_tahun" value="{{$sk_tahun}}" hidden>
