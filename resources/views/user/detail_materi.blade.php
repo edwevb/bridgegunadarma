@@ -5,6 +5,9 @@
 		<div class="col-md-2"></div>
 		<div class="col-lg d-flex">
 			<div class="container">
+				<div class="my-2 text-muted">
+	        <small>Dashboard / Data / Materi / {{$materi->mat_title}}</small>
+	      </div>
 				<section>
 					@if(session('AlertDanger'))
             <div class="alert alert-danger alert-dismissible fade show text-center col-md-6 mx-auto" role="alert">

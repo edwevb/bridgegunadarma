@@ -1,11 +1,14 @@
 @extends('layout.admin_cms')
-@section('title', $pesan->p_title)
+@section('title', 'Pesan')
 @section('section')
   <div class="row no-gutters">
     <div class="col-md-2"></div>
     {{-- start content --}}
     <div class="col-lg d-flex">
       <div class="container">
+        <div class="my-2 text-muted">
+          Dashboard / Pesan / Detail
+        </div>
         <section>
           <div class="card col-md-8 shadow border-left-success mt-4">
               <div class="card-body">

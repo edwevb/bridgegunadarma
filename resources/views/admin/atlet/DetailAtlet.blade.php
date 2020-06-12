@@ -6,6 +6,9 @@
     {{-- start content --}}
     <div class="col-lg d-flex">
       <div class="container">
+        <div class="my-2 text-muted">
+          <small>Dashboard / Data / Atlet / {{$atlet->atlet_name}}</small>
+        </div>
         <section>
           <div class="row">
             <div class="col-md-6 mt-3">{{-- content 1 --}}

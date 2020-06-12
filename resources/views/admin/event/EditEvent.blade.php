@@ -6,6 +6,9 @@
 		{{-- start content --}}
 		<div class="col-lg d-flex">
 			<div class="container">
+				<div class="my-2 text-muted">
+	        <small>Dashboard / Data / Event / Edit / {{$event->eve_title}}</small>
+	      </div>
 				<section id="edit">
           <div class="card-borderless">
             <div class="card-header borderless rounded border-l-i_border-r-d shadow-sm bg-white">

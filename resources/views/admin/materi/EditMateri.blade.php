@@ -3,9 +3,12 @@
 @section('section')
   <div class="row no-gutters">
     <div class="col-md-2"></div>
-    <div class="col-lg">
+    <div class="col-lg d-flex">
       {{-- start content --}}
-      <section id="edit">
+      <div class="container">
+      <div class="my-2 text-muted">
+        <small>Dashboard / Data / Materi / Edit / {{$materi->mat_title}}</small>
+      </div>
         <div class="card-borderless"> {{-- card --}}
           <div class="card-header borderless rounded border-l-i_border-r-d shadow-sm bg-white">
             <h3 id="cms-header" class="text-center">Form Edit Materi</h3>
@@ -101,7 +104,7 @@
             </form>
           </div>
         </div> {{-- end card --}}
-      </section> {{-- end content --}}
+      </div> {{-- end content --}}
     </div>
   </div>
 @section('footer')

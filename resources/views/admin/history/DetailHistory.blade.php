@@ -6,6 +6,9 @@
 	  {{-- start content --}}
 	  <div class="col-lg d-flex">
 	    <div class="container px-4">
+	    <div class="my-2 text-muted">
+        <small>Dashboard / Data / Pelatihan / {{$history->hist_title}}</small>
+      </div>
 	    	<section>
 	  			@if(session('AlertDanger'))
 		        <div class="alert alert-danger alert-dismissible fade show text-center col-md-6 mx-auto" role="alert">

@@ -6,6 +6,9 @@
 		{{-- start content --}}
 		<div class="col-lg d-flex">
 			<div class="container">
+        <div class="my-2 text-muted">
+          <small>Dashboard / Kas / Iuran SK / {{$iuranSk->pta_ata.' '.$iuranSk->sk_tahun}}</small>
+        </div>
 				<div class="card-borderless borderless">
           <div class="card-header">
             <h1 id="cms-header" class="text-center font-weight-bold">Kas (Iuran SK) Bridge Gunadarma </h1>

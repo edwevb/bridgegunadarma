@@ -6,6 +6,9 @@
 		<div class="col-md-2"></div>
 		<div class="col-lg d-flex">
 			<div class="container">
+				<div class="my-2 text-muted">
+          Dashboard / Kirim Pesan
+        </div>
 				<section id="edit">
 	        <div class="card-borderless p-1"> {{-- card --}}
 	          <div class="card-header">

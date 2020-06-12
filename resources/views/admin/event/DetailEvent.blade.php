@@ -6,6 +6,9 @@
 		{{-- start content --}}
 		<div class="col-lg d-flex mb-5">
 			<div class="container">
+				<div class="my-2 text-muted">
+	        <small>Dashboard / Data / Event / {{$event->eve_title}}</small>
+	      </div>
 				<section>
 					<div class="row">
 						{{-- content 1 --}}

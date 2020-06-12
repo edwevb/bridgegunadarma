@@ -142,7 +142,7 @@
             <small data-toggle="tooltip" data-placement="top" title="Home"><a href="{{ url('/') }}" class="text-light"><i class="fa fa-home"></i>&nbsp;Home</a></small>
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
           </div>
-          <div class="ml-2 text-muted">
+          <div class="my-2 text-muted">
             {{Request::url() ===  url('/materi')  ? 'Dashboard / Data / Materi' : ''}}
             {{Request::url() ===  url('/history')  ? 'Dashboard / Data / Pelatihan' : ''}}
             {{Request::url() ===  url('/atlet')  ? 'Dashboard / Data / Atlet' : ''}}
@@ -152,7 +152,7 @@
             {{Request::url() ===  url('/iuranSk')  ? 'Dashboard / Kas / Iuran SK' : ''}}
             {{Request::url() ===  url('/pengeluaran')  ? 'Dashboard / Kas / Pengeluaran' : ''}}
             {{Request::url() ===  url('/user')  ? 'Dashboard / User Management' : ''}}
-            {{Request::url() ===  url('/dashboard')  ? 'Dashboard / ' : ''}}
+            {{Request::url() ===  url('/dashboard')  ? 'Dashboard' : ''}}
             {{Request::url() ===  url('/pesan')  ? 'Dashboard / Pesan' : ''}}
             {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
           </div>
@@ -196,6 +196,13 @@
           <div class="breadcrumb bg-dark">
             <small data-toggle="tooltip" data-placement="top" title="Home"><a href="{{ url('/') }}" class="text-light"><i class="fa fa-home"></i>&nbsp;Home</a></small>
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
+          </div>
+          <div class="my-2 text-muted">
+            {{Request::url() ===  url('/_materi')  ? 'Dashboard / Data / Materi' : ''}}
+            {{Request::url() ===  url('/_history')  ? 'Dashboard / Data / Pelatihan' : ''}}
+            {{Request::url() ===  url('/_masterpoint')  ? 'Dashboard / Masterpoint' : ''}}
+            {{Request::url() ===  url('/dashboard')  ? 'Dashboard ' : ''}}
+            {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
           </div>
         </div>
       </div>

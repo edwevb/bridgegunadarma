@@ -6,6 +6,9 @@
     {{-- start content --}}
     <div class="col-lg d-flex">
       <div class="container">
+        <div class="my-2 text-muted">
+          <small>Dashboard / Kas / Pengeluaran / {{$pengeluaran->p_title}}</small>
+        </div>
         <section>
           <div class="card col-md-8 mx-auto shadow border-left-success mt-4">
               <div class="card-body">

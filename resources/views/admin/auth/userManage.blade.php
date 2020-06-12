@@ -16,11 +16,6 @@
           <div class="card-body">
             @if ($errors->any())
               <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-                {{-- <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul> --}}
                 <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-user" data-toggle="modal" data-target="#modal-tambah-user">Click disini</a> untuk melihat error.</p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

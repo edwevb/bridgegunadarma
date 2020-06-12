@@ -6,6 +6,9 @@
     {{-- start content --}}
     <div class="col-lg d-flex">
       <div class="container">
+        <div class="my-2 text-muted">
+          <small>Dashboard / Data / Prestasi / {{$prestasi->pre_title}}</small>
+        </div>
         <section>
           <div class="card-borderless col-md-11 mx-auto border-left-info rounded">
             <div class="row no-gutters m-3">
