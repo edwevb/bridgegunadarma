@@ -105,18 +105,18 @@
             @csrf
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="atlet_name">Nama</label>
-                <input type="text" name="atlet_name" id="atlet_name" class="form-style  @error('atlet_name') is-invalid @enderror" value="{{old('atlet_name')}}">
-                @error('atlet_name')
-                  <div class="invalid-feedback" autocomplete="off">
+                <label for="nik">NIK/NPM</label>
+                <input type="text" name="nik" id="nik" class="form-style  @error('nik') is-invalid @enderror" value="{{old('nik')}}" autocomplete="off">
+                @error('nik')
+                  <div class="invalid-feedback">
                     {{$message}}
                   </div>
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="nik">NIK/NPM</label>
-                <input type="text" name="nik" id="nik" class="form-style  @error('nik') is-invalid @enderror" value="{{old('nik')}}" autocomplete="off">
-                @error('nik')
+                <label for="atlet_name">Nama</label>
+                <input type="text" name="atlet_name" id="atlet_name" class="form-style  @error('atlet_name') is-invalid @enderror" value="{{old('atlet_name')}}" autocomplete="off">
+                @error('atlet_name')
                   <div class="invalid-feedback">
                     {{$message}}
                   </div>
