@@ -125,7 +125,7 @@
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="discipline">Kedisiplinan</label>
-                <input type="number" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" value="{{old('discipline')}}" autocomplete="off">
+                <input type="number" name="discipline" id="discipline" class="form-style-static @error('discipline') is-invalid @enderror" step="0.01" value="{{old('discipline')}}" autocomplete="off">
                 @error('discipline')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -134,7 +134,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="bidding">Penguasaan Sistem</label>
-                <input type="number" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" value="{{old('bidding')}}" autocomplete="off">
+                <input type="number" name="bidding" id="bidding" class="form-style-static @error('bidding') is-invalid @enderror" step="0.01" value="{{old('bidding')}}" autocomplete="off">
                 @error('bidding')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -143,7 +143,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="play">Teknik Play</label>
-                <input type="number" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{old('play')}}" autocomplete="off">
+                <input type="number" name="play" id="play" class="form-style-static @error('play') is-invalid @enderror" value="{{old('play')}}" step="0.01" autocomplete="off">
                 @error('play')
                   <div class="invalid-feedback">
                     {{$message}}
