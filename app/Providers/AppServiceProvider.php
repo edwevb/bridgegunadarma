@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Blade;
@@ -26,11 +27,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      if($this->app->environment('production'))
+      if (env('APP_ENV') === 'production')
       {
-          \URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS', true);
+        URL::forceScheme('https');
       }
-
+      
       Schema::defaultStringLength(255);
 
       Validator::extend('alpha_spaces', function($attribute, $value)
