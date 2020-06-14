@@ -166,7 +166,7 @@
                 </div>
               @endisset
               <div class="my-1">
-                <a role="button" data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon btn-none px-5"><i class="fa fa-edit"></i> Edit</a>
+                <a data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon px-5"><i class="fa fa-edit"></i> Edit</a>
               </div>
             </div>
           </div>
