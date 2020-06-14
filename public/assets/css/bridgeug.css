@@ -1022,3 +1022,8 @@ footer blockquote p{
   letter-spacing: 3px;
   color: #fff;
 }
+
+.DashboardAnnouncement{
+  height: 50vh;
+  overflow: auto;
+}

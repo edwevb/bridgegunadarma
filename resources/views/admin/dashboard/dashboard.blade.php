@@ -146,7 +146,7 @@
         </div> {{-- end row --}}
         <div class="my-5">
           <h1 class="text-center">Welcome, Admin <i class="fas fa-user-tie"></i></h1><br>
-          <div class="card borderless bg-gradient-purple text-white">
+          <div class="card borderless bg-gradient-purple text-white DashboardAnnouncement">
             <div class="card-body">
               @isset($data_ann->ann_title)
                 <h5 class="card-title">{{$data_ann->ann_title}}</h5>
@@ -161,7 +161,7 @@
               @endisset
               <hr id="bridgeHr">
               @isset ($data_ann->ann_isi )
-                <div class="ml-2">
+                <div class="ml-2 p-1">
                   {!! $data_ann->ann_isi !!}
                 </div>
               @endisset
@@ -176,7 +176,7 @@
         <div class="p-3">
           <h1>Hello, {{auth()->user()->name}}</h1>
           <br>
-          <div class="card borderless bg-gradient-purple text-white">
+          <div class="card borderless bg-gradient-purple text-white DashboardAnnouncement">
             <div class="card-body">
               @isset($data_ann->ann_title)
                 <h5 class="card-title">{{$data_ann->ann_title}}</h5>
