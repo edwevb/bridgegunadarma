@@ -14,19 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route home
-Route::group(['scheme' => 'https'], function () {
-  route::get('/', 'PagesController@home')->name('home');
-	route::get('/moreAtlet', 'PagesController@moreAtlet')->name('moreAtlet');
-	route::get('/detailAtlet/{atlet}', 'PagesController@detailAtlet')->name('detailAtlet');
-	route::get('/morePrestasi', 'PagesController@morePrestasi')->name('morePrestasi');
-	route::get('/detailPrestasi/{prestasi}', 'PagesController@detailPrestasi')->name('detailPrestasi');
-	route::get('/moreEvent', 'PagesController@moreEvent')->name('moreEvent');
-	route::get('/detailEvent/{event}', 'PagesController@detailEvent')->name('detailEvent');
-});
-
+route::get('/', 'PagesController@home')->name('home');
+route::get('/moreAtlet', 'PagesController@moreAtlet')->name('moreAtlet');
+route::get('/detailAtlet/{atlet}', 'PagesController@detailAtlet')->name('detailAtlet');
+route::get('/morePrestasi', 'PagesController@morePrestasi')->name('morePrestasi');
+route::get('/detailPrestasi/{prestasi}', 'PagesController@detailPrestasi')->name('detailPrestasi');
+route::get('/moreEvent', 'PagesController@moreEvent')->name('moreEvent');
+route::get('/detailEvent/{event}', 'PagesController@detailEvent')->name('detailEvent');
 
 //Admin
-route::group(['scheme' => 'https', 'middleware' => ['auth','CheckRole:1']],function()
+route::group(['middleware' => ['auth','CheckRole:1']],function()
 {
 	//Atlet
 	route::get('/atlet/exportPdf','AtletController@exportPDF');
@@ -72,7 +69,7 @@ route::group(['scheme' => 'https', 'middleware' => ['auth','CheckRole:1']],funct
 });
 
 //User
-route::group(['scheme' => 'https', 'middleware' => ['auth','CheckRole:0,1']],function()
+route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 {
 	route::resource('/dashboard', 'DashboardController');
 	route::get('/passwordForm/{user}', 'DashboardController@passwordForm');
@@ -89,10 +86,7 @@ route::group(['scheme' => 'https', 'middleware' => ['auth','CheckRole:0,1']],fun
 	route::get('/pesan/form/{id}','PesanController@makePesan')->name('makePesan');
 });
 
-Route::group(['scheme' => 'https'], function () {
-	//Login
-	Auth::routes(['register'=>false, 'reset'=>false]);
-});
-
+//Login
+Auth::routes(['register'=>false, 'reset'=>false]);
 
 
