@@ -35,7 +35,7 @@ class MateriController extends Controller
         {
             $file             = $request->file('file_mat');
             $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
+            $fileName         = '(BridgeFile)'.$request->mat_title.'('.$request->mat_date.').'.$file_extension;
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
@@ -75,7 +75,7 @@ class MateriController extends Controller
         {
             $file             = $request->file('file_mat');
             $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = '(BridgeFile)'.$request->mat_date.'.'.$file_extension;
+            $fileName         = '(BridgeFile)'.$request->mat_title.'('.$request->mat_date.').'.$file_extension;
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
