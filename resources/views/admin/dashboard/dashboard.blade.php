@@ -145,7 +145,11 @@
           </div>
         </div> {{-- end row --}}
         <div class="my-5">
-          <h1 class="text-center">Welcome, Admin <i class="fas fa-user-tie"></i></h1><br>
+          <h1 class="text-center">Welcome, Admin <i class="fas fa-user-tie"></i></h1>
+          <h3 class="p-2"><i class="fas fa-bullhorn"></i> Announcement!</h3>
+          <div class="my-1 text-white">
+            <a data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon px-5"><i class="fa fa-edit"></i> Edit</a>
+          </div>
           <div class="card borderless bg-gradient-purple text-white DashboardAnnouncement">
             <div class="card-body">
               @isset($data_ann->ann_title)
@@ -165,17 +169,14 @@
                   {!! $data_ann->ann_isi !!}
                 </div>
               @endisset
-              <div class="my-1">
-                <a data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon px-5"><i class="fa fa-edit"></i> Edit</a>
-              </div>
             </div>
           </div>
         </div>
       @else
-        <i class="ml-4 fas fa-user fa-2x"></i>
         <div class="p-3">
-          <h1>Hello, {{auth()->user()->name}}</h1>
-          <br>
+          <h1><i class="fas fa-user"></i> Hello, {{auth()->user()->name}}</h1>
+          <hr class="myHr">
+          <h3 class="p-2"><i class="fas fa-bullhorn"></i> Announcement!</h3>
           <div class="card borderless bg-gradient-purple text-white DashboardAnnouncement">
             <div class="card-body">
               @isset($data_ann->ann_title)
