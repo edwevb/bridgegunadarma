@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://localhost'),
+    'url' => env('APP_URL', 'https://bridgegunadarma.herokuapp.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
