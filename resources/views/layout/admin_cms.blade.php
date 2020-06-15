@@ -4,7 +4,7 @@
   @php
     $meta = ['Bridge Indonesia','Bridge Gunadarma','Website Bridge Gunadarma Jakarta'];
   @endphp
-{{--   @if (env('ENFORCE_SSL')==false)
+  {{--@if (env('ENFORCE_SSL')==false)
     <meta http-equiv="refresh" content='0;https://bridgegunadarma.herokuapp.com'>
   @endif --}}
   <meta charset="utf-8">
