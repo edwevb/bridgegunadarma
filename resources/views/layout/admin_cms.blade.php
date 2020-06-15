@@ -4,9 +4,9 @@
   @php
     $meta = ['Bridge Indonesia','Bridge Gunadarma','Website Bridge Gunadarma Jakarta'];
   @endphp
-  @if (env('ENFORCE_SSL')==false)
-    <meta http-equiv="refresh" content="0; url=https://bridgegunadarma.herokuapp.com/">
-  @endif
+{{--   @if (env('ENFORCE_SSL')==false)
+    <meta http-equiv="refresh" content='0;https://bridgegunadarma.herokuapp.com'>
+  @endif --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
