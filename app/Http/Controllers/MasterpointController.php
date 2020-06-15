@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Masterpoint;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class MasterpointController extends Controller
 {
 
@@ -17,7 +17,7 @@ class MasterpointController extends Controller
         });
         $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint');
         
-        $data_atlet  = \App\Atlet::orderBy('atlet_name','asc')->get();
+        $data_atlet  = \App\Atlet::where('status_mp',null)->orderBy('atlet_name','asc')->get();
         return view('admin.masterpoint.masterpoint', compact('data_mpoint','data_atlet'));
     }
 
@@ -25,9 +25,9 @@ class MasterpointController extends Controller
     {
          $request->validate([
             'atlet_id'   => 'required',
-            'discipline' => 'required|numeric|between:1.10',
-            'bidding'    => 'required|numeric|between:1.10',
-            'play'       => 'required|numeric|between:1.10'
+            'discipline' => 'required|numeric|between:1,9.99',
+            'bidding'    => 'required|numeric|between:1,9.99',
+            'play'       => 'required|numeric|between:1,9.99'
         ]);
          if ($masterpoint->where('atlet_id',$request->atlet_id)->exists()){
              return redirect()->back()->with('AlertWarning',
@@ -38,6 +38,11 @@ class MasterpointController extends Controller
                     </button>
                 </div>');
          }else{
+         $affected = DB::table('tb_atlet')
+            ->where('id', $request->atlet_id)
+            ->update([
+                'status_mp' => 1,
+                ]);
             $masterpoint = Masterpoint::create($request->all());
             return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil ditambahkan!');
          }
@@ -52,17 +57,29 @@ class MasterpointController extends Controller
     public function update(Request $request, Masterpoint $masterpoint)
     {
          $request->validate([
-            'discipline' => 'required|numeric|between:1,10',
-            'bidding'    => 'required|numeric|between:1,10',
-            'play'       => 'required|numeric|between:1,10'
+            'discipline' => 'required|numeric|between:1,9.99',
+            'bidding'    => 'required|numeric|between:1,9.99',
+            'play'       => 'required|numeric|between:1,9.99'
         ]);
+         $affected = DB::table('tb_atlet')
+            ->where('id', $request->atlet_id)
+            ->update([
+                'status_mp' => 1,
+                ]);
         $masterpoint->update($request->all());
         return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil diperbaharui!');
     }
 
     public function destroy(Masterpoint $masterpoint)
     {
-        Masterpoint::destroy($masterpoint->id);
+        if (Masterpoint::destroy($masterpoint->id))
+        {
+            $affected = DB::table('tb_atlet')
+                ->where('id', $masterpoint->atlet_id)
+                ->update([
+                    'status_mp' => NULL,
+                ]);
+        }
         return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil dihapus!');
     }
 }

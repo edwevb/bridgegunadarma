@@ -144,7 +144,7 @@ form label, .file-desc{
 }
 
 .form-style-static{
-  background-color: transparent !important
+  background-color: transparent !important;
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
