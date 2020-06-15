@@ -25,9 +25,9 @@ class MasterpointController extends Controller
     {
          $request->validate([
             'atlet_id'   => 'required',
-            'discipline' => 'required|numeric|between:1,10',
-            'bidding'    => 'required|numeric|between:1,10',
-            'play'       => 'required|numeric|between:1,10'
+            'discipline' => 'required|numeric|between:1.10',
+            'bidding'    => 'required|numeric|between:1.10',
+            'play'       => 'required|numeric|between:1.10'
         ]);
          if ($masterpoint->where('atlet_id',$request->atlet_id)->exists()){
              return redirect()->back()->with('AlertWarning',
