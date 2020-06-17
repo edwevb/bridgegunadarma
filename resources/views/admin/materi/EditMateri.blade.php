@@ -25,7 +25,7 @@
             <div class="text-right mb-4">
               <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
                 <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-                " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+                " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
               </button>
             </div>
             <form method="post" action="{{ url('/materi/'.$materi->id) }}" enctype="multipart/form-data">
@@ -41,16 +41,8 @@
                     </div>
                   @enderror
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="mat_date">Date</label>
-                  <input type="date" name="mat_date" id="mat_date" class="form-style @error('mat_date') is-invalid @enderror" value="{{$materi->mat_date}}">
-                  @error('mat_date')
-                    <div class="invalid-feedback">
-                      {{$message}}
-                    </div>
-                  @enderror
-                </div>
               </div>
+              <input type="date" name="mat_date" id="mat_date" value="{{date('Y-m-d')}}" hidden>
               <div class="form-group row">
                 <div class="col-md-12">
                   <label for="mat_keterangan">Deskripsi*</label>

@@ -32,7 +32,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-pengeluaran"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
               <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -97,7 +97,7 @@
              <p>Contoh pengisian <b>Biaya Pengeluaran</b> :</p>
               <p>300000 -> tiga ratus ribu rupiah</p>
               <p>300000.33 -> tiga ratus ribu tiga puluh tiga rupiah</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/pengeluaran') }}">

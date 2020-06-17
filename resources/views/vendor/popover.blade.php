@@ -1,0 +1,1 @@
+<a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" data-trigger="focus" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle"></i></a>

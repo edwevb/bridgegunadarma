@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+
 use App\Atlet;
 use PDF;
 class AtletController extends Controller
@@ -52,20 +52,19 @@ class AtletController extends Controller
 
         if ($atlet = Atlet::create($request->all()))
         {
-            if($request->file('img_atlet') == "")
+            if($request->hasFile('img_atlet'))
             {
-                $atlet->img_atlet = 'default.png';
-            }
-            else{
-                $file             = $request->file('img_atlet');
-                $fileName         = $atlet->nik.'.'.$file->getClientOriginalExtension();
+                $file     = $request->file('img_atlet');
+                $fileName = $atlet->nik.'.'.$file->getClientOriginalExtension();
                 $file->move("assets/img/img_atlet", $fileName);
                 $atlet->img_atlet = $fileName;
+            }
+            else{
+                $atlet->img_atlet = 'default.png';
             }
             $atlet->save();
             return redirect('/atlet')->with('AlertSuccess','Data Atlet berhasil ditambahkan!');
         }
-        return abort(500); 
     }
 
     public function show(Atlet $atlet)
@@ -100,28 +99,23 @@ class AtletController extends Controller
             'img_atlet'  => 'nullable|image|max:2048'
         ]);
 
-        if ($request->img_atlet != NULL)
+        if ($request->hasFile('img_atlet'))
         {
-            if ($atlet->exists('img_atlet') && $atlet->img_atlet != 'default.png') 
+            $file      = $request->file('img_atlet');
+            $imagePath = public_path("assets/img/img_atlet/{$atlet->img_atlet}");
+            if (isset($atlet->img_atlet) && $atlet->img_atlet != 'default.png' && file_exists($imagePath)) 
             {
-                $imageFile = public_path("assets/img/img_atlet/".$atlet->img_atlet);
-                File::delete($imageFile);
+                unlink($imagePath);
+            }
+            $atlet->update($request->all());
+            if ($file->isValid())
+            {
+                $fileName   = $atlet->nik.'.'.$file->getClientOriginalExtension();
+                $file->move("assets/img/img_atlet", $fileName);
+                $atlet->img_atlet = $fileName;
+                $atlet->save();
             }
         }
-        $atlet->update($request->all());
-        if ($request->img_atlet != NULL)
-        {
-            $file       = $request->file('img_atlet');
-            $fileName   = $atlet->nik.'.'.$file->getClientOriginalExtension();
-            $file->move("assets/img/img_atlet", $fileName);
-            $atlet->img_atlet = $fileName;
-            $atlet->save();
-        }
-        else
-        {
-            $request->img_atlet = $atlet->img_atlet;
-        }
-        
         return redirect('/atlet')->with('AlertSuccess','Data '.$atlet->atlet_name.' berhasil diperbaharui!');
     }
 
@@ -129,13 +123,10 @@ class AtletController extends Controller
     {
         if (Atlet::destroy($atlet->id))
         {
-            $imageFile = public_path("assets/img/img_atlet/{$atlet->img_atlet}");
-            if($atlet->img_atlet != NULL)
+            $imagePath = public_path("assets/img/img_atlet/{$atlet->img_atlet}");
+            if ($atlet->img_atlet != 'default.png' && file_exists($imagePath)) 
             {
-                if (File::exists($imageFile))
-                {
-                    unlink($imageFile);
-                }
+                unlink($imagePath);
             }
             $atlet->masterpoint()->delete($atlet->masterpoint);
             $atlet->prestasi()->detach($atlet->prestasi, $atlet->history, $atlet->iuranSk);

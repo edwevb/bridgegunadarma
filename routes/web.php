@@ -27,34 +27,34 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 {
 	//Atlet
 	route::get('/atlet/exportPdf','AtletController@exportPDF');
-	route::resource('/atlet', 'AtletController');
+	route::resource('/atlet', 'AtletController',['except' => ['create']]);
 	route::post('/atlet/{atlet}/addPrestasi', 'AtletController@addPrestasi');
 	route::get('/atlet/{atlet}/{prestasi}/removePrestasi','AtletController@removePrestasi');
 	route::post('/atlet/{atlet}/addHistory', 'AtletController@addHistory');
 	route::get('/atlet/{atlet}/{prestasi}/removeHistory','AtletController@removeHistory');
 
 	//Prestasi
-	route::resource('/prestasi', 'PrestasiController');
+	route::resource('/prestasi', 'PrestasiController',['except' => ['create']]);
 	route::post('/prestasi/{prestasi}/addAtlet', 'PrestasiController@addAtlet');
 	route::get('/prestasi/{prestasi}/{atlet}/removeAtlet', 'PrestasiController@removeAtlet');
 	//Materi
-	route::resource('/materi', 'MateriController');
+	route::resource('/materi', 'MateriController',['except' => ['create']]);
 	route::get('/materi/{materi}/download','MateriController@download');
 
 	//Event
-	route::resource('/event','EventController');
+	route::resource('/event','EventController',['except' => ['create']]);
 
 	//History
-	route::resource('/history','HistoryController');
+	route::resource('/history','HistoryController',['except' => ['create']]);
 	route::post('/history/{history}/addAtlet', 'HistoryController@addAtlet');
 	route::get('/history/{history}/{atlet}/removeAtlet', 'HistoryController@removeAtlet');
 	route::get('/history/{history}/download','HistoryController@download');
 
 	//Masterpoint
-	route::resource('/masterpoint','MasterpointController');
+	route::resource('/masterpoint','MasterpointController',['except' => ['create']]);
 
 	//Kas Iuran SK
-	route::resource('/iuranSk','IuranSkController');
+	route::resource('/iuranSk','IuranSkController',['except' => ['create','edit','update']]);
 	route::post('/iuranSk/{iuranSk}/addAtlet', 'IuranSkController@addAtlet');
 	route::get('/iuranSk/{iuranSk}/{atlet}/removeAtlet', 'IuranSkController@removeAtlet');
 
@@ -65,13 +65,13 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::patch('/user/{user}', 'UserManagementController@update');
 	route::delete('/user/{user}', 'UserManagementController@destroy');
 
-	route::resource('/pengeluaran','KasPengeluaranController');
+	route::resource('/pengeluaran','KasPengeluaranController',['except' => ['create']]);
 });
 
 //User
 route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 {
-	route::resource('/dashboard', 'DashboardController');
+	route::resource('/dashboard', 'DashboardController',['except' => ['create','edit','store','destroy']]);
 	route::get('/passwordForm/{user}', 'DashboardController@passwordForm');
 	route::post('/changePassword/{user}', 'DashboardController@changePassword');
 	route::get('/_materi','UserPageController@_materi');
@@ -82,7 +82,7 @@ route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 	route::get('/_history/{history}/download','UserPageController@_historyDownload');
 	route::get('/_masterpoint','UserPageController@_masterpoint');
 	route::get('/_masterpoint/{masterpoint}','UserPageController@show_masterpoint');
-	route::resource('/pesan','PesanController');
+	route::resource('/pesan','PesanController',['except' => ['create','edit','update']]);
 	route::get('/pesan/form/{id}','PesanController@makePesan')->name('makePesan');
 });
 

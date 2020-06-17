@@ -86,6 +86,12 @@ body{
   opacity: 1;
 }
 
+#info{
+  text-decoration: none!important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /*TABLE EDIT*/
 table,th,td{
   font-family:'OpenSans-R', 'Poppins-R', 'Nunito', 'Trebuchet MS', 'Helvetica', sans-serif, serif, 'Arial' !important ;
@@ -809,7 +815,6 @@ small.form-text{
   text-decoration: none!important;
   border: none !important;
   box-shadow: none !important;
-  box-shadow: 
 }
 
 .btn-detail{

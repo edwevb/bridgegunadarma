@@ -35,7 +35,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-prestasi"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
               <table  class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -96,7 +96,7 @@
           <div class="text-right mb-4">
             <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
               <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/prestasi') }}" enctype="multipart/form-data">
@@ -112,7 +112,7 @@
             </div>
             <div class="form-group">
               <label for="pre_date">Tanggal</label>
-              <input type="date" name="pre_date" id="pre_date" class="form-style @error('pre_date') is-invalid @enderror" value="{{old('pre_date')}}">
+              <input type="date" name="pre_date" id="pre_date" class="form-style-static @error('pre_date') is-invalid @enderror" value="{{old('pre_date')}}">
               @error('pre_date')
                 <div class="invalid-feedback">
                   {{$message}}
@@ -121,8 +121,8 @@
             </div>
             <div class="form-group row">
               <div class="col-md-12">
-                <label>Prestasi yang didapatkan</label>
-                <textarea name="pre_isi" id="pre_isi" class="form-style" placeholder="Write here..">{{old('pre_isi')}}</textarea>
+                <label>Deskripsi Prestasi yang didapatkan</label>
+                <textarea name="pre_isi" id="pre_isi" class="form-style-static @error('pre_isi') is-invalid @enderror" placeholder="Write here..">{{old('pre_isi')}}</textarea>
                 @error('pre_isi')
                   <div class="invalid-feedback">
                     {{$message}}

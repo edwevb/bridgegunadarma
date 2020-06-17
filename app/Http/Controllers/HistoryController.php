@@ -19,11 +19,6 @@ class HistoryController extends Controller
         return view('admin.history.history', compact('data_history','data_atlet'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -35,21 +30,14 @@ class HistoryController extends Controller
         ]);
         if ($history = History::create($request->all()))
         {
-            if ($request->hist_dist == NULL)
-            {
-                $history->hist_dist = '';
-            }
-            else
-            {
-                $file             = $request->file('hist_dist');
-                $fileName         = $file->getClientOriginalName();
-                $file->move("assets/file/hist_dist", $fileName);
-                $history->hist_dist = $fileName;
-            }
+            $file             = $request->file('hist_dist');
+            $file_extension   = $file->getClientOriginalExtension();
+            $fileName         = 'Distribusi'.$request->hist_date.'.'.$file_extension;
+            $file->move("assets/file/hist_dist", $fileName);
+            $history->hist_dist = $fileName;
             $history->save();
-            return redirect('/history')->with('AlertSuccess','Data berhasil ditambahkan!');
         }
-        return abort(500);
+        return redirect('/history')->with('AlertSuccess','Data history berhasil ditambahkan!');
     }
 
     public function show(History $history)
@@ -72,52 +60,41 @@ class HistoryController extends Controller
             'hist_dist'       => 'nullable|file|max:10024',
             'hist_keterangan' => 'nullable'
         ]);
-        if($history->update($request->all()))
+
+       if ($request->hasFile('hist_dist'))
         {
-            if($request->file('hist_dist') == NULL)
+            $file      = $request->file('hist_dist');
+            $filePath = public_path("assets/file/hist_dist/{$history->hist_dist}");
+            if (isset($history->hist_dist) && file_exists($filePath)) 
             {
-                $history->hist_dist = $history->hist_dist;
+                unlink($filePath);
             }
-            else
+            $history->update($request->all());
+            if ($file->isValid())
             {
-                $file             = $request->file('hist_dist');
                 $file_extension   = $file->getClientOriginalExtension();
-                $fileName         = $request->hist_title.'.'.$file_extension;
+                $fileName         = 'Distribusi'.$request->hist_date.'.'.$file_extension;
                 $file->move("assets/file/hist_dist", $fileName);
                 $history->hist_dist = $fileName;
                 $history->save();
-
-                if($request->hasFile('hist_dist'))
-                {
-                    // get previous image from folder
-                    $histFile = public_path("assets/file/hist_dist/{$history->hist_dist}"); 
-                    if ($request->exists($histFile))
-                    {
-                        // unlink or remove previous image from folder
-                        unlink($histFile);
-                    }
-                }
             }
-            return redirect('/history')->with('AlertSuccess','Data '.$history->hist_title.' berhasil diperbaharui!');
         }
-        return abort(500);
+        return redirect('/history')->with('AlertSuccess','Data '.$history->hist_title.' berhasil diperbaharui!');
     }
 
     public function destroy(History $history)
     {
         if (History::destroy($history->id))
         {
-            $filePath = public_path("assets/img/hist_dist/{$event->hist_dist}");
-            if($event->hist_dist != NULL)
+            $filePath = public_path("assets/file/hist_dist/{$history->hist_dist}");
+            if (file_exists($filePath)) 
             {
-                if (File::exists($filePath))
-                {
-                    unlink($filePath);
-                }
-                $history->atlet()->detach($history->atlet);
+                unlink($filePath);
             }
+            $history->atlet()->detach($history->atlet);
             return redirect('/history')->with('AlertSuccess','Data History berhasil dihapus!');
         }
+        return abort(500);
     }
 
     public function addAtlet(Request $request, History $history)

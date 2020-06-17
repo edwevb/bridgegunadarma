@@ -25,7 +25,7 @@
             <div class="text-right mb-4">
               <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
                 <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-                " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+                " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
               </button>
             </div>
             <form novalidate method="post" action="{{ url('/prestasi/'.$prestasi->id) }}" enctype="multipart/form-data">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="pre_date">Date</label>
-                  <input type="date" name="pre_date" id="pre_date" class="form-style @error('pre_date') is-invalid @enderror" value="{{$prestasi->pre_date}}" autocomplete="off">
+                  <input type="date" name="pre_date" id="pre_date" class="form-style-static @error('pre_date') is-invalid @enderror" value="{{$prestasi->pre_date}}" autocomplete="off">
                   @error('pre_date')
                     <div class="invalid-feedback">
                       {{$message}}
@@ -53,14 +53,19 @@
               </div>
               <div class="form-group row">
                 <div class="col-md-12">
-                  <label for="pre_isi">Prestasi yang didapatkan</label>
-                  <textarea type="text" name="pre_isi" id="pre_isi" class="form-style" placeholder="Write here..">{!!$prestasi->pre_isi!!}</textarea>
+                  <label for="pre_isi">Deskripsi Prestasi yang didapatkan</label>
+                  <textarea type="text" name="pre_isi" id="pre_isi" class="form-style-static @error('pre_isi') is-invalid @enderror" placeholder="Write here..">{!!$prestasi->pre_isi!!}</textarea>
+                  @error('pre_isi')
+                    <div class="invalid-feedback">
+                      {{$message}}
+                    </div>
+                  @enderror
                 </div>
               </div>
               <div class="form-group border-left-info rounded p-2">
                 <label>Upload Picture*</label>
                 <div class="border-0 col-md-2">
-                  <img height="200" width="auto" class="rounded" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}">
+                  <img class="rounded col-md" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}">
                   @error('img_pre')
                     <div class="invalid-feedback d-flex">
                       {{$message}}

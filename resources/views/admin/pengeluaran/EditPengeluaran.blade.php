@@ -27,7 +27,7 @@
                  <p>Contoh pengisian <b>Biaya Pengeluaran</b> :</p>
                   <p>300000 -> tiga ratus ribu rupiah</p>
                   <p>300000.33 -> tiga ratus ribu tiga puluh tiga rupiah</p>
-                  " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+                  " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
                 </button>
               </div>
             <form method="post" action="{{ url('/pengeluaran/'.$pengeluaran->id) }}">

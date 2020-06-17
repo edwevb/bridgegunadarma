@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -36,6 +36,7 @@ class EventController extends Controller
             'eve_url'       => 'nullable|string|max:128',
             'img_eve'       => 'nullable|image|max:2048'
         ]);
+
         $event = new Event;
         $event->eve_title     = $request->eve_title;
         $event->eve_date      = $request->eve_date;
@@ -51,16 +52,15 @@ class EventController extends Controller
         $event->prizepool     = (float) str_replace(",","",$request->prizepool);
         $event->eve_url       = $request->eve_url;
  
-        if($request->file('img_eve') == NULL)
+        if($request->hasFile('img_eve'))
         {
-            $event->img_eve = 'default.png';
-        }
-        else
-        {
-            $file           = $request->file('img_eve');
-            $fileName       = $event->eve_title.$event->eve_date.'.'.$file->getClientOriginalExtension();
+            $file     = $request->file('img_eve');
+            $fileName = 'Event_'.Str::random(8).'.'.$file->getClientOriginalExtension();
             $file->move("assets/img/img_eve", $fileName);
             $event->img_eve = $fileName;
+        }
+        else{
+            $event->img_eve = 'default.png';
         }
         $event->save();
         return redirect('/event')->with('AlertSuccess','Data Event berhasil ditambahkan!');
@@ -95,14 +95,6 @@ class EventController extends Controller
             'img_eve'       => 'nullable|image|max:2048'
         ]);
 
-       if ($request->img_eve != NULL)
-        {
-            if ($event->exists('img_eve') && $event->img_eve != 'default.png') 
-            {
-                $imageFile = public_path("assets/img/img_eve/".$event->img_eve);
-                File::delete($imageFile);
-            }
-        }
         Event::where('id', $event->id)
         ->update([
             'eve_title'     => $request->eve_title,
@@ -120,15 +112,23 @@ class EventController extends Controller
             'eve_url'       => $request->eve_url,
         ]);
 
-        if ($request->img_eve != NULL) 
+        if ($request->hasFile('img_eve'))
         {
-            $file       = $request->file('img_eve');
-            $fileName   = '(BridgeGunadarma)'.$event->eve_date.'.'.$file->getClientOriginalExtension();
-            $file->move("assets/img/img_eve", $fileName);
-            $event->img_eve = $fileName;
-            $event->save();
+            $file      = $request->file('img_eve');
+            $imagePath = public_path("assets/img/img_eve/{$event->img_eve}");
+            if (isset($event->img_eve) && $event->img_eve != 'default.png' && file_exists($imagePath)) 
+            {
+                unlink($imagePath);
+            }
+            $event->update($request->all());
+            if ($file->isValid())
+            {
+                $fileName = 'Event_'.Str::random(8).'.'.$file->getClientOriginalExtension();
+                $file->move("assets/img/img_eve", $fileName);
+                $event->img_eve = $fileName;
+                $event->save();
+            }
         }
-        $request->img_eve = $event->img_eve;
         return redirect('/event')->with('AlertSuccess','Data '.$event->eve_title.' berhasil diperbaharui!');
     }
 
@@ -136,15 +136,12 @@ class EventController extends Controller
     {
         if (Event::destroy($event->id))
         {
-            $imageFile = public_path("assets/img/img_eve/{$event->img_eve}");
-            if($event->img_eve != NULL)
+            $imagePath = public_path("assets/img/img_eve/{$event->img_eve}");
+            if ($event->img_eve != 'default.png' && file_exists($imagePath)) 
             {
-                if (File::exists($imageFile))
-                {
-                    unlink($imageFile);
-                }
+                unlink($imagePath);
             }
-            return redirect('/materi')->with('AlertSuccess','Data Materi berhasil dihapus!');
+            return redirect('/event')->with('AlertSuccess','Data Event berhasil dihapus!');
         }
         return abort(500);
     }

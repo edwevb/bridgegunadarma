@@ -26,7 +26,7 @@
               <div class="text-right mb-4">
                 <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
                   <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-                  " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+                  " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
                 </button>
               </div>
               <form method="post" action="{{ url('/atlet/'.$atlet->id) }}" enctype="multipart/form-data">
@@ -55,7 +55,7 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="tgl_lahir">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-style @error('tgl_lahir') is-invalid @enderror" value="{{$atlet->tgl_lahir}}">
+                    <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-style-static @error('tgl_lahir') is-invalid @enderror" value="{{$atlet->tgl_lahir}}">
                     @error('tgl_lahir')
                       <div class="invalid-feedback">
                         {{$message}}
@@ -160,7 +160,7 @@
                 <div class="form-group border-left-info rounded p-2">
                   <label>Upload Picture*</label>
                   <div class="border-0 col-md-2">
-                    <img height="200" width="auto" class="rounded" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}">
+                    <img class="rounded col-md" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}">
                   </div>
                   @error('img_atlet')
                     <div class="invalid-feedback d-flex form-text">

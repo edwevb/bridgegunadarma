@@ -38,7 +38,7 @@
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-atlet"><i class="far fa-plus-square"></i> Tambah data</a>
               <a id="btn-wh" href="{{ url('/atlet/exportPdf') }}" target="__blank" class="btn bg-danger"><i class="fas fa-file-pdf"></i> Export PDF</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
               <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -98,7 +98,7 @@
           <div class="text-right mb-4">
             <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
               <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/atlet') }}" enctype="multipart/form-data">
@@ -126,7 +126,7 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="tgl_lahir">Tanggal Lahir</label>
-                <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-style  @error('tgl_lahir') is-invalid @enderror" value="{{old('tgl_lahir')}}">
+                <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-style-static @error('tgl_lahir') is-invalid @enderror" value="{{old('tgl_lahir')}}">
                 @error('tgl_lahir')
                   <div class="invalid-feedback">
                     {{$message}}

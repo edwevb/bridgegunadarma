@@ -30,7 +30,7 @@
 			            <p>300000 -> tiga ratus ribu rupiah</p>
 			            <p>300000.33 -> tiga ratus ribu tiga puluh tiga rupiah</p>
 			            <p>Fee lainnya <i>(yang tidak ada pada field biaya pendafraran)</i> bisa ditambahkan pada field  <b>Deskripsi</b></p>
-			            " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+			            " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
 			          </button>
             	</div>
               <form method="post" action="{{ url('/event/'.$event->id) }}" enctype="multipart/form-data">
@@ -48,7 +48,7 @@
 		              </div>
 		              <div class="form-group col-md-6">
 		                <label for="eve_date">Tanggal</label>
-		                <input type="date" name="eve_date" id="eve_date" class="form-style @error('eve_date') is-invalid @enderror" value="{{$event->eve_date}}">
+		                <input type="date" name="eve_date" id="eve_date" class="form-style-static @error('eve_date') is-invalid @enderror" value="{{$event->eve_date}}">
 		                @error('eve_date')
 		                  <div class="invalid-feedback">
 		                    {{$message}}
@@ -171,7 +171,7 @@
 		            <div class="form-group border-left-info rounded p-2">
 		              <label>Upload Picture*</label>
 		              <div class="border-0 col-md-2">
-		                <img height="200" width="auto" class="rounded" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}">
+		                <img class="rounded col-md" id="FilePreview" alt="image preview" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}">
 		                @error('img_eve')
 		                  <div class="invalid-feedback d-flex">
 		                    {{$message}}

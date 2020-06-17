@@ -17,11 +17,6 @@ class IuranSkController extends Controller
         return view('admin.iuran_sk.iuran_sk', compact('data_sk'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -40,16 +35,6 @@ class IuranSkController extends Controller
     {
         $data_atlet = \App\Atlet::orderBy('atlet_name')->get();
         return view('admin.iuran_sk.DetailIuranSk',compact('iuranSk','data_atlet'));
-    }
-
-    public function edit(IuranSk $iuranSk)
-    {
-        //
-    }
-
-    public function update(Request $request, IuranSk $iuranSk)
-    {
-        //
     }
 
     public function destroy(IuranSk $iuranSk)

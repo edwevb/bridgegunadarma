@@ -19,11 +19,6 @@ class PesanController extends Controller
         return view('admin.pesan',['data_pesan'=>$data_pesan]);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -41,16 +36,6 @@ class PesanController extends Controller
     public function show(Pesan $pesan)
     {
         return view('admin.DetailPesan',compact('pesan'));
-    }
-
-    public function edit(Pesan $pesan)
-    {
-        //
-    }
-
-    public function update(Request $request, Pesan $pesan)
-    {
-        //
     }
 
     public function destroy(Pesan $pesan)

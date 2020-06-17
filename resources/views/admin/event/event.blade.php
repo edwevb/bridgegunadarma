@@ -34,7 +34,7 @@
             @endif
 						<div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-event"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
 		          <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -102,7 +102,7 @@
               <p>300000 -> tiga ratus ribu rupiah</p>
               <p>300000.33 -> tiga ratus ribu tiga puluh tiga rupiah</p>
               <p>Fee lainnya <i>(yang tidak ada pada field biaya pendafraran)</i> bisa ditambahkan pada field  <b>Deskripsi</b></p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/event') }}" enctype="multipart/form-data">
@@ -119,7 +119,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="eve_date">Tanggal</label>
-                <input type="date" name="eve_date" id="eve_date" class="form-style @error('eve_date') is-invalid @enderror" value="{{old('eve_date')}}">
+                <input type="date" name="eve_date" id="eve_date" class="form-style-static @error('eve_date') is-invalid @enderror" value="{{old('eve_date')}}">
                 @error('eve_date')
                   <div class="invalid-feedback">
                     {{$message}}
@@ -231,7 +231,7 @@
             </div>
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="eve_isi">Deskripsi*</label>
+                <label for="eve_isi">Deskripsi</label>
                 <textarea name="eve_isi" id="eve_isi" class="form-style @error('eve_isi') is-invalid @enderror" placeholder="Event descripton..">{{old('eve_isi')}}</textarea>
                 @error('eve_isi')
                   <div class="invalid-feedback">

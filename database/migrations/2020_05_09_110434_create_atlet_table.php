@@ -30,6 +30,7 @@ class CreateAtletTable extends Migration
             $table->text('ig')->nullable($value = true);
             $table->text('brg_taught')->nullable($value = true);
             $table->text('img_atlet')->nullable($value = true);
+            $table->string('status_mp',8)->nullable($value = true);
             $table->timestamps();
         });
     }

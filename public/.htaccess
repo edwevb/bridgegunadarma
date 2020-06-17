@@ -1,5 +1,5 @@
     RewriteEngine On
-
+    
     RewriteBase /
     #redirect from www to non-www(https)
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
@@ -20,3 +20,4 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+

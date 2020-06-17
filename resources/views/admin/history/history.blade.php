@@ -35,7 +35,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-history"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
               <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -100,7 +100,7 @@
           <div class="text-right mb-4">
             <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
               <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/history') }}" enctype="multipart/form-data">

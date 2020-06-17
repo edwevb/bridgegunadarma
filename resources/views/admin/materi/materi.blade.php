@@ -48,7 +48,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-materi"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="@popoverText"><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl mt-4">
               <table class="table table-borderless table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -115,7 +115,7 @@
           <div class="text-right mb-4">
             <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
               <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form method="post" action="{{ url('/materi') }}" enctype="multipart/form-data">
@@ -129,21 +129,13 @@
                 </div>
               @enderror
             </div>
-            <div class="form-group">
-              <label for="mat_date">Tanggal Upload</label>
-              <input type="date" name="mat_date" id="CurrentDate" class="form-style @error('mat_date') is-invalid @enderror" value="{{old('mat_date')}}">
-              @error('mat_date')
-                <div class="invalid-feedback">
-                  {{$message}}
-                </div>
-              @enderror
-            </div>
+            <input type="date" name="mat_date" id="mat_date" value="{{date('Y-m-d')}}" hidden>
             <div class="form-group">
               <label>Deskripsi*</label>
               <textarea name="mat_keterangan" id="mat_keterangan" class="form-style" placeholder="Write here.. or Upload File below">{{old('mat_keterangan')}}</textarea>
             </div>
             <div class="form-group">
-              <label>Upload File*</label>
+              <label>Upload File</label>
               <div class="border-0">
                 @error('file_mat')
                   <div class="invalid-feedback d-flex">

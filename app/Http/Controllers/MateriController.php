@@ -4,24 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Materi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
 
 class MateriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $data_materi = Materi::orderBy('mat_date','DESC')->get();
         return view('admin.materi.materi',['data_materi'=>$data_materi]);
-    }
-
-    public function create()
-    {
-        //
     }
 
     public function store(Request $request)
@@ -31,6 +20,7 @@ class MateriController extends Controller
             'mat_date'  => 'required|date',
             'file_mat'  => 'required|file|max:10024'
         ]);
+
         if ($materi = Materi::create($request->all()))
         {
             $file             = $request->file('file_mat');
@@ -39,9 +29,8 @@ class MateriController extends Controller
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
-            return redirect('/materi')->with('AlertSuccess','Data Materi berhasil ditambahkan!');
         }
-        return abort(404); 
+        return redirect('/materi')->with('AlertSuccess','Data Materi berhasil ditambahkan!');
     }
 
     public function show(Materi $materi)
@@ -59,30 +48,26 @@ class MateriController extends Controller
          $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
-            'file_mat'  => 'required|file|max:10024'
+            'file_mat'  => 'nullable|file|max:10024'
         ]);
 
-        if ($request->file_mat != NULL)
+        if ($request->hasFile('file_mat'))
         {
-            if ($materi->exists('file_mat') && $materi) 
+            $file      = $request->file('file_mat');
+            $filePath = public_path("assets/file/file_mat/{$materi->file_mat}");
+            if (isset($materi->file_mat) && file_exists($filePath)) 
             {
-                $imageFile = public_path("assets/file/file_mat/".$materi->file_mat);
-                File::delete($imageFile);
+                unlink($filePath);
             }
-        }
-        $materi->update($request->all());
-        if ($request->file_mat != NULL) 
-        {
-            $file             = $request->file('file_mat');
-            $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = '(BridgeFile)'.$request->mat_title.'.'.$file_extension;
-            $file->move("assets/file/file_mat", $fileName);
-            $materi->file_mat = $fileName;
-            $materi->save();
-        }
-        else
-        {
-            $request->file_mat = $materi->file_mat;
+            $materi->update($request->all());
+            if ($file->isValid())
+            {
+                $file_extension   = $file->getClientOriginalExtension();
+                $fileName         = '(BridgeFile)'.$request->mat_title.'.'.$file_extension;
+                $file->move("assets/file/file_mat", $fileName);
+                $materi->file_mat = $fileName;
+                $materi->save();
+            }
         }
         return redirect('/materi')->with('AlertSuccess','Data '.$materi->mat_title.' diperbaharui!');
     }
@@ -92,12 +77,9 @@ class MateriController extends Controller
         if (Materi::destroy($materi->id))
         {
             $filePath = public_path("assets/file/file_mat/{$materi->file_mat}");
-            if ($materi->file_mat != NULL)
+            if (file_exists($filePath)) 
             {
-                if (File::exists($filePath))
-                {
-                    unlink($filePath);
-                }
+                unlink($filePath);
             }
             return redirect('/materi')->with('AlertSuccess','Data Materi berhasil dihapus!');
         }

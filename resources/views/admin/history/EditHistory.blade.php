@@ -25,7 +25,7 @@
             <div class="text-right mb-4">
               <button id="info" class="btn text-secondary" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
                 <p>Tanda <strong>(*)</strong> Field boleh kosong.</p>
-                " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+                " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
               </button>
             </div>
             <form method="post" action="{{ url('/history/'.$history->id) }}" enctype="multipart/form-data">

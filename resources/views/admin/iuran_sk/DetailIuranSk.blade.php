@@ -41,12 +41,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-iuransk-atlet"><i class="far fa-plus-square"></i> Tambah data</a>
-              <a id="info" class="text-secondary float-right" href="#popover" data-html="true" data-toggle="popover" title="<h5 class='text-muted'>Penjelasan</h5>" data-content="
-                <div class='no-overfolw lead'>
-                  <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam veritatis, obcaecati autem! Quibusdam dolor quam est, ad adipisci earum odit doloremque, velit teskore quisquam voluptatibus magni nam eos, delectus ipsam.</p>
-                  <a class='mb-2 text-center d-block' href='#'>Laporkan Kesalahan</a>
-                </div>
-              "><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="left" title="click me"></i></a>
+              @include('vendor.popover')
             </div>
             <div class="table-responsive-xl">
             	<table class="table table-borderless" width="100%" cellspacing="0">
@@ -109,7 +104,7 @@
               <p>Contoh pengisian <b>Jumlah Tunai</b> :</p>
               <p>300000 -> tiga ratus ribu rupiah</p>
               <p>300000.33 -> tiga ratus ribu tiga puluh tiga rupiah</p>
-              " data-placement="bottom"><h5><i class="fas fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="click me"></i></h5>
+              " data-placement="bottom"><h5><i class="fas fa-question-circle"></i></h5>
             </button>
           </div>
           <form action="{{ url('/iuranSk/'.$iuranSk->id.'/addAtlet') }}" method="POST">
