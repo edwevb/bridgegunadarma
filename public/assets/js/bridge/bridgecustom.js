@@ -65,4 +65,3 @@ function CurrentDate()
 {
   document.getElementById('CurrentDate').value = new Date().toISOString().substring(0, 10);
 }
-

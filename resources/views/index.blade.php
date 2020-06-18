@@ -7,7 +7,7 @@
 		 		{{-- start Jumbotron --}}
 				<div class="jumbotron bg-transparent">
 					<header class="mb-5 startContent">
-						<div class="row showContent">{{-- row welcome --}}
+						<div class="row">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
 							  <h1 class="display-4 text-gradient-purple">Hello, Bridge Lovers!</h1>
 							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>

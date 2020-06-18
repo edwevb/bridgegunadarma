@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   @yield('header')
 </head>
-  <body>
+  <body class="test">
   {{-- Top menu --}}
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
@@ -163,7 +163,7 @@
   @else
 
     {{-- =================start sidebar section user================= --}}
-    <div class="content-mobile row no-gutters">
+    <div class="content-mobile row no-gutters showCrud">
       {{-- menu sidebar --}}
       <div class="col-lg-2 mb-1">
         <div id="sidebar" class="col-lg-2 collapse show">
@@ -216,6 +216,11 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function(){
+      $('.test').addClass('load');
+    });
+  </script>
   {{-- Page plugins --}}
   @yield('footer')
   {{-- Page custom scripts --}}

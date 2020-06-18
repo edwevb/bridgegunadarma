@@ -141,7 +141,6 @@ table,th,td{
 }
 
 form label, .file-desc{
-  padding: 0.375rem 0.75rem;
   color: #6c757d;
 }
 
@@ -154,7 +153,6 @@ form label, .file-desc{
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -177,7 +175,6 @@ form label, .file-desc{
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -894,15 +891,24 @@ small.form-text{
   to{width: 390px;}
 }
 
+.test{
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+
+.load{
+  opacity: 1;
+}
+
 .startContent{
   opacity: 0;
-  transform: translate(0, -40px);
-  transition: 0.5s;
+  transform: scale(4.0);
+  transition: 1s ease-in-out;
 }
 
 .showContent{
   opacity: 1;
-  transform: translate(0, 0);
+  transform: scale(1);
 }
 
 .bx-none{
@@ -924,7 +930,7 @@ small.form-text{
 .about{
   opacity: 0;
   transform: translate(0, -40px);
-  transition: .5s;
+  transition: .5s ease-in-out;
 }
 
 .showAbout{
@@ -940,7 +946,7 @@ small.form-text{
 .contact{
   opacity: 0;
   transform: translate(0, -40px);
-  transition: .5s;
+  transition: .5s ease-in-out;
 }
 
 .showContact1, .showContact2{
