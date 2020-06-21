@@ -41,7 +41,7 @@
               <ul class="list-group">
                 <a class="btn-none rounded-pill" href="{{ url('/detailAtlet/'.$atlet->id) }}">
                   <li class="list-group-item btn btn-sm btn-salmon text-white">
-                    {!!$atlet->atlet_name!!}
+                    <span class="lead">{!!$atlet->atlet_name!!}</span>
                   </li>
                 </a>
               </ul>
@@ -50,11 +50,34 @@
         </div> {{-- end row --}}
       </section>
       <div class="text-center mt-5">
-      	<a href="{{ url('/morePrestasi') }}" class="btn btn-salmon btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
+        <div class="col-md-6 mx-auto">
+          <button type="button" class="btn btn-salmon btn-none rounded-pill font-weight-bold col-md-4" data-toggle="modal" data-target="#ModalShare"><span class="lead font-weight-bold">Share <i class="fas fa-share-square"></i></span></button>
+        </div>
+        <div class="col-md-6 mt-2 mx-auto">
+          <a href="{{ url('/morePrestasi') }}" class="btn btn-salmon btn-none rounded-pill col-md-4 shadow text-white"><span class="lead font-weight-bold">Load More <i class="fas fa-medal"></i></span></a>
+        </div>
       </div>
 	  </div>
 	</div>
+
+  <div class="modal fade bg-dark" id="ModalShare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Share This Page</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="addthis_inline_share_toolbox_8sj8"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 	@section('script')
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eef7ac28f548f31"></script>
 	  <script>
 	    //Back to top
 	    $(document).ready(function(){ 

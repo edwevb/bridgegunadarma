@@ -156,7 +156,7 @@
 						</div>{{--  end row --}}
 					</section>
 					<div class="text-center mt-5">
-	        	<a href="{{ url('/moreEvent') }}" class="btn btn-salmon btn-none rounded-pill px-5 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+	        	<a href="{{ url('/moreEvent') }}" class="btn btn-salmon btn-none rounded-pill col-md-4 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
 	        </div>
 				</div> {{-- end container --}}
 			</div> {{-- end content --}}
