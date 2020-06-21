@@ -51,6 +51,7 @@ class MateriController extends Controller
             'file_mat'  => 'nullable|file|max:10024'
         ]);
 
+        $materi->update($request->all());
         if ($request->hasFile('file_mat'))
         {
             $file      = $request->file('file_mat');
@@ -59,7 +60,6 @@ class MateriController extends Controller
             {
                 unlink($filePath);
             }
-            $materi->update($request->all());
             if ($file->isValid())
             {
                 $file_extension   = $file->getClientOriginalExtension();

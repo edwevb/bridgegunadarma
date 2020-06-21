@@ -99,6 +99,7 @@ class AtletController extends Controller
             'img_atlet'  => 'nullable|image|max:2048'
         ]);
 
+        $atlet->update($request->all());
         if ($request->hasFile('img_atlet'))
         {
             $file      = $request->file('img_atlet');
@@ -107,7 +108,6 @@ class AtletController extends Controller
             {
                 unlink($imagePath);
             }
-            $atlet->update($request->all());
             if ($file->isValid())
             {
                 $fileName   = $atlet->nik.'.'.$file->getClientOriginalExtension();

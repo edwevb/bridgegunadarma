@@ -112,6 +112,7 @@ class EventController extends Controller
             'eve_url'       => $request->eve_url,
         ]);
 
+        $event->update($request->all());
         if ($request->hasFile('img_eve'))
         {
             $file      = $request->file('img_eve');
@@ -120,7 +121,6 @@ class EventController extends Controller
             {
                 unlink($imagePath);
             }
-            $event->update($request->all());
             if ($file->isValid())
             {
                 $fileName = 'Event_'.Str::random(8).'.'.$file->getClientOriginalExtension();

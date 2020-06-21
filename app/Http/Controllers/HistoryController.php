@@ -61,7 +61,8 @@ class HistoryController extends Controller
             'hist_keterangan' => 'nullable'
         ]);
 
-       if ($request->hasFile('hist_dist'))
+        $history->update($request->all());
+        if ($request->hasFile('hist_dist'))
         {
             $file      = $request->file('hist_dist');
             $filePath = public_path("assets/file/hist_dist/{$history->hist_dist}");
@@ -69,7 +70,6 @@ class HistoryController extends Controller
             {
                 unlink($filePath);
             }
-            $history->update($request->all());
             if ($file->isValid())
             {
                 $file_extension   = $file->getClientOriginalExtension();

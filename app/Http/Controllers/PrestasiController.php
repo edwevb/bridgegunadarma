@@ -58,7 +58,7 @@ class PrestasiController extends Controller
             'pre_isi'   => 'required',
             'img_pre'   => 'nullable|image|max:2048'
         ]);
-
+        $prestasi->update($request->all());
         if ($request->hasFile('img_pre'))
         {
             $file      = $request->file('img_pre');
@@ -67,10 +67,9 @@ class PrestasiController extends Controller
             {
                 unlink($imagePath);
             }
-            $prestasi->update($request->all());
             if ($file->isValid())
             {
-                $fileName   = $prestasi->nik.'.'.$file->getClientOriginalExtension();
+                $fileName = '(BridgeGunadarma)'.$prestasi->pre_date.'.'.$file->getClientOriginalExtension();
                 $file->move("assets/img/img_pre", $fileName);
                 $prestasi->img_pre = $fileName;
                 $prestasi->save();
