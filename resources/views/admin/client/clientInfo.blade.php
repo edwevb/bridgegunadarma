@@ -1,5 +1,8 @@
 @extends('layout.admin_cms')
 @section('title', 'Client Info')
+@section('header')
+  <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
+@stop
 @section('section')
 	<div class="row no-gutters">
 		<div class="col-md-2"></div>
@@ -20,7 +23,7 @@
               </div>
             @endif
             <div class="table-responsive-xl">
-            	<table class="table table-borderless" width="100%" cellspacing="0">
+            	<table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th scope="col" width="10">No</th>
