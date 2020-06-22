@@ -156,6 +156,7 @@
             {{Request::url() ===  url('/dashboard')  ? 'Dashboard' : ''}}
             {{Request::url() ===  url('/pesan')  ? 'Dashboard / Pesan' : ''}}
             {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
+            {{Request::url() ===  url('/clientInfo')  ? 'Dashboard / Client Info' : ''}}
           </div>
         </div>
       </div>

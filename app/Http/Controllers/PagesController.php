@@ -1,34 +1,77 @@
 <?php
 
 namespace App\Http\Controllers;
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 class PagesController extends Controller
 {
     public function home()
     {
-        $data_mpoint  = \App\Masterpoint::all();
+        if (DB::table('tb_device')->where('name',$this->checkClient()['name'])->exists()==false ||
+            DB::table('tb_device')->where('ip',$this->checkClient()['ip'])->exists()==false)
+        {
+            $this->addClient();
+        }
+        $data_mpoint   = $this->getMasterpoint();
+        $data_prestasi = $this->getPrestasi();
+        $data_event    = $this->getEvent();
+    	return view('index', compact('data_mpoint','data_prestasi','data_event'));
+    }
+
+    public function getMasterpoint()
+    {
+        $data_mpoint = \App\Masterpoint::all();
         $data_mpoint->map(function($avg)
-                        {
-                            $avg->AvarageMasterpoint = $avg->AvarageMasterpoint();
-                            return $avg;
-                        });
+                {
+                    $avg->AvarageMasterpoint = $avg->AvarageMasterpoint();
+                    return $avg;
+                });
         $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint')->take(6);
+        return $data_mpoint;
+    }
 
-		$data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
-                            ->take(3)
-                            ->get();
+    public function getPrestasi()
+    {
+        $data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
+                        ->take(3)
+                        ->get();
+        return $data_prestasi;
+    }
 
-        $data_event    = \App\Event::orderBy('eve_date','Desc')
-                            ->take(3)
-                            ->get();
+    public function getEvent()
+    {
+        $data_event = \App\Event::orderBy('eve_date','Desc')
+                        ->take(3)
+                        ->get();
+        return $data_event;
+    }
 
-    	return view('index',
-                [
-                    'data_mpoint'    => $data_mpoint,
-                    'data_prestasi' => $data_prestasi,
-                    'data_event'    => $data_event
-		    	]);
+    public function addClient()
+    {
+        $agent = new Agent;
+        DB::table('tb_device')
+        ->insert([
+            'name'       => $this->checkClient()['name'],
+            'device'     => $agent->device(),
+            'browser'    => $agent->browser().' '.$agent->version($agent->browser()),
+            'platform'   => $agent->platform().' '.$agent->version($agent->platform()),
+            'ip'         => $this->checkClient()['ip'],
+            'created_at' => now()
+        ]);
+    }
+
+    public function checkClient()
+    {
+        if (isset(auth()->user()->name))
+        {
+            $name = auth()->user()->name;
+            $ip = \Request::ip();
+        }else{
+             $name = 'unknown';
+             $ip = \Request::ip();
+        }
+        return $check = ['name'=>$name, 'ip'=>$ip];
     }
 
     public function moreAtlet()
@@ -58,7 +101,6 @@ class PagesController extends Controller
         $data_event = \App\Event::orderBy('eve_date','Desc')->get();
         return view('home.HomeMoreEvent',compact('data_event'));
     }
-
 
     public function detailEvent(\App\Event $event)
     {

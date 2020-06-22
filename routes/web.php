@@ -54,7 +54,12 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::patch('/user/{user}', 'UserManagementController@update');
 	route::delete('/user/{user}', 'UserManagementController@destroy');
 
+	//Pengeluaran
 	route::resource('/pengeluaran','KasPengeluaranController',['except' => ['create']]);
+
+	//User Device Information
+	route::get('/clientInfo', 'ClientInfoController@index');
+	route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete');
 });
 
 //User

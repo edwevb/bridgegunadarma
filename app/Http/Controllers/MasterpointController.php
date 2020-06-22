@@ -61,7 +61,7 @@ class MasterpointController extends Controller
             'bidding'    => 'required|numeric|between:1,9.99',
             'play'       => 'required|numeric|between:1,9.99'
         ]);
-         $affected = DB::table('tb_atlet')
+        $affected = DB::table('tb_atlet')
             ->where('id', $request->atlet_id)
             ->update([
                 'status_mp' => 1,

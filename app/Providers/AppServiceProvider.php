@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Jenssegers\Agent\Agent;
+use View;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
@@ -24,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
     }
     
     Schema::defaultStringLength(255);
+
+    $agent = new Agent();
+    View::share('agent', $agent);
 
     Validator::extend('alpha_spaces', function($attribute, $value)
     {

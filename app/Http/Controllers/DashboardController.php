@@ -30,13 +30,13 @@ class DashboardController extends Controller
 
     public function update(Request $request, $id)
     {
-        $affected = DB::table('tb_ann')
-              ->where('id', $id)
-              ->update([
-                    'ann_title' => $request->ann_title,
-                    'ann_date'  => now(),
-                    'ann_isi'   => $request->ann_isi
-                    ]);
+        DB::table('tb_ann')
+            ->where('id', $id)
+            ->update([
+                'ann_title' => $request->ann_title,
+                'ann_date'  => now(),
+                'ann_isi'   => $request->ann_isi
+            ]);
         return redirect('/dashboard')->with('AlertSuccess','Announcement berhasil diperbaharui!');
     }
 
