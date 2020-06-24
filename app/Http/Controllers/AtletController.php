@@ -204,7 +204,7 @@ class AtletController extends Controller
     public function exportPdf()
     {
         $atlet = Atlet::orderBy('atlet_name','ASC')->get();
-        $atletPdf = PDF::loadview('admin.atlet.PdfAtlet',['atlet' => $atlet]);
+        $atletPdf = PDF::loadview('admin.atlet.PdfAtlet',['atlet' => $atlet])->setPaper('a4', 'landscape');
         return $atletPdf->download('AtletBridgeGunadarma.pdf');
     }
 }

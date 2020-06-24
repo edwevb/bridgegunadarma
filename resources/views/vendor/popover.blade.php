@@ -1,0 +1,1 @@
+<a tabindex="0" class="btn btn-lg btn-none float-right" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="<b>Penjelasan</b>" data-content="@popoverText <a class='mb-2 text-center d-block' href='{{ url('/pesan/form/'.auth()->user()->id) }}'>Laporkan Kesalahan</a>"><i class="fas fa-question-circle"></i></a>

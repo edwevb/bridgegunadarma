@@ -33,7 +33,7 @@
  <h2>Atlet Bridge Gunadarma</h2>
 	  
   {{-- <p class="card-text"><small class="text-muted">downloaded by : {{getUserIpAddr()}}</small></p> --}}
-  <p class="card-text"><small class="text-muted">{{$date}}</small></p>
+  <p class="card-text"><small class="text-muted">downloaded at : {{$date}}</small></p>
   	<p class="text-muted font-italic">Major information</p>
  	<table class="table table-striped">
 		<thead>

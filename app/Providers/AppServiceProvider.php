@@ -49,10 +49,9 @@ class AppServiceProvider extends ServiceProvider
 
     Blade::directive('popoverText', function()
     {
-        return "<div class='no-overflow'>
+        return "<div>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam veritatis, obcaecati autem! Quibusdam dolor quam est, ad adipisci earum odit doloremque, velit tempore quisquam voluptatibus magni nam eos, delectus ipsam.</p>
-          <a class='mb-2 text-center d-block' href='#'>Laporkan Kesalahan</a>
-        </div>'";
+        </div>";
     });
   }
 }
