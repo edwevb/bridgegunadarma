@@ -902,13 +902,13 @@ small.form-text{
 
 .startContent{
   opacity: 0;
-  transform: scale(4.0);
-  transition: 1s ease-in-out;
+  transform: translate(0, -40px);
+  transition: 0.7s ease-in-out;
 }
 
 .showContent{
   opacity: 1;
-  transform: scale(1);
+  transform: translate(0, 0);
 }
 
 .bx-none{
@@ -930,7 +930,7 @@ small.form-text{
 .about{
   opacity: 0;
   transform: translate(0, -40px);
-  transition: .5s ease-in-out;
+  transition: .7s ease-in-out;
 }
 
 .showAbout{
