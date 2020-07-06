@@ -10,8 +10,10 @@ class CreateAtletHistoryTable extends Migration
     {
         Schema::create('atlet_history', function (Blueprint $table) {
             $table->id();
-            $table->integer('atlet_id');
-            $table->integer('history_id');
+            $table->integer('atlet_id')->unsigned();
+            $table->integer('history_id')->unsigned();
+            $table->foreign('atlet_id')->references('id')->on('tb_atlet')->onDelete('cascade');
+            $table->foreign('history_id')->references('id')->on('tb_history')->onDelete('cascade');
             $table->timestamps();
         });
     }

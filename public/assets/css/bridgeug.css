@@ -148,6 +148,10 @@ form label, .file-desc{
   padding: 0rem 0.75rem;
 }
 
+.custom-file-label{
+  background-color: transparent!important;
+}
+
 .form-style-static{
   background-color: transparent !important;
   display: block;

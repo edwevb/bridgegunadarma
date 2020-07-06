@@ -10,7 +10,7 @@
         <small>Dashboard / Data / Materi / Edit / {{$materi->mat_title}}</small>
       </div>
         <div class="card-borderless"> {{-- card --}}
-          <div class="card-header borderless rounded border-l-i_border-r-d shadow-sm bg-white">
+          <div class="card-header borderless rounded shadow-sm">
             <h3 id="cms-header" class="text-center">Form Edit Materi</h3>
           </div>
            @if ($errors->any())
@@ -73,7 +73,7 @@
                   </div>
                 </div>
                 <div class="custom-file col-md-4 d-flex mt-2">
-                  <input type="file" class="custom-file-input  @error('file_mat') is-invalid @enderror" id="FileSource" name="file_mat" onchange="previewImage();" accept="@file">
+                  <input type="file" class="custom-file-input @error('file_mat') is-invalid @enderror" id="FileSource" name="file_mat" onchange="previewImage();" accept="@file">
                   <label class="custom-file-label" for="file_mat">
                     {!! $materi->file_mat !!}
                     @empty($materi->file_mat)

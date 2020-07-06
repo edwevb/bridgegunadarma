@@ -14,8 +14,9 @@ class CreateMasterpointTable extends Migration
     public function up()
     {
         Schema::create('tb_masterpoint', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('atlet_id');
+            $table->id();
+            $table->integer('atlet_id')->unsigned();
+            $table->foreign('atlet_id')->references('id')->on('tb_atlet')->onDelete('cascade');
             $table->double('discipline');
             $table->double('bidding');
             $table->double('play');

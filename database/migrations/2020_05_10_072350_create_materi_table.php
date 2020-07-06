@@ -14,11 +14,11 @@ class CreateMateriTable extends Migration
     public function up()
     {
         Schema::create('tb_materi', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('mat_title');
+            $table->id();
+            $table->string('mat_title', 128);
             $table->date('mat_date');
             $table->text('mat_keterangan')->nullable($value = true);
-            $table->text('file_mat')->nullable($value = true);
+            $table->text('file_mat');
             $table->timestamps();
         });
     }

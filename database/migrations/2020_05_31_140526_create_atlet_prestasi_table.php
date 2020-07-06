@@ -10,8 +10,10 @@ class CreateAtletPrestasiTable extends Migration
     {
         Schema::create('atlet_prestasi', function (Blueprint $table) {
             $table->id();
-            $table->integer('atlet_id');
-            $table->integer('prestasi_id');
+            $table->integer('atlet_id')->unsigned();
+            $table->integer('prestasi_id')->unsigned();
+            $table->foreign('atlet_id')->references('id')->on('tb_atlet')->onDelete('cascade');
+            $table->foreign('prestasi_id')->references('id')->on('tb_prestasi')->onDelete('cascade');
             $table->timestamps();
         });
     }

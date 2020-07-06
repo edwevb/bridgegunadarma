@@ -30,13 +30,18 @@ class HistoryController extends Controller
         ]);
         if ($history = History::create($request->all()))
         {
-            $file             = $request->file('hist_dist');
-            $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = 'Distribusi'.$request->hist_date.'.'.$file_extension;
-            $file->move("assets/file/hist_dist", $fileName);
-            $history->hist_dist = $fileName;
-            $history->save();
+            if ($request->hist_dist != NULL)
+            {
+                $file             = $request->file('hist_dist');
+                $file_extension   = $file->getClientOriginalExtension();
+                $fileName         = 'Distribusi'.$request->hist_date.'.'.$file_extension;
+                $file->move("assets/file/hist_dist", $fileName);
+                $history->hist_dist = $fileName;
+            }else{
+                $history->hist_dist = 'no_file';
+            }
         }
+        $history->save();
         return redirect('/history')->with('AlertSuccess','Data history berhasil ditambahkan!');
     }
 

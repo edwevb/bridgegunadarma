@@ -14,11 +14,11 @@ class CreateAtletTable extends Migration
     public function up()
     {
         Schema::create('tb_atlet', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nik',32)->unique();
             $table->string('atlet_name',64);
             $table->date('tgl_lahir');
-            $table->string('gender');
+            $table->string('gender', 8);
             $table->text('telp');
             $table->text('email');
             $table->text('alamat')->nullable($value = true);
@@ -30,7 +30,7 @@ class CreateAtletTable extends Migration
             $table->text('ig')->nullable($value = true);
             $table->text('brg_taught')->nullable($value = true);
             $table->text('img_atlet')->nullable($value = true);
-            $table->string('status_mp',8)->nullable($value = true);
+            $table->string('status_mp',1)->nullable($value = true);
             $table->timestamps();
         });
     }

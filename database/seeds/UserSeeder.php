@@ -15,7 +15,8 @@ class UserSeeder extends Seeder
 				'name'     => 'Admin',
 				'email'    => 'admin@bridgegunadarma.com',
 				'role_id'  => 1,
-				'password' => bcrypt('admin123')
+				'password' => bcrypt('admin123'),
+                'created_at' => now()
     		]);
     }
 }

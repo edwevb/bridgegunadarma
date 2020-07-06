@@ -14,7 +14,7 @@ class CreateHistoryTable extends Migration
     public function up()
     {
         Schema::create('tb_history', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('hist_title',128);
             $table->date('hist_date');
             $table->text('hist_loc');

@@ -14,7 +14,7 @@ class CreatePrestasiTable extends Migration
     public function up()
     {
         Schema::create('tb_prestasi', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('pre_title',128);
             $table->date('pre_date');
             $table->text('pre_isi');

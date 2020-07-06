@@ -14,8 +14,8 @@ class CreatePengeluaranTable extends Migration
     public function up()
     {
         Schema::create('tb_pengeluaran', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('p_title',256);
+            $table->id();
+            $table->string('p_title',128);
             $table->date('p_date');
             $table->double('p_biaya');
             $table->text('p_keterangan')->nullable($value=true);

@@ -170,13 +170,30 @@
 									</div>
 									<hr id="bridgeHr" class="bg-gradient-salmon" width="200">
 								</div>
+								<div class="col-md-6 mx-auto text-center mb-4">
+									Bridge Gunadarma merupakan organisasi olahraga bridge yang aktif sejak tahun 1992. Dengan membawa nama Gunadarma, Bridge Gunadarma telah menorehkan banyak prestasi pada tingkat nasional hingga internasional.
+								</div>
+								<hr id="bridgeHr" width="200">
 								<div class="row">
-									<div class="col-md-6 mx-auto text-justify py-2">
-							  		<p class="aboutLeft">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
+									<div class="col-md-5 mx-auto text-justify py-2">
+							  		<div class="aboutLeft text-center">
+							  			<h5 class="lead font-weight-bold">VISI</h5>
+							  			<p>
+							  				Meningkatkan kualitas atlet dan menjadi sarana peningkatan EQ (Emotional Qoutient), IQ (Intellegence Qoutient, SQ (Spiritual Qoutient), dan CQ (Creativity Qoutient) bagi para atlet Bridge Gunadarma.
+							  			</p>
+							  		</div>
+								  </div>		
+								  <div class="col-md-5 mx-auto text-justify py-2">
+							  		<div class="aboutRight text-center">
+							  			<h5 class="lead font-weight-bold">MISI</h5>
+							  			<p>
+							  				Bridge Gunadarma mampu berprestasi agar Gunadarma dikenal tidak saja di Indonesia, namun juga secara internasional melalui cabang olahraga Bridge.
+							  			</p>
+							  		</div>
 								  </div>
-								  <div class="col-md-6 mx-auto text-justify py-2">
-							  		<p class="aboutRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos neque, ipsa illo omnis dicta sapiente nisi, illum dolor. Ea perferendis iure dolor? Fugiat ipsa nisi ab soluta pariatur aliquid, natus.</p>
-								  </div>
+								</div>
+								<div class="text-center pb-2 font-italic">
+									<small>W.D. Karamoy (2011)</small>
 								</div>
 							</div>
 						  <article id="contact" class="mt-5">	

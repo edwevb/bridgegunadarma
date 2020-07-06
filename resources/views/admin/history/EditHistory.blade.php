@@ -10,7 +10,7 @@
           <small>Dashboard / Data / Pelatihan / Edit / {{$history->hist_title}}</small>
         </div>
         <div class="card-borderless"> {{-- card --}}
-          <div class="card-header borderless rounded border-l-i_border-r-d shadow-sm bg-white">
+          <div class="card-header borderless rounded shadow-sm">
             <h3 id="cms-header" class="text-center">Form Edit Pelatihan</h3>
           </div>
            @if ($errors->any())

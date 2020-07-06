@@ -14,7 +14,7 @@ class CreateAnnounceTable extends Migration
     public function up()
     {
         Schema::create('tb_ann', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('ann_title',256);
             $table->date('ann_date');
             $table->text('ann_isi');
