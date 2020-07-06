@@ -51,7 +51,6 @@
 		            				<div class="p-4">
 						            	<div class="card-borderless bg-white p-4 shadow rounded bg-light">
 						                <h5 class="card-text">
-						                	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas maiores velit tempore laudantium ipsam illo impedit ex minus eos! Repellendus, iste eos! Atque dolorum deserunt pariatur perferendis, ex assumenda!
 						                	@isset($event->eve_isi)
 																{!! $event->eve_isi !!}
 					              			@endisset
