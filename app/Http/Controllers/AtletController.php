@@ -34,7 +34,7 @@ class AtletController extends Controller
     public function store(Request $request)
     {   
          $request->validate([
-            'nik'        => 'required|numeric|digits_between:1,17',
+            'nik'        => 'required|alpha_num|max:17',
             'atlet_name' => 'required|alpha_spaces|max:64',
             'tgl_lahir'  => 'required|date',
             'gender'     => 'required|alpha|max:6',
@@ -83,7 +83,7 @@ class AtletController extends Controller
     public function update(Request $request, Atlet $atlet)
     {
         $request->validate([
-            'nik'        => 'required|numeric|digits_between:1,17',
+            'nik'        => 'required|alpha_num|max:17',
             'atlet_name' => 'required|alpha_spaces|max:64',
             'tgl_lahir'  => 'required|date',
             'gender'     => 'required|alpha|max:6',
