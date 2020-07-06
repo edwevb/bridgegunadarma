@@ -12,10 +12,10 @@
 					<div class="px-1 mb-5 morePrestasi">
 					  <div class="card-borderless shadow h-100 bg-gradient-purple rounded morePrestasiShow">
 					  	<div class="col-md p-2">
-					  		<a href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="{!!$prestasi->pre_title!!}"></a>
+					  		<a href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_date) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="{!!$prestasi->pre_title!!}"></a>
 					  	</div>
 					    <div class="card-body">
-					      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5></a>
+					      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_date) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5></a>
 					      <p class="mb-4 card-subtitle text-white">
 					      	<?php $date = strtotime($prestasi->pre_date);
 					      		echo date('d M Y',$date);

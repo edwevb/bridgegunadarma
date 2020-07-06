@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Route;
 //Route home
 route::get('/', 'PagesController@home')->name('home');
 route::get('/moreAtlet', 'PagesController@moreAtlet')->name('moreAtlet');
-route::get('/detailAtlet/{atlet}', 'PagesController@detailAtlet')->name('detailAtlet');
+route::get('/detailAtlet/{atlet}/{name}', 'PagesController@detailAtlet')->name('detailAtlet');
 route::get('/morePrestasi', 'PagesController@morePrestasi')->name('morePrestasi');
-route::get('/detailPrestasi/{prestasi}', 'PagesController@detailPrestasi')->name('detailPrestasi');
+route::get('/detailPrestasi/{prestasi}/{name}', 'PagesController@detailPrestasi')->name('detailPrestasi');
 route::get('/moreEvent', 'PagesController@moreEvent')->name('moreEvent');
-route::get('/detailEvent/{event}', 'PagesController@detailEvent')->name('detailEvent');
+route::get('/detailEvent/{event}/{name}', 'PagesController@detailEvent')->name('detailEvent');
 
 //Admin
 route::group(['middleware' => ['auth','CheckRole:1']],function()

@@ -71,10 +71,10 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless h-100 shadow rounded">
 											  	<div class="col-md p-2">
-											  		<a href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
+											  		<a href="{{ url('/detailAtlet/'.$mp->atlet_id.'/'.$mp->atlet->atlet_name) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$mp->atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body text-center">
-											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id) }}"><h5 class="card-title font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
+											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id.'/'.$mp->atlet->atlet_name) }}"><h5 class="card-title font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
 											      <hr id="atletHr" class="bg-gradient-salmon">
 											      <div class="text-white lead font-italic">
 											      	<h6>{{$mp->atlet->alamat}}</h6>
@@ -102,10 +102,10 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<a href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
+											  		<a href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_date) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body">
-											      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5></a>
+											      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_title) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_date}}</h5></a>
 											      <p class="mb-4 card-subtitle text-white">
 											      	<?php $date = strtotime($prestasi->pre_date);
 											      		echo date('d M Y',$date);
@@ -134,10 +134,10 @@
 											<div class="px-1 mb-5">
 											  <div class="card-borderless shadow h-100 bg-gradient-purple rounded">
 											  	<div class="col-md p-2">
-											  		<a href="{{ url('/detailEvent/'.$event->id) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
+											  		<a href="{{ url('/detailEvent/'.$event->id.'/'.$event->eve_date) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body">
-											      <a id="body-link" href="{{ url('/detailEvent/'.$event->id) }}"><h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5></a>
+											      <a id="body-link" href="{{ url('/detailEvent/'.$event->id.'/'.$event->eve_date) }}"><h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5></a>
 											      <p class="mb-4 card-subtitle text-white">
 											      	<?php $date = strtotime($event->eve_date);
 											      		echo date('d M Y',$date);

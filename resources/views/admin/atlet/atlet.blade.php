@@ -61,7 +61,7 @@
                     <td>{{$atlet->telp}}</td>
                     <td>{{$atlet->fakultas}}</td>
                     <td class="text-center">
-                      <a class="btn-table btn btn-transparent" href="{{ url('/atlet/'.$atlet->id) }}"><i class="fas fa-address-book"></i></a>
+                      <a class="btn-table btn btn-transparent" href="{{ url('/atlet/'.$atlet->id.$atlet->atlet_name) }}"><i class="fas fa-address-book"></i></a>
                     </td>
                     <td class="text-center">
                       <a class="btn-table btn btn-transparent" href="{{ url('/atlet/'.$atlet->id.'/edit') }}"><i class="fa fa-edit"></i></a>
