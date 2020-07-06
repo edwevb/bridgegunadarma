@@ -13,7 +13,7 @@ class UserManagementController extends Controller
 	   return view('admin.auth.userManage',compact('data_user'));
     }
 
-    public function create(Request $request)
+    public function validateUser($request)
     {
         $request->validate([
             'name'             => 'required|alpha_spaces|max:64',
@@ -22,6 +22,12 @@ class UserManagementController extends Controller
             'password'         => 'required|min:6',
             'confirm_password' => 'required|min:6|same:password'
         ]);
+    }
+
+    public function create(Request $request)
+    {
+        $this->validateUser($request);
+        
         $user = new User;
         $user->name           = $request->name;
         $user->role_id        = $request->role_id;
@@ -39,12 +45,7 @@ class UserManagementController extends Controller
 
     public function update(Request $request, User $user)
     {
-    	$request->validate([
-			'email'            => 'required|email',
-			'password'         => 'required|min:6',
-            'role_id'          => 'required',
-			'confirm_password' => 'required|min:6|same:password'
-        ]);
+        $this->validateUser($request);
 
 		User::where('id', $user->id)
             ->update([

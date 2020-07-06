@@ -13,13 +13,19 @@ class MateriController extends Controller
         return view('admin.materi.materi',['data_materi'=>$data_materi]);
     }
 
-    public function store(Request $request)
+    public function validateMateri($request)
     {
         $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
             'file_mat'  => 'required|file|max:10024'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {
+        $this->validateMateri($request);
 
         if ($materi = Materi::create($request->all()))
         {
@@ -45,12 +51,7 @@ class MateriController extends Controller
 
     public function update(Request $request, Materi $materi)
     {
-         $request->validate([
-            'mat_title' => 'required|max:128',
-            'mat_date'  => 'required|date',
-            'file_mat'  => 'nullable|file|max:10024'
-        ]);
-
+        $this->validateMateri($request);
         $materi->update($request->all());
         if ($request->hasFile('file_mat'))
         {

@@ -7,7 +7,10 @@
     <div class="col-lg d-flex">
       <div class="container">
         <div class="my-2 text-muted">
-          <small>Dashboard / Data / Atlet / Edit / {{$atlet->atlet_name}}</small>
+          <small>Dashboard / Data / 
+            <a class="text-none" href="{{ url('/atlet') }}">Atlet</a> / Edit / 
+            <a class="text-none" href="{{url('/atlet/'.$atlet->id)}}">{{$atlet->atlet_name}}</a>
+          </small>
         </div>
         <section id="edit">
           <div class="card-borderless">

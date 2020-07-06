@@ -78,7 +78,7 @@
 									<div class="table-responsive-xl">
 		              <table class="table table-borderless mx-auto">
 		              	<tbody>
-		                  @foreach ($history->atlet as $atlet)
+		                  @foreach ($sort_atlet as $atlet)
 		                  <tr>
 		                    <th width="10" scope="row">{{$loop->iteration}}</th>
 		                    <td>{{$atlet->atlet_name}}</td>

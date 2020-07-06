@@ -12,7 +12,8 @@ class PesanController extends Controller
 
     public function index()
     {
-        if (auth()->user()->role_id != 1) {
+        if (auth()->user()->role_id != 1)
+        {
             return abort(403,'Access Forbidden!');
         }
         $data_pesan = Pesan::orderBy('created_at', 'desc')->get();

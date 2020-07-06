@@ -17,13 +17,19 @@ class KasPengeluaranController extends Controller
         return view('admin.pengeluaran.pengeluaran', compact('data_pengeluaran'));
     }
 
-    public function store(Request $request)
+    public function validatePengeluaran($request)
     {
         $request->validate([
             'p_title' => 'required|max:256',
             'p_date'  => 'required|date',
             'p_biaya' => 'required|between:0.1,999999999999.999'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {
+        $this->validatePengeluaran($request);
 
         Pengeluaran::create([
             'p_title'       => $request->p_title,
@@ -47,11 +53,7 @@ class KasPengeluaranController extends Controller
 
     public function update(Request $request, Pengeluaran $pengeluaran)
     {
-         $request->validate([
-            'p_title' => 'required|max:256',
-            'p_date'  => 'required|date',
-            'p_biaya' => 'required|between:0.1,999999999999.999'
-        ]);
+        $this->validatePengeluaran($request);
 
         Pengeluaran::where('id', $pengeluaran->id)
                     ->update([

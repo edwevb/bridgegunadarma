@@ -12,7 +12,7 @@ class PrestasiController extends Controller
         return view('admin.prestasi.prestasi', ['data_prestasi'=>$data_prestasi]);
     }
 
-    public function store(Request $request)
+    public function validatePrestasi($request)
     {
         $request->validate([
             'pre_title' => 'required|string|max:128',
@@ -20,6 +20,12 @@ class PrestasiController extends Controller
             'pre_isi'   => 'required',
             'img_pre'   => 'nullable|image|max:2048'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {
+        $this->validatePrestasi($request);
 
         if ($prestasi = Prestasi::create($request->all()))
         {
@@ -41,7 +47,8 @@ class PrestasiController extends Controller
     public function show(Prestasi $prestasi)
     {
         $data_atlet = \App\Atlet::orderBy('atlet_name','ASC')->get();
-        return view('admin.prestasi.DetailPrestasi',compact('prestasi','data_atlet'));
+        $sort_atlet = $prestasi->atlet()->orderBy('atlet_name', 'ASC')->get();
+        return view('admin.prestasi.DetailPrestasi',compact('prestasi','data_atlet','sort_atlet'));
     }
 
     public function edit(Prestasi $prestasi)
@@ -51,13 +58,8 @@ class PrestasiController extends Controller
 
     public function update(Request $request, Prestasi $prestasi)
     {
-        //Validate form input
-        $request->validate([
-            'pre_title' => 'required|string|max:128',
-            'pre_date'  => 'required|date',
-            'pre_isi'   => 'required',
-            'img_pre'   => 'nullable|image|max:2048'
-        ]);
+        $this->validatePrestasi($request);
+        
         $prestasi->update($request->all());
         if ($request->hasFile('img_pre'))
         {
@@ -99,7 +101,7 @@ class PrestasiController extends Controller
         {
             return redirect()->back()->with('ErrorInput',
                 '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-                    Data atlet sudah ada
+                    Atlet sudah ada !
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -110,7 +112,7 @@ class PrestasiController extends Controller
         $prestasi->atlet()->attach($request->atlet);
         return redirect()->back()->with('AlertSuccess',
             '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                Atlet berhasil ditambahkan
+                Atlet berhasil ditambahkan !
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -121,7 +123,7 @@ class PrestasiController extends Controller
     {
         $prestasi->atlet()->detach($atlet);
         return redirect()->back()->with('AlertSuccess','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-            Data prestasi berhasil dihapus
+            Atlet berhasil dihapus !
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

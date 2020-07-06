@@ -915,6 +915,10 @@ small.form-text{
   transform: translate(0, 0);
 }
 
+.text-none{
+  text-decoration: none !important;
+}
+
 .bx-none{
   box-shadow: none !important;
 }

@@ -21,14 +21,21 @@ class MasterpointController extends Controller
         return view('admin.masterpoint.masterpoint', compact('data_mpoint','data_atlet'));
     }
 
-    public function store(Request $request, Masterpoint $masterpoint)
+    public function validateMasterpoint($request)
     {
-         $request->validate([
+        $request->validate([
             'atlet_id'   => 'required',
             'discipline' => 'required|numeric|between:1,9.99',
             'bidding'    => 'required|numeric|between:1,9.99',
             'play'       => 'required|numeric|between:1,9.99'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request, Masterpoint $masterpoint)
+    {
+        $this->validateMasterpoint($request);
+        
          if ($masterpoint->where('atlet_id',$request->atlet_id)->exists()){
              return redirect()->back()->with('AlertWarning',
                 '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
@@ -56,11 +63,8 @@ class MasterpointController extends Controller
 
     public function update(Request $request, Masterpoint $masterpoint)
     {
-         $request->validate([
-            'discipline' => 'required|numeric|between:1,9.99',
-            'bidding'    => 'required|numeric|between:1,9.99',
-            'play'       => 'required|numeric|between:1,9.99'
-        ]);
+        $this->validateMasterpoint($request);
+        
         $affected = DB::table('tb_atlet')
             ->where('id', $request->atlet_id)
             ->update([

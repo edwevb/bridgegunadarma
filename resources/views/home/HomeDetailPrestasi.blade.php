@@ -37,7 +37,7 @@
           </div> {{-- end card --}}
           <div class="text-center col-md-6">
             <div class="font-weight-bold lead text-salmon">List Atlet Berprestasi</div>
-            @foreach ($prestasi->atlet as $atlet)
+            @foreach ($sort_atlet as $atlet)
               <ul class="list-group">
                 <a class="btn-none rounded-pill" href="{{ url('/detailAtlet/'.$atlet->id) }}">
                   <li class="list-group-item btn btn-sm btn-salmon text-white">

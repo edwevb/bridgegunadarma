@@ -18,9 +18,9 @@ class EventController extends Controller
         return view('admin.event.event',compact('data_event'));
     }
 
-    public function store(Request $request)
+    public function validateEvent($request)
     {
-         $request->validate([
+        $request->validate([
             'eve_title'     => 'required|string|max:128',
             'eve_date'      => 'required|date',
             'eve_isi'       => 'required|string',
@@ -36,6 +36,12 @@ class EventController extends Controller
             'eve_url'       => 'nullable|string|max:128',
             'img_eve'       => 'nullable|image|max:2048'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {
+        $this->validateEvent($request);
 
         $event = new Event;
         $event->eve_title     = $request->eve_title;
@@ -78,22 +84,7 @@ class EventController extends Controller
 
     public function update(Request $request, Event $event)
     {
-        $request->validate([
-            'eve_title'     => 'required|string|max:128',
-            'eve_date'      => 'required|date',
-            'eve_isi'       => 'required|string',
-            'eve_loc'       => 'required|string|max:256',
-            'kontak'        => 'nullable|string',
-            'prizepool'     => 'nullable|between:0,999999999999.999',
-            'fee_team_open' => 'nullable|between:0,999999999999.999',
-            'fee_team_mhs'  => 'nullable|between:0,999999999999.999',
-            'fee_team_u21'  => 'nullable|between:0,999999999999.999',
-            'fee_pas_open'  => 'nullable|between:0,999999999999.999',
-            'fee_pas_mhs'   => 'nullable|between:0,999999999999.999',
-            'fee_pas_u21'   => 'nullable|between:0,999999999999.999',
-            'eve_url'       => 'nullable|string|max:128',
-            'img_eve'       => 'nullable|image|max:2048'
-        ]);
+        $this->validateEvent($request);
 
         Event::where('id', $event->id)
         ->update([

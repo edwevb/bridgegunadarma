@@ -93,7 +93,8 @@ class PagesController extends Controller
 
     public function detailPrestasi(\App\Prestasi $prestasi)
     {
-        return view('home.HomeDetailPrestasi',compact('prestasi'));
+        $sort_atlet = $prestasi->atlet()->orderBy('atlet_name', 'ASC')->get();
+        return view('home.HomeDetailPrestasi',compact('prestasi','sort_atlet'));
     }
 
     public function moreEvent()

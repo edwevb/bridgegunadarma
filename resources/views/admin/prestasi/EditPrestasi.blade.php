@@ -7,7 +7,10 @@
       {{-- start content --}}
       <section id="edit" class="container">
         <div class="my-2 text-muted">
-          <small>Dashboard / Data / Prestasi / {{$prestasi->pre_title}}</small>
+          <small>Dashboard / Data / 
+            <a class="text-none" href="{{ url('/prestasi') }}">Prestasi</a> / Edit /
+            <a class="text-none" href="{{ url('/prestasi/'.$prestasi->id) }}">{{$prestasi->pre_title}}</a>
+          </small>
         </div>
         <div class="card-borderless"> {{-- card --}}
           <div class="card-header borderless rounded shadow-sm">

@@ -19,7 +19,7 @@ class HistoryController extends Controller
         return view('admin.history.history', compact('data_history','data_atlet'));
     }
 
-    public function store(Request $request)
+    public function validateHistory($request)
     {
         $request->validate([
             'hist_title'      => 'required|string|max:128',
@@ -28,6 +28,13 @@ class HistoryController extends Controller
             'hist_dist'       => 'nullable|file|max:10024',
             'hist_keterangan' => 'nullable'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {
+        $this->validateHistory($request);
+        
         if ($history = History::create($request->all()))
         {
             if ($request->hist_dist != NULL)
@@ -48,7 +55,8 @@ class HistoryController extends Controller
     public function show(History $history)
     {
         $data_atlet = \App\Atlet::orderBy('atlet_name','ASC')->get();
-        return view('admin.history.DetailHistory',compact('history','data_atlet'));
+        $sort_atlet = $history->atlet()->orderBy('atlet_name', 'ASC')->get();
+        return view('admin.history.DetailHistory',compact('history','data_atlet','sort_atlet'));
     }
 
     public function edit(History $history)
@@ -58,13 +66,7 @@ class HistoryController extends Controller
 
     public function update(Request $request, History $history)
     {
-        $request->validate([
-            'hist_title'      => 'required|string|max:128',
-            'hist_date'       => 'required|date',
-            'hist_loc'        => 'required|string',
-            'hist_dist'       => 'nullable|file|max:10024',
-            'hist_keterangan' => 'nullable'
-        ]);
+        $this->validateHistory($request);
 
         $history->update($request->all());
         if ($request->hasFile('hist_dist'))
@@ -108,7 +110,7 @@ class HistoryController extends Controller
         {
             return redirect()->back()->with('ErrorInput',
                 '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-                    Data atlet sudah ada
+                    Atlet sudah ada !
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -119,7 +121,7 @@ class HistoryController extends Controller
         $history->atlet()->attach($request->atlet);
         return redirect()->back()->with('AlertSuccess',
             '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                Atlet berhasil ditambahkan
+                Atlet berhasil ditambahkan !
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,7 +132,7 @@ class HistoryController extends Controller
     {
         $history->atlet()->detach($atlet);
         return redirect()->back()->with('AlertSuccess','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-            Data History berhasil dihapus
+            Atlet berhasil dihapus !
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

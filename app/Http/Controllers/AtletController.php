@@ -17,23 +17,20 @@ class AtletController extends Controller
         return view('admin.atlet.atlet', ['data_atlet'=>$data_atlet]);
     }
 
-    public function create()
+    //Cara 1
+    // $atlet             = new Atlet;
+     // $atlet->nik        = $request->nik;
+     // $atlet->save();
+
+     //Cara 2
+     /*Atlet::create([
+        'nik'        => $request->nik,
+        'atlet_name' => $request->atlet_name,
+     ]);*/
+
+    public function validateAtlet($request)
     {
-        //Cara 1
-        // $atlet             = new Atlet;
-        // $atlet->nik        = $request->nik;
-        // $atlet->save();
-
-        //Cara 2
-        /*Atlet::create([
-            'nik'        => $request->nik,
-            'atlet_name' => $request->atlet_name,
-        ]);*/
-    }
-
-    public function store(Request $request)
-    {   
-         $request->validate([
+        $request->validate([
             'nik'        => 'required|alpha_num|max:17',
             'atlet_name' => 'required|alpha_spaces|max:64',
             'tgl_lahir'  => 'required|date',
@@ -49,6 +46,12 @@ class AtletController extends Controller
             'ig'         => 'nullable|string|max:128',
             'img_atlet'  => 'nullable|image|max:2048'
         ]);
+        return $request;
+    }
+
+    public function store(Request $request)
+    {   
+        $this->validateAtlet($request);
 
         if ($atlet = Atlet::create($request->all()))
         {
@@ -71,8 +74,10 @@ class AtletController extends Controller
     {
         $data_prestasi = \App\Prestasi::orderBy('pre_date','DESC')->get();
         $data_history  = \App\History::orderBy('hist_date','DESC')->get();
+        $sort_prestasi = $atlet->prestasi()->orderBy('pre_date', 'DESC')->get();
+        $sort_history  = $atlet->history()->orderBy('hist_date', 'DESC')->get();
         $data_mpoint   = \App\Masterpoint::all();
-        return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint'));
+        return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint','sort_history','sort_prestasi'));
     }
 
     public function edit(Atlet $atlet)
@@ -82,22 +87,7 @@ class AtletController extends Controller
 
     public function update(Request $request, Atlet $atlet)
     {
-        $request->validate([
-            'nik'        => 'required|alpha_num|max:17',
-            'atlet_name' => 'required|alpha_spaces|max:64',
-            'tgl_lahir'  => 'required|date',
-            'gender'     => 'required|alpha|max:6',
-            'telp'       => 'required|numeric|digits_between:1,14',
-            'email'      => 'required|email|max:64',
-            'alamat'     => 'nullable|string|max:256',
-            'fakultas'   => 'required|alpha_spaces|max:64',
-            'jurusan'    => 'required|alpha_spaces|max:64',
-            'angkatan'   => 'nullable|numeric|digits:4',
-            'fb'         => 'nullable|string|max:128',
-            'twt'        => 'nullable|string|max:128',
-            'ig'         => 'nullable|string|max:128',
-            'img_atlet'  => 'nullable|image|max:2048'
-        ]);
+        $this->validateAtlet($request);
 
         $atlet->update($request->all());
         if ($request->hasFile('img_atlet'))

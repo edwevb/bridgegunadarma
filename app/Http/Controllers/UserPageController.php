@@ -61,7 +61,6 @@ class UserPageController extends Controller
             if(file_exists($filepath))
             {
                 return response()->download($filepath);
-                // return response()->file($filepath);
             }
             return redirect()->back()->with('AlertDanger','File tidak tersedia. Silahkan download kembali lain waktu.');
         }

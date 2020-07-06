@@ -190,7 +190,7 @@
                               <th hidden>Action</th>
                             </tr>
                             <tbody class="clearfix">
-                              @foreach($atlet->prestasi as $prestasi)
+                              @foreach($sort_prestasi as $prestasi)
                                 <tr>
                                   <td>
                                     <a href="{{ url('/prestasi/'.$prestasi->id) }}">{{$prestasi->pre_title}}</a>
@@ -234,7 +234,7 @@
                               <th hidden>Action</th>
                             </tr>
                             <tbody class="clearfix">
-                              @foreach($atlet->history as $history)
+                              @foreach($sort_history as $history)
                                 <tr>
                                   <td>
                                     <a href="{{ url('/history/'.$history->id) }}">{{$history->hist_title}}</a>
@@ -242,7 +242,7 @@
                                   <td>
                                     @php
                                       $date = strtotime($history->hist_date);
-                                      echo date('D, d-M-Y',$date);
+                                      echo date('D, d M Y',$date);
                                     @endphp
                                   </td>
                                   <td width="100">
