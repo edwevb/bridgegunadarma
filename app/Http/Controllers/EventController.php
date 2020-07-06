@@ -55,7 +55,7 @@ class EventController extends Controller
         if($request->hasFile('img_eve'))
         {
             $file     = $request->file('img_eve');
-            $fileName = 'Event_'.Str::random(8).'.'.$file->getClientOriginalExtension();
+            $fileName = 'Event_'.$event->eve_date.'_'.$event->id.'.'.$file->getClientOriginalExtension();
             $file->move("assets/img/img_eve", $fileName);
             $event->img_eve = $fileName;
         }
@@ -123,7 +123,7 @@ class EventController extends Controller
             }
             if ($file->isValid())
             {
-                $fileName = 'Event_'.Str::random(8).'.'.$file->getClientOriginalExtension();
+                $fileName = 'Event_'.$event->eve_date.'_'.$event->id.'.'.$file->getClientOriginalExtension();
                 $file->move("assets/img/img_eve", $fileName);
                 $event->img_eve = $fileName;
                 $event->save();
