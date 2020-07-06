@@ -81,7 +81,9 @@
 		                  @foreach ($sort_atlet as $atlet)
 		                  <tr>
 		                    <th width="10" scope="row">{{$loop->iteration}}</th>
-		                    <td>{{$atlet->atlet_name}}</td>
+		                    <td>
+		                    	<a class="text-none" href="{{ url('/atlet/'.$atlet->id) }}">{{$atlet->atlet_name}}</a>
+		                    </td>
 		                    <td>
 	                      	<a href="{{ url('/history/'.$history->id.'/'.$atlet->id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
 	                      </td>
