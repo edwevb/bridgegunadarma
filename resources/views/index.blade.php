@@ -171,7 +171,7 @@
 									<hr id="bridgeHr" class="bg-gradient-salmon" width="200">
 								</div>
 								<div class="col-md-6 mx-auto text-center mb-4">
-									Bridge Gunadarma merupakan organisasi olahraga bridge yang aktif sejak tahun 1992. Dengan membawa nama Gunadarma, Bridge Gunadarma telah menorehkan banyak prestasi pada tingkat nasional hingga internasional.
+									Bridge Gunadarma merupakan organisasi olahraga Bridge Universitas Gunadarma yang berdiri pada tahun 1992 dan masih "aktif" hingga saat ini. Dengan berkompetisi membawa nama Gunadarma, Bridge Gunadarma telah menorehkan banyak prestasi pada tingkat nasional hingga internasional.
 								</div>
 								<hr id="bridgeHr" width="200">
 								<div class="row">
@@ -179,7 +179,7 @@
 							  		<div class="aboutLeft text-center">
 							  			<h5 class="lead font-weight-bold">VISI</h5>
 							  			<p>
-							  				Meningkatkan kualitas atlet dan menjadi sarana peningkatan EQ (Emotional Qoutient), IQ (Intellegence Qoutient, SQ (Spiritual Qoutient), dan CQ (Creativity Qoutient) bagi para atlet Bridge Gunadarma.
+							  				Meningkatkan kualitas Atlet dan menjadi sarana peningkatan EQ (Emotional Qoutient), IQ (Intellegence Qoutient, SQ (Spiritual Qoutient), dan CQ (Creativity Qoutient) bagi para Atlet Bridge Gunadarma.
 							  			</p>
 							  		</div>
 								  </div>		
