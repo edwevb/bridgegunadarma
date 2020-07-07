@@ -105,7 +105,7 @@
 											  		<a href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_date) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_pre/'.$prestasi->img_pre) }}" class="card-img-top rounded text-white" alt="ImagePreview"></a>
 											  	</div>
 											    <div class="card-body">
-											      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_title) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_date}}</h5></a>
+											      <a id="body-link" href="{{ url('/detailPrestasi/'.$prestasi->id.'/'.$prestasi->pre_title) }}"><h5 class="card-title font-weight-bold">{{$prestasi->pre_title}}</h5></a>
 											      <p class="mb-4 card-subtitle text-white">
 											      	<?php $date = strtotime($prestasi->pre_date);
 											      		echo date('d M Y',$date);
