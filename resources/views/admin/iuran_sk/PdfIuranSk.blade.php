@@ -31,39 +31,37 @@
  </head>
  <body>
  	<img height="100" width="auto" class="imgug" src="{{ asset('assets/img/bridgeug.png') }}">
- 	<h2>Atlet Bridge Gunadarma</h2>
-  {{-- <p class="card-text"><small class="text-muted">downloaded by : {{getUserIpAddr()}}</small></p> --}}
+ 	<h2>Laporan Kas Iuran SK Bridge Gunadarma</h2>
   <p class="card-text"><small class="text-muted">downloaded at : {{$date}}</small></p>
-  	<p class="text-muted font-italic">Major information</p>
  	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>Nama</th>
-				<th>NIK/NPM</th>
-				<th>Tanggal Lahir</th>
-				<th>Telp</th>
-				<th>Alamat</th>
-				<th>Fakultas</th>
-				<th>Jurusan</th>
-				<th>Angkatan</th>
+				<th scope="col">No</th>
+        <th scope="col">Nama Atlet</th>
+        <th scope="col">Tanggal bayar</th>
+        <th scope="col">Jumlah bayar</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($atlet as $a)
-			<tr>
-				<td>{{$a->atlet_name}}</td>
-				<td>{{$a->nik}}</td>
-				<td>
-					@php $tgl_lahir = strtotime($a->tgl_lahir); @endphp
-                    {{date("d M Y", $tgl_lahir)}}
-				</td>
-				<td>{{$a->telp}}</td>
-				<td>{{$a->alamat}}</td>
-				<td>{{$a->fakultas}}</td>
-				<td>{{$a->jurusan}}</td>
-				<td>{{$a->angkatan}}</td>
-			</tr>
-			@endforeach
+			 @foreach ($iuranSk->atlet as $atlet)
+      <tr>
+        <th scope="row">{{$loop->iteration}}</th>
+        <td>{{$atlet->atlet_name}}</td>
+        <td>
+          <?php $tgl_lahir = strtotime($atlet->pivot->sk_date) ?>
+          {{date("D, d M Y", $tgl_lahir)}}
+        </td>
+        <td>@rupiah($atlet->pivot->sk_bayar)</td>
+      </tr>
+      @endforeach
+       @if($iuranSk->atlet->isEmpty())
+        <th class="text-center font-italic lead" colspan="4">No Data.</th>
+      @else
+	      <tr>
+	        <td colspan="3" class="text-right"><h5>Total</h5></td>
+	        <td>@rupiah($iuranSk->totalSk())</td>
+	      </tr>
+      @endif
 		</tbody>
 	</table>
  </body>

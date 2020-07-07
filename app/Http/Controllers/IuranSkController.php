@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\IuranSk;
 use Illuminate\Http\Request;
+use PDF;
 
 class IuranSkController extends Controller
 {
@@ -79,7 +80,7 @@ class IuranSkController extends Controller
             </div>');
     }
 
-    public function removeAtlet(IuranSK $iuranSk, $atlet)
+    public function removeAtlet(IuranSk $iuranSk, $atlet)
     {
         $iuranSk->atlet()->detach($atlet);
         return redirect()->back()->with('AlertSuccessAtlet','<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
@@ -88,5 +89,11 @@ class IuranSkController extends Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
+    }
+
+    public function exportPdf(IuranSk $iuranSk)
+    {
+        $iuranSkPdf = PDF::loadview('admin.iuran_sk.PdfIuranSk',['iuranSk' => $iuranSk])->setPaper('a4', 'landscape');
+        return $iuranSkPdf->stream('Kas_Iuran_SK_BridgeGunadarma.pdf');
     }
 }

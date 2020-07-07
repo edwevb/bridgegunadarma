@@ -31,37 +31,29 @@
  </head>
  <body>
  	<img height="100" width="auto" class="imgug" src="{{ asset('assets/img/bridgeug.png') }}">
- 	<h2>Atlet Bridge Gunadarma</h2>
-  {{-- <p class="card-text"><small class="text-muted">downloaded by : {{getUserIpAddr()}}</small></p> --}}
+ 	<h2>Laporan Pengeluaran Bridge Gunadarma</h2>
   <p class="card-text"><small class="text-muted">downloaded at : {{$date}}</small></p>
-  	<p class="text-muted font-italic">Major information</p>
  	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>Nama</th>
-				<th>NIK/NPM</th>
-				<th>Tanggal Lahir</th>
-				<th>Telp</th>
-				<th>Alamat</th>
-				<th>Fakultas</th>
-				<th>Jurusan</th>
-				<th>Angkatan</th>
+				<th>No</th>
+				<th>Jenis Pengeluaran</th>
+				<th>Tanggal</th>
+				<th>Biaya Pengeluaran</th>
+				<th>Keterangan</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($atlet as $a)
+			@foreach ($pengeluaran as $p)
 			<tr>
-				<td>{{$a->atlet_name}}</td>
-				<td>{{$a->nik}}</td>
-				<td>
-					@php $tgl_lahir = strtotime($a->tgl_lahir); @endphp
-                    {{date("d M Y", $tgl_lahir)}}
-				</td>
-				<td>{{$a->telp}}</td>
-				<td>{{$a->alamat}}</td>
-				<td>{{$a->fakultas}}</td>
-				<td>{{$a->jurusan}}</td>
-				<td>{{$a->angkatan}}</td>
+				<th scope="row">{{$loop->iteration}}</th>
+        <td>{{strtoupper($p->p_title)}}</td>
+        <td>
+          <?php $date = strtotime($p->p_date) ?>
+          {{date("d M Y", $date)}}
+        </td>
+        <td>@rupiah($p->p_biaya)</td>
+        <td>{{$p->p_keterangan}}</td>
 			</tr>
 			@endforeach
 		</tbody>

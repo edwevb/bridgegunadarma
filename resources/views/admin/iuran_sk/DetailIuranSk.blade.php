@@ -41,6 +41,7 @@
             @endif
             <div class="mb-2">
               <a id="btn-wh" class="btn bg-primary" data-toggle="modal" data-target="#modal-tambah-iuransk-atlet"><i class="far fa-plus-square"></i> Tambah data</a>
+              <a id="btn-wh" href="{{ url('/iuranSk/exportPdf/'.$iuranSk->id) }}" target="__blank" class="btn bg-danger"><i class="fas fa-file-pdf"></i> Export PDF</a>
               @include('vendor.popover')
             </div>
             <div class="table-responsive-xl">

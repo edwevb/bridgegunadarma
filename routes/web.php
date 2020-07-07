@@ -43,6 +43,7 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::resource('/masterpoint','MasterpointController',['except' => ['create']]);
 
 	//Kas Iuran SK
+	route::get('/iuranSk/exportPdf/{iuranSk}','IuranSkController@exportPDF');
 	route::resource('/iuranSk','IuranSkController',['except' => ['create','edit','update']]);
 	route::post('/iuranSk/{iuranSk}/addAtlet', 'IuranSkController@addAtlet');
 	route::get('/iuranSk/{iuranSk}/{atlet}/removeAtlet', 'IuranSkController@removeAtlet');
@@ -55,6 +56,7 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::delete('/user/{user}', 'UserManagementController@destroy');
 
 	//Pengeluaran
+	route::get('/pengeluaran/exportPdf','KasPengeluaranController@exportPDF');
 	route::resource('/pengeluaran','KasPengeluaranController',['except' => ['create']]);
 
 	//User Device Information

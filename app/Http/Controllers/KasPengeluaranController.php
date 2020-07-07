@@ -71,4 +71,11 @@ class KasPengeluaranController extends Controller
         Pengeluaran::destroy($pengeluaran->id);
         return redirect('/pengeluaran')->with('AlertSuccess','Data Pengeluaran berhasil dihapus!');
     }
+
+    public function exportPdf()
+    {
+        $pengeluaran = Pengeluaran::orderBy('p_date','DESC')->get();
+        $pengeluaranPdf = PDF::loadview('admin.pengeluaran.PdfPengeluaran',['pengeluaran' => $pengeluaran])->setPaper('a4', 'landscape');
+        return $pengeluaranPdf->download('Kas_Pengeluaran_BridgeGunadarma.pdf');
+    }
 }
