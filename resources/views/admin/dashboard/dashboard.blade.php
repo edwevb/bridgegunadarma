@@ -149,7 +149,7 @@
           </div>
         </div> {{-- end row --}}
         <div class="my-5">
-          <h1 class="text-center">Selamat datang, Admin <i class="fas fa-user-tie"></i></h1>
+          <h1 class="text-center">Selamat datang, {{auth()->user()->name}} <i class="fas fa-user-tie"></i></h1>
           <h3 class="p-2"><i class="fas fa-bullhorn"></i> Announcement!</h3>
           <div class="my-1 text-white">
             <a data-toggle="modal" data-target="#modal-edit-announcement" class="btn btn-salmon px-5"><i class="fa fa-edit"></i> Edit</a>
