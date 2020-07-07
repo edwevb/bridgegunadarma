@@ -17,7 +17,7 @@ class CreatePengeluaranTable extends Migration
             $table->id();
             $table->string('p_title',128);
             $table->date('p_date');
-            $table->double('p_biaya');
+            $table->double('p_biaya', 9, 2);
             $table->text('p_keterangan')->nullable($value=true);
             $table->timestamps();
         });

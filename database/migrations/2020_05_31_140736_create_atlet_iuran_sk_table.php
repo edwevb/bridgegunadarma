@@ -15,7 +15,7 @@ class CreateAtletIuranSkTable extends Migration
             $table->foreign('atlet_id')->references('id')->on('tb_atlet')->onDelete('cascade');
             $table->foreign('iuran_sk_id')->references('id')->on('tb_iuran_sk')->onDelete('cascade');
             $table->date('sk_date');
-            $table->double('sk_bayar');
+            $table->double('sk_bayar', 9, 2);
             $table->timestamps();
         });
     }

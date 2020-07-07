@@ -17,9 +17,9 @@ class CreateMasterpointTable extends Migration
             $table->id();
             $table->integer('atlet_id')->unsigned();
             $table->foreign('atlet_id')->references('id')->on('tb_atlet')->onDelete('cascade');
-            $table->double('discipline');
-            $table->double('bidding');
-            $table->double('play');
+            $table->double('discipline', 2, 2);
+            $table->double('bidding', 2, 2);
+            $table->double('play', 2, 2);
             $table->timestamps();
         });
     }

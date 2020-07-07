@@ -102,8 +102,6 @@ class EventController extends Controller
             'prizepool'     => (float) str_replace(",","",$request->prizepool),
             'eve_url'       => $request->eve_url,
         ]);
-
-        $event->update($request->all());
         if ($request->hasFile('img_eve'))
         {
             $file      = $request->file('img_eve');
