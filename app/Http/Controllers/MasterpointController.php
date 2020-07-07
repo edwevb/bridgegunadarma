@@ -17,7 +17,7 @@ class MasterpointController extends Controller
         });
         $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint');
         
-        $data_atlet  = \App\Atlet::where('status_mp',null)->orderBy('atlet_name','asc')->get();
+        $data_atlet  = \App\Atlet::where('status_mp', null)->orderBy('atlet_name','asc')->get();
         return view('admin.masterpoint.masterpoint', compact('data_mpoint','data_atlet'));
     }
 

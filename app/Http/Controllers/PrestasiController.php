@@ -97,6 +97,10 @@ class PrestasiController extends Controller
 
     public function addAtlet(Request $request, Prestasi $prestasi)
     {
+        $request->validate([
+            'atlet'    => 'required',
+        ]);
+
         if($prestasi->atlet()->where('atlet_id',$request->atlet)->exists())
         {
             return redirect()->back()->with('ErrorInput',

@@ -174,6 +174,14 @@
               @if(session('AlertSuccessPre'))
                 {!!session('AlertSuccessPre') !!}
               @endif
+              @if ($errors->has('prestasi'))
+                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                  <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-atlet-prestasi" data-toggle="modal" data-target="#modal-tambah-atlet-prestasi">Click disini</a> untuk melihat error.</p>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              @endif
               <div class="card-borderless">
                 <div class="bg-gradient-info rounded">
                   <div class="col-md p-1">
@@ -217,6 +225,14 @@
               @endif
               @if(session('AlertSuccessHist'))
                 {!!session('AlertSuccessHist') !!}
+              @endif
+              @if ($errors->has('history'))
+                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                  <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-atlet-history" data-toggle="modal" data-target="#modal-tambah-atlet-history">Click disini</a> untuk melihat error.</p>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
               @endif
               <div class="card-borderless">
                 <div class="bg-gradient-info rounded">
@@ -283,9 +299,10 @@
             @csrf
             <div class="form-group col-md-9">
               <label for="prestasi">List Prestasi</label>
-              <select class="form-style-static" name="prestasi" id="prestasi">
+              <select class="form-style-static @error('prestasi') is-invalid @enderror" name="prestasi" id="prestasi">
+                <option value="">Choose..</option>
                 @foreach ($data_prestasi as $prestasi)
-                  <option value="{{$prestasi->id}}">{{$prestasi->pre_title}} |  
+                  <option value="{{$prestasi->id}}">{{$prestasi->pre_title}} | 
                     @php
                       $date = strtotime($prestasi->pre_date);
                       echo date('d-M-Y',$date);
@@ -293,6 +310,11 @@
                   </option>
                 @endforeach
               </select>
+              @error('prestasi')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="ml-5 pb-5">
               <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>
@@ -320,7 +342,8 @@
             @csrf
             <div class="form-group col-md-9">
               <label for="history">List Pelatihan</label>
-              <select class="form-style-static" name="history" id="history">
+              <select class="form-style-static @error('history') is-invalid @enderror" name="history" id="history">
+                <option value="">Choose..</option>
                 @foreach ($data_history as $history)
                   <option value="{{$history->id}}">{{$history->hist_title}} |  
                     @php
@@ -330,6 +353,11 @@
                   </option>
                 @endforeach
               </select>
+              @error('history')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="ml-5 pb-5">
               <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>

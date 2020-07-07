@@ -106,6 +106,10 @@ class HistoryController extends Controller
 
     public function addAtlet(Request $request, History $history)
     {
+         $request->validate([
+            'atlet'    => 'required',
+        ]);
+
         if($history->atlet()->where('atlet_id',$request->atlet)->exists())
         {
             return redirect()->back()->with('ErrorInput',

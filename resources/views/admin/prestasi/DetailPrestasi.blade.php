@@ -58,15 +58,23 @@
             </div><!--end card-->
             <div class="col-md-6">
               <div class="my-4">
-                <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
-              </div>
-              <div class="mb-4">
                 @if(session('ErrorInput'))
                   {!! session('ErrorInput') !!}
                 @endif
                 @if(session('AlertSuccess'))
                   {!!session('AlertSuccess') !!}
                 @endif
+                @if ($errors->has('atlet'))
+                  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                    <p>Gagal menambahkan data!&nbsp;<a class="font-weight-bold text-danger" href="#modal-tambah-daftar-atlet" data-toggle="modal" data-target="#modal-tambah-daftar-atlet">Click disini</a> untuk melihat error.</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                @endif
+                <a id="btn-wh" class="btn bg-gradient-primary" data-toggle="modal" data-target="#modal-tambah-daftar-atlet"><i class="far fa-plus-square"></i> Tambah List Atlet</a>
+              </div>
+              <div class="mb-4">
                 <h5 class="m-1">List Atlet Berprestasi</h5>
               </div>
               <div class="table-responsive-xl m-1">
@@ -130,12 +138,18 @@
           <form action="{{ url('/prestasi/'.$prestasi->id.'/addAtlet') }}" method="POST">
             @csrf
             <div class="form-group col-md-9">
-              <label for="atlet">List atlet</label>
-              <select class="form-style-static" name="atlet" id="atlet">
+              <label for="atlet">List Atlet</label>
+              <select class="form-style-static @error('atlet') is-invalid @enderror" name="atlet" id="atlet">
+                <option value="">Choose..</option>
                 @foreach ($data_atlet as $atlet)
                   <option value="{{$atlet->id}}">{{$atlet->atlet_name}}</option>
                 @endforeach
               </select>
+              @error('atlet')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="ml-5 pb-5">
               <button onclick="javascript: return confirm('This is a confirmation message, click (OK) to continue the action.')" type="submit" class="btn-form btn btn-primary">Insert</button>

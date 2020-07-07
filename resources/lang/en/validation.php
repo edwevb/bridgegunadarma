@@ -157,6 +157,9 @@ return [
     */
 
     'attributes' => [
+        'atlet'            => 'Atlet',
+        'history'          => 'Pelatihan',
+        'prestasi'         => 'Prestasi',
         'nik'              => 'NIK/NPM',
         'atlet_name'       => 'Nama',
         'tgl_lahir'        => 'Tanggal Lahir',

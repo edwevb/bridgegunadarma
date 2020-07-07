@@ -110,10 +110,11 @@
             	<div class="form-group col-md-6">
                 <label for="atlet_id">Atlet</label>
                 <select class="form-style-static  @error('atlet_id') is-invalid @enderror" name="atlet_id" id="atlet_id">
-	                @foreach ($data_atlet as $atlet)
+                  <option value="">Choose..</option>
+                  @foreach ($data_atlet as $atlet)
                     <option value="{{$atlet->id}}" {{ old('atlet_id') == $atlet->id ? 'selected' : ''}}>
                       {{$atlet->atlet_name}}</option>
-	                @endforeach
+	                 @endforeach
 	              </select>
                 @error('atlet_id')
                   <div class="invalid-feedback">

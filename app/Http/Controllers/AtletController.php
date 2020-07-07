@@ -127,6 +127,10 @@ class AtletController extends Controller
 
     public function addPrestasi(Request $request, Atlet $atlet)
     {
+        $request->validate([
+            'prestasi'    => 'required',
+        ]);
+
         if ($atlet->prestasi()->where('prestasi_id',$request->prestasi)->exists())
         {
             return redirect()->back()->with('ErrorInputPre',
@@ -160,6 +164,10 @@ class AtletController extends Controller
 
     public function addHistory(Request $request, Atlet $atlet)
     {
+        $request->validate([
+            'history'    => 'required',
+        ]);
+
         if ($atlet->history()->where('history_id',$request->history)->exists())
         {
             return redirect()->back()->with('ErrorInputHist',
