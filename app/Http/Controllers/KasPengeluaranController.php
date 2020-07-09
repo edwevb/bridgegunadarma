@@ -10,10 +10,7 @@ class KasPengeluaranController extends Controller
 
     public function index()
     {
-        if (!$data_pengeluaran = Pengeluaran::orderBy('p_date','ASC')->get())
-        {
-            return abort(500);
-        }
+        $data_pengeluaran = Pengeluaran::orderBy('p_date','ASC')->get();
         return view('admin.pengeluaran.pengeluaran', compact('data_pengeluaran'));
     }
 

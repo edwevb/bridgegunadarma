@@ -11,10 +11,7 @@ class IuranSkController extends Controller
 
     public function index()
     {
-        if (!$data_sk = IuranSk::orderBy('sk_tahun','DESC')->get())
-        {
-            return abort(500);
-        }
+        $data_sk = IuranSk::orderBy('sk_tahun','DESC')->get();
         return view('admin.iuran_sk.iuran_sk', compact('data_sk'));
     }
 
@@ -25,11 +22,8 @@ class IuranSkController extends Controller
             'sk_tahun' => 'required|max:16'
         ]);
 
-        if ($iuranSk = IuranSK::create($request->all()))
-        {
-            return redirect('/iuranSk')->with('AlertSuccess','Data berhasil ditambahkan!');
-        }
-        return abort(500);
+        $iuranSk = IuranSK::create($request->all());
+        return redirect('/iuranSk')->with('AlertSuccess','Data berhasil ditambahkan!');
     }
 
     public function show(IuranSk $iuranSk)
@@ -66,11 +60,11 @@ class IuranSkController extends Controller
                 </div>');
         }
         $iuranSk->atlet()->attach(
-            $request->atlet,
-            [
-                'sk_date'  => $request->sk_date,
-                'sk_bayar' => (float) str_replace(',','',$request->sk_bayar)
-            ]);
+        $request->atlet,
+        [
+            'sk_date'  => $request->sk_date,
+            'sk_bayar' => (float) str_replace(',','',$request->sk_bayar)
+        ]);
         return redirect()->back()->with('AlertSuccessAtlet',
             '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                 Data '.$iuranSk->atlet_name.' berhasil ditambahkan!

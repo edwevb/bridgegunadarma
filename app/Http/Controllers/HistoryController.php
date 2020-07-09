@@ -10,11 +10,7 @@ class HistoryController extends Controller
 
     public function index()
     {
-        if (!$data_history = History::orderBy('hist_date','DESC')->get())
-        {
-            return abort(500);
-        }
-        
+        $data_history = History::orderBy('hist_date','DESC')->get();        
         $data_atlet = \App\Atlet::all();
         return view('admin.history.history', compact('data_history','data_atlet'));
     }

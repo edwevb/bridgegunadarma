@@ -10,10 +10,7 @@ class AtletController extends Controller
 {
     public function index()
     {
-        if (!$data_atlet = Atlet::orderBy('atlet_name','ASC')->get())
-        {
-            return abort(500);
-        }
+        $data_atlet = Atlet::orderBy('atlet_name','ASC')->get();
         return view('admin.atlet.atlet', ['data_atlet'=>$data_atlet]);
     }
 

@@ -11,10 +11,7 @@ class EventController extends Controller
 
     public function index()
     {
-        if (!$data_event = Event::orderBy('eve_date','ASC')->get())
-        {
-            return abort(500);
-        }
+        $data_event = Event::orderBy('eve_date','Desc')->get();
         return view('admin.event.event',compact('data_event'));
     }
 
@@ -102,6 +99,7 @@ class EventController extends Controller
             'prizepool'     => (float) str_replace(",","",$request->prizepool),
             'eve_url'       => $request->eve_url,
         ]);
+        
         if ($request->hasFile('img_eve'))
         {
             $file      = $request->file('img_eve');

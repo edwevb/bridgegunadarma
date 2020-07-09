@@ -40,7 +40,7 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::get('/history/{history}/download','HistoryController@download');
 
 	//Masterpoint
-	route::resource('/masterpoint','MasterpointController',['except' => ['create']]);
+	route::resource('/masterpoint','MasterpointController',['except' => ['create','show']]);
 
 	//Kas Iuran SK
 	route::get('/iuranSk/exportPdf/{iuranSk}','IuranSkController@exportPDF');
@@ -59,15 +59,15 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::get('/pengeluaran/exportPdf','KasPengeluaranController@exportPDF');
 	route::resource('/pengeluaran','KasPengeluaranController',['except' => ['create']]);
 
-	//User Device Information
-	route::get('/clientInfo', 'ClientInfoController@index');
-	route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete');
+		//User Device Information
+		route::get('/clientInfo', 'ClientInfoController@index');
+		route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete');
 });
 
 //User
 route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 {
-	route::resource('/dashboard', 'DashboardController',['except' => ['create','edit','store','destroy']]);
+	route::resource('/dashboard', 'DashboardController',['except' => ['create','edit','store','show','destroy']]);
 	route::get('/passwordForm/{user}', 'DashboardController@passwordForm');
 	route::post('/changePassword/{user}', 'DashboardController@changePassword');
 	route::get('/_materi','UserPageController@_materi');
