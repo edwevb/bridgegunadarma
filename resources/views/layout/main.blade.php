@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+	<meta name="google-site-verification" content="1QTEecFjSYBTNocSZKekEKHqouTX2xDkZdYW3tPocFU" />
   @php
     $meta = ['Bridge Indonesia','Bridge Gunadarma','Website Bridge Gunadarma Jakarta'];
   @endphp
