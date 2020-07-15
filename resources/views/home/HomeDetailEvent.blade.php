@@ -155,12 +155,32 @@
 						</div>{{--  end row --}}
 					</section>
 					<div class="text-center mt-5">
-	        	<a href="{{ url('/moreEvent') }}" class="btn btn-salmon btn-none rounded-pill col-md-4 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+						<div class="col-md-6 mx-auto">
+		          <button type="button" class="btn btn-salmon btn-none rounded-pill font-weight-bold col-md-4" data-toggle="modal" data-target="#ModalShare"><span class="lead font-weight-bold">Share <i class="fas fa-share-square"></i></span></button>
+		        </div>
+		        <div class="col-md-6 mt-2 mx-auto">
+		          <a href="{{ url('/moreEvent') }}" class="btn btn-salmon btn-none rounded-pill col-md-4 shadow text-white"><span class="lead font-weight-bold">Load More <i class="far fa-clipboard"></i></span></a>
+		        </div>
 	        </div>
 				</div> {{-- end container --}}
 			</div> {{-- end content --}}
 		</div>
 	</div>
+	<div class="modal fade bg-dark" id="ModalShare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Share This Page</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="addthis_inline_share_toolbox_8sj8"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 	@section('script')
 	  <script>
 	    //Back to top

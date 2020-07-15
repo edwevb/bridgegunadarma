@@ -59,7 +59,6 @@
       </div>
 	  </div>
 	</div>
-
   <div class="modal fade bg-dark" id="ModalShare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -75,7 +74,6 @@
       </div>
     </div>
   </div>
-
 	@section('script')
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eef7ac28f548f31"></script>
 	  <script>
