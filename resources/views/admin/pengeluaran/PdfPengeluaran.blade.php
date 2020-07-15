@@ -53,7 +53,7 @@
           {{date("d M Y", $date)}}
         </td>
         <td>@rupiah($p->p_biaya)</td>
-        <td>{{$p->p_keterangan}}</td>
+        <td>{!!$p->p_keterangan!!}</td>
 			</tr>
 			@endforeach
 		</tbody>
