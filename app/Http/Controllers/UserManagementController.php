@@ -17,7 +17,7 @@ class UserManagementController extends Controller
     {
         $request->validate([
             'name'             => 'required|alpha_spaces|max:64',
-            'email'            => 'required|unique:users|email',
+            'email'            => 'required|email',
             'role_id'          => 'required',
             'password'         => 'required|min:6',
             'confirm_password' => 'required|min:6|same:password'
