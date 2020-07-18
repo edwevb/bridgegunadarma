@@ -62,6 +62,10 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 		//User Device Information
 		route::get('/clientInfo', 'ClientInfoController@index');
 		route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete');
+
+		//User Device Information
+		route::get('/visitor', 'ClientInfoController@visit');
+		route::delete('/visitor/delete/{id}', 'ClientInfoController@deleteVisitor');
 });
 
 //User
