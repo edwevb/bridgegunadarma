@@ -25,9 +25,9 @@ class MasterpointController extends Controller
     {
         $request->validate([
             'atlet_id'   => 'required',
-            'discipline' => 'required|numeric|between:1,9.99',
-            'bidding'    => 'required|numeric|between:1,9.99',
-            'play'       => 'required|numeric|between:1,9.99'
+            'discipline' => 'required|between:0.1,9.99',
+            'bidding'    => 'required|between:0.1,9.99',
+            'play'       => 'required|between:0.1,9.99'
         ]);
         return $request;
     }
@@ -45,7 +45,7 @@ class MasterpointController extends Controller
                     </button>
                 </div>');
          }else{
-         $affected = DB::table('tb_atlet')
+            DB::table('tb_atlet')
             ->where('id', $request->atlet_id)
             ->update([
                 'status_mp' => 1,
@@ -65,11 +65,11 @@ class MasterpointController extends Controller
     {
         $this->validateMasterpoint($request);
         
-        $affected = DB::table('tb_atlet')
-            ->where('id', $request->atlet_id)
-            ->update([
-                'status_mp' => 1,
-                ]);
+        DB::table('tb_atlet')
+        ->where('id', $request->atlet_id)
+        ->update([
+            'status_mp' => 1,
+            ]);
         $masterpoint->update($request->all());
         return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil diperbaharui!');
     }
@@ -78,11 +78,11 @@ class MasterpointController extends Controller
     {
         if (Masterpoint::destroy($masterpoint->id))
         {
-            $affected = DB::table('tb_atlet')
-                ->where('id', $masterpoint->atlet_id)
-                ->update([
-                    'status_mp' => NULL,
-                ]);
+            DB::table('tb_atlet')
+            ->where('id', $masterpoint->atlet_id)
+            ->update([
+                'status_mp' => NULL,
+            ]);
         }
         return redirect('/masterpoint')->with('AlertSuccess','Data Masterpoint berhasil dihapus!');
     }

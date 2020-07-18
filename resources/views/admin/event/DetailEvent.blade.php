@@ -83,11 +83,15 @@
               </div>
 							<table class="table table-borderless mx-auto">
 		          	<tbody>
-		              <tr>
-		              	<th colspan="3">
-		              		<a class="text-muted font-italic ">Team</a>
-		              	</th>
-		              </tr>
+		              @if (isset($event->fee_team_open)
+		          				|| isset($event->fee_team_mhs) 
+		          				|| isset($event->fee_team_u21))
+			          		<tr>
+			              	<th colspan="3">
+			              		<a class="text-muted font-italic">Team</a>
+			              	</th>
+			              </tr>
+		          		@endif
 		              @isset($event->fee_team_open)
 	              		<tr>
 		              		<th>Open</th>
@@ -109,11 +113,15 @@
 				              <td>@rupiah($event->fee_team_u21)</td>
 			             </tr>
 	              	@endisset
-		              <tr>
-		              	<th colspan="3">
-		              		<a class="text-muted font-italic ">Pasangan</a>
-		              	</th>
-		              </tr>
+		              @if (isset($event->fee_pas_open)
+		          				|| isset($event->fee_pas_mhs) 
+		          				|| isset($event->fee_pas_u21))
+			          		<tr>
+			              	<th colspan="3">
+			              		<a class="text-muted font-italic">Pasangan</a>
+			              	</th>
+			              </tr>
+		          		@endif
 		              @isset($event->fee_pas_open)
 	              		<tr>
 		              		<th>Open</th>

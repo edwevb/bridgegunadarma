@@ -17,6 +17,7 @@
 	              <div class="text-center mt-4">
 	            		<h3 class="text-shadow">{{ $atlet->atlet_name }}</h3>
 	            	</div>
+	            	<span class="ml-2 text-secondary"><i class="far fa-eye"></i> {{$atlet->visited->hits}}</span>
 	            	<hr class="bg-gradient-salmon" style="border-width: 3px;">
 	            	<div class="px-4">
 	            		<table class="table table-borderless">

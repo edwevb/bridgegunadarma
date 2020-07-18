@@ -77,7 +77,7 @@
 											      <a id="body-link" href="{{ url('/detailAtlet/'.$mp->atlet_id.'/'.$mp->atlet->atlet_name) }}"><h5 class="card-title font-weight-bold">{{$mp->atlet->atlet_name}}</h5></a>
 											      <hr id="atletHr" class="bg-gradient-salmon">
 											      <div class="text-white lead font-italic">
-											      	<h6>{{$mp->atlet->alamat}}</h6>
+										      	<h6>{{$mp->atlet->alamat}}</h6>
 											      </div>
 											    </div>
 											  </div> {{-- end card --}}

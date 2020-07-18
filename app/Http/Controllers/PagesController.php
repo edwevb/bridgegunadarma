@@ -82,7 +82,22 @@ class PagesController extends Controller
 
     public function detailAtlet(\App\Atlet $atlet)
     {
-        return view('home.HomeDetailAtlet',compact('atlet'));
+        $data_visited = DB::table('tb_visited')->where('atlet_id', $atlet->id)->first();
+        if (empty($data_visited))
+        {
+            DB::table('tb_visited')
+            ->insert([
+                'atlet_id' => $atlet->id,
+                'hits'     => 1
+            ]);
+            return view('home.HomeDetailAtlet',compact('atlet'));
+        }else{
+            \App\Visited::where('atlet_id', $atlet->id)
+            ->update([
+                'hits'     => $data_visited->hits + 1
+            ]);
+            return view('home.HomeDetailAtlet',compact('atlet'));
+        }
     }
 
     public function morePrestasi()

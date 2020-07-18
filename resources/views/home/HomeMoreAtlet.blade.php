@@ -21,6 +21,7 @@
 					      <div class="text-white lead font-italic mb-3">
 					      	<h6>{{$atlet->alamat}}</h6>
 					      </div>
+					      <span class="text-white"><i class="far fa-eye"></i> {{$atlet->visited->hits}}</span>
 					    </div>
 					  </div> {{-- end card --}}
 					</div>

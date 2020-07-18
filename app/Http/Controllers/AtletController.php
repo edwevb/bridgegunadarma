@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Atlet;
+use App\visited;
 use PDF;
 class AtletController extends Controller
 {

@@ -38,6 +38,11 @@ class Atlet extends Model
         return $this->hasOne('App\Masterpoint');
     }
 
+     public function visited()
+    {   
+        return $this->hasOne('App\Visited');
+    }
+
     public function iuranSk()
     {   
         return $this->belongsToMany('App\IuranSk')->withPivot(['sk_date','sk_bayar'])->withTimeStamps();
