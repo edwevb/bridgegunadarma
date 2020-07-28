@@ -21,7 +21,7 @@ class ClientInfoController extends Controller
 
     public function visit()
     {
-        $data_visit = \App\Visited::all();
+        $data_visit = \App\Visited::orderBy('hits','DESC')->get();
         return view('admin.client.visited',compact('data_visit'));
     }
 

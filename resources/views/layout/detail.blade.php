@@ -1,3 +1,6 @@
+<!-- 
+@author Edward Evbert <edwardevbert@gmail.com>
+-->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -47,10 +50,6 @@
 </head>
   {{-- sidebar --}}
   <body class="bg-dark">
-  {{-- <script>
-  alert('Direkomendasikan untuk membuka halaman website ini dengan browser GOOGLE CHROME');
-  </script> --}}
-  {{-- Top menu --}}
   <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
