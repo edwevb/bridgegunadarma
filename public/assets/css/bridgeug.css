@@ -1046,3 +1046,8 @@ footer blockquote p{
   height: 50vh;
   overflow: auto;
 }
+
+#atlet a img, #prestasi a img, #event a img{
+  object-fit: cover;
+  object-position: center;
+}
