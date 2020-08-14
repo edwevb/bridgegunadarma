@@ -13,10 +13,10 @@
 					<div class="px-1 mb-5 moreAtlet">
 					  <div class="card-borderless shadow h-100 rounded moreAtletShow">
 					  	<div class="col-md p-2">
-					  		<a href="{{ url('/detailAtlet/'.$atlet->id.'/'.$atlet->atlet_name) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="{!!$atlet->atlet_name!!}"></a>
+					  		<a href="{{ url('/detailAtlet/'.$atlet->id.'/'.\Str::slug($atlet->atlet_name,'-')) }}"><img height="350" width="auto" src="{{ asset('assets/img/img_atlet/'.$atlet->img_atlet) }}" class="card-img-top rounded text-white" alt="{!!$atlet->atlet_name!!}"></a>
 					  	</div>
 					    <div class="card-body">
-					      <a id="body-link" href="{{ url('/detailAtlet/'.$atlet->id.'/'.$atlet->atlet_name) }}"><h5 class="card-title font-weight-bold">{{$atlet->atlet_name}}</h5></a>
+					      <a id="body-link" href="{{ url('/detailAtlet/'.$atlet->id.'/'.\Str::slug($atlet->atlet_name,'-')) }}"><h5 class="card-title font-weight-bold">{{$atlet->atlet_name}}</h5></a>
 					      <hr id="atletHr" class="bg-gradient-salmon">
 					      <div class="text-white lead font-italic mb-3">
 					      	<h6>{{$atlet->alamat}}</h6>

@@ -57,8 +57,9 @@ class EventController extends Controller
  
         if($request->hasFile('img_eve'))
         {
-            $file     = $request->file('img_eve');
-            $fileName = 'Event_'.$event->eve_date.'_'.$event->id.'.'.$file->getClientOriginalExtension();
+            $file           = $request->file('img_eve');
+            $fileExtension  = $file->getClientOriginalExtension();
+            $fileName       = $event->eve_date.'_'.Str::slug($event->eve_title).'.'.$fileExtension;
             $file->move("assets/img/img_eve", $fileName);
             $event->img_eve = $fileName;
         }
@@ -110,7 +111,8 @@ class EventController extends Controller
             }
             if ($file->isValid())
             {
-                $fileName = 'Event_'.$event->eve_date.'_'.$event->id.'.'.$file->getClientOriginalExtension();
+                $fileExtension  = $file->getClientOriginalExtension();
+                $fileName       = $event->eve_date.'_'.Str::slug($event->eve_title).'.'.$fileExtension;
                 $file->move("assets/img/img_eve", $fileName);
                 $event->img_eve = $fileName;
                 $event->save();
@@ -136,7 +138,7 @@ class EventController extends Controller
     public function feeTeamOpen($request)
     {
         $check = $request->fee_team_open;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_team_open = NULL;
             return $fee_team_open;
@@ -150,7 +152,7 @@ class EventController extends Controller
     public function feeTeamU26($request)
     {
         $check = $request->fee_team_mhs;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_team_mhs = NULL;
             return $fee_team_mhs;
@@ -164,7 +166,7 @@ class EventController extends Controller
     public function feeTeamU21($request)
     {
         $check = $request->fee_team_u21;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_team_u21 = NULL;
             return $fee_team_u21;
@@ -178,7 +180,7 @@ class EventController extends Controller
     public function feePasOpen($request)
     {
         $check = $request->fee_pas_open;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_pas_open = NULL;
             return $fee_pas_open;
@@ -192,7 +194,7 @@ class EventController extends Controller
     public function feePasMhs($request)
     {
         $check = $request->fee_pas_mhs;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_pas_mhs = NULL;
             return $fee_pas_mhs;
@@ -206,7 +208,7 @@ class EventController extends Controller
     public function feePasU21($request)
     {
         $check = $request->fee_pas_u21;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $fee_pas_u21 = NULL;
             return $fee_pas_u21;
@@ -220,7 +222,7 @@ class EventController extends Controller
     public function prizepool($request)
     {
         $check = $request->prizepool;
-        if (empty($check) || $check == 0 || $check == 0.00) 
+        if (blank($check)) 
         {
             $prizepool = NULL;
             return $prizepool;

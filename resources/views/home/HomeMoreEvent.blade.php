@@ -12,10 +12,10 @@
 					<div class="px-1 mb-5 moreEvent">
 					  <div class="card-borderless shadow h-100 bg-gradient-purple rounded moreEventShow">
 					  	<div class="col-md p-2">
-					  		<a href="{{ url('/detailEvent/'.$event->id.'/'.$event->eve_date) }}"><img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="{!!$event->eve_title!!}"></a>
+					  		<a href="{{ url('/detailEvent/'.$event->id.'/'.\Str::slug($event->eve_title,'-'))  }}"><img height="250" width="auto" src="{{ asset('assets/img/img_eve/'.$event->img_eve) }}" class="card-img-top rounded text-white" alt="{!!$event->eve_title!!}"></a>
 					  	</div>
 					    <div class="card-body">
-					      <a id="body-link" href="{{ url('/detailEvent/'.$event->id.'/'.$event->eve_date) }}"><h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5></a>
+					      <a id="body-link" href="{{ url('/detailEvent/'.$event->id.'/'.\Str::slug($event->eve_title,'-'))  }}"><h5 class="card-title font-weight-bold">{{$event->eve_title}}</h5></a>
 					      <p class="mb-4 card-subtitle text-white">
 					      	<?php $date = strtotime($event->eve_date);
 					      		echo date('d M Y',$date);

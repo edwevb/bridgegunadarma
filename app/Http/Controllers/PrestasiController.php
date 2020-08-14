@@ -46,8 +46,12 @@ class PrestasiController extends Controller
 
     public function show(Prestasi $prestasi)
     {
-        $data_atlet = \App\Atlet::orderBy('atlet_name','ASC')->get();
-        $sort_atlet = $prestasi->atlet()->orderBy('atlet_name', 'ASC')->get();
+        $data_atlet = \App\Atlet::select('id','atlet_name')
+                      ->orderBy('atlet_name','ASC')->get();
+
+        $sort_atlet = $prestasi->atlet()->select('atlet_id','atlet_name')
+                      ->orderBy('atlet_name', 'ASC')->get();
+
         return view('admin.prestasi.DetailPrestasi',compact('prestasi','data_atlet','sort_atlet'));
     }
 

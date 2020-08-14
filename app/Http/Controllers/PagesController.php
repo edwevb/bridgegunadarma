@@ -34,6 +34,7 @@ class PagesController extends Controller
     public function getPrestasi()
     {
         $data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
+                        ->select('id','pre_date', 'pre_title')
                         ->take(3)
                         ->get();
         return $data_prestasi;
@@ -76,17 +77,22 @@ class PagesController extends Controller
 
     public function moreAtlet()
     {
-        $data_atlet = \App\Atlet::orderBy('atlet_name','Asc')->get();
+        $data_atlet = \App\Atlet::select('id','atlet_name','alamat','img_atlet')
+                      ->orderBy('atlet_name','ASC')
+                      ->get();
         return view('home.HomeMoreAtlet',compact('data_atlet'));
     }
 
     public function detailAtlet(\App\Atlet $atlet)
     {
-        $data_visited = DB::table('tb_visited')->where('atlet_id', $atlet->id)->first();
+        $data_visited = DB::table('tb_visited')
+                        ->select('hits')
+                        ->where('atlet_id', $atlet->id)
+                        ->first();
+
         if (empty($data_visited))
         {
-            DB::table('tb_visited')
-            ->insert([
+            \App\Visited::insert([
                 'atlet_id' => $atlet->id,
                 'hits'     => 1
             ]);
@@ -102,19 +108,25 @@ class PagesController extends Controller
 
     public function morePrestasi()
     {
-        $data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')->get();
+        $data_prestasi = \App\Prestasi::select('id','pre_title','pre_date','img_pre')
+                         ->orderBy('pre_date','DESC')
+                         ->get();
         return view('home.HomeMorePrestasi',compact('data_prestasi'));
     }
 
     public function detailPrestasi(\App\Prestasi $prestasi)
     {
-        $sort_atlet = $prestasi->atlet()->orderBy('atlet_name', 'ASC')->get();
+        $sort_atlet = $prestasi->atlet()->select('atlet_name')
+                      ->orderBy('atlet_name', 'ASC')
+                      ->get();
         return view('home.HomeDetailPrestasi',compact('prestasi','sort_atlet'));
     }
 
     public function moreEvent()
     {
-        $data_event = \App\Event::orderBy('eve_date','Desc')->get();
+        $data_event = \App\Event::select('id','eve_title','eve_date')
+                      ->orderBy('eve_date','DESC')
+                      ->get();
         return view('home.HomeMoreEvent',compact('data_event'));
     }
 

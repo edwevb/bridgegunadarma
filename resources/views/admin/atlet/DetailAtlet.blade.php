@@ -201,10 +201,10 @@
                               @foreach($sort_prestasi as $prestasi)
                                 <tr>
                                   <td>
-                                    <a href="{{ url('/prestasi/'.$prestasi->id) }}">{{$prestasi->pre_title}}</a>
+                                    <a href="{{ url('/prestasi/'.$prestasi->prestasi_id) }}">{{$prestasi->pre_title}}</a>
                                   </td>
                                   <td width="100">
-                                    <a href="{{ url('/atlet/'.$atlet->id.'/'.$prestasi->id.'/removePrestasi') }}" onclick="return confirm('Anda yakin?')"><h5><i class="far fa-minus-square"></i></h5></a>
+                                    <a href="{{ url('/atlet/'.$atlet->id.'/'.$prestasi->prestasi_id.'/removePrestasi') }}" onclick="return confirm('Anda yakin?')"><h5><i class="far fa-minus-square"></i></h5></a>
                                   </td>
                                 </tr>
                               @endforeach
@@ -253,16 +253,10 @@
                               @foreach($sort_history as $history)
                                 <tr>
                                   <td>
-                                    <a href="{{ url('/history/'.$history->id) }}">{{$history->hist_title}}</a>
-                                  </td>
-                                  <td>
-                                    @php
-                                      $date = strtotime($history->hist_date);
-                                      echo date('D, d M Y',$date);
-                                    @endphp
+                                    <a href="{{ url('/history/'.$history->history_id) }}">{{$history->hist_title}}</a>
                                   </td>
                                   <td width="100">
-                                    <a href="{{ url('/atlet/'.$atlet->id.'/'.$history->id.'/removeHistory') }}" onclick="return confirm('Anda yakin?')"><h5><i class="far fa-minus-square"></i></h5></a>
+                                    <a href="{{ url('/atlet/'.$atlet->id.'/'.$history->history_id.'/removeHistory') }}" onclick="return confirm('Anda yakin?')"><h5><i class="far fa-minus-square"></i></h5></a>
                                   </td>
                                 </tr>
                               @endforeach

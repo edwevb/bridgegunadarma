@@ -34,7 +34,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="mat_title">Title</label>
-                  <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{$materi->mat_title}}" autocomplete="off">
+                  <input type="text" name="mat_title" id="mat_title" class="form-style @error('mat_title') is-invalid @enderror" value="{{old('mat_title') ? old('mat_title') : $materi->mat_title}}" autocomplete="off">
                   @error('mat_title')
                     <div class="invalid-feedback">
                       {{$message}}
@@ -46,7 +46,7 @@
               <div class="form-group row">
                 <div class="col-md-12">
                   <label for="mat_keterangan">Deskripsi*</label>
-                  <textarea type="text" name="mat_keterangan" id="mat_keterangan" class="form-style" placeholder="Write here.. or Upload File below">{!!$materi->mat_keterangan!!}</textarea>
+                  <textarea type="text" name="mat_keterangan" id="mat_keterangan" class="form-style" placeholder="Write here.. or Upload File below">{{old('mat_keterangan') ? old('mat_keterangan') : $materi->mat_keterangan}}</textarea>
                 </div>
               </div>
               <div class="form-group">

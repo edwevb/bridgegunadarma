@@ -15,17 +15,6 @@ class AtletController extends Controller
         return view('admin.atlet.atlet', ['data_atlet'=>$data_atlet]);
     }
 
-    //Cara 1
-    // $atlet             = new Atlet;
-     // $atlet->nik        = $request->nik;
-     // $atlet->save();
-
-     //Cara 2
-     /*Atlet::create([
-        'nik'        => $request->nik,
-        'atlet_name' => $request->atlet_name,
-     ]);*/
-
     public function validateAtlet($request)
     {
         $request->validate([
@@ -51,7 +40,7 @@ class AtletController extends Controller
     {   
         $this->validateAtlet($request);
 
-        if ($atlet = Atlet::create($request->all()))
+        if($atlet = Atlet::create($request->all()))
         {
             if($request->hasFile('img_atlet'))
             {
@@ -70,10 +59,18 @@ class AtletController extends Controller
 
     public function show(Atlet $atlet)
     {
-        $data_prestasi = \App\Prestasi::orderBy('pre_date','DESC')->get();
-        $data_history  = \App\History::orderBy('hist_date','DESC')->get();
-        $sort_prestasi = $atlet->prestasi()->orderBy('pre_date', 'DESC')->get();
-        $sort_history  = $atlet->history()->orderBy('hist_date', 'DESC')->get();
+        $data_prestasi = \App\Prestasi::select('id','pre_title')
+                         ->orderBy('pre_date','DESC')->get();
+
+        $data_history  = \App\History::select('id','hist_title')
+                         ->orderBy('hist_date','DESC')->get();
+
+        $sort_prestasi = $atlet->prestasi()->select('prestasi_id', 'pre_title')
+                         ->orderBy('pre_date', 'DESC')->get();
+
+        $sort_history  = $atlet->history()->select('history_id','hist_title')
+                         ->orderBy('hist_date', 'DESC')->get();
+                         
         $data_mpoint   = \App\Masterpoint::all();
         return view('admin.atlet.DetailAtlet',compact('atlet','data_prestasi','data_history','data_mpoint','sort_history','sort_prestasi'));
     }

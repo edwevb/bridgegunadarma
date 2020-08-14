@@ -18,7 +18,7 @@ class MateriController extends Controller
         $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
-            'file_mat'  => 'required|file|max:10024'
+            'file_mat'  => 'file|max:10024'
         ]);
         return $request;
     }
@@ -31,7 +31,7 @@ class MateriController extends Controller
         {
             $file             = $request->file('file_mat');
             $file_extension   = $file->getClientOriginalExtension();
-            $fileName         = '(BridgeFile)'.$request->mat_title.'.'.$file_extension;
+            $fileName         = \Str::slug($request->mat_title, '-').'.'.$file_extension;
             $file->move("assets/file/file_mat", $fileName);
             $materi->file_mat = $fileName;
             $materi->save();
@@ -55,7 +55,7 @@ class MateriController extends Controller
         $materi->update($request->all());
         if ($request->hasFile('file_mat'))
         {
-            $file      = $request->file('file_mat');
+            $file     = $request->file('file_mat');
             $filePath = public_path("assets/file/file_mat/{$materi->file_mat}");
             if (isset($materi->file_mat) && file_exists($filePath)) 
             {

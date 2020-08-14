@@ -84,10 +84,10 @@
                     <tr>
                       <th width="10" scope="row">{{$loop->iteration}}</th>
                       <td>
-                        <a class="text-none" href="{{ url('/atlet/'.$atlet->id) }}">{{$atlet->atlet_name}}</a>
+                        <a class="text-none" href="{{ url('/atlet/'.$atlet->atlet_id) }}">{{$atlet->atlet_name}}</a>
                       </td>
                       <td>
-                        <a href="{{ url('/prestasi/'.$prestasi->id.'/'.$atlet->id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
+                        <a href="{{ url('/prestasi/'.$prestasi->id.'/'.$atlet->atlet_id.'/removeAtlet') }}" onclick="return confirm('Anda yakin?')"><i class="fa fa-trash"></i> Remove</a>
                       </td>
                     </tr>
                     @endforeach
