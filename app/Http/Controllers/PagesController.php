@@ -34,7 +34,7 @@ class PagesController extends Controller
     public function getPrestasi()
     {
         $data_prestasi = \App\Prestasi::orderBy('pre_date','Desc')
-                        ->select('id','pre_date', 'pre_title')
+                        ->select('id','pre_date', 'pre_title', 'img_pre')
                         ->take(3)
                         ->get();
         return $data_prestasi;
@@ -116,7 +116,7 @@ class PagesController extends Controller
 
     public function detailPrestasi(\App\Prestasi $prestasi)
     {
-        $sort_atlet = $prestasi->atlet()->select('atlet_name')
+        $sort_atlet = $prestasi->atlet()->select('id','atlet_name')
                       ->orderBy('atlet_name', 'ASC')
                       ->get();
         return view('home.HomeDetailPrestasi',compact('prestasi','sort_atlet'));

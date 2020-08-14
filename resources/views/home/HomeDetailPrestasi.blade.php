@@ -39,7 +39,7 @@
             <div class="font-weight-bold lead text-salmon">List Atlet Berprestasi</div>
             @foreach ($sort_atlet as $atlet)
               <ul class="list-group">
-                <a class="btn-none rounded-pill" href="{{ url('/detailAtlet/'.$atlet->id.'/'.$atlet->atlet_name) }}">
+                <a class="btn-none rounded-pill" href="{{ url('/detailAtlet/'.$atlet->id.'/'.\Str::slug($atlet->atlet_name)) }}">
                   <li class="list-group-item btn btn-sm btn-salmon text-white">
                     <span class="lead">{!!$atlet->atlet_name!!}</span>
                   </li>
