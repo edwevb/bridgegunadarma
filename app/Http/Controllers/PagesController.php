@@ -116,7 +116,7 @@ class PagesController extends Controller
 
     public function detailPrestasi(\App\Prestasi $prestasi)
     {
-        $sort_atlet = $prestasi->atlet()->select('id','atlet_name')
+        $sort_atlet = $prestasi->atlet()->select('atlet_id','atlet_name')
                       ->orderBy('atlet_name', 'ASC')
                       ->get();
         return view('home.HomeDetailPrestasi',compact('prestasi','sort_atlet'));
