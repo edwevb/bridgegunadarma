@@ -66,7 +66,6 @@
       </div>
     </div>
   </nav>
-
   <div class="bridge-side-bg fixed-top mt-2">
     <a class="btn">
       <img class="imgug shadow rounded-circle bg-gradient-dark" src="{{ asset('assets/img/bridgeug.png') }} "data-toggle="collapse" data-target="#sidebar">
@@ -82,56 +81,56 @@
           <div id="dashboard" class="collapse show">
             <li class="list-group">
               <a class="btn btn-block text-left {{
-                Request::url() ===  url('/materi') || 
-                Request::url() ===  url('/history') ||
-                Request::url() ===  url('/atlet') || 
-                Request::url() ===  url('/prestasi') || 
-                Request::url() ===  url('/event')
+                Route::is('materi.*') || 
+                Route::is('history.*') ||
+                Route::is('atlet.*') || 
+                Route::is('prestasi.*') || 
+                Route::is('event.*')
                 ? 'btn-secondary show' : 'btn-dark'}}" 
                 href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="data" class="collapse {{
-                Request::url() ===  url('/materi') || 
-                Request::url() ===  url('/history') ||
-                Request::url() ===  url('/atlet') || 
-                Request::url() ===  url('/prestasi') || 
-                Request::url() ===  url('/event')
+                Route::is('materi.*') || 
+                Route::is('history.*') ||
+                Route::is('atlet.*') || 
+                Route::is('prestasi.*') || 
+                Route::is('event.*')
                 ? 'show' : 'hide'}} list-group">
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/materi') }}"><i class="fas fa-book"></i> Materi</a>
+                  <a class="btn text-left ml-2 {{Route::is('materi.*')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2  {{Request::url() ===  url('/history')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/history') }}"><i class="fas fa-history"></i> Pelatihan</a>
+                  <a class="btn text-left ml-2  {{Route::is('history.*')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/history') }}"><i class="fas fa-history"></i> Pelatihan</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/atlet')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/atlet') }}"><i class="fas fa-users"></i> Atlet</a>
+                  <a class="btn text-left ml-2 {{Route::is('atlet.*')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/atlet') }}"><i class="fas fa-users"></i> Atlet</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/prestasi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/prestasi') }}"><i class="fas fa-trophy"></i> Prestasi</a>
+                  <a class="btn text-left ml-2 {{Route::is('prestasi.*')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/prestasi') }}"><i class="fas fa-trophy"></i> Prestasi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/event')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/event') }}"><i class="far fa-newspaper"></i> Event</a>
+                  <a class="btn text-left ml-2 {{Route::is('event.*') ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/event') }}"><i class="far fa-newspaper"></i> Event</a>
                 </li>
               </ul>
             </li>
           </div>
           <li id="dashboard" class="list-group collapse show">
-            <a class="btn btn-block text-left {{Request::url() ===  url('/masterpoint')  ? 'btn-secondary' : 'btn-dark'}}" href="{{ url('/masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
+            <a class="btn btn-block text-left {{Route::is('masterpoint.*')  ? 'btn-secondary' : 'btn-dark'}}" href="{{ url('/masterpoint') }}"><i class="fas fa-coins"></i> Masterpoint</a>
           </li>
           <div id="dashboard" class="collapse show">
             <li class="list-group">
               <a class="btn btn-block text-left {{
-                Request::url() ===  url('/iuranSk') || 
-                Request::url() ===  url('/pengeluaran')
+                Route::is('iuranSk.*') || 
+                Route::is('pengeluaran.*')
                 ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#kas"></i><i class="fas fa-balance-scale-right"></i> Kas<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="kas" class="collapse list-group {{
-                Request::url() ===  url('/iuranSk') || 
-                Request::url() ===  url('/pengeluaran')
+                Route::is('iuranSk.*') || 
+                Route::is('pengeluaran.*')
                 ? 'show' : 'hide'}}">
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/iuranSk')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/iuranSk') }}"><i class="fas fa-money-bill-wave"></i> Iuran SK</a>
+                  <a class="btn text-left ml-2 {{Route::is('iuranSk.*')   ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/iuranSk') }}"><i class="fas fa-money-bill-wave"></i> Iuran SK</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/pengeluaran')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/pengeluaran') }}"><i class="fas fa-credit-card"></i> Pengeluaran</a>
+                  <a class="btn text-left ml-2 {{Route::is('pengeluaran.*')   ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/pengeluaran') }}"><i class="fas fa-credit-card"></i> Pengeluaran</a>
                 </li>
               </ul>
             </li>
@@ -148,25 +147,24 @@
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
           </div>
           <div class="my-2 text-muted">
-            {{Request::url() ===  url('/materi')  ? 'Dashboard / Data / Materi' : ''}}
-            {{Request::url() ===  url('/history')  ? 'Dashboard / Data / Pelatihan' : ''}}
-            {{Request::url() ===  url('/atlet')  ? 'Dashboard / Data / Atlet' : ''}}
-            {{Request::url() ===  url('/prestasi')  ? 'Dashboard / Data / Prestasi' : ''}}
-            {{Request::url() ===  url('/event')  ? 'Dashboard / Data / Event' : ''}}
-            {{Request::url() ===  url('/masterpoint')  ? 'Dashboard / Masterpoint' : ''}}
-            {{Request::url() ===  url('/iuranSk')  ? 'Dashboard / Kas / Iuran SK' : ''}}
-            {{Request::url() ===  url('/pengeluaran')  ? 'Dashboard / Kas / Pengeluaran' : ''}}
+            {{Route::is('materi.index')  ? 'Dashboard / Data / Materi' : ''}}
+            {{Route::is('history.index')  ? 'Dashboard / Data / Pelatihan' : ''}}
+            {{Route::is('atlet.index')  ? 'Dashboard / Data / Atlet' : ''}}
+            {{Route::is('prestasi.index')  ? 'Dashboard / Data / Prestasi' : ''}}
+            {{Route::is('event.index')  ? 'Dashboard / Data / Event' : ''}}
+            {{Route::is('masterpoint.index')  ? 'Dashboard / Masterpoint' : ''}}
+            {{Route::is('iuranSk.index')  ? 'Dashboard / Kas / Iuran SK' : ''}}
+            {{Route::is('pengeluaran.index')  ? 'Dashboard / Kas / Pengeluaran' : ''}}
             {{Request::url() ===  url('/user')  ? 'Dashboard / User Management' : ''}}
-            {{Request::url() ===  url('/dashboard')  ? 'Dashboard' : ''}}
-            {{Request::url() ===  url('/pesan')  ? 'Dashboard / Pesan' : ''}}
-            {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
-            {{Request::url() ===  url('/clientInfo')  ? 'Dashboard / Client Info' : ''}}
+            {{Route::is('dashboard.*')  ? 'Dashboard' : ''}}
+            {{Route::is('pesan.*')  ? 'Dashboard / Pesan' : ''}}
+            {{Route::is('passwordForm') ? 'Dashboard / Change Password' : ''}}
+            {{Route::is('clientInfo')  ? 'Dashboard / Client Info' : ''}}
           </div>
         </div>
       </div>
     </div> {{-- end sidebar section --}}
   @else
-
     {{-- =================start sidebar section user================= --}}
     <div class="content-mobile row no-gutters showCrud">
       {{-- menu sidebar --}}
@@ -176,18 +174,18 @@
           <div id="dashboard" class="collapse show">
             <li class="list-group">
               <a class="btn btn-block text-left {{
-                Request::url() ===  url('/_materi') || 
-                Request::url() ===  url('/_history')
+                Route::is('_materi') ||
+                Route::is('_history')
                 ? 'btn-secondary' : 'btn-dark'}}" href="javascript:;" data-toggle="collapse" data-target="#data"><i class="fas fa-database"></i> Data<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="data" class="collapse list-group {{
-                Request::url() ===  url('/_materi') || 
-                Request::url() ===  url('/_history')
+                Route::is('_materi') ||
+                Route::is('_history')
                 ? 'show' : 'hide'}}">
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/_materi')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_materi') }}"><i class="fas fa-book"></i> Materi</a>
+                  <a class="btn text-left ml-2 {{Route::is('_materi') ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_materi') }}"><i class="fas fa-book"></i> Materi</a>
                 </li>
                 <li class="list-group">
-                  <a class="btn text-left ml-2 {{Request::url() ===  url('/_history')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_history') }}"><i class="fas fa-history"></i> Pelatihan</a>
+                  <a class="btn text-left ml-2 {{Route::is('_history')  ? 'btn-secondary' : 'btn-light'}}" href="{{ url('/_history') }}"><i class="fas fa-history"></i> Pelatihan</a>
                 </li>
               </ul>
             </li>
@@ -204,17 +202,16 @@
             <small data-toggle="tooltip" data-placement="top" title="Dashboard"><a href="{{ url('/dashboard') }}" class="text-light ml-2"><i class="fas fa-desktop"></i>&nbsp;Dashboard</a></small>
           </div>
           <div class="my-2 text-muted">
-            {{Request::url() ===  url('/_materi')  ? 'Dashboard / Data / Materi' : ''}}
-            {{Request::url() ===  url('/_history')  ? 'Dashboard / Data / Pelatihan' : ''}}
-            {{Request::url() ===  url('/_masterpoint')  ? 'Dashboard / Masterpoint' : ''}}
-            {{Request::url() ===  url('/dashboard')  ? 'Dashboard ' : ''}}
-            {{Request::url() ===  url('/passwordForm/'.auth()->user()->id) ? 'Dashboard / Change Password' : ''}}
+            {{Route::is('_materi')  ? 'Dashboard / Data / Materi' : ''}}
+            {{Route::is('_history')  ? 'Dashboard / Data / Pelatihan' : ''}}
+            {{Route::is('_masterpoint')  ? 'Dashboard / Masterpoint' : ''}}
+            {{Route::is('dashboard.*')  ? 'Dashboard ' : ''}}
+            {{Route::is('passwordForm') ? 'Dashboard / Change Password' : ''}}
           </div>
         </div>
       </div>
     </div> {{-- end sidebar section user --}} 
   @endif
-
   @yield('section')
   <br><br><br><br><br><br><br><br><br><br>
   {{-- Page scripts --}}

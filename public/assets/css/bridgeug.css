@@ -340,11 +340,13 @@ a.nav-link-style{
   color: #fff;
   transition: 0.5s;
 }
-
-a.nav-link-style:hover {
-  color: #f07241;
-  background-color: transparent;
-  box-shadow: none;
+@media (max-width: 992px)
+  {
+  a.nav-link-style:hover {
+    color: #f07241;
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 #dashboard{
@@ -430,6 +432,16 @@ small.form-text{
 { 
   nav{
     position: relative !important;
+  }
+
+  a.nav-link-style:hover {
+    color: #fff!important;
+    background-color: #41295a;
+    background-image: -webkit-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
+    background-image: -o-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
+    background-image: linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
+    background-size: cover;
+    box-shadow: none;
   }
 
   .dropdown .dropdown-menu{
@@ -763,6 +775,10 @@ small.form-text{
   background:  #C04848;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-orange{
+  color: #f07241!important;
 }
 
 .text-purple{

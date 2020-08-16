@@ -1,5 +1,5 @@
 @extends('layout.admin_cms')
-@section('title', 'Client Info')
+@section('title', 'Visitors')
 @section('header')
   <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/dataTables.bootstrap4.min.css') }}">
 @stop

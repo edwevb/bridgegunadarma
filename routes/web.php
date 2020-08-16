@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 //Route home
 route::get('/', 'PagesController@home')->name('home');
-route::get('/moreAtlet', 'PagesController@moreAtlet')->name('moreAtlet');
-route::get('/detailAtlet/{atlet}/{name}', 'PagesController@detailAtlet')->name('detailAtlet');
-route::get('/morePrestasi', 'PagesController@morePrestasi')->name('morePrestasi');
-route::get('/detailPrestasi/{prestasi}/{name}', 'PagesController@detailPrestasi')->name('detailPrestasi');
-route::get('/moreEvent', 'PagesController@moreEvent')->name('moreEvent');
-route::get('/detailEvent/{event}/{name}', 'PagesController@detailEvent')->name('detailEvent');
+route::get('/moreAtlet', 'PagesController@moreAtlet')->name('HomeAtlet');
+route::get('/detailAtlet/{atlet}/{name}', 'PagesController@detailAtlet')->name('HomeAtlet');
+route::get('/morePrestasi', 'PagesController@morePrestasi')->name('HomePrestasi');
+route::get('/detailPrestasi/{prestasi}/{name}', 'PagesController@detailPrestasi')->name('HomePrestasi');
+route::get('/moreEvent', 'PagesController@moreEvent')->name('HomeEvent');
+route::get('/detailEvent/{event}/{name}', 'PagesController@detailEvent')->name('HomeEvent');
 
 //Admin
 route::group(['middleware' => ['auth','CheckRole:1']],function()
@@ -60,28 +60,27 @@ route::group(['middleware' => ['auth','CheckRole:1']],function()
 	route::resource('/pengeluaran','KasPengeluaranController',['except' => ['create']]);
 
 		//User Device Information
-		route::get('/clientInfo', 'ClientInfoController@index');
-		route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete');
+		route::get('/clientInfo', 'ClientInfoController@index')->name('clientInfo');
+		route::delete('/clientInfo/delete/{id}', 'ClientInfoController@delete')->name('clientInfo');
 
 		//User Device Information
-		route::get('/visitor', 'ClientInfoController@visit');
-		route::delete('/visitor/delete/{id}', 'ClientInfoController@deleteVisitor');
+		route::get('/visitor', 'ClientInfoController@visit')->name('clientInfo');
+		route::delete('/visitor/delete/{id}', 'ClientInfoController@deleteVisitor')->name('clientInfo');
 });
 
 //User
 route::group(['middleware' => ['auth','CheckRole:0,1']],function()
 {
 	route::resource('/dashboard', 'DashboardController',['except' => ['create','edit','store','show','destroy']]);
-	route::get('/passwordForm/{user}', 'DashboardController@passwordForm');
+	route::get('/passwordForm/{user}', 'DashboardController@passwordForm')->name('passwordForm');
 	route::post('/changePassword/{user}', 'DashboardController@changePassword');
-	route::get('/_materi','UserPageController@_materi');
-	route::get('/_materi/{materi}','UserPageController@show_materi');
+	route::get('/_materi','UserPageController@_materi')->name('_materi');
+	route::get('/_materi/{materi}','UserPageController@show_materi')->name('_materi');
 	route::get('/_materi/{materi}/download','UserPageController@_materiDownload');
-	route::get('/_history','UserPageController@_history');
-	route::get('/_history/{history}','UserPageController@show_history');
+	route::get('/_history','UserPageController@_history')->name('_history');
+	route::get('/_history/{history}','UserPageController@show_history')->name('_history');
 	route::get('/_history/{history}/download','UserPageController@_historyDownload');
-	route::get('/_masterpoint','UserPageController@_masterpoint');
-	route::get('/_masterpoint/{masterpoint}','UserPageController@show_masterpoint');
+	route::get('/_masterpoint','UserPageController@_masterpoint')->name('_masterpoint');
 	route::resource('/pesan','PesanController',['except' => ['create','edit','update']]);
 	route::get('/pesan/form/{id}','PesanController@makePesan')->name('makePesan');
 });

@@ -77,9 +77,4 @@ class UserPageController extends Controller
         $data_mpoint = $data_mpoint->sortByDesc('AvarageMasterpoint');
 		return view('user._masterpoint',compact('data_mpoint'));
     }
-
-    public function show_masterpoint(Masterpoint $masterpoint)
-    {
-    	return view('user.detail_masterpoint',compact('masterpoint'));
-    }
 }

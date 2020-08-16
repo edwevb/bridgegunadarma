@@ -64,13 +64,13 @@
             <a class="nav-link-style js-scroll-trigger" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-style js-scroll-trigger" href="{{ url('/moreAtlet') }}">Atlet</a>
+            <a class="nav-link-style js-scroll-trigger {{Route::is('HomeAtlet') ? 'text-orange':''}}" href="{{ url('/moreAtlet') }}">Atlet</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-style js-scroll-trigger" href="{{ url('/morePrestasi') }}">Prestasi</a>
+            <a class="nav-link-style js-scroll-trigger {{Route::is('HomePrestasi') ? 'text-orange':''}}" href="{{ url('/morePrestasi') }}">Prestasi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-style js-scroll-trigger" href="{{ url('/moreEvent') }}">Event</a>
+            <a class="nav-link-style js-scroll-trigger {{Route::is('HomeEvent') ? 'text-orange':''}}" href="{{ url('/moreEvent') }}">Event</a>
           </li>
           <li class="nav-item" id="login-btn">
           @if(auth()->user())
