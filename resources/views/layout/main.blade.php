@@ -110,7 +110,7 @@
       </div>
     </div>
   </nav>
-
+  
   @yield('section')
   
   {{-- footer --}}
