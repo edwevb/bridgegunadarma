@@ -195,20 +195,7 @@
 	@section('script')
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eef7ac28f548f31"></script>
 	  <script>
-	    //Back to top
-	    $(document).ready(function(){ 
-	      $(window).scroll(function(){ 
-	          if ($(this).scrollTop() > 400) { 
-	              $('#scroll').fadeIn(); 
-	          } else { 
-	              $('#scroll').fadeOut(); 
-	          } 
-	      }); 
-	      $('#scroll').click(function(){ 
-	          $("html, body").animate({ scrollTop: 0 }, 600); 
-	          return false; 
-	      }); 
-	    });
+	    $(document).ready(function(){ $(window).scroll(function(){ if ($(this).scrollTop() > 400) { $('#scroll').fadeIn(); } else { $('#scroll').fadeOut(); } }); $('#scroll').click(function(){ $("html, body").animate({ scrollTop: 0 }, 600); return false; });});
 	  </script>
 	@stop
 @endsection

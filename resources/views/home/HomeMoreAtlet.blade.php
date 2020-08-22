@@ -32,29 +32,7 @@
   </article>{{-- end atlet --}}
   @section('script')
 	  <script>
-	    //Back to top
-	    $(document).ready(function(){ 
-	      $(window).scroll(function(){ 
-	          if ($(this).scrollTop() > 400) { 
-	              $('#scroll').fadeIn(); 
-	          } else { 
-	              $('#scroll').fadeOut(); 
-	          } 
-	      }); 
-	      $('#scroll').click(function(){ 
-	          $("html, body").animate({ scrollTop: 0 }, 600); 
-	          return false; 
-	      }); 
-	    });
-
-	    $(window).on('load', function(){
-	      $('.moreAtlet').each(function(i)
-	      {
-	         setTimeout(function(){
-	          $('.moreAtlet').eq(i).addClass('moreAtletShow'); 
-	         }, 500*i);
-	      });
-	    });
+	   $(document).ready(function(){ $(window).scroll(function(){ if ($(this).scrollTop() > 400) { $('#scroll').fadeIn(); } else { $('#scroll').fadeOut(); } });$('#scroll').click(function(){ $("html, body").animate({ scrollTop: 0 }, 600); return false; }); });$(window).on('load', function(){$('.moreAtlet').each(function(i){setTimeout(function(){$('.moreAtlet').eq(i).addClass('moreAtletShow'); }, 500*i);});});
 	  </script>
 	@stop
 @endsection

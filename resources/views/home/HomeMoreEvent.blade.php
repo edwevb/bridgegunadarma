@@ -31,29 +31,7 @@
   </article>{{-- end event --}}
   @section('script')
 	  <script>
-	    //Back to top
-	    $(document).ready(function(){ 
-	      $(window).scroll(function(){ 
-	          if ($(this).scrollTop() > 400) { 
-	              $('#scroll').fadeIn(); 
-	          } else { 
-	              $('#scroll').fadeOut(); 
-	          } 
-	      }); 
-	      $('#scroll').click(function(){ 
-	          $("html, body").animate({ scrollTop: 0 }, 600); 
-	          return false; 
-	      }); 
-	    });
-
-	    $(window).on('load', function(){
-	      $('.moreEvent').each(function(i)
-	      {
-	         setTimeout(function(){
-	          $('.moreEvent').eq(i).addClass('moreEventShow'); 
-	         }, 500*i);
-	      });
-	    });
+	    $(document).ready(function(){ $(window).scroll(function(){ if ($(this).scrollTop() > 400) { $('#scroll').fadeIn(); } else { $('#scroll').fadeOut(); } });$('#scroll').click(function(){ $("html, body").animate({ scrollTop: 0 }, 600); return false; }); });$(window).on('load', function(){$('.moreEvent').each(function(i){setTimeout(function(){$('.moreEvent').eq(i).addClass('moreEventShow'); }, 500*i);});});
 	  </script>
 	@stop
 @endsection

@@ -32,28 +32,7 @@
   @section('script')
 	  <script>
 	    //Back to top
-	    $(document).ready(function(){ 
-	      $(window).scroll(function(){ 
-	          if ($(this).scrollTop() > 400) { 
-	              $('#scroll').fadeIn(); 
-	          } else { 
-	              $('#scroll').fadeOut(); 
-	          } 
-	      }); 
-	      $('#scroll').click(function(){ 
-	          $("html, body").animate({ scrollTop: 0 }, 600); 
-	          return false; 
-	      }); 
-	    });
-
-	    $(window).on('load', function(){
-	      $('.morePrestasi').each(function(i)
-	      {
-	         setTimeout(function(){
-	          $('.morePrestasi').eq(i).addClass('morePrestasiShow'); 
-	         }, 500*i);
-	      });
-	    });
+	    $(document).ready(function(){ $(window).scroll(function(){ if ($(this).scrollTop() > 400) { $('#scroll').fadeIn(); } else { $('#scroll').fadeOut(); } });$('#scroll').click(function(){ $("html, body").animate({ scrollTop: 0 }, 600); return false; }); });$(window).on('load', function(){$('.morePrestasi').each(function(i){setTimeout(function(){$('.morePrestasi').eq(i).addClass('morePrestasiShow'); }, 500*i);});});
 	  </script>
 	@stop
 @endsection
