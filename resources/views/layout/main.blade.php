@@ -1,6 +1,3 @@
-<!-- 
-@author Edward Evbert <edwardevbert@gmail.com>
--->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -18,43 +15,12 @@
   <meta property="og:image" content="{{ asset('assets/img/bridgeug.png') }}"/>  
   <meta property="og:description" content="{{ $meta[2] }}" />
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/bridgeug.png') }}">
-
   <title>@yield('title')</title> 
-
   {{--  Page fonts & Icon --}}
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   <style>
-    nav{
-      background-color: #ad5389;
-      background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-size: cover;
-    }
-    @media (min-width: 992px){
-      nav{
-        padding-top: 2rem!important;
-        padding-bottom: 18rem!important;
-        background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;
-        background-size: cover;
-        background-attachment: fixed;
-        /*filter: brightness(75%);*/
-      }
-
-      #about .container{
-        opacity: 0.94;
-      }
-
-      #home{
-        margin-top: -5px;
-      }
-    }
-    .vertical { 
-      border-left: 3px solid #C04848;
-      height: 50px;
-    } 
+    nav{background-color: #ad5389;background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));background-size: cover;}@media (min-width: 992px){nav{padding-top: 2rem!important;padding-bottom: 18rem!important;background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;background-size: cover;background-attachment: fixed;}#about .container{opacity: 0.94;}#home{margin-top: -5px;}}.vertical { border-left: 3px solid #C04848;height: 50px;} 
   </style>
 </head>
   {{-- sidebar --}}
@@ -110,9 +76,7 @@
       </div>
     </div>
   </nav>
-  
   @yield('section')
-  
   {{-- footer --}}
   <footer class="mt-5">
     <blockquote class="text-center col-md-6 mx-auto rounded-pill">
@@ -133,8 +97,6 @@
     </div>
   </footer>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-
-
   {{-- Page scripts --}}
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

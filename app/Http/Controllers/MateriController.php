@@ -18,7 +18,7 @@ class MateriController extends Controller
         $request->validate([
             'mat_title' => 'required|max:128',
             'mat_date'  => 'required|date',
-            'file_mat'  => 'file|max:10024'
+            'file_mat'  => 'required|file|max:10024'
         ]);
         return $request;
     }

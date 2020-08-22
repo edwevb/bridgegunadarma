@@ -6,7 +6,10 @@
 			{{-- start content --}}
 			<div class="col-lg d-flex">
 				<div class="container">
-					<section>
+					<section id="home-detail-header">
+						<div class="text-gradient-purple mx-auto mb-5">
+	        		<h1 class="text-center">Event / Turnamen</h1>
+	        	</div>
 						<div class="row">
 							{{-- content 1 --}}
 							<div class="col-md-6">

@@ -1,6 +1,3 @@
-<!-- 
-@author Edward Evbert <edwardevbert@gmail.com>
--->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -25,27 +22,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   <style>
-    nav{
-      background-color: #ad5389;
-      background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));
-      background-size: cover;
-    }
-    @media (min-width: 992px){
-      nav{
-        padding-top: 2rem!important;
-        padding-bottom: 18rem !important;
-        background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;
-        background-size: cover;
-        background-attachment: fixed;
-      }
-    }
-
-    @font-face{
-      font-family: HeaderContent;
-      src: url("{{ asset('assets/font/Righteous-Regular.ttf') }}"); 
-    }
+    nav{background-color: #ad5389;background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));background-size: cover;}@media (min-width: 992px){nav{padding-top: 2rem!important;padding-bottom: 18rem !important;background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;background-size: cover;background-attachment: fixed;}}
   </style>
 </head>
   {{-- sidebar --}}
@@ -98,9 +75,7 @@
       </div>
     </div>
   </nav>
-	
   @yield('content')
-
   <a href="#" id="scroll" style="display: none;"><span></span></a>
   {{-- Page scripts --}}
   <script src="{{ asset('js/app.js') }}" defer></script>

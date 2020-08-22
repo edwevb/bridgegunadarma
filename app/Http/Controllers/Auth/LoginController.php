@@ -15,4 +15,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function loggedOut()
+    {
+        return redirect('/login')->with('AlertSuccess','Anda telah logout!');
+    }
 }

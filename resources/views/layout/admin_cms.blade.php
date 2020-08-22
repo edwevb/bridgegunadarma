@@ -1,6 +1,3 @@
-<!-- 
-@author Edward Evbert <edwardevbert@gmail.com>
--->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,9 +5,6 @@
   @php
     $meta = ['Bridge Indonesia','Bridge Gunadarma','Website Bridge Gunadarma Jakarta'];
   @endphp
-  {{--@if (env('ENFORCE_SSL')==false)
-    <meta http-equiv="refresh" content='0;https://bridgegunadarma.herokuapp.com'>
-  @endif --}}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,14 +15,11 @@
   <meta property="og:image" content="{{ asset('assets/img/bridgeug.png') }}"/>  
   <meta property="og:description" content="{{ $meta[2] }}" />
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/bridgeug.png') }}">
-
   <title>@yield('title')</title> 
-
   {{--  Page fonts & Icon --}}
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
   {{--  Page styles --}}
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   @yield('header')
 </head>
   <body class="test">
@@ -217,9 +208,7 @@
   {{-- Page scripts --}}
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
-    $(window).on('load', function(){
-      $('.test').addClass('load');
-    });
+    $(window).on('load', function(){$('.test').addClass('load');});
   </script>
   {{-- Page plugins --}}
   @yield('footer')

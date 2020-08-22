@@ -1,26 +1,4 @@
-.form-control{
-  border-radius: 5px!important;
-}
-
-.form-control:focus{
-  border:none !important;
-  box-shadow: 0 0 0 0.2rem rgba(47, 7, 67, 0.6);
-}
-
-.btn-salmon{
-  text-decoration: none;
-  background-color: rgb(192,72,72);
-  transition: 0.5s;
-}
-
-.btn-salmon:hover{
-  background-color: #ad5389;
-}
-
-.bg-purple{
-  background-color: #41295a;
-  background-image: -webkit-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
-  background-image: -o-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
-  background-image: linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));
-  background-size: cover;
-}
+.form-control{border-radius: 5px!important;}.form-control:focus{border:none !important;
+box-shadow: 0 0 0 0.2rem rgba(47, 7, 67, 0.6);}.btn-salmon{text-decoration: none;
+background-color: rgb(192,72,72);transition: 0.5s;}.btn-salmon:hover{
+background-color: #ad5389;}.bg-purple{background-color: #41295a;background-image: -webkit-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));background-image: -o-linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));background-image: linear-gradient(rgb(65, 41, 90), rgb(47, 7, 67));background-size: cover;}

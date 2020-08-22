@@ -40,7 +40,7 @@
 				</div> {{-- end jumbotron --}}
 				<div class="d-block gunadarmaCup bg-gradient-purple py-5">
 					<div class="text-center">
-					  <div class="display-4 text-animate text-shadow">GUNADARMA CUP</div>
+					  <div class="gundarCup text-animate text-shadow">GUNADARMA CUP</div>
 					  <div class="py-4">
 					  	<a type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5 shadow" href="#" role="button">Learn more</a>
 					  </div>
