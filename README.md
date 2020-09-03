@@ -1,17 +1,17 @@
 # Bridge Gunadarma
 <p align="center">
 	<a href="https://bridgegunadarma.herokuapp.com">
-		<img src="https://bridgegunadarma.herokuapp.com/assets/img/bridgeug.png" width="400" alt="logo bridge gunadarma">
+		<img src="https://bridgegunadarma.herokuapp.com/assets/img/bridgeug.png" height="250" alt="logo bridge gunadarma">
 	</a>
 </p>
 
 ## Tentang Bridge Gunadarma
 Berdiri sejak tahun 1992 sebagai organisasi yang aktif dan berkompetisi dengan membawa nama Universitas Gunadarma, Bridge Gunadarma telah banyak menorehkan prestasi dari tingkat nasional sampai internasional dari cabang olahraga Bridge.
 <br>
-- **VISI**
+### **VISI**
 Meningkatkan kualitas atlet dan menjadi sarana peningkatan EQ (Emotional Qoutient), IQ (Intellegence Qoutient), SQ (Spiritual Qoutient), dan CQ (Creativity Qoutient) bagi para atlet Bridge Gunadarma.
-<br>
-- **MISI**
+
+### **MISI**
 Bridge Gunadarma mampu berprestasi agar Gunadarma dikenal tidak saja di Indonesia, namun juga secara internasional melalui cabang olahraga Bridge.
 
 ## Sistem Informasi Bridge Gunadarma Berbasis Web
@@ -43,12 +43,12 @@ Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan membe
 
 ## Usage
 
-- **[HOME](https://vehikl.com/)**
+- **[Home](https://bridgegunadarma.herokuapp.com)**
 - **[List Atlet](https://bridgegunadarma.herokuapp.com/moreAtlet)**
 - **[List Prestasion](https://bridgegunadarma.herokuapp.com/morePrestasi)**
 
 ## Credit
 
 - **[Edward Evbert A.](https://edwevb.github.io)**
-- **Bridge Gunadarma(https://bridgegunadarma.herokuapp.com)**
-- **Gunadarma University**(https://www.gunadarma.ac.id/)
+- **[Bridge Gunadarma](https://bridgegunadarma.herokuapp.com)**
+- **[Gunadarma University]**(https://www.gunadarma.ac.id/)
