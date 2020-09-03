@@ -15,7 +15,7 @@ Meningkatkan kualitas atlet dan menjadi sarana peningkatan EQ (Emotional Qoutien
 Bridge Gunadarma mampu berprestasi agar Gunadarma dikenal tidak saja di Indonesia, namun juga secara internasional melalui cabang olahraga Bridge.
 
 ## Sistem Informasi Bridge Gunadarma Berbasis Web
-Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan memberikan efisiensi bagi organisasi dalam mengolah data serta informasi dengan aplikasi web.
+Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan memberikan efisiensi bagi organisasi dalam mengolah data serta informasi dengan aplikasi web. Juga sebagai media online yang menyediakan informasi seputar Bridge Gunadarma.
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
@@ -40,6 +40,8 @@ Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan membe
 * [Font Awesone](https://php.net)
 * [dataTable](https://datatables.net)
 * [tinyMCE](https://www.tiny.cloud)
+* [Git](https://git-scm.com)
+* [Heroku](https://www.heroku.com)
 
 ## Usage
 
@@ -51,4 +53,4 @@ Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan membe
 
 - **[Edward Evbert A.](https://edwevb.github.io)**
 - **[Bridge Gunadarma](https://bridgegunadarma.herokuapp.com)**
-- **[Gunadarma University]**(https://www.gunadarma.ac.id/)
+- **[Gunadarma University](https://www.gunadarma.ac.id/)**
