@@ -31,12 +31,12 @@ Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan membe
 * [Laravel](https://laravel.com)
 * [Bootstrap](https://getbootstrap.com)
 * [PHP](https://php.net)
-* HTML 5 & CSS 3
-* MySQL
+* [MySQL](https://www.mysql.com)
 
 ## Plugin, Package, etc.
 
 * [npm](https://www.npmjs.com/)
+* [jQuery](https://jquery.com)
 * [Font Awesone](https://php.net)
 * [dataTable](https://datatables.net)
 * [tinyMCE](https://www.tiny.cloud)
