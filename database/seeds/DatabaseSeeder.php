@@ -9,6 +9,5 @@ class DatabaseSeeder extends Seeder
     		AnnounceTableSeeder::class,
     		UserSeeder::class
     	]);
-        // $this->call(UserSeeder::class);
     }
 }

@@ -20,7 +20,6 @@
   {{--  Page fonts & Icon --}}
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/bridgeug.css') }}">
   <style>
     nav{background-color: #ad5389;background-image: -webkit-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: -o-linear-gradient(right, rgb(173, 83, 137), rgb(60, 16, 83));background-image: linear-gradient(to left, rgb(173, 83, 137), rgb(60, 16, 83));background-size: cover;}@media (min-width: 992px){nav{padding-top: 2rem!important;padding-bottom: 18rem !important;background-image: url("{{ asset('assets/img/slider_1.jpg') }}")!important;background-size: cover;background-attachment: fixed;}}
   </style>
