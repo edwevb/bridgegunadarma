@@ -124,7 +124,7 @@ class PagesController extends Controller
 
     public function moreEvent()
     {
-        $data_event = \App\Event::select('id','eve_title','eve_date')
+        $data_event = \App\Event::select('id','eve_title','eve_date','img_eve')
                       ->orderBy('eve_date','DESC')
                       ->get();
         return view('home.HomeMoreEvent',compact('data_event'));
