@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Poppins&family=Righteous&display=swap');
 
 // Variables
 @import 'variables';
@@ -309,6 +309,7 @@ a.nav-link-style{
   color: #fff;
   transition: 0.5s;
 }
+
 @media (max-width: 992px)
   {
   a.nav-link-style:hover {
@@ -377,8 +378,7 @@ small.form-text{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
     font-size: 4vh;
     letter-spacing: 2px;
     overflow: 0;
@@ -392,10 +392,6 @@ small.form-text{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-}
-
-@media (min-width: 576px)
-{
 }
 
 @media (min-width: 992px)
@@ -464,7 +460,7 @@ small.form-text{
   }
 
   .bridge-bg{
-    background-image: url(slider_1.jpg);
+    background: url(https://bridgegunadarma.herokuapp.com/assets/img/slider_1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -482,9 +478,8 @@ small.form-text{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
     font-size: 10vh;
-    font-weight: bold;
     letter-spacing: 2px;
     overflow: 0;
     margin :0;
@@ -500,7 +495,7 @@ small.form-text{
 
   .gundarCup {
   	text-shadow: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
     font-size: 10vh;
     font-weight: bold;
   }
@@ -918,15 +913,13 @@ small.form-text{
 }
 
 #home h1, #atlet h1, #event h1, #prestasi h1, #about h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Righteous', cursive;
   letter-spacing: 2px;
-  font-weight: bold;
 }
 
 #home-detail-header h1{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Righteous', cursive;
   letter-spacing: 2px;
-  font-weight: bold;
 }
 
 .about{

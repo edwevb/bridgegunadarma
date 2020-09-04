@@ -16,7 +16,7 @@
         <a href="{{ url('/') }}">
         <img height="100" width="auto" src="{{ asset('assets/img/bridgeug.png') }}" alt="Bridge Gunadarma"></a>
       </div>
-      <div class="card-borderless shadow rounded">
+      <div class="card-borderless shadow rounded bg-light loginSection">
         <div class="text-center bg-purple p-2  rounded-top">
           <h3 class="card-title text-white pt-2"><i class="fas fa-user-alt"></i> {{ __('Login Page') }}</h3>
         </div>

@@ -12,8 +12,22 @@
   <!-- Styles -->
   <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/app-login.css') }}" rel="stylesheet">
+
+  <style>
+    body{
+      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+      url({{ asset('assets/img/slider_1.jpg') }}) no-repeat bottom fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .loginSection{
+      opacity: 0.95;
+    }
+  </style>
 </head>
-<body class="bg-light">
+<body>
   <main class="mt-5">
     @yield('content')
   </main>

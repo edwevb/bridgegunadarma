@@ -51,6 +51,9 @@ Sistem ini bertujuan untuk mengatasi permasalahan, menyediakan solusi, dan membe
 
 ## Credit
 
-- **[Edward Evbert A.](https://edwevb.github.io)**
 - **[Bridge Gunadarma](https://bridgegunadarma.herokuapp.com)**
 - **[Gunadarma University](https://www.gunadarma.ac.id/)**
+
+## Author
+
+- **[Edward Evbert A.](https://edwevb.github.io)**
