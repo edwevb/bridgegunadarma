@@ -31,10 +31,10 @@ body{
   background-color: #C04848;
 }
 
- .btn-nav:focus{
+.btn-nav:focus{
   text-decoration: none;
   outline: 0;
- }
+}
 
 #cms-header{
   font-family: 'Poppins', sans-serif;
@@ -310,8 +310,15 @@ a.nav-link-style{
   transition: 0.5s;
 }
 
+@media (max-width: 500px)
+{
+  .navbar-brand span{
+    display:none;
+  }
+}
+
 @media (max-width: 992px)
-  {
+{
   a.nav-link-style:hover {
     color: #f07241;
     background-color: transparent;
@@ -364,7 +371,7 @@ small.form-text{
 }
 
 #atlet .collapsing, #event .collapsing, #prestasi .collapsing {
-    transition: 0.5s;
+  transition: 0.5s;
 }
 
 
@@ -411,94 +418,94 @@ small.form-text{
   }
 
   .dropdown .dropdown-menu{
-     margin-left: 5rem !important;
-     min-width: 5rem ;
-     padding: 0.5rem 0;
-  }
+   margin-left: 5rem !important;
+   min-width: 5rem ;
+   padding: 0.5rem 0;
+ }
 
-  .bridge-side-bg{
-    display : flex;
-    z-index: 1 !important;
-  }
+ .bridge-side-bg{
+  display : flex;
+  z-index: 1 !important;
+}
 
-  .bridge-side-bg img{
-    margin-left: 2em;
-    transition: padding 1s;
-  }
+.bridge-side-bg img{
+  margin-left: 2em;
+  transition: padding 1s;
+}
 
-  .bridge-side-bg img:hover{
-      padding: 1em;
-  }
+.bridge-side-bg img:hover{
+  padding: 1em;
+}
 
-  #sidebar{
-    text-decoration: none;
-    position: fixed;
-    top: 130px;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-  }
-  
-  small.form-text{
-    margin-bottom: 0rem;
-  }
+#sidebar{
+  text-decoration: none;
+  position: fixed;
+  top: 130px;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
-  .content-mobile{
-    margin-top: 5px;
-  }
+small.form-text{
+  margin-bottom: 0rem;
+}
 
-  .content-home{
-    margin-top: 0;
-  }
+.content-mobile{
+  margin-top: 5px;
+}
 
-  .dashboard-heading{
-    padding: 0.4rem 1rem;
-  }
+.content-home{
+  margin-top: 0;
+}
 
- #detail-card{
-    margin-top: -100px
-  }
+.dashboard-heading{
+  padding: 0.4rem 1rem;
+}
 
-  .bridge-bg{
-    background: url(https://bridgegunadarma.herokuapp.com/assets/img/slider_1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+#detail-card{
+  margin-top: -100px
+}
 
-  #about .bridge-bg{
-    padding-bottom: 6rem!important;
-  }
+.bridge-bg{
+  background: url(https://bridgegunadarma.herokuapp.com/assets/img/slider_1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-  .title{
-    text-decoration: none;
-    background: -webkit-linear-gradient(#ad5389, #3c1053);
-    background: -o-linear-gradient(#ad5389, #3c1053);
-    background: linear-gradient(#ad5389, #3c1053);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: none;
-    font-family: 'Righteous', cursive;
-    font-size: 10vh;
-    letter-spacing: 2px;
-    overflow: 0;
-    margin :0;
-  }
+#about .bridge-bg{
+  padding-bottom: 6rem!important;
+}
 
-  .title:hover{
-    background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
-    background: -o-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
-    background: linear-gradient(to right, rgb(192,72,72), rgb(60, 16, 83));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.title{
+  text-decoration: none;
+  background: -webkit-linear-gradient(#ad5389, #3c1053);
+  background: -o-linear-gradient(#ad5389, #3c1053);
+  background: linear-gradient(#ad5389, #3c1053);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  font-family: 'Righteous', cursive;
+  font-size: 10vh;
+  letter-spacing: 2px;
+  overflow: 0;
+  margin :0;
+}
 
-  .gundarCup {
-  	text-shadow: none;
-    font-family: 'Righteous', cursive;
-    font-size: 10vh;
-    font-weight: bold;
-  }
+.title:hover{
+  background: -webkit-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+  background: -o-linear-gradient(left, rgb(192,72,72), rgb(60, 16, 83));
+  background: linear-gradient(to right, rgb(192,72,72), rgb(60, 16, 83));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gundarCup {
+ text-shadow: none;
+ font-family: 'Righteous', cursive;
+ font-size: 10vh;
+ font-weight: bold;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -758,8 +765,8 @@ small.form-text{
  background: -webkit-linear-gradient(#41295a, #2F0743);
  background: -o-linear-gradient(#41295a, #2F0743);
  background: linear-gradient(#41295a, #2F0743);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-salmon{
@@ -774,8 +781,8 @@ small.form-text{
  background: -webkit-linear-gradient(#ad5389, #3c1053);
  background: -o-linear-gradient(#ad5389, #3c1053);
  background: linear-gradient(#ad5389, #3c1053);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-danger{
@@ -869,14 +876,8 @@ small.form-text{
   transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-#home .textWrite {
-  white-space: nowrap;
-  overflow: hidden;    
-  animation: animated-text 4s linear 1s 1 normal both;
-}
-
 #drop-icon{
-   white-space: pre-line;
+ white-space: pre-line;
 }
 
 @keyframes animated-text{

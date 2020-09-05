@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark shadow fixed-top" id ="mainNav">
     <div class="container-fluid">
       <div class="navbar-brand">
-        <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"> Bridge Gunadarma</a>
+        <a href="{{ url('/') }}"><img class="imgug" src="{{ asset('assets/img/bridgeug.png') }}"><span> Bridge Gunadarma</span></a>
       </div>
       <button class="btn btn-dark navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNav">
         <span class ="navbar-toggler-icon"></span>

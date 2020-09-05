@@ -10,7 +10,7 @@
 						<div class="row">{{-- row welcome --}}
 							<div class="col-xl-6 mb-5">
 							  <h1 class="display-4 text-gradient-purple">Hello, Bridge Lovers!</h1>
-							  <p class="lead textWrite">Welcome to Bridge Gunadarma's website</p>
+							  <p class="lead">Welcome to Bridge Gunadarma website</p>
 							  <a href="#about" class="btn btn-lg btn-salmon btn-none text-white rounded-pill px-5 js-scroll-trigger" role="button">About Us</a>
 							</div>
 							<div class="col-xl-6 p-1 bg-purple shadow-lg rounded mb-5">
